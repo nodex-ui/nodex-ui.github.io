@@ -1,0 +1,12 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="radio-group-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <RadioGroup value="'option-one'" className="'d-flex flex-column gap-2'">
+          <RadioGroupItem value="'option-one'">Option One</RadioGroupItem>
+          <RadioGroupItem value="'option-two'">Option Two</RadioGroupItem>
+        </RadioGroup>
+      </div>
+    </div>
+  </t>
+</templates>

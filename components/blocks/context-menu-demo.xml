@@ -1,0 +1,21 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="context-menu-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <ContextMenu>
+          <ContextMenuTrigger>
+            <div class="d-flex align-items-center justify-content-center rounded border border-dashed small w-100" style="height: 6.25rem">
+              Right click here
+            </div>
+          </ContextMenuTrigger>
+          <ContextMenuContent>
+            <ContextMenuItem>Profile</ContextMenuItem>
+            <ContextMenuItem>Billing</ContextMenuItem>
+            <ContextMenuItem>Team</ContextMenuItem>
+            <ContextMenuItem>Subscription</ContextMenuItem>
+          </ContextMenuContent>
+        </ContextMenu>
+      </div>
+    </div>
+  </t>
+</templates>

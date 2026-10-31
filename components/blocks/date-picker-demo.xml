@@ -1,0 +1,11 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="date-picker-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100 d-flex flex-column gap-4">
+        <DatePicker label="'Date of birth'" supportingText="'As on your ID'"/>
+        <DatePicker label="'Start date'" errorText="'Pick a date'"/>
+        <DatePicker label="'Date of birth'" supportingText="'As on your ID'" useTip="1"/>
+      </div>
+    </div>
+  </t>
+</templates>

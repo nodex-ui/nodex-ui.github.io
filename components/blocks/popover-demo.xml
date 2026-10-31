@@ -1,0 +1,19 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="popover-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem">
+        <Popover>
+          <PopoverTrigger>
+            <Button variant="'outline'">Open Popover</Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <div class="d-flex flex-column gap-1">
+              <Typography variant="'h4'">Title</Typography>
+              <Typography variant="'muted'">Description text here.</Typography>
+            </div>
+          </PopoverContent>
+        </Popover>
+      </div>
+    </div>
+  </t>
+</templates>

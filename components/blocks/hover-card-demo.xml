@@ -1,0 +1,24 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="hover-card-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem">
+        <HoverCard>
+          <HoverCardTrigger>
+            <a href="https://thebase.vn" class="text-decoration-underline">@thebase</a>
+          </HoverCardTrigger>
+          <HoverCardContent className="'w-auto'">
+            <div class="d-flex justify-content-between gap-3" style="width: 20rem">
+              <div class="d-flex flex-column gap-1" style="min-width: 0">
+                <h4 class="small fw-semibold mb-0">@thebase</h4>
+                <p class="small mb-0">The React Framework – created and maintained by @vercel.</p>
+                <div class="d-flex align-items-center pt-2">
+                  <span class="small text-muted">Joined December 2021</span>
+                </div>
+              </div>
+            </div>
+          </HoverCardContent>
+        </HoverCard>
+      </div>
+    </div>
+  </t>
+</templates>

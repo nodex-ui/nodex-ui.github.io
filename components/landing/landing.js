@@ -24,7 +24,7 @@ const sections = [
   { route: "docs", icon: "book-open", title: t("Docs"), text: t("Install paths, usage guides, and live previews for every component.") },
   { route: "blocks", icon: "layout-dashboard", title: t("Blocks"), text: t("Dashboards, sidebars, data tables, and auth screens ready to copy.") },
   { route: "icons", icon: "shapes", title: t("Icons"), text: t("The full Lucide set through b-icon and the Icon component.") },
-  { route: "chart", icon: "chart-column", title: t("Charts"), text: t("Bar and area charts built from native Nodex UI markup.") },
+  { route: "chart", icon: "chart-column", title: t("Charts"), text: t("Bar, line, area, pie, radar and radial charts from native Nodex UI markup, plus Chart.js.") },
 ];
 
 const analyticsFeatures = [

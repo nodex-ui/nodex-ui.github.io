@@ -1,4 +1,4 @@
-import { Component, loadFile, mount, onMounted, onWillUnmount, useState } from "nodexui";
+import { Component, onMounted, onWillUnmount, useState } from "nodexui";
 import { DocsSidebar, DocsContent } from "@/components/docs/docs.js";
 import { BlocksSidebar, BlocksContent } from "@/components/block-gallery/block-gallery.js";
 import { IconsSidebar, IconsContent } from "@/components/icons/icons.js";
@@ -6,6 +6,7 @@ import { ChartSidebar, ChartContent } from "@/components/chart-gallery/chart-gal
 import { OwlFrameworkSidebar, OwlFrameworkContent } from "@/components/owl-framework/owl-framework.js";
 import { ThemeCreatorSidebar, ThemeCreatorContent } from "@/components/theme-creator/theme-creator.js";
 import { LanguageSwitcher } from "@/components/language-switcher/language-switcher.js";
+import { mountPage } from "@/components/page/page.js";
 import { setPageMeta } from "@/seo.js";
 import { trackEvent } from "@/tracking.js";
 import { loadCatalog, t } from "../../i18n.js";
@@ -14,7 +15,7 @@ await loadCatalog(import.meta.url);
 
 const routes = [
   { id: "docs", label: t("Docs"), description: t("Install paths, usage guidance, and per-component sample code with live Nodex UI previews.") },
-  { id: "blocks", label: t("Blocks"), description: t("Catalog of composed Nodex UI block examples.") },
+  { id: "blocks", label: t("Blocks"), description: t("Catalog of composed Nodex UI blocks and runnable examples.") },
   { id: "icons", label: t("Icons"), description: t("Lucide-backed icon usage through the Icon component.") },
   { id: "chart", label: t("Chart"), description: t("Interactive Nodex UI chart catalog.") },
   { id: "owl-framework", label: t("Concept"), description: t("Reference for everything exported by the underlying runtime.") },
@@ -30,10 +31,6 @@ function routeFromHash() {
 function setRouteTitle(id) {
   const route = routes.find((entry) => entry.id === id);
   setPageMeta({ title: `${route.label} · Nodex UI`, description: route.description });
-}
-
-function templateBody(xml) {
-  return xml.match(/<templates[^>]*>([\s\S]*)<\/templates>/)?.[1] || xml;
 }
 
 /** Every `main-nav` tab is rendered as one shared `Shell`: the active tab's item list fills `ShellSidebar`, and the selected item's content fills `ShellContent`. */
@@ -72,17 +69,16 @@ export class Root extends Component {
   }
 }
 
-const [baseTemplates, appTemplates, docsTemplates, blockGalleryTemplates, iconsTemplates, chartGalleryTemplates, owlFrameworkTemplates, themeCreatorTemplates] = await Promise.all([
-  loadFile(import.meta.resolve("nodexui/templates")),
-  loadFile("/components/main/main.xml"),
-  loadFile("/components/docs/docs.xml"),
-  loadFile("/components/block-gallery/block-gallery.xml"),
-  loadFile("/components/icons/icons.xml"),
-  loadFile("/components/chart-gallery/chart-gallery.xml"),
-  loadFile("/components/owl-framework/owl-framework.xml"),
-  loadFile("/components/theme-creator/theme-creator.xml"),
-]);
-const templates = [baseTemplates, appTemplates, docsTemplates, blockGalleryTemplates, iconsTemplates, chartGalleryTemplates, owlFrameworkTemplates, themeCreatorTemplates]
-  .map(templateBody)
-  .join("\n");
-await mount(Root, document.getElementById("b-example-app"), { templates: `<templates>${templates}</templates>` });
+await mountPage(Root, [
+  "/components/main/main.xml",
+  "/components/docs/docs.xml",
+  "/components/block-gallery/block-gallery.xml",
+  "/components/icons/icons.xml",
+  "/components/chart-gallery/chart-gallery.xml",
+  "/components/apidoc-demo/apidoc-demo.xml",
+  "/components/qr-demo/qr-demo.xml",
+  "/components/i18n-demo/i18n-demo.xml",
+  "/components/analytics-dashboard/analytics-dashboard.xml",
+  "/components/owl-framework/owl-framework.xml",
+  "/components/theme-creator/theme-creator.xml",
+], document.getElementById("b-example-app"));

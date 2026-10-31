@@ -1,0 +1,36 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <section b-block="data-table-01" class="bg-body-tertiary min-vh-100 p-3 p-lg-4">
+      <div class="d-grid gap-4 mx-auto" style="max-width: 88rem">
+        <div class="d-grid gap-2" style="max-width: 42rem">
+          <Badge variant="'muted'">Data table usage</Badge>
+          <h1 class="h3 mb-0 fw-semibold">A data table with 100 records and 20 columns</h1>
+          <p class="text-body-secondary small mb-0">Import <code>DataTable</code> from <code>nodexui</code> and pass <code>columns</code>/<code>rows</code> arrays. Search, per-column sorting, pagination, column visibility toggling, a rows-per-page selector, and a <code>toolbarActions</code> slot for custom buttons all work out of the box against a dataset this size.</p>
+        </div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Employee directory</CardTitle>
+            <CardDescription>100 employees, 20 fields per record.</CardDescription>
+          </CardHeader>
+          <CardBody>
+            <DataTable
+              columns="window.exampleDataTableColumns"
+              rows="window.exampleDataTableRows"
+              selectable="true"
+              columnToggle="true"
+              pageSize="10"
+              pageSizeOptions="[10, 20, 50, 80]"
+              filterPlaceholder="'Filter by name or email...'"
+              rowActions="[{label: 'View profile'}, {label: 'Edit record'}, {label: 'Deactivate'}]"
+            >
+              <t t-set-slot="toolbarActions">
+                <Button icon="'plus'">New employee</Button>
+                <Button variant="'outline'">Export</Button>
+              </t>
+            </DataTable>
+          </CardBody>
+        </Card>
+      </div>
+    </section>
+  </t>
+</templates>

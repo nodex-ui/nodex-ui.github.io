@@ -14,27 +14,7 @@ msgid "Bar Chart"
 msgstr ""
 
 #: chart-gallery.xml
-msgid "Monthly visitors, native Nodex UI bar plot"
-msgstr ""
-
-#: chart-gallery.xml
 msgid "Trending up by 5.2% this month"
-msgstr ""
-
-#: chart-gallery.xml
-msgid "January - June 2026"
-msgstr ""
-
-#: chart-gallery.xml
-msgid "Weekly active users, native Nodex UI bar plot"
-msgstr ""
-
-#: chart-gallery.xml
-msgid "Trending up by 3.1% this week"
-msgstr ""
-
-#: chart-gallery.xml
-msgid "Week of Aug 24, 2026"
 msgstr ""
 
 #: chart-gallery.xml
@@ -151,4 +131,264 @@ msgstr ""
 
 #: chart-gallery.xml
 msgid "Area Chart Gradient"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Linear"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart Linear"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Step"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart Step"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Stacked"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart Stacked"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Stacked Expanded"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart Stacked Expanded"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Axes"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart Axes"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Line Charts"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Pie Charts"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radar Charts"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radial Charts"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js Charts"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Native plot, hover a bar to see its value"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Bar Chart - Multiple"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Bar Chart - Stacked"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Bar Chart - Label"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Bar Chart - Horizontal"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Bar Chart - Negative"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Net visitor change per month"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Line Chart"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Line Chart - Linear"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Line Chart - Step"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Line Chart - Multiple"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Line Chart - Dots"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Line Chart - Label"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Pie Chart - Native Donut"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Native plot with the built-in five-colour split"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chrome 34%"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Safari 24%"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Firefox 19%"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Edge 13%"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Other 10%"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Pie Chart"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Visitors by browser, January - June 2024"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chrome"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Safari"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Firefox"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Edge"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Other"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Pie Chart - Donut with Text"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Visitors"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Pie Chart - Label"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radar Chart"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radar Chart - Multiple"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radar Chart - Circle Grid"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radar Chart - Dots"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radial Chart - Text"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radial Chart - Multiple"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Radial Chart - Stacked"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Rendered by Chart.js 3 from a JSON config"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Trend"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js - Bar"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js - Line"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js - Mixed"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Desktop visitors with a trend line"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js - Doughnut"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js - Polar Area"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js - Radar"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js - Scatter"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Session length and pages viewed"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Chart.js - Bubble"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Session length, pages viewed and visitor count"
 msgstr ""

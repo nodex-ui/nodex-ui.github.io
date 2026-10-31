@@ -1,0 +1,16 @@
+<templates>
+  <t t-name="examples.QrDemo">
+    <div style="max-width: 40rem">
+      <Label for="'text'">Text or URL</Label>
+      <Input id="'text'" className="'mb-3'" value="state.text" onInput="(value) => { state.text = value; }"/>
+      <div class="mb-4" style="width: 14rem" t-out="textQr"/>
+      <h2 class="h5">VietQR</h2>
+      <div class="row g-2 mb-3">
+        <div class="col"><Input ariaLabel="'Account number'" value="state.account" onInput="(value) => { state.account = value; }"/></div>
+        <div class="col"><Input ariaLabel="'Amount (VND)'" value="state.amount" onInput="(value) => { state.amount = value; }"/></div>
+      </div>
+      <div class="mb-2" style="width: 14rem" t-out="vietQr"/>
+      <code class="d-block small text-break" t-esc="vietQrPayload"/>
+    </div>
+  </t>
+</templates>

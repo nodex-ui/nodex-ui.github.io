@@ -12,7 +12,6 @@
           <a class="btn btn-link text-body text-decoration-none px-2" href="/index.html#/blocks"><t t-esc="t('Blocks')"/></a>
           <a class="btn btn-link text-body text-decoration-none d-none d-md-inline-block" href="#apidoc"><t t-esc="t('API docs')"/></a>
           <a class="btn btn-link text-body text-decoration-none d-none d-md-inline-block" href="#analytics"><t t-esc="t('Analytics')"/></a>
-          <a class="btn btn-link text-body text-decoration-none" href="/index.html"><t t-esc="t('Examples')"/></a>
           <LanguageSwitcher/>
           <ThemeButton variant="'outline'" storageKey="'b-example-theme'" onChange="(theme) => this.onThemeChange(theme)"/>
         </div>
@@ -79,7 +78,7 @@
               </li>
             </ul>
             <div class="d-flex flex-wrap gap-2">
-              <Button href="'/apidoc/index.html'" icon="'file-json'"><t t-esc="t('Live Petstore demo')"/></Button>
+              <Button href="'/index.html#/blocks/apidoc'" icon="'file-json'"><t t-esc="t('Live Petstore demo')"/></Button>
               <Button href="'/index.html#/docs/components/apidoc'" variant="'outline'" icon="'book-open'"><t t-esc="t('ApiDoc docs')"/></Button>
             </div>
           </div>

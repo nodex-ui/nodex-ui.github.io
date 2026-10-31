@@ -1,0 +1,16 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="input-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100 d-flex flex-column gap-4">
+        <Input type="'email'" placeholder="'Email'"/>
+        <Input label="'Email'" supportingText="'We only use it to send receipts'" useTip="1" leadingIcon="'mail'"/>
+        <Input label="'Website'" placeholder="'example.com'">
+          <t t-set-slot="start"><span>https://</span></t>
+        </Input>
+        <Input label="'Search'">
+          <t t-set-slot="end"><Button size="'xs'">Search</Button></t>
+        </Input>
+      </div>
+    </div>
+  </t>
+</templates>

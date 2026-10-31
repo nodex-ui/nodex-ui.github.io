@@ -1,5 +1,0 @@
-[b-block="sidebar-11"] [b-block-content] { padding: 0; }
-[b-block="sidebar-11"] [b-block-file-shell] { display: grid; grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr); min-height: 100%; }
-[b-block="sidebar-11"] [b-block-file-panel] { border-right: 1px solid var(--b-border); display: grid; gap: 0.25rem; align-content: start; padding: 1rem; }
-[b-block="sidebar-11"] [b-block-file-panel] a { align-items: center; border-radius: var(--b-radius-md); display: flex; gap: 0.5rem; min-height: 2rem; padding: 0.375rem 0.5rem; }
-[b-block="sidebar-11"] [b-block-file-panel] a:hover, [b-block="sidebar-11"] [b-block-file-panel] a[aria-current="page"] { background: var(--b-accent); }

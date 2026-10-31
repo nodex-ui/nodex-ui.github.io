@@ -1,0 +1,5 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="sidebar-13"><div b-block-dialog-demo=""><Button type="'button'"><Icon name="'panel-left-open'"/>Open Dialog</Button><section b-block-dialog=""><Sidebar defaultOpen="true"><SidebarContent className="'b-block-sidebar'"><a href="#" b-block-brand=""><span b-block-mark=""><Icon name="'gallery-vertical-end'"/></span><span>Acme Inc<small>Command</small></span></a><nav b-block-nav=""><SidebarMenu><SidebarMenuItem><SidebarMenuButton href="'#'" icon="'search'" active="true">Search</SidebarMenuButton></SidebarMenuItem><SidebarMenuItem><SidebarMenuButton href="'#'" icon="'sparkles'">Ask AI</SidebarMenuButton></SidebarMenuItem><SidebarMenuItem><SidebarMenuButton href="'#'" icon="'settings'">Settings</SidebarMenuButton></SidebarMenuItem></SidebarMenu></nav></SidebarContent></Sidebar><ShellContent className="'b-block-content'"><h2>Sidebar command surface</h2><p b-block-muted="">Use this static block as a dialog body with a compact sidebar and focused content area.</p></ShellContent></section></div></div>
+  </t>
+</templates>

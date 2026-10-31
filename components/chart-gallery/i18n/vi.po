@@ -14,28 +14,8 @@ msgid "Bar Chart"
 msgstr "Biểu đồ cột"
 
 #: chart-gallery.xml
-msgid "Monthly visitors, native Nodex UI bar plot"
-msgstr "Lượt truy cập hàng tháng, biểu đồ cột Nodex UI gốc"
-
-#: chart-gallery.xml
 msgid "Trending up by 5.2% this month"
 msgstr "Tăng 5,2% trong tháng này"
-
-#: chart-gallery.xml
-msgid "January - June 2026"
-msgstr "Tháng 1 - Tháng 6 năm 2026"
-
-#: chart-gallery.xml
-msgid "Weekly active users, native Nodex UI bar plot"
-msgstr "Người dùng hoạt động hàng tuần, biểu đồ cột Nodex UI gốc"
-
-#: chart-gallery.xml
-msgid "Trending up by 3.1% this week"
-msgstr "Tăng 3,1% trong tuần này"
-
-#: chart-gallery.xml
-msgid "Week of Aug 24, 2026"
-msgstr "Tuần của 24 Th8, 2026"
 
 #: chart-gallery.xml
 msgid "Area Chart - Interactive"
@@ -152,3 +132,263 @@ msgstr "Biểu đồ vùng - Chuyển màu"
 #: chart-gallery.xml
 msgid "Area Chart Gradient"
 msgstr "Biểu đồ vùng chuyển màu"
+
+#: chart-gallery.xml
+msgid "Area Chart - Linear"
+msgstr "Biểu đồ vùng - Đường thẳng"
+
+#: chart-gallery.xml
+msgid "Area Chart Linear"
+msgstr "Biểu đồ vùng đường thẳng"
+
+#: chart-gallery.xml
+msgid "Area Chart - Step"
+msgstr "Biểu đồ vùng - Bậc thang"
+
+#: chart-gallery.xml
+msgid "Area Chart Step"
+msgstr "Biểu đồ vùng bậc thang"
+
+#: chart-gallery.xml
+msgid "Area Chart - Stacked"
+msgstr "Biểu đồ vùng - Xếp chồng"
+
+#: chart-gallery.xml
+msgid "Area Chart Stacked"
+msgstr "Biểu đồ vùng xếp chồng"
+
+#: chart-gallery.xml
+msgid "Area Chart - Stacked Expanded"
+msgstr "Biểu đồ vùng - Xếp chồng mở rộng"
+
+#: chart-gallery.xml
+msgid "Area Chart Stacked Expanded"
+msgstr "Biểu đồ vùng xếp chồng mở rộng"
+
+#: chart-gallery.xml
+msgid "Area Chart - Axes"
+msgstr "Biểu đồ vùng - Trục"
+
+#: chart-gallery.xml
+msgid "Area Chart Axes"
+msgstr "Biểu đồ vùng có trục"
+
+#: chart-gallery.xml
+msgid "Line Charts"
+msgstr "Biểu đồ đường"
+
+#: chart-gallery.xml
+msgid "Pie Charts"
+msgstr "Biểu đồ tròn"
+
+#: chart-gallery.xml
+msgid "Radar Charts"
+msgstr "Biểu đồ radar"
+
+#: chart-gallery.xml
+msgid "Radial Charts"
+msgstr "Biểu đồ vòng"
+
+#: chart-gallery.xml
+msgid "Chart.js Charts"
+msgstr "Biểu đồ Chart.js"
+
+#: chart-gallery.xml
+msgid "Native plot, hover a bar to see its value"
+msgstr "Biểu đồ gốc, di chuột lên cột để xem giá trị"
+
+#: chart-gallery.xml
+msgid "Bar Chart - Multiple"
+msgstr "Biểu đồ cột - Nhiều nhóm"
+
+#: chart-gallery.xml
+msgid "Bar Chart - Stacked"
+msgstr "Biểu đồ cột - Xếp chồng"
+
+#: chart-gallery.xml
+msgid "Bar Chart - Label"
+msgstr "Biểu đồ cột - Nhãn"
+
+#: chart-gallery.xml
+msgid "Bar Chart - Horizontal"
+msgstr "Biểu đồ cột - Ngang"
+
+#: chart-gallery.xml
+msgid "Bar Chart - Negative"
+msgstr "Biểu đồ cột - Giá trị âm"
+
+#: chart-gallery.xml
+msgid "Net visitor change per month"
+msgstr "Thay đổi lượt truy cập ròng mỗi tháng"
+
+#: chart-gallery.xml
+msgid "Line Chart"
+msgstr "Biểu đồ đường"
+
+#: chart-gallery.xml
+msgid "Line Chart - Linear"
+msgstr "Biểu đồ đường - Tuyến tính"
+
+#: chart-gallery.xml
+msgid "Line Chart - Step"
+msgstr "Biểu đồ đường - Bậc thang"
+
+#: chart-gallery.xml
+msgid "Line Chart - Multiple"
+msgstr "Biểu đồ đường - Nhiều đường"
+
+#: chart-gallery.xml
+msgid "Line Chart - Dots"
+msgstr "Biểu đồ đường - Điểm"
+
+#: chart-gallery.xml
+msgid "Line Chart - Label"
+msgstr "Biểu đồ đường - Nhãn"
+
+#: chart-gallery.xml
+msgid "Pie Chart - Native Donut"
+msgstr "Biểu đồ tròn - Vành khuyên gốc"
+
+#: chart-gallery.xml
+msgid "Native plot with the built-in five-colour split"
+msgstr "Biểu đồ gốc với cách chia năm màu có sẵn"
+
+#: chart-gallery.xml
+msgid "Chrome 34%"
+msgstr "Chrome 34%"
+
+#: chart-gallery.xml
+msgid "Safari 24%"
+msgstr "Safari 24%"
+
+#: chart-gallery.xml
+msgid "Firefox 19%"
+msgstr "Firefox 19%"
+
+#: chart-gallery.xml
+msgid "Edge 13%"
+msgstr "Edge 13%"
+
+#: chart-gallery.xml
+msgid "Other 10%"
+msgstr "Khác 10%"
+
+#: chart-gallery.xml
+msgid "Pie Chart"
+msgstr "Biểu đồ tròn"
+
+#: chart-gallery.xml
+msgid "Visitors by browser, January - June 2024"
+msgstr "Lượt truy cập theo trình duyệt, Tháng 1 - Tháng 6 năm 2024"
+
+#: chart-gallery.xml
+msgid "Chrome"
+msgstr "Chrome"
+
+#: chart-gallery.xml
+msgid "Safari"
+msgstr "Safari"
+
+#: chart-gallery.xml
+msgid "Firefox"
+msgstr "Firefox"
+
+#: chart-gallery.xml
+msgid "Edge"
+msgstr "Edge"
+
+#: chart-gallery.xml
+msgid "Other"
+msgstr "Khác"
+
+#: chart-gallery.xml
+msgid "Pie Chart - Donut with Text"
+msgstr "Biểu đồ tròn - Vành khuyên có chữ"
+
+#: chart-gallery.xml
+msgid "Visitors"
+msgstr "Lượt truy cập"
+
+#: chart-gallery.xml
+msgid "Pie Chart - Label"
+msgstr "Biểu đồ tròn - Nhãn"
+
+#: chart-gallery.xml
+msgid "Radar Chart"
+msgstr "Biểu đồ radar"
+
+#: chart-gallery.xml
+msgid "Radar Chart - Multiple"
+msgstr "Biểu đồ radar - Nhiều chuỗi"
+
+#: chart-gallery.xml
+msgid "Radar Chart - Circle Grid"
+msgstr "Biểu đồ radar - Lưới tròn"
+
+#: chart-gallery.xml
+msgid "Radar Chart - Dots"
+msgstr "Biểu đồ radar - Điểm"
+
+#: chart-gallery.xml
+msgid "Radial Chart - Text"
+msgstr "Biểu đồ vòng - Chữ"
+
+#: chart-gallery.xml
+msgid "Radial Chart - Multiple"
+msgstr "Biểu đồ vòng - Nhiều vòng"
+
+#: chart-gallery.xml
+msgid "Radial Chart - Stacked"
+msgstr "Biểu đồ vòng - Xếp chồng"
+
+#: chart-gallery.xml
+msgid "Rendered by Chart.js 3 from a JSON config"
+msgstr "Vẽ bằng Chart.js 3 từ cấu hình JSON"
+
+#: chart-gallery.xml
+msgid "Trend"
+msgstr "Xu hướng"
+
+#: chart-gallery.xml
+msgid "Chart.js - Bar"
+msgstr "Chart.js - Cột"
+
+#: chart-gallery.xml
+msgid "Chart.js - Line"
+msgstr "Chart.js - Đường"
+
+#: chart-gallery.xml
+msgid "Chart.js - Mixed"
+msgstr "Chart.js - Kết hợp"
+
+#: chart-gallery.xml
+msgid "Desktop visitors with a trend line"
+msgstr "Lượt truy cập máy tính kèm đường xu hướng"
+
+#: chart-gallery.xml
+msgid "Chart.js - Doughnut"
+msgstr "Chart.js - Vành khuyên"
+
+#: chart-gallery.xml
+msgid "Chart.js - Polar Area"
+msgstr "Chart.js - Vùng cực"
+
+#: chart-gallery.xml
+msgid "Chart.js - Radar"
+msgstr "Chart.js - Radar"
+
+#: chart-gallery.xml
+msgid "Chart.js - Scatter"
+msgstr "Chart.js - Phân tán"
+
+#: chart-gallery.xml
+msgid "Session length and pages viewed"
+msgstr "Thời lượng phiên và số trang đã xem"
+
+#: chart-gallery.xml
+msgid "Chart.js - Bubble"
+msgstr "Chart.js - Bong bóng"
+
+#: chart-gallery.xml
+msgid "Session length, pages viewed and visitor count"
+msgstr "Thời lượng phiên, số trang đã xem và số lượt truy cập"

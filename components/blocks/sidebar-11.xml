@@ -1,0 +1,29 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="sidebar-11">
+      <Shell className="'b-block-shell'" collapsed="state.collapsed" onCollapsedChange="(value) => { state.collapsed = value; }">
+
+        <ShellMain className="'b-block-main'">
+          <ShellHeader className="'b-block-header'">
+            <SidebarTrigger/>
+            <Separator orientation="'vertical'"/>
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem><a class="b-breadcrumb-link" href="#">Build Your Application</a></BreadcrumbItem>
+                    <BreadcrumbSeparator/>
+                    <BreadcrumbItem><BreadcrumbPage>button.tsx</BreadcrumbPage></BreadcrumbItem>
+                </BreadcrumbList>
+                </Breadcrumb>
+          </ShellHeader>
+          <ShellContent className="'b-block-content'">
+            <div b-block-file-shell="">
+              <section b-block-file-panel=""><h2>Changes</h2><a href="#"><Icon name="'file-text'" className="'b-block-icon'"/>README.md <span>M</span></a><a href="#"><Icon name="'file-code'" className="'b-block-icon'"/>api/hello/route.ts <span>U</span></a><a href="#"><Icon name="'layout'" className="'b-block-icon'"/>app/layout.tsx <span>M</span></a></section>
+              <section b-block-file-panel=""><h2>Files</h2><a href="#"><Icon name="'folder'" className="'b-block-icon'"/>app</a><a href="#"><Icon name="'folder-open'" className="'b-block-icon'"/>components</a><a href="#" aria-current="page"><Icon name="'file-code'" className="'b-block-icon'"/>button.tsx</a><a href="#"><Icon name="'file-code'" className="'b-block-icon'"/>card.tsx</a><a href="#"><Icon name="'folder'" className="'b-block-icon'"/>lib</a><a href="#"><Icon name="'folder'" className="'b-block-icon'"/>public</a></section>
+            </div>
+          </ShellContent>
+        </ShellMain>
+
+      </Shell>
+    </div>
+  </t>
+</templates>

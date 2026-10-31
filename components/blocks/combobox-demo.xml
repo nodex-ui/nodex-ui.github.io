@@ -1,0 +1,19 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="combobox-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100 d-flex flex-column gap-4">
+        <Combobox options="[
+          { value: 'nextjs', label: 'Next.js' },
+          { value: 'sveltekit', label: 'SvelteKit' },
+          { value: 'nuxtjs', label: 'Nuxt.js' },
+          { value: 'remix', label: 'Remix' },
+          { value: 'astro', label: 'Astro' },
+        ]" label="'Framework'" placeholder="'Select a framework'"/>
+        <Combobox options="[
+          { value: 'nextjs', label: 'Next.js' },
+          { value: 'remix', label: 'Remix' },
+        ]" label="'Framework'" supportingText="'Pick the one you use most'" useTip="1"/>
+      </div>
+    </div>
+  </t>
+</templates>

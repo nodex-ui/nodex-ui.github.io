@@ -1,0 +1,27 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="message-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex flex-column gap-3 w-100" style="max-width: 24rem">
+        <div class="d-flex align-items-end gap-2">
+          <Avatar className="'flex-shrink-0'"><t t-set-slot="fallback">JL</t></Avatar>
+          <Message side="'incoming'">Hey, are we still on for the deploy today?</Message>
+        </div>
+        <div class="d-flex align-items-end gap-2 justify-content-end">
+          <Message side="'outgoing'">Deploying to prod real quick.</Message>
+          <Avatar className="'flex-shrink-0'"><t t-set-slot="fallback">ME</t></Avatar>
+        </div>
+        <div class="d-flex flex-column align-items-end gap-1">
+          <div class="d-flex align-items-end gap-2 justify-content-end">
+            <Message side="'outgoing'">Just kicked it off, should be done in a few minutes.</Message>
+            <Avatar className="'flex-shrink-0'"><t t-set-slot="fallback">ME</t></Avatar>
+          </div>
+          <Typography variant="'muted'" className="'me-1'">Delivered</Typography>
+        </div>
+        <div class="d-flex align-items-end gap-2">
+          <Avatar className="'flex-shrink-0'"><t t-set-slot="fallback">JL</t></Avatar>
+          <Message side="'incoming'">Sounds good, keep me posted 🚀</Message>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

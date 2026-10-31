@@ -1,19 +1,19 @@
 msgid ""
 msgstr "Project-Id-Version: examples/components/block-gallery\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: vi\n"
 
-#: block-gallery.xml
+#: block-gallery.js
 msgid "Feature blocks"
 msgstr "Khối tính năng"
 
-#: block-gallery.xml
+#: block-gallery.js
 msgid "Sidebar blocks"
 msgstr "Khối thanh bên"
 
-#: block-gallery.xml
+#: block-gallery.js
 msgid "Auth blocks"
 msgstr "Khối xác thực"
 
-#: block-gallery.xml
+#: block-gallery.js
 msgid "Component demos"
 msgstr "Demo thành phần"
 
@@ -24,3 +24,39 @@ msgstr "Mở khối"
 #: block-gallery.xml
 msgid "{label} preview"
 msgstr "Xem trước {label}"
+
+#: block-gallery.js
+msgid "Examples"
+msgstr "Ví dụ"
+
+#: block-gallery.js
+msgid "API documentation"
+msgstr "Tài liệu API"
+
+#: block-gallery.js
+msgid "The ApiDoc component rendering the Swagger Petstore OpenAPI 3.0 spec as browsable API docs."
+msgstr "Component ApiDoc hiển thị đặc tả Swagger Petstore OpenAPI 3.0 thành tài liệu API có thể duyệt."
+
+#: block-gallery.js
+msgid "QR code"
+msgstr "Mã QR"
+
+#: block-gallery.js
+msgid "A QR code and a VietQR payment code drawn in the browser by the QR service (nodexui/qr)."
+msgstr "Mã QR và mã thanh toán VietQR được vẽ ngay trên trình duyệt bằng dịch vụ QR (nodexui/qr)."
+
+#: block-gallery.js
+msgid "Translation"
+msgstr "Dịch ngôn ngữ"
+
+#: block-gallery.js
+msgid "Switch languages with the i18n service (nodexui/i18n), which reads gettext .po catalogs."
+msgstr "Đổi ngôn ngữ bằng dịch vụ i18n (nodexui/i18n), đọc các tệp gettext .po."
+
+#: block-gallery.js
+msgid "Analytics dashboard"
+msgstr "Bảng thống kê truy cập"
+
+#: block-gallery.js
+msgid "Traffic stats for nodexui/analytics, shown with generated demo data, no server needed."
+msgstr "Số liệu truy cập của nodexui/analytics, hiển thị bằng dữ liệu mẫu, không cần máy chủ."

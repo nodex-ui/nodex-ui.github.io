@@ -1,0 +1,13 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="spinner-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <Item className="'d-flex align-items-center gap-2'">
+          <Spinner/>
+          <span>Processing payment...</span>
+          <span class="ms-auto text-muted">$100.00</span>
+        </Item>
+      </div>
+    </div>
+  </t>
+</templates>

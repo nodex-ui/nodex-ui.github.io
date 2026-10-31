@@ -1,3 +1,0 @@
-[b-block="sidebar-13"] [b-block-dialog-demo] { align-items: center; background: var(--b-muted); display: grid; gap: 1rem; justify-items: center; min-height: 100svh; padding: 2rem; }
-[b-block="sidebar-13"] [b-block-dialog] { background: var(--b-background); border: 1px solid var(--b-border); border-radius: var(--b-radius-xl); box-shadow: var(--b-shadow-lg); display: grid; grid-template-columns: 16rem minmax(0, 1fr); max-width: 48rem; min-height: 22rem; overflow: hidden; width: 100%; }
-[b-block="sidebar-13"] [b-block-sidebar] { border-right: 1px solid var(--b-border); min-height: auto; }

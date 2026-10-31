@@ -1,0 +1,9 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="slider-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="width: 60%; max-width: 28rem">
+        <Slider value="33" max="100" step="1"/>
+      </div>
+    </div>
+  </t>
+</templates>

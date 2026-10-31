@@ -1,0 +1,16 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="navigation-menu-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 40rem" class="w-100">
+        <NavigationMenu>
+          <NavigationMenuItem href="'#home'">Home</NavigationMenuItem>
+          <NavigationMenuItem href="'#components'">Components</NavigationMenuItem>
+          <NavigationMenuItem href="'/docs'">Docs</NavigationMenuItem>
+          <NavigationMenuItem href="'#list'">List</NavigationMenuItem>
+          <NavigationMenuItem href="'#simple'">Simple</NavigationMenuItem>
+          <NavigationMenuItem href="'#with-icon'">With Icon</NavigationMenuItem>
+        </NavigationMenu>
+      </div>
+    </div>
+  </t>
+</templates>

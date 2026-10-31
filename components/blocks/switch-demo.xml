@@ -1,0 +1,11 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="switch-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex flex-column gap-3" style="max-width: 28rem">
+        <Switch>Airplane Mode</Switch>
+        <Switch supportingText="'Turns off all wireless radios'">Airplane Mode</Switch>
+        <Switch supportingText="'Turns off all wireless radios'" useTip="1">Airplane Mode</Switch>
+      </div>
+    </div>
+  </t>
+</templates>

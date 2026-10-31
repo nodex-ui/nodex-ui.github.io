@@ -1,0 +1,34 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div class="d-flex flex-column align-items-center justify-content-center gap-4 min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex flex-column align-items-center gap-4 col-12 col-sm-8 col-md-6 col-lg-4">
+        <a href="#" class="d-inline-flex align-items-center gap-2 fw-medium">
+          <Icon name="'gallery-vertical-end'"/>
+          Acme Inc.
+        </a>
+        <Card className="'w-100'">
+          <CardBody>
+            <form class="d-flex flex-column gap-4">
+              <div class="d-flex flex-column gap-2 text-center">
+                <h2 class="h4 mb-0">Login to your account</h2>
+                <p class="text-muted mb-0">Enter your email below to login to your account</p>
+              </div>
+              <FieldGroup>
+                <Field label="'Email'">
+                  <Input type="'email'" placeholder="'m@example.com'"/>
+                </Field>
+                <Field label="'Password'">
+                  <Input type="'password'"/>
+                  <a href="#" class="small align-self-end text-decoration-underline">Forgot your password?</a>
+                </Field>
+                <Button icon="'log-in'">Login</Button>
+                <Button variant="'outline'" icon="'mail'">Login with email</Button>
+              </FieldGroup>
+              <p class="text-center small mb-0">Don&apos;t have an account? <a href="#" class="text-decoration-underline">Sign up</a></p>
+            </form>
+          </CardBody>
+        </Card>
+      </div>
+    </div>
+  </t>
+</templates>

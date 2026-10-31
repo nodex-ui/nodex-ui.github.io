@@ -1,0 +1,9 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="data-table-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="w-100" style="max-width: 56rem">
+        <DataTable searchable="true" sortable="true" selectable="true" columnToggle="true" pagination="true"/>
+      </div>
+    </div>
+  </t>
+</templates>

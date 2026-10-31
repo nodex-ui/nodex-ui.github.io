@@ -1,0 +1,20 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="sheet-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <Sheet>
+          <SheetTrigger>Open</SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetDescription>This action cannot be undone.</SheetDescription>
+            </SheetHeader>
+            <SheetFooter>
+              <SheetClose>Close</SheetClose>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </div>
+  </t>
+</templates>

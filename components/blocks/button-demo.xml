@@ -1,0 +1,30 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="button-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex flex-column gap-4" style="max-width: 28rem">
+        <Button icon="'arrow-up'" label="'Button'"/>
+
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <Button size="'xs'" label="'Extra Small'"/>
+          <Button size="'sm'" label="'Small'"/>
+          <Button label="'Default'"/>
+          <Button size="'lg'" label="'Large'"/>
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <Button icon="'git-branch'" label="'New Branch'"/>
+          <Button icon="'git-fork'" label="'Fork'"/>
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <Button disabled="true">
+            <Spinner className="'me-2'"/>Generating
+          </Button>
+          <Button disabled="true">
+            <Spinner className="'me-2'"/>Downloading
+          </Button>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

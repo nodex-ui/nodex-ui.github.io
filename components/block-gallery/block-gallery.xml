@@ -1,62 +1,37 @@
 <templates>
   <t t-name="examples.BlocksSidebar">
-    <div class="b-blocks-sidebar-inner d-grid gap-4">
-      <SidebarGroup>
-        <SidebarGroupLabel><t t-esc="t('Feature blocks')"/></SidebarGroupLabel>
+    <div class="b-blocks-sidebar-inner d-grid gap-2">
+      <SidebarGroupCollapsible t-foreach="groups" t-as="group" t-key="group.label" label="group.label"
+                               defaultOpen="group.blocks.some((block) => block.name === state.name)">
         <SidebarMenu>
-          <SidebarMenuItem t-foreach="featureBlocks" t-as="block" t-key="block.name">
+          <SidebarMenuItem t-foreach="group.blocks" t-as="block" t-key="block.name">
             <SidebarMenuButton href="'#/blocks/' + block.name" active="state.name === block.name">
               <t t-esc="block.label"/>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-      </SidebarGroup>
-
-      <SidebarGroup>
-        <SidebarGroupLabel><t t-esc="t('Sidebar blocks')"/></SidebarGroupLabel>
-        <SidebarMenu>
-          <SidebarMenuItem t-foreach="sidebarBlocks" t-as="block" t-key="block.name">
-            <SidebarMenuButton href="'#/blocks/' + block.name" active="state.name === block.name">
-              <t t-esc="block.label"/>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarGroup>
-
-      <SidebarGroup>
-        <SidebarGroupLabel><t t-esc="t('Auth blocks')"/></SidebarGroupLabel>
-        <SidebarMenu>
-          <SidebarMenuItem t-foreach="authBlocks" t-as="block" t-key="block.name">
-            <SidebarMenuButton href="'#/blocks/' + block.name" active="state.name === block.name">
-              <t t-esc="block.label"/>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarGroup>
-
-      <SidebarGroup>
-        <SidebarGroupLabel><t t-esc="t('Component demos')"/></SidebarGroupLabel>
-        <SidebarMenu>
-          <SidebarMenuItem t-foreach="componentDemoBlocks" t-as="block" t-key="block.name">
-            <SidebarMenuButton href="'#/blocks/' + block.name" active="state.name === block.name">
-              <t t-esc="block.label"/>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarGroup>
+      </SidebarGroupCollapsible>
     </div>
   </t>
 
   <t t-name="examples.BlocksContent">
-    <div>
+    <div t-if="example" class="vstack gap-4">
+      <div>
+        <h2 class="h4 fw-semibold mb-1" t-esc="example.label"/>
+        <p class="text-body-secondary mb-0" t-esc="example.description"/>
+      </div>
+      <Skeleton t-if="!view.component" style="'height: 12rem'"/>
+      <t t-else="" t-component="view.component" t-key="state.name"/>
+    </div>
+    <div t-else="">
       <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
         <h2 class="h5 mb-0" t-esc="block.label"/>
-        <a class="btn btn-outline-secondary" t-att-href="'./blocks/' + block.name + '.html'">
+        <a class="btn btn-outline-secondary" t-att-href="'/index.html?block=' + block.name">
           <Icon name="'external-link'"/>
           <t t-esc="t('Open block')"/>
         </a>
       </div>
-      <iframe class="w-100 border rounded-3 bg-body" t-att-title="t('{label} preview', { label: block.label })" t-att-src="'./blocks/' + block.name + '.html?embed=1'" t-att-style="'height: ' + block.height + 'px'"></iframe>
+      <iframe class="w-100 border rounded-3 bg-body" t-att-title="t('{label} preview', { label: block.label })" t-att-src="'/index.html?block=' + block.name + '&amp;embed=1'" t-att-style="'height: ' + block.height + 'px'"></iframe>
     </div>
   </t>
 </templates>

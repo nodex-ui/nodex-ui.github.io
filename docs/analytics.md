@@ -226,24 +226,21 @@ curl -i -X POST http://localhost:8080/api/event -H 'Content-Type: text/plain' \
 
 ## Sample dashboard
 
-[`examples/analytics/`](/analytics/dashboard/?backend=http://localhost:8080) contains a working dashboard plus two complete sample backends: [`server-go`](/analytics/server-go/main.go) (Fiber v3) and [`server-fastapi`](/analytics/server-fastapi/main.py). Each one extends the receivers above with an in-memory store, a daily-salted cookieless visitor hash, a `GET /api/stats` endpoint, and static hosting for the dashboard.
+`components/analytics-dashboard/` contains a working dashboard plus two complete sample backends: [`server-go`](/components/analytics-dashboard/server-go/main.go) (Fiber v3) and [`server-fastapi`](/components/analytics-dashboard/server-fastapi/main.py). Each one extends the receivers above with an in-memory store, a daily-salted cookieless visitor hash and a `GET /api/stats` endpoint.
 
-The dashboard ([`dashboard/`](/analytics/dashboard/?backend=http://localhost:8080)) is a pure application that loads `nodexui@1.3.1` from jsDelivr: KPI `Card`s, an area `Chart`, top pages/sources/events `Table`s, site and period `NativeSelect`s, and a `ThemeButton`. It refreshes every 30 s and tracks its own visits through `nodexui/analytics`, so a fresh backend has data straight away.
+The dashboard ([Blocks → Examples → Analytics dashboard](/index.html#/blocks/analytics)) is a pure Nodex UI component: KPI `Card`s, an area `Chart`, top pages/sources/events `Table`s and site and period `NativeSelect`s. On the site it shows demo data generated in the browser in the `GET /api/stats` shape, so it needs no backend; the Refresh button regenerates it.
 
 ```sh
 # Go (1.25+)
-cd examples/analytics/server-go && DEMO_SEED=1 go run .
+cd components/analytics-dashboard/server-go && DEMO_SEED=1 go run .
 
 # or Python (3.10+)
-cd examples/analytics/server-fastapi && pip install -r requirements.txt && DEMO_SEED=1 fastapi run main.py --port 8080
+cd components/analytics-dashboard/server-fastapi && pip install -r requirements.txt && DEMO_SEED=1 fastapi run main.py --port 8080
 ```
 
-Open <http://localhost:8080/>, the backend serves the dashboard itself. If you are browsing these docs from `npm run dev` (port 5173), the [dashboard link](/analytics/dashboard/?backend=http://localhost:8080) also works once a backend is running on port 8080; until then it shows a "Can't load stats" message. `DEMO_SEED=1` preloads 30 days of synthetic traffic for `demo.example.com`. Other environment variables:
+The backends serve only the API (the site's [dashboard](/index.html#/blocks/analytics) does not call them). `DEMO_SEED=1` preloads 30 days of synthetic traffic for `demo.example.com`. Other environment variables:
 - `ADDR`: the Go listen address.
 - `ALLOWED_ORIGINS`: a comma-separated CORS allow-list (default `*`).
-- `DASHBOARD_DIR`: the folder served at `/`.
-
-To serve the dashboard from somewhere else, open it with `?backend=https://stats.example.com`.
 
 `GET /api/stats?domain=<site>&days=<1..90>` (default: the busiest site, 7 days, UTC) returns:
 

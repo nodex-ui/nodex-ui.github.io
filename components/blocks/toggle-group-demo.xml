@@ -1,0 +1,19 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="toggle-group-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem">
+        <ToggleGroup>
+          <ToggleGroupItem value="'bold'">
+            <Icon name="'bold'" className="'h-4 w-4'"/>
+          </ToggleGroupItem>
+          <ToggleGroupItem value="'italic'">
+            <Icon name="'italic'" className="'h-4 w-4'"/>
+          </ToggleGroupItem>
+          <ToggleGroupItem value="'underline'">
+            <Icon name="'underline'" className="'h-4 w-4'"/>
+          </ToggleGroupItem>
+        </ToggleGroup>
+      </div>
+    </div>
+  </t>
+</templates>

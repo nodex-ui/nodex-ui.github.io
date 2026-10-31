@@ -1,0 +1,23 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="select-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 240px" class="d-flex flex-column gap-4">
+        <Select label="'Theme'" value="'dark'">
+          <SelectTrigger>Dark</SelectTrigger>
+          <SelectContent>
+            <SelectItem value="'light'">Light</SelectItem>
+            <SelectItem value="'dark'">Dark</SelectItem>
+            <SelectItem value="'system'">System</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select label="'Theme'" value="'dark'" supportingText="'Applies to this device only'" useTip="1">
+          <SelectTrigger>Dark</SelectTrigger>
+          <SelectContent>
+            <SelectItem value="'light'">Light</SelectItem>
+            <SelectItem value="'dark'">Dark</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+    </div>
+  </t>
+</templates>

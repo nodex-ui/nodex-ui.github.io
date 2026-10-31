@@ -1,0 +1,9 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="input-otp-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100 d-flex justify-content-center">
+        <InputOtp length="6"/>
+      </div>
+    </div>
+  </t>
+</templates>

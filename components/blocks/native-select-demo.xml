@@ -1,0 +1,18 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="native-select-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-grid w-100 gap-2" style="max-width: 24rem">
+        <NativeSelect label="'Fruit'">
+          <option value="'apple'">Apple</option>
+          <option value="'banana'">Banana</option>
+          <option value="'blueberry'">Blueberry</option>
+          <option value="'pineapple'">Pineapple</option>
+        </NativeSelect>
+        <NativeSelect label="'Fruit'" supportingText="'Shown on your order'" useTip="1">
+          <option value="'apple'">Apple</option>
+          <option value="'banana'">Banana</option>
+        </NativeSelect>
+      </div>
+    </div>
+  </t>
+</templates>

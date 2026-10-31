@@ -1,0 +1,12 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="label-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <div class="d-flex align-items-center gap-2">
+          <Checkbox/>
+          <Label for="'terms'">Accept terms and conditions</Label>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

@@ -1,0 +1,16 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="tabs-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 25rem" class="w-100">
+        <Tabs defaultValue="'account'">
+          <TabsList>
+            <TabTrigger value="'account'">Account</TabTrigger>
+            <TabTrigger value="'password'">Password</TabTrigger>
+          </TabsList>
+          <TabContent value="'account'">Make changes to your account here.</TabContent>
+          <TabContent value="'password'">Change your password here.</TabContent>
+        </Tabs>
+      </div>
+    </div>
+  </t>
+</templates>

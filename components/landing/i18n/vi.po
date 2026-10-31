@@ -62,8 +62,8 @@ msgid "Charts"
 msgstr "Biểu đồ"
 
 #: landing.js
-msgid "Bar and area charts built from native Nodex UI markup."
-msgstr "Biểu đồ cột và vùng dựng từ markup Nodex UI gốc."
+msgid "Bar, line, area, pie, radar and radial charts from native Nodex UI markup, plus Chart.js."
+msgstr "Biểu đồ cột, đường, vùng, tròn, radar và vòng từ markup Nodex UI gốc, kèm Chart.js."
 
 #: landing.js
 msgid "Cookieless: no visitor ID leaves the browser, and nothing is sent until init()."

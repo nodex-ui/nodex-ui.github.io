@@ -1,0 +1,12 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="badge-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex gap-2" style="max-width: 28rem">
+        <Badge variant="'primary'">Default</Badge>
+        <Badge variant="'secondary'">Secondary</Badge>
+        <Badge variant="'danger'">Destructive</Badge>
+        <Badge variant="'muted'">Outline</Badge>
+      </div>
+    </div>
+  </t>
+</templates>

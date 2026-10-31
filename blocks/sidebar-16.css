@@ -1,2 +1,0 @@
-[b-block="sidebar-16"] [b-block-shell] { grid-template-rows: auto 1fr; }
-[b-block="sidebar-16"] [b-block-site-header] { align-items: center; border-bottom: 1px solid var(--b-border); display: flex; grid-column: 1 / -1; min-height: 3.5rem; padding: 0.5rem 1rem; }

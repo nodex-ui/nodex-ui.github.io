@@ -1,0 +1,9 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="calendar-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem">
+        <Calendar selected="'2026-08-27'" className="'rounded-3 border'"/>
+      </div>
+    </div>
+  </t>
+</templates>

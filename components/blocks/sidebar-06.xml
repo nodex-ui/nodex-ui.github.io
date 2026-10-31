@@ -1,0 +1,100 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="sidebar-06">
+      <Shell className="'border'" collapsed="state.collapsed" onCollapsedChange="(value) => { state.collapsed = value; }">
+        <ShellSidebar>
+          <ShellSidebarHeader>
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none fw-medium">
+              <Icon name="'gallery-vertical-end'"/>
+              <span class="d-flex flex-column lh-sm">
+                <span>Documentation</span>
+                <small class="text-body-secondary fw-normal">v1.0.1</small>
+              </span>
+            </a>
+          </ShellSidebarHeader>
+          <ShellNav className="'d-flex flex-column gap-2'">
+            <SidebarGroup>
+              <SidebarGroupLabel>Getting Started</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'package'">Installation</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'folder-tree'">Project Structure</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup>
+              <SidebarGroupLabel>Build Your Application</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'route'">Routing</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'database'" active="true">Data Fetching</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'component'">Rendering</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'archive'">Caching</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'palette'">Styling</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'zap'">Optimizing</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'sliders-horizontal'">Configuring</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'test-tube'">Testing</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'shield-check'">Authentication</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'rocket'">Deploying</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'upload'">Upgrading</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'blocks'">Examples</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup>
+              <SidebarGroupLabel>API Reference</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'braces'">Components</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'file-code'">File Conventions</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'function-square'">Functions</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'settings-2'">next.config.js Options</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'terminal'">CLI</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'cloud'">Edge Runtime</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup>
+              <SidebarGroupLabel>Architecture</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'accessibility'">Accessibility</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'refresh-cw'">Fast Refresh</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'cpu'">Next.js Compiler</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'monitor'">Supported Browsers</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'box'">Turbopack</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+          </ShellNav>
+          <form class="mt-auto">
+            <Card>
+              <CardBody className="'d-flex flex-column gap-2'">
+                <p class="fw-semibold mb-0">Subscribe to our newsletter</p>
+                <p class="text-body-secondary small mb-0">Opt-in to receive updates and news about the sidebar.</p>
+                <div class="d-flex align-items-start gap-2">
+                  <Field className="'flex-grow-1 mb-0'"><Input type="'email'" placeholder="'Email'"/></Field>
+                  <Button type="'button'">Subscribe</Button>
+                </div>
+              </CardBody>
+            </Card>
+          </form>
+        </ShellSidebar>
+        <ShellMain>
+          <ShellHeader className="'border-bottom p-3'">
+            <SidebarTrigger/>
+            <Separator orientation="'vertical'"/>
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem><a class="b-breadcrumb-link" href="#">Build Your Application</a></BreadcrumbItem>
+                    <BreadcrumbSeparator/>
+                    <BreadcrumbItem><BreadcrumbPage>Data Fetching</BreadcrumbPage></BreadcrumbItem>
+                </BreadcrumbList>
+                </Breadcrumb>
+          </ShellHeader>
+          <ShellContent className="'d-flex flex-column gap-3'">
+            <div class="row row-cols-3 g-3">
+              <div class="col"><div class="ratio ratio-16x9 bg-body-secondary rounded-4"></div></div>
+              <div class="col"><div class="ratio ratio-16x9 bg-body-secondary rounded-4"></div></div>
+              <div class="col"><div class="ratio ratio-16x9 bg-body-secondary rounded-4"></div></div>
+            </div>
+            <div class="flex-grow-1 bg-body-secondary rounded-4"></div>
+          </ShellContent>
+        </ShellMain>
+
+      </Shell>
+    </div>
+  </t>
+</templates>

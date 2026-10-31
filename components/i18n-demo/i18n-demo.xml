@@ -1,0 +1,14 @@
+<templates>
+  <t t-name="examples.I18nDemo">
+    <div style="max-width: 40rem">
+      <Label for="'language'"><t t-esc="t('Language')"/></Label>
+      <NativeSelect id="'language'" className="'mb-4'" value="current" onChange="(code) => this.changeLanguage(code)">
+        <option t-foreach="languages" t-as="item" t-key="item.code" t-att-value="item.code" t-att-selected="item.code === current" t-esc="item.label"/>
+      </NativeSelect>
+      <h2 class="h4" t-esc="t('Welcome to the i18n example')"/>
+      <p t-esc="t('Hello {name}, nice to meet you.', { name: 'An' })"/>
+      <p t-esc="t('You clicked {count} times.', { count: state.clicks })"/>
+      <Button label="t('Click me')" onClick="() => { state.clicks += 1; }"/>
+    </div>
+  </t>
+</templates>

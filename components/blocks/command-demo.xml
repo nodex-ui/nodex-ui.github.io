@@ -1,0 +1,20 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="command-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="border rounded-3 shadow-sm bg-body" style="max-width: 28rem; width: 100%;">
+        <Command
+          placeholder="'Type a command or search...'"
+          className="'border-0 shadow-none'"
+          items="[
+            { value: 'calendar', label: 'Calendar' },
+            { value: 'search-emoji', label: 'Search Emoji' },
+            { value: 'calculator', label: 'Calculator (disabled)' },
+            { value: 'profile', label: 'Profile — ⌘P' },
+            { value: 'billing', label: 'Billing — ⌘B' },
+            { value: 'settings', label: 'Settings — ⌘S' },
+          ]"
+        />
+      </div>
+    </div>
+  </t>
+</templates>

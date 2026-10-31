@@ -1,0 +1,30 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="sidebar-12">
+      <Shell className="'b-block-shell'" collapsed="state.collapsed" onCollapsedChange="(value) => { state.collapsed = value; }">
+        <ShellSidebar className="'b-block-sidebar'">
+          <div b-block-user=""><span b-block-avatar="">CN</span><span>shadcn<small>m@example.com</small></span></div>
+          <div b-block-calendar=""><h2>August 2026</h2><div b-block-calendar-grid=""><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span aria-current="date">15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span></div></div>
+          <nav b-block-nav="" aria-label="Calendars"><SidebarGroup><SidebarGroupLabel>My Calendars</SidebarGroupLabel><SidebarMenu><SidebarMenuItem><SidebarMenuButton href="'#'" icon="'calendar'">Personal</SidebarMenuButton></SidebarMenuItem><SidebarMenuItem><SidebarMenuButton href="'#'" icon="'briefcase'">Work</SidebarMenuButton></SidebarMenuItem><SidebarMenuItem><SidebarMenuButton href="'#'" icon="'users'">Family</SidebarMenuButton></SidebarMenuItem></SidebarMenu></SidebarGroup><SidebarGroup><SidebarGroupLabel>Favorites</SidebarGroupLabel></SidebarGroup><SidebarGroup><SidebarGroupLabel>Other</SidebarGroupLabel><SidebarMenu><SidebarMenuItem><SidebarMenuButton href="'#'" icon="'plus'">New Calendar</SidebarMenuButton></SidebarMenuItem></SidebarMenu></SidebarGroup></nav>
+        </ShellSidebar>
+        <ShellMain className="'b-block-main'">
+          <ShellHeader className="'b-block-header'">
+            <SidebarTrigger/>
+            <Separator orientation="'vertical'"/>
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem><a class="b-breadcrumb-link" href="#">Build Your Application</a></BreadcrumbItem>
+                    <BreadcrumbSeparator/>
+                    <BreadcrumbItem><BreadcrumbPage>October 2024</BreadcrumbPage></BreadcrumbItem>
+                </BreadcrumbList>
+                </Breadcrumb>
+          </ShellHeader>
+          <ShellContent className="'b-block-content'">
+            <div b-block-calendar-main=""><h2>October 2024</h2><div b-block-canvas=""></div></div>
+          </ShellContent>
+        </ShellMain>
+
+      </Shell>
+    </div>
+  </t>
+</templates>

@@ -1,0 +1,7 @@
+.kpi-value { font-size: 1.75rem; font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.bar-cell { position: relative; padding: 0.125rem 0.5rem; border-radius: var(--b-radius-sm, 0.25rem); }
+.bar-cell > .bar { position: absolute; inset: 0 auto 0 0; border-radius: inherit;
+  background: color-mix(in srgb, var(--b-chart-1) 16%, transparent); }
+.bar-cell > span { position: relative; }
+td.num, th.num { text-align: end; font-variant-numeric: tabular-nums; width: 6rem; }
+  

@@ -1,0 +1,36 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="chart-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 32rem" class="w-100">
+        <Chart type="'bar'" className="'w-100'" aria-label="'Bar chart of desktop and mobile visitors'">
+          <div b-chart-header="">
+            <h3 b-chart-title="">Bar Chart</h3>
+            <p b-chart-description="">Desktop and mobile visitors for January - March</p>
+          </div>
+          <div b-chart-body="">
+            <div b-chart-plot="">
+              <div class="d-flex align-items-end gap-1" title="January">
+                <div b-att-value="186" b-att-label="Desktop"></div>
+                <div b-att-value="80" b-att-label="Mobile"></div>
+              </div>
+              <div class="d-flex align-items-end gap-1" title="February">
+                <div b-att-value="305" b-att-label="Desktop"></div>
+                <div b-att-value="200" b-att-label="Mobile"></div>
+              </div>
+              <div class="d-flex align-items-end gap-1" title="March">
+                <div b-att-value="237" b-att-label="Desktop"></div>
+                <div b-att-value="120" b-att-label="Mobile"></div>
+              </div>
+            </div>
+          </div>
+          <div b-chart-footer="">
+            <div b-chart-legend="">
+              <span style="--b-chart-color: var(--b-chart-1)">Desktop</span>
+              <span style="--b-chart-color: var(--b-chart-2)">Mobile</span>
+            </div>
+          </div>
+        </Chart>
+      </div>
+    </div>
+  </t>
+</templates>

@@ -1,0 +1,28 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="textarea-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex flex-column gap-4" style="max-width: 28rem; width: 100%">
+        <Textarea label="'Message'"/>
+
+        <Textarea label="'Your message'" placeholder="'Type your message here.'" id="'message'"/>
+
+        <Textarea label="'Your message'" supportingText="'Your message will be copied to the support team.'" maxLength="200"/>
+
+        <Textarea label="'Your message'" supportingText="'Copied to the support team'" useTip="1"/>
+
+        <Textarea label="'Message'" rows="3">
+          <t t-set-slot="footer"><span>0/280</span><Button size="'xs'">Send</Button></t>
+        </Textarea>
+
+        <Textarea label="'Your message'" errorText="'Message is required'"/>
+
+        <div class="d-grid gap-2">
+          <Textarea placeholder="'Type your message here.'"/>
+          <Button>Send message</Button>
+        </div>
+
+        <Textarea label="'Disabled'" placeholder="'Type your message here.'" disabled="true"/>
+      </div>
+    </div>
+  </t>
+</templates>

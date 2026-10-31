@@ -78,7 +78,7 @@ See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load
 </div>
 ```
 
-See `examples/charts/area.html` for the local copy of the shadcn area chart gallery: interactive, default, linear, step, legend, stacked, stacked expanded, icons, gradient, and axes.
+See the [Chart tab](/index.html#/chart/area) (`components/chart-gallery/`) for the local copy of the shadcn area chart gallery: interactive, default, linear, step, legend, stacked, stacked expanded, icons, gradient, and axes.
 
 ## Chart.js usage
 

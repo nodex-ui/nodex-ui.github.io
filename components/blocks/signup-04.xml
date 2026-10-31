@@ -1,0 +1,29 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <Card className="'w-100 overflow-hidden'">
+          <div class="row g-0">
+            <div class="col-12 col-md-6 p-4">
+              <form class="d-flex flex-column gap-4">
+                <div class="d-flex flex-column gap-2 text-center">
+                  <h2 class="h4 mb-0">Create an account</h2>
+                  <p class="text-muted mb-0">Enter your email below to create your account</p>
+                </div>
+                <FieldGroup>
+                  <Field label="'Email'">
+                    <Input type="'email'" placeholder="'m@example.com'"/>
+                  </Field>
+                  <Button icon="'user-plus'">Sign up</Button>
+                  <Button variant="'outline'" icon="'mail'">Sign up with email</Button>
+                </FieldGroup>
+                <p class="text-center small mb-0">Already have an account? <a href="#" class="text-decoration-underline">Login</a></p>
+              </form>
+            </div>
+            <div class="col-12 col-md-6 d-none d-md-block bg-body-secondary" aria-hidden="true"></div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </t>
+</templates>

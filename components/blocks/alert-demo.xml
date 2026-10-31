@@ -1,0 +1,18 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="alert-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex flex-column gap-3 w-100" style="max-width: 28rem">
+        <Alert>
+          <Icon name="'circle-check-big'"/>
+          <AlertTitle>Payment successful</AlertTitle>
+          <AlertDescription>Your payment of $29.99 has been processed. A receipt has been sent to your email address.</AlertDescription>
+        </Alert>
+        <Alert>
+          <Icon name="'info'"/>
+          <AlertTitle>New feature available</AlertTitle>
+          <AlertDescription>We've added dark mode support. You can enable it in your account settings.</AlertDescription>
+        </Alert>
+      </div>
+    </div>
+  </t>
+</templates>

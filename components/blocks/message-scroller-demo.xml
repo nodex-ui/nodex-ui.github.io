@@ -1,0 +1,29 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="message-scroller-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="w-100" style="max-width: 28rem">
+        <Card className="'p-0 overflow-hidden'">
+          <CardHeader className="'border-bottom p-3'">
+            <CardTitle>Support chat</CardTitle>
+            <CardDescription>Demo is read only. Press send to start a new conversation.</CardDescription>
+          </CardHeader>
+          <div style="height: 22rem">
+            <MessageScroller className="'h-100 p-3'">
+              <Message>Hi! How can I help you today?</Message>
+              <Message side="'outgoing'">I'm trying to add auto-scroll to my chat UI.</Message>
+              <Message>Wrap your messages in a MessageScroller and it will scroll to the newest content automatically.</Message>
+              <Message side="'outgoing'">Does it still let me scroll up to read older messages?</Message>
+              <Message>Yes, you can scroll away freely while it's not actively streaming new content.</Message>
+              <Message side="'outgoing'">That's exactly what I needed, thanks!</Message>
+            </MessageScroller>
+          </div>
+          <CardFooter className="'border-top p-3'">
+            <Textarea placeholder="'Type your message...'" rows="1" className="'w-100'">
+              <t t-set-slot="footer"><span/><Button size="'icon-xs'" ariaLabel="'Send'"><Icon name="'arrow-up'"/></Button></t>
+            </Textarea>
+          </CardFooter>
+        </Card>
+      </div>
+    </div>
+  </t>
+</templates>

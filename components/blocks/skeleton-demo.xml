@@ -1,0 +1,19 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="skeleton-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex align-items-center gap-3" style="max-width: 28rem">
+        <div style="width: 3rem">
+          <Skeleton shape="'circle'"/>
+        </div>
+        <div class="d-flex flex-column gap-2">
+          <div style="width: 250px">
+            <Skeleton/>
+          </div>
+          <div style="width: 200px">
+            <Skeleton/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

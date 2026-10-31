@@ -1,0 +1,23 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="resizable-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex border rounded-3" style="max-width: 28rem; width: 100%;">
+        <Resizable min="80" max="300" className="'flex-shrink-0 border-end'">
+          <div class="d-flex align-items-center justify-content-center h-100 p-3">
+            <span class="fw-semibold">One</span>
+          </div>
+        </Resizable>
+        <Resizable min="80" max="300" className="'flex-shrink-0 border-end'">
+          <div class="d-flex align-items-center justify-content-center h-100 p-3">
+            <span class="fw-semibold">Two</span>
+          </div>
+        </Resizable>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center justify-content-center h-100 p-3">
+            <span class="fw-semibold">Three</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

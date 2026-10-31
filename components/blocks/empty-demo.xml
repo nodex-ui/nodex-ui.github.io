@@ -1,0 +1,23 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="empty-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <Empty>
+          <EmptyHeader>
+            <EmptyMedia variant="'icon'">
+              <Icon name="'folder-code'"/>
+            </EmptyMedia>
+            <EmptyTitle>No Projects Yet</EmptyTitle>
+            <EmptyDescription>You haven't created any projects yet. Get started by creating your first project.</EmptyDescription>
+          </EmptyHeader>
+          <EmptyContent>
+            <div class="d-flex gap-2">
+              <Button label="'Create Project'"/>
+              <Button variant="'outline'" label="'Import Project'"/>
+            </div>
+          </EmptyContent>
+        </Empty>
+      </div>
+    </div>
+  </t>
+</templates>

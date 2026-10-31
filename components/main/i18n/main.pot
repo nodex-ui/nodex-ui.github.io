@@ -14,7 +14,7 @@ msgid "Blocks"
 msgstr ""
 
 #: main.js
-msgid "Catalog of composed Nodex UI block examples."
+msgid "Catalog of composed Nodex UI blocks and runnable examples."
 msgstr ""
 
 #: main.js

@@ -14,8 +14,8 @@ msgid "Blocks"
 msgstr "Khối"
 
 #: main.js
-msgid "Catalog of composed Nodex UI block examples."
-msgstr "Danh mục các khối Nodex UI được ghép sẵn."
+msgid "Catalog of composed Nodex UI blocks and runnable examples."
+msgstr "Danh mục các khối Nodex UI được ghép sẵn và các ví dụ chạy được."
 
 #: main.js
 msgid "Icons"

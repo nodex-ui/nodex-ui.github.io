@@ -1,0 +1,13 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="qr-card-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <!-- qrContent is the string encoded into the QR code; for custom error correction pass matrix="..." from qrMatrix() in nodexui/qr instead. -->
+      <QRCard
+        style="'max-width: 24rem'"
+        qrContent="'https://nodex-ui.github.io'"
+        label="'Connect device QR code'"
+        title="'Scan to connect your mobile device'"
+        description="'Open the Ledger mobile app and scan this code to link your device.'"/>
+    </div>
+  </t>
+</templates>

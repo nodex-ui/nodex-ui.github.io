@@ -1,0 +1,11 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="aspect-ratio-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <AspectRatio ratio="'16 / 9'">
+          <img src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&amp;dpr=2&amp;q=80" alt="Image" class="rounded w-100 h-100" style="object-fit: cover"/>
+        </AspectRatio>
+      </div>
+    </div>
+  </t>
+</templates>

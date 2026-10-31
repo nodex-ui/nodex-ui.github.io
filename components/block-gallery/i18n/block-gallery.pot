@@ -1,19 +1,19 @@
 msgid ""
 msgstr "Project-Id-Version: examples/components/block-gallery\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
 
-#: block-gallery.xml
+#: block-gallery.js
 msgid "Feature blocks"
 msgstr ""
 
-#: block-gallery.xml
+#: block-gallery.js
 msgid "Sidebar blocks"
 msgstr ""
 
-#: block-gallery.xml
+#: block-gallery.js
 msgid "Auth blocks"
 msgstr ""
 
-#: block-gallery.xml
+#: block-gallery.js
 msgid "Component demos"
 msgstr ""
 
@@ -23,4 +23,40 @@ msgstr ""
 
 #: block-gallery.xml
 msgid "{label} preview"
+msgstr ""
+
+#: block-gallery.js
+msgid "Examples"
+msgstr ""
+
+#: block-gallery.js
+msgid "API documentation"
+msgstr ""
+
+#: block-gallery.js
+msgid "The ApiDoc component rendering the Swagger Petstore OpenAPI 3.0 spec as browsable API docs."
+msgstr ""
+
+#: block-gallery.js
+msgid "QR code"
+msgstr ""
+
+#: block-gallery.js
+msgid "A QR code and a VietQR payment code drawn in the browser by the QR service (nodexui/qr)."
+msgstr ""
+
+#: block-gallery.js
+msgid "Translation"
+msgstr ""
+
+#: block-gallery.js
+msgid "Switch languages with the i18n service (nodexui/i18n), which reads gettext .po catalogs."
+msgstr ""
+
+#: block-gallery.js
+msgid "Analytics dashboard"
+msgstr ""
+
+#: block-gallery.js
+msgid "Traffic stats for nodexui/analytics, shown with generated demo data, no server needed."
 msgstr ""

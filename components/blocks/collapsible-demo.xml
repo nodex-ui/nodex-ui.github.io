@@ -1,0 +1,14 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="collapsible-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <Collapsible>
+          <CollapsibleTrigger>Toggle details</CollapsibleTrigger>
+          <CollapsibleContent>
+            <div>Status: Shipped</div>
+          </CollapsibleContent>
+        </Collapsible>
+      </div>
+    </div>
+  </t>
+</templates>

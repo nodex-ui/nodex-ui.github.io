@@ -1,0 +1,5 @@
+<templates>
+  <t t-name="examples.ApiDocDemo">
+    <ApiDoc src="'/components/apidoc-demo/openapi.json'" themeToggle="true" height="'calc(100vh - 12rem)'"/>
+  </t>
+</templates>

@@ -1,0 +1,13 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="tooltip-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100 d-flex align-items-center justify-content-center">
+        <Tooltip content="'Add to library'">
+          <t t-set-slot="trigger">
+            <Button variant="'outline'">Hover</Button>
+          </t>
+        </Tooltip>
+      </div>
+    </div>
+  </t>
+</templates>

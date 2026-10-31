@@ -1,0 +1,12 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="marker-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem">
+        <Marker>
+          <Icon name="'git-branch'" class="'me-1'"/>
+          Switched to a new branch
+        </Marker>
+      </div>
+    </div>
+  </t>
+</templates>

@@ -33,4 +33,4 @@ Types ship as `dist/types/qr.d.ts`.
 
 Text is encoded as UTF-8, so Vietnamese text scans correctly.
 
-See [`qr/`](/qr/index.html) for a working page, plus the `emvhub` QR tool and `qr-page` app.
+See [Blocks → Examples → QR code](/index.html#/blocks/qr) (`components/qr-demo/`) for a working page, plus the `emvhub` QR tool and `qr-page` app.

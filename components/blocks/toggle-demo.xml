@@ -1,0 +1,21 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="toggle-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex flex-column gap-4" style="max-width: 28rem">
+        <div class="d-flex align-items-center gap-2">
+          <Toggle>Toggle</Toggle>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <Toggle variant="'outline'"><Icon name="'italic'"/></Toggle>
+          <Toggle variant="'outline'"><Icon name="'bold'"/></Toggle>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <Toggle><Icon name="'italic'"/> Italic</Toggle>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <Toggle className="'disabled'" pressed="false"><Icon name="'italic'"/></Toggle>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

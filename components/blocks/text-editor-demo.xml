@@ -1,0 +1,12 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="text-editor-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 40rem; height: 32rem" class="w-100">
+        <TextEditor
+          content="'&lt;h1&gt;Draft&lt;/h1&gt;&lt;p&gt;Edit &lt;strong&gt;rich text&lt;/strong&gt; here.&lt;/p&gt;'"
+          placeholder="'Write something...'"
+        />
+      </div>
+    </div>
+  </t>
+</templates>

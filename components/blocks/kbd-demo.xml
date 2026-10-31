@@ -1,0 +1,25 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="kbd-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="d-flex flex-column align-items-center gap-4 w-100">
+        <div class="d-flex align-items-center gap-1">
+          <Kbd>⌘</Kbd>
+          <Kbd>⇧</Kbd>
+          <Kbd>⌥</Kbd>
+          <Kbd>⌃</Kbd>
+        </div>
+        <p class="text-body-secondary small text-center mb-0">
+          Use <Kbd>⌘</Kbd><Kbd>V</Kbd> to paste text.
+        </p>
+        <Button variant="'outline'">
+          <t t-set-slot="default">
+            Accept <Kbd className="'ms-2'">⏎ Enter</Kbd>
+          </t>
+        </Button>
+        <Input label="'Search'" className="'w-100'">
+          <t t-set-slot="end"><Kbd>⌘K</Kbd></t>
+        </Input>
+      </div>
+    </div>
+  </t>
+</templates>

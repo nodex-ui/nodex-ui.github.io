@@ -43,11 +43,23 @@ function isLandingUrl() {
   return atRoot && !location.hash.startsWith("#/");
 }
 
-/** Picks which page to show: the landing page at the site root, the examples app for any `#/<route>`. */
+/** Picks which page to show: one block's viewer for `?block=<name>`, the landing page at the site root, and the
+ * examples app for any `#/<route>`. */
 async function boot() {
   const target = redirectTargetFor(location.pathname);
   if (target) {
     location.replace(`/index.html${target}`);
+    return;
+  }
+
+  // The Examples tab moved into Blocks; keep old `#/examples/<id>` bookmarks working.
+  if (location.hash.startsWith("#/examples")) history.replaceState(null, "", location.hash.replace("#/examples", "#/blocks"));
+
+  const blockName = new URLSearchParams(location.search).get("block");
+  if (blockName) {
+    root.innerHTML = '<div id="b-block-viewer"></div>';
+    const { showBlock } = await import("/components/block-viewer/block-viewer.js");
+    await showBlock(blockName, root.firstElementChild);
     return;
   }
 

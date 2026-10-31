@@ -1,0 +1,11 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <section b-block="apidoc-01" class="bg-body">
+      <ApiDoc
+        src="'/components/apidoc-demo/openapi.json'"
+        height="'100vh'"
+        hash="false"
+        themeToggle="true"/>
+    </section>
+  </t>
+</templates>

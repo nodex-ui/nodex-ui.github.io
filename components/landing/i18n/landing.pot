@@ -62,7 +62,7 @@ msgid "Charts"
 msgstr ""
 
 #: landing.js
-msgid "Bar and area charts built from native Nodex UI markup."
+msgid "Bar, line, area, pie, radar and radial charts from native Nodex UI markup, plus Chart.js."
 msgstr ""
 
 #: landing.js

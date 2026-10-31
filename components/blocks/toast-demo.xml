@@ -1,0 +1,18 @@
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="toast-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="d-flex flex-column align-items-center gap-3 w-100">
+        <Button variant="'outline'" onClick="() => state.open = true">Show Toast</Button>
+        <Toast open="state.open" onOpenChange="(v) => state.open = v" className="'w-100'">
+          <div class="d-flex flex-column">
+            <span class="fw-medium">Event created</span>
+            <span class="text-body-secondary small">Sunday, December 3 at 9:00 AM</span>
+          </div>
+          <t t-set-slot="action">
+            <Button variant="'outline'" size="'sm'" onClick="() => state.open = false">Undo</Button>
+          </t>
+        </Toast>
+      </div>
+    </div>
+  </t>
+</templates>
