@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ApiDoc examples</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="stylesheet" href="../../dist/nodexui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.min.css" />
   <style>
     .apidoc-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; padding: .5rem 1rem; border-bottom: 1px solid var(--bs-border-color); }
     .apidoc-bar a { text-decoration: none; }
@@ -20,13 +20,13 @@
     <a href="?spec=basehub" data-spec="basehub">Base HUB aliases (OpenAPI 3.1, large)</a>
   </nav>
 
-  <!-- Standalone ApiDoc: dist/nodexui.apidoc.min.js embeds Owl and ApiDoc's templates, so no nodexui.min.js,
+  <!-- Standalone ApiDoc: nodexui.apidoc.min.js (from the nodexui npm package) embeds Owl and ApiDoc's templates, so no nodexui.min.js,
        templates file or b-ui markup is needed. Bootstrap's JS is still required (Authorize dialog), and
        nodexui.min.css above styles the page. -->
   <div id="docs"></div>
 
-  <script src="../../dist/bootstrap.bundle.min.js"></script>
-  <script src="../../dist/nodexui.apidoc.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.apidoc.min.js"></script>
   <script>
     // Picks the sample from ?spec= and points Try It at this origin when the sample has no live server.
     const spec = new URLSearchParams(location.search).get("spec") === "basehub" ? "basehub" : "petstore";

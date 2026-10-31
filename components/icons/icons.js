@@ -3,7 +3,8 @@ import { loadCatalog, t } from "../../i18n.js";
 
 await loadCatalog(import.meta.url);
 
-const manifestUrl = "/dist/icons/lucide.json";
+// Icon list shipped with the nodexui version pinned in the page's import map.
+const manifestUrl = new URL("icons/lucide.json", import.meta.resolve("nodexui")).href;
 
 async function loadIconNames() {
   const response = await fetch(manifestUrl);

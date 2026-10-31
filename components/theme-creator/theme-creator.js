@@ -4,7 +4,11 @@ import { ACCENTS, BASES, RADII, STATUSES, STATUS_DEFAULTS, STATUS_PRESETS, defau
 
 await loadCatalog(import.meta.url);
 
-const THEME_URLS = { light: "/dist/themes/nodexui-light.css", dark: "/dist/themes/nodexui-dark.css" };
+// Theme files shipped with the nodexui version pinned in the page's import map.
+const THEME_URLS = {
+  light: new URL("themes/nodexui-light.css", import.meta.resolve("nodexui")).href,
+  dark: new URL("themes/nodexui-dark.css", import.meta.resolve("nodexui")).href,
+};
 
 /** Shared reactive state for the Theme tab, subscribed to by both `ThemeCreatorSidebar` and `ThemeCreatorContent`. */
 export const themeState = reactive({ ...defaultConfig(), mode: "light", copied: false });

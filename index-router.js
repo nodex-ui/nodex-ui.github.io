@@ -37,7 +37,13 @@ function redirectTargetFor(pathname) {
   return null;
 }
 
-/** Picks which page to show: the landing page at the site root, the examples app everywhere else. */
+/** True when the URL should show the landing page: the site root with no `#/<route>` hash. */
+function isLandingUrl() {
+  const atRoot = location.pathname === "/" || location.pathname === "/index.html";
+  return atRoot && !location.hash.startsWith("#/");
+}
+
+/** Picks which page to show: the landing page at the site root, the examples app for any `#/<route>`. */
 async function boot() {
   const target = redirectTargetFor(location.pathname);
   if (target) {
@@ -46,7 +52,11 @@ async function boot() {
   }
 
   root.innerHTML = '<div id="b-example-app"></div>';
-  const isLanding = location.pathname === "/" || location.pathname === "/index.html";
+  const isLanding = isLandingUrl();
+  // A same-page hash link (landing -> #/docs, or app -> bare #) doesn't reload, so swap pages by reloading.
+  window.addEventListener("hashchange", () => {
+    if (isLandingUrl() !== isLanding) location.reload();
+  });
   await import(isLanding ? "/components/landing/landing.js" : "/components/main/main.js");
 }
 
@@ -66,13 +76,21 @@ function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     watchForNewVersion();
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/examples-sw.js").catch((error) => {
+      navigator.serviceWorker.register("/sw.js").catch((error) => {
         console.error("Service worker registration failed", error);
       });
     });
   }
 }
 
+/** nodexui 1.3.1 loads its live-preview templates from a hardcoded `/dist/nodexui.templates.xml`; this site
+ * has no `/dist`, so send that one request to the repo's `/templates.xml` copy instead. */
+function useLocalTemplates() {
+  const nativeFetch = window.fetch;
+  window.fetch = (input, init) => nativeFetch(input === "/dist/nodexui.templates.xml" ? "/templates.xml" : input, init);
+}
+
+useLocalTemplates();
 registerServiceWorker();
 
 boot().catch((error) => {

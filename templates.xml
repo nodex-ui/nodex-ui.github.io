@@ -1,0 +1,2896 @@
+<templates>
+<t t-name="nodexui.alert-dialog">
+    <div b-ui="alert-dialog">
+      <div b-alert-dialog-panel="">
+        <t t-esc="props.content"/>
+      </div>
+    </div>
+  </t>
+  <t t-name="nodexui.AlertDialog">
+    <t t-slot="default"/>
+  </t>
+  <t t-name="AlertDialog" t-call="nodexui.AlertDialog"/>
+  <t t-name="nodexui.AlertDialogTrigger">
+    <Button variant="'outline'" attrs="attrs" className="'b-alert-dialog-trigger'" style="props.style" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="AlertDialogTrigger" t-call="nodexui.AlertDialogTrigger"/>
+  <t t-name="nodexui.AlertDialogContent">
+    <div t-if="open" data-slot="alert-dialog-overlay" class="b-dialog-backdrop" t-ref="root" role="alertdialog" aria-modal="true" tabindex="-1" t-on-keydown="onKeyDown">
+      <div data-slot="alert-dialog-content" t-att-data-size="size" t-att-class="'b-dialog-panel b-alert-dialog-panel' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+        <t t-slot="default"/>
+      </div>
+    </div>
+  </t>
+  <t t-name="AlertDialogContent" t-call="nodexui.AlertDialogContent"/>
+  <t t-name="nodexui.AlertDialogHeader">
+    <div data-slot="alert-dialog-header" class="b-dialog-header b-alert-dialog-header" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="AlertDialogHeader" t-call="nodexui.AlertDialogHeader"/>
+  <t t-name="nodexui.AlertDialogFooter">
+    <div data-slot="alert-dialog-footer" class="b-dialog-footer b-alert-dialog-footer" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="AlertDialogFooter" t-call="nodexui.AlertDialogFooter"/>
+  <t t-name="nodexui.AlertDialogMedia">
+    <div data-slot="alert-dialog-media" class="b-alert-dialog-media" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="AlertDialogMedia" t-call="nodexui.AlertDialogMedia"/>
+  <t t-name="nodexui.AlertDialogTitle">
+    <h2 data-slot="alert-dialog-title" class="b-dialog-title b-alert-dialog-title" t-att-style="props.style">
+      <t t-slot="default"/>
+    </h2>
+  </t>
+  <t t-name="AlertDialogTitle" t-call="nodexui.AlertDialogTitle"/>
+  <t t-name="nodexui.AlertDialogDescription">
+    <p data-slot="alert-dialog-description" class="b-dialog-description b-alert-dialog-description" t-att-style="props.style">
+      <t t-slot="default"/>
+    </p>
+  </t>
+  <t t-name="AlertDialogDescription" t-call="nodexui.AlertDialogDescription"/>
+
+  <t t-name="nodexui.AlertDialogCancel">
+    <Button variant="'outline'" attrs="attrs" className="'b-alert-dialog-cancel'" style="props.style" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="AlertDialogCancel" t-call="nodexui.AlertDialogCancel"/>
+  <t t-name="nodexui.AlertDialogAction">
+    <Button attrs="attrs" className="'b-alert-dialog-action'" style="props.style" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="AlertDialogAction" t-call="nodexui.AlertDialogAction"/>
+<t t-name="nodexui.alert">
+    <div class="alert b-alert b-alert-default" role="alert"><t t-esc="props.message"/></div>
+  </t>
+  <t t-name="nodexui.Alert">
+    <div data-slot="alert" t-att-class="classNames" t-att-style="props.style" role="alert" t-ref="root">
+      <t t-slot="default"/>
+      <Button t-if="props.dismissible" unstyled="true" className="'btn-close'" attrs="{ 'data-bs-dismiss': 'alert', 'aria-label': 'Close' }"/>
+    </div>
+  </t>
+  <t t-name="Alert" t-call="nodexui.Alert"/>
+  <t t-name="nodexui.AlertTitle">
+    <div data-slot="alert-title" t-att-class="'b-alert-title' + (props.className ? ' ' + props.className : '')" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="AlertTitle" t-call="nodexui.AlertTitle"/>
+  <t t-name="nodexui.AlertDescription">
+    <div data-slot="alert-description" t-att-class="'b-alert-description' + (props.className ? ' ' + props.className : '')" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="AlertDescription" t-call="nodexui.AlertDescription"/>
+  <t t-name="nodexui.AlertAction">
+    <div data-slot="alert-action" t-att-class="'b-alert-action' + (props.className ? ' ' + props.className : '')" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="AlertAction" t-call="nodexui.AlertAction"/>
+<t t-name="nodexui.ApiDoc">
+    <div t-ref="root" t-att-class="classNames" t-att-style="rootStyle" t-att-data-theme="theme" t-att-data-bs-theme="theme" data-slot="apidoc" t-att-data-status="state.status">
+      <header class="app-header">
+        <div class="header-left">
+          <Button variant="'ghost'" size="'icon'" icon="'menu'" className="'icon-button mobile-only sidebar-toggle'" aria-label="'Toggle sidebar'" attrs="{'aria-expanded': state.sidebarOpen ? 'true' : 'false'}" onClick="() => this.toggleSidebar()"/>
+          <a t-if="state.status === 'ready'" class="brand-link" t-att-href="href('introduction')" t-on-click="(ev) => this.go(ev, 'introduction')"><span class="brand-title" t-esc="title"/></a>
+        </div>
+        <div class="header-right">
+          <Button t-if="state.status === 'ready' and hasSecurity" variant="state.authed ? 'default' : 'outline'" size="'sm'" className="'btn-authorize'" label="state.authed ? 'Authorized' : 'Authorize'" onClick="() => this.openAuth()"/>
+          <Badge t-if="state.status === 'ready' and doc.info.version" variant="'muted'" pill="true" label="'v' + doc.info.version"/>
+          <Button t-if="props.themeToggle" variant="'ghost'" size="'icon'" icon="theme === 'dark' ? 'sun' : 'moon'" aria-label="'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'" ariaPressed="theme === 'dark' ? 'true' : 'false'" onClick="() => this.toggleTheme()"/>
+        </div>
+      </header>
+
+      <Dialog open="state.authOpen" onOpenChange="(open) => this.setAuthOpen(open)">
+        <DialogContent className="'auth-dialog-panel'">
+          <DialogHeader>
+            <DialogTitle>Available authorizations</DialogTitle>
+            <DialogDescription>Values are stored locally in your browser and applied to Try It requests.</DialogDescription>
+          </DialogHeader>
+          <section t-if="state.authOpen" class="auth-dialog-body">
+            <t t-call="nodexui.ApiDocAuthBody"/>
+          </section>
+          <DialogFooter>
+            <Button variant="'ghost'" label="'Close'" onClick="() => this.closeAuth()"/>
+            <Button label="'Authorize'" onClick="() => this.saveAuth()"/>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      <div class="app-shell">
+        <aside t-if="state.status === 'ready'" class="sidebar-shell" t-att-aria-hidden="state.sidebarOpen ? 'false' : 'true'">
+          <nav class="sidebar-nav" aria-label="API navigation">
+            <ul class="sidebar-root">
+              <li>
+                <a t-att-href="href('introduction')" t-att-class="'sidebar-intro-link' + (state.current === 'introduction' ? ' is-active' : '')" t-on-click="(ev) => this.go(ev, 'introduction')"><span>Introduction</span></a>
+              </li>
+              <t t-foreach="sidebarGroups" t-as="group" t-key="group.id">
+                <ApiDocGroup group="group" groups="doc.groups" current="state.current" href="(id) => this.href(id)" onSelect="(ev, id) => this.go(ev, id)"/>
+              </t>
+            </ul>
+          </nav>
+        </aside>
+
+        <main class="workspace">
+          <section t-ref="main" class="doc-main">
+            <div t-if="state.status === 'loading'" class="empty-state" role="status">Loading API documentation…</div>
+            <div t-elif="state.status === 'error'" class="empty-state" role="alert">Failed to load API spec: <t t-esc="state.error"/></div>
+            <t t-elif="op" t-call="nodexui.ApiDocOperation"/>
+            <t t-else="" t-call="nodexui.ApiDocIntro"/>
+          </section>
+          <aside t-if="state.status === 'ready' and showTryIt" class="tryit-panel">
+            <t t-call="nodexui.ApiDocTryIt"/>
+          </aside>
+        </main>
+      </div>
+    </div>
+  </t>
+  <t t-name="ApiDoc" t-call="nodexui.ApiDoc"/>
+
+  <t t-name="nodexui.ApiDocGroup">
+    <li class="sidebar-group-wrap">
+      <details class="sidebar-group" open="open">
+        <summary>
+          <span class="sidebar-group-label"><t t-esc="props.group.name"/><span t-if="props.group.kind" class="apidoc-muted"> (<t t-esc="props.group.kind"/>)</span></span>
+          <span class="sidebar-group-arrow"><Icon name="'chevron-right'"/></span>
+        </summary>
+        <ul class="sidebar-group-items">
+          <li t-foreach="props.group.items" t-as="item" t-key="item.id">
+            <a t-att-href="props.href(item.id)" t-att-class="'sidebar-op-link' + (props.current === item.id ? ' is-active' : '')" t-on-click="(ev) => props.onSelect(ev, item.id)">
+              <span class="method-badge" t-att-data-method="item.method" t-esc="methodLabel(item.method)"/>
+              <span t-esc="item.summary"/>
+            </a>
+          </li>
+          <t t-foreach="children" t-as="child" t-key="child.id">
+            <ApiDocGroup group="child" groups="props.groups" current="props.current" href="props.href" onSelect="props.onSelect"/>
+          </t>
+        </ul>
+      </details>
+    </li>
+  </t>
+
+  <t t-name="nodexui.ApiDocBreadcrumb">
+    <Breadcrumb>
+      <BreadcrumbList>
+        <t t-foreach="breadcrumb" t-as="part" t-key="part_index">
+          <BreadcrumbItem>
+            <BreadcrumbPage t-if="part_last"><t t-esc="part.label"/></BreadcrumbPage>
+            <BreadcrumbLink t-else="" href="href(part.id)" onClick="(ev) => this.go(ev, part.id)">
+              <Icon t-if="part.home" name="'house'"/>
+              <t t-else="" t-esc="part.label"/>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator t-if="!part_last"/>
+        </t>
+      </BreadcrumbList>
+    </Breadcrumb>
+  </t>
+
+  <t t-name="nodexui.ApiDocIntro">
+    <div class="doc-pane">
+      <t t-call="nodexui.ApiDocBreadcrumb"/>
+      <h1 t-esc="title"/>
+      <Badge t-if="doc.info.version" variant="'muted'" label="'v' + doc.info.version"/>
+      <p t-if="doc.info.summary" class="param-desc" t-esc="doc.info.summary"/>
+      <div t-if="doc.info.description" class="prose"><Markdown t-key="theme" content="doc.info.description" nodexUi="false"/></div>
+      <div class="intro-card">
+        <header><h3>Base URL</h3></header>
+        <section><code t-esc="doc.baseUrl"/></section>
+      </div>
+      <section class="doc-section">
+        <h2>Groups</h2>
+        <ul class="intro-group-list">
+          <li t-foreach="doc.groups" t-as="group" t-key="group.id">
+            <a t-att-href="href(group.items[0].id)" t-on-click="(ev) => this.go(ev, group.items[0].id)"><strong t-esc="group.name"/></a>
+            <span t-if="group.description"> — <t t-esc="group.description"/></span>
+            <span class="apidoc-muted"> (<t t-esc="group.items.length"/> endpoint<t t-if="group.items.length !== 1">s</t>)</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </t>
+
+  <t t-name="nodexui.ApiDocParams">
+    <details t-if="paramList.length" class="param-group" open="open">
+      <summary><span class="param-group-head"><span class="caret"/><t t-esc="paramTitle.toUpperCase()"/></span></summary>
+      <ul>
+        <li t-foreach="paramList" t-as="p" t-key="p.name" class="param-row">
+          <div>
+            <div class="param-row-head">
+              <span class="param-name" t-esc="p.name"/>
+              <span class="param-type"><t t-esc="p.type"/><t t-if="p.format"> (<t t-esc="p.format"/>)</t></span>
+            </div>
+            <p t-if="p.description" class="param-desc" t-esc="p.description"/>
+            <p t-if="p.enum" class="param-desc">enum: <t t-foreach="p.enum" t-as="e" t-key="e_index"><code t-esc="e"/><t t-if="!e_last">, </t></t></p>
+            <p t-if="p.example !== undefined" class="param-desc">example<t t-if="p.exampleLabel"> (<t t-esc="p.exampleLabel"/>)</t>: <code t-esc="p.example"/></p>
+          </div>
+          <Badge t-if="p.required" variant="'danger'" label="'Required'"/>
+        </li>
+      </ul>
+    </details>
+  </t>
+
+  <t t-name="nodexui.ApiDocSchema">
+    <t t-set="rows" t-value="schemaRows(schemaNode)"/>
+    <p t-if="!rows.length" class="apidoc-muted">No schema available.</p>
+    <ul t-else="" class="schema-tree">
+      <li t-foreach="rows" t-as="row" t-key="row_index" t-attf-style="--depth:#{depth(row.path)}">
+        <span class="param-name"><t t-esc="row.path"/><span t-if="row.required" class="required-star">*</span></span>
+        <span class="param-type"><t t-esc="row.type"/><t t-if="row.format"> (<t t-esc="row.format"/>)</t></span>
+        <p t-if="row.description" class="param-desc" t-esc="row.description"/>
+      </li>
+    </ul>
+  </t>
+
+  <t t-name="nodexui.ApiDocCode">
+    <pre class="snippet-block"><span class="snippet-gutter"><span t-foreach="lineNumbers(codeText)" t-as="n" t-key="n" t-esc="n"/></span><span class="snippet-code"><code t-esc="codeText"/></span></pre>
+  </t>
+
+  <t t-name="nodexui.ApiDocOperation">
+    <div class="doc-pane">
+      <t t-call="nodexui.ApiDocBreadcrumb"/>
+      <h1><t t-esc="op.summary"/><Badge t-if="op.deprecated" variant="'warning'" label="'Deprecated'"/></h1>
+      <div class="endpoint-box">
+        <span class="method-badge" t-att-data-method="op.method" t-esc="methodLabel(op.method)"/>
+        <code class="endpoint-url" t-esc="doc.baseUrl + op.path"/>
+      </div>
+      <section t-if="op.description" class="doc-section"><div class="prose"><Markdown t-key="op.id + theme" content="op.description" nodexUi="false"/></div></section>
+      <p t-if="op.externalDocs and op.externalDocs.url" class="param-desc"><a t-att-href="op.externalDocs.url" target="_blank" rel="noopener noreferrer"><t t-esc="op.externalDocs.description || 'External documentation'"/></a></p>
+
+      <section class="doc-section">
+        <h2>Request</h2>
+        <t t-call="nodexui.ApiDocParams"><t t-set="paramTitle" t-value="'Path Parameters'"/><t t-set="paramList" t-value="op.parameters.path"/></t>
+        <t t-call="nodexui.ApiDocParams"><t t-set="paramTitle" t-value="'Query Parameters'"/><t t-set="paramList" t-value="op.parameters.query"/></t>
+        <t t-call="nodexui.ApiDocParams"><t t-set="paramTitle" t-value="'Header Parameters'"/><t t-set="paramList" t-value="op.parameters.header"/></t>
+        <t t-call="nodexui.ApiDocParams"><t t-set="paramTitle" t-value="'Form Data'"/><t t-set="paramList" t-value="op.parameters.formData"/></t>
+        <details t-if="op.parameters.body" class="param-group" open="open">
+          <t t-set="body" t-value="op.parameters.body"/>
+          <summary><span class="param-group-head"><span class="caret"/>BODY<t t-if="body.required"> (required)</t></span></summary>
+          <p t-if="body.description" class="param-desc" t-esc="body.description"/>
+          <p class="param-desc">content type: <code t-esc="body.contentType || 'application/json'"/></p>
+          <t t-if="body.encoding">
+            <p class="param-desc">encoding:</p>
+            <ul class="schema-tree">
+              <li t-foreach="encodingEntries(body.encoding)" t-as="entry" t-key="entry[0]">
+                <span class="param-name" t-esc="entry[0]"/>
+                <span class="param-type"><t t-esc="entry[1].contentType || ''"/><t t-if="entry[1].style"> style=<t t-esc="entry[1].style"/></t></span>
+              </li>
+            </ul>
+          </t>
+          <p class="param-desc">example<t t-if="body.exampleIsAuto"> (auto)</t><t t-elif="body.exampleLabel"> (<t t-esc="body.exampleLabel"/>)</t>:</p>
+          <pre><code t-esc="formatExample(body.example)"/></pre>
+          <t t-call="nodexui.ApiDocSchema"><t t-set="schemaNode" t-value="body.schema"/></t>
+        </details>
+      </section>
+
+      <section class="doc-section">
+        <div class="response-tabs-head"><h2>Responses</h2></div>
+        <p t-if="!op.responses.length" class="apidoc-muted">No responses documented.</p>
+        <Tabs t-else="" t-key="op.id" value="'' + state.respTab" onChange="(v) => this.selectResponse(v)">
+          <div class="response-tabs-head">
+            <TabsList className="'response-tablist'" variant="'line'">
+              <TabTrigger t-foreach="op.responses" t-as="r" t-key="r.status" value="'' + r_index" className="'tab-status tab-' + statusClass(r.status)"><t t-esc="r.status"/></TabTrigger>
+            </TabsList>
+          </div>
+          <TabsContainer className="'response-card-shell'">
+            <TabContent t-foreach="op.responses" t-as="r" t-key="r.status" value="'' + r_index">
+              <p t-if="r.summary" class="response-desc"><strong t-esc="r.summary"/></p>
+              <p class="response-desc" t-esc="r.description"/>
+              <t t-call="nodexui.ApiDocParams"><t t-set="paramTitle" t-value="'Response Headers'"/><t t-set="paramList" t-value="r.headers"/></t>
+              <div t-if="r.schema" class="response-body">
+                <div class="response-body-head">
+                  <Badge variant="'secondary'" label="r.contentType || 'application/json'"/>
+                  <div class="view-toggle" role="group">
+                    <Button size="'sm'" variant="state.respView[r_index] !== 'example' ? 'default' : 'outline'" ariaPressed="state.respView[r_index] !== 'example' ? 'true' : 'false'" label="'Schema'" onClick="() => this.setResponseView(r_index, 'schema')"/>
+                    <Button size="'sm'" variant="state.respView[r_index] === 'example' ? 'default' : 'outline'" ariaPressed="state.respView[r_index] === 'example' ? 'true' : 'false'" label="r.exampleIsAuto ? 'Example (auto)' : 'Example'" onClick="() => this.setResponseView(r_index, 'example')"/>
+                  </div>
+                </div>
+                <pre t-if="state.respView[r_index] === 'example'"><code t-esc="formatExample(r.example)"/></pre>
+                <div t-else=""><t t-call="nodexui.ApiDocSchema"><t t-set="schemaNode" t-value="r.schema"/></t></div>
+              </div>
+              <p t-else="" class="apidoc-muted">No response body.</p>
+              <details t-if="r.links.length" class="param-group">
+                <summary><span class="param-group-head"><span class="caret"/>LINKS</span></summary>
+                <ul>
+                  <li t-foreach="r.links" t-as="l" t-key="l.name" class="param-row">
+                    <div>
+                      <div class="param-row-head"><span class="param-name" t-esc="l.name"/></div>
+                      <p t-if="l.description" class="param-desc" t-esc="l.description"/>
+                      <p class="param-desc"><t t-if="l.operationId">operationId: <code t-esc="l.operationId"/></t><t t-else="">operationRef: <code t-esc="l.operationRef"/></t></p>
+                    </div>
+                  </li>
+                </ul>
+              </details>
+            </TabContent>
+          </TabsContainer>
+        </Tabs>
+      </section>
+
+      <section t-if="op.callbacks.length" class="doc-section">
+        <h2>Callbacks</h2>
+        <ul class="schema-tree">
+          <li t-foreach="op.callbacks" t-as="cb" t-key="cb_index">
+            <span class="method-badge" t-att-data-method="cb.method" t-esc="methodLabel(cb.method)"/>
+            <span class="param-name" t-esc="cb.name"/>
+            <code class="param-type" t-esc="cb.expression"/>
+            <p t-if="cb.summary" class="param-desc" t-esc="cb.summary"/>
+            <p t-if="cb.description" class="param-desc" t-esc="cb.description"/>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </t>
+
+  <t t-name="nodexui.ApiDocResultRequest">
+    <div class="result-section">
+      <h4 class="result-section-title">Request</h4>
+      <details class="param-group" open="open">
+        <summary><span class="param-group-head"><span class="caret"/>URL</span></summary>
+        <t t-call="nodexui.ApiDocCode"><t t-set="codeText" t-value="state.result.sent.url"/></t>
+      </details>
+      <details class="param-group" open="open">
+        <summary><span class="param-group-head"><span class="caret"/>Headers</span></summary>
+        <t t-call="nodexui.ApiDocCode"><t t-set="codeText" t-value="state.result.sent.headerLines || '(none)'"/></t>
+      </details>
+      <details t-if="state.result.sent.bodyText" class="param-group" open="open">
+        <summary><span class="param-group-head"><span class="caret"/>Body</span></summary>
+        <t t-call="nodexui.ApiDocCode"><t t-set="codeText" t-value="state.result.sent.bodyText"/></t>
+      </details>
+    </div>
+  </t>
+
+  <t t-name="nodexui.ApiDocTryIt">
+    <div class="tryit-stack">
+      <section class="sdk-card">
+        <div class="sdk-strip" role="tablist" aria-label="Code language">
+          <Button t-foreach="languages" t-as="l" t-key="l.id" unstyled="true" className="'lang-chip' + (l.id === currentLanguage.id ? ' is-active' : '')" onClick="() => this.setLanguage(l.id)">
+            <span t-attf-class="lang-chip-icon lang-#{languageTone(l.id)}">
+              <span class="lang-chip-icon-image" t-att-style="iconUrl(l) ? 'background-image:url(' + iconUrl(l) + ')' : ''"/>
+            </span>
+            <span class="lang-chip-label" t-esc="l.label"/>
+          </Button>
+        </div>
+        <Badge variant="'secondary'" className="'sdk-current'" label="currentLanguage.label"/>
+        <div class="snippet-shell"><t t-call="nodexui.ApiDocCode"><t t-set="codeText" t-value="state.snippet"/></t></div>
+      </section>
+
+      <section class="tryit-card">
+        <header class="tryit-card-head">
+          <h3>Request</h3>
+          <Button variant="'ghost'" size="'sm'" className="'head-action'" label="'Collapse All'" onClick="() => this.collapseRequest()"/>
+        </header>
+        <div class="tryit-card-body">
+          <details open="open">
+            <summary><span class="param-group-head"><span class="caret"/>Base URL</span></summary>
+            <div class="tryit-fields">
+              <NativeSelect value="draft.baseUrl" onChange="(v) => this.onBaseUrl(v)">
+                <option t-foreach="serverOptions" t-as="server" t-key="server.url" t-att-value="server.url"><t t-esc="serverLabel(server)"/></option>
+              </NativeSelect>
+            </div>
+          </details>
+
+          <details t-if="tryItParams.length" open="open">
+            <summary><span class="param-group-head"><span class="caret"/>Parameters</span></summary>
+            <div class="tryit-fields">
+              <label t-foreach="tryItParams" t-as="p" t-key="p.group + p.name" class="tryit-field">
+                <span><t t-esc="p.name"/> <span class="apidoc-muted">— <t t-esc="p.group"/><t t-if="p.required"> REQUIRED</t></span></span>
+                <NativeSelect t-if="p.enum" value="draft[p.group][p.name]" onChange="(v) => this.onParam(v, p.group, p.name)">
+                  <option t-foreach="p.enum" t-as="v" t-key="v_index" t-att-value="v" t-esc="v"/>
+                </NativeSelect>
+                <Input t-else="" value="draft[p.group][p.name] ?? ''" placeholder="p.description || (p.required ? 'required' : 'optional')" onInput="(v) => this.onParam(v, p.group, p.name)"/>
+              </label>
+            </div>
+          </details>
+
+          <details t-if="op.parameters.body" open="open">
+            <summary><span class="param-group-head"><span class="caret"/>Body (<t t-esc="draft.mimeType"/>)</span></summary>
+            <div class="tryit-fields">
+              <Textarea rows="8" value="draft.bodyText" onInput="(v) => this.onBody(v)"/>
+            </div>
+          </details>
+
+          <Button className="'apidoc-btn'" disabled="!!(state.result and state.result.phase === 'sending')" label="'Send API Request'" onClick="() => this.send()"/>
+        </div>
+      </section>
+
+      <section class="tryit-card">
+        <header class="tryit-card-head">
+          <h3>Response</h3>
+          <Button variant="'ghost'" size="'sm'" className="'response-clear'" label="'Clear'" onClick="() => this.clearResult()"/>
+        </header>
+        <div class="tryit-card-body">
+          <div t-if="!state.result" class="response-placeholder">Click the <code>Send API Request</code> button above and see the response here!</div>
+          <t t-elif="state.result.phase === 'sending'">
+            <div class="tryit-result-head">
+              <Badge variant="'muted'" label="state.result.sent.method"/>
+              <span class="apidoc-muted">Sending…</span>
+            </div>
+            <t t-call="nodexui.ApiDocResultRequest"/>
+          </t>
+          <t t-else="">
+            <t t-call="nodexui.ApiDocResultRequest"/>
+            <div class="result-section">
+              <h4 class="result-section-title">Response</h4>
+              <t t-if="state.result.phase === 'done'">
+                <div class="tryit-result-head">
+                  <span class="status-badge" t-att-data-status="statusClass(state.result.res.status)"><t t-esc="state.result.res.status"/><t t-if="state.result.res.statusText"> <t t-esc="state.result.res.statusText"/></t></span>
+                  <span class="apidoc-muted"><t t-esc="state.result.res.ms"/> ms</span>
+                </div>
+                <details class="param-group">
+                  <summary><span class="param-group-head"><span class="caret"/>Headers</span></summary>
+                  <t t-call="nodexui.ApiDocCode"><t t-set="codeText" t-value="state.result.res.headerLines || '(none)'"/></t>
+                </details>
+                <t t-call="nodexui.ApiDocCode"><t t-set="codeText" t-value="state.result.res.bodyText"/></t>
+              </t>
+              <t t-else="">
+                <div class="tryit-result-head"><Badge variant="'danger'" label="'Request failed'"/></div>
+                <p class="param-desc"><t t-esc="state.result.message"/>. This is usually a CORS restriction or network error — check the browser console for details.</p>
+              </t>
+            </div>
+          </t>
+        </div>
+      </section>
+    </div>
+  </t>
+
+  <t t-name="nodexui.ApiDocStoredField">
+    <div class="auth-field">
+      <label class="tryit-field auth-field">
+        <span class="auth-field-label" t-esc="fieldLabel"/>
+        <div class="auth-input-row">
+          <Input value="state.inputs[fieldName]" disabled="!!state.stored[fieldName]" placeholder="fieldPlaceholder" onInput="(v) => this.setAuthInput(fieldName, v)"/>
+          <Button variant="'outline'" size="'sm'" className="'auth-clean-button' + (state.stored[fieldName] ? '' : ' is-hidden')" label="'Clean'" onClick="() => this.clearAuth(fieldName)"/>
+        </div>
+      </label>
+      <p class="param-desc auth-field-help"><t t-esc="fieldHelp"/></p>
+    </div>
+  </t>
+
+  <t t-name="nodexui.ApiDocAuthBody">
+    <div class="auth-global-fields">
+      <t t-call="nodexui.ApiDocStoredField">
+        <t t-set="fieldName" t-value="'apikey'"/>
+        <t t-set="fieldLabel" t-value="'API Key'"/>
+        <t t-set="fieldPlaceholder" t-value="'Enter API key'"/>
+        <t t-set="fieldHelp" t-value="'Stored in this tab\'s session storage as apikey. Used for apiKey-type schemes and as the Basic auth credential (Authorization: Basic &lt;API Key&gt;).'"/>
+      </t>
+      <t t-call="nodexui.ApiDocStoredField">
+        <t t-set="fieldName" t-value="'oauthkey'"/>
+        <t t-set="fieldLabel" t-value="'Bearer / OAuth token'"/>
+        <t t-set="fieldPlaceholder" t-value="'Bearer token (auto-filled by Authorize/Get token below)'"/>
+        <t t-set="fieldHelp" t-value="'Stored in this tab\'s session storage as oauthkey. Used for bearer, openIdConnect and oauth2 schemes as Authorization: Bearer &lt;token&gt;.'"/>
+      </t>
+    </div>
+    <p t-if="!authSchemes.length" class="apidoc-muted auth-empty-state">No authorization schemes defined by this spec.</p>
+    <div t-else="" class="auth-schemes">
+      <details t-foreach="authSchemes" t-as="scheme" t-key="scheme.key" class="param-group auth-scheme" open="open">
+        <summary>
+          <span t-esc="scheme.key"/>
+          <Badge variant="'secondary'" label="scheme.def.type"/>
+          <Badge t-if="scheme.def.deprecated" variant="'warning'" label="'Deprecated'"/>
+        </summary>
+        <p t-if="scheme.def.description" class="param-desc" t-esc="scheme.def.description"/>
+        <p t-if="scheme.def.oauth2MetadataUrl" class="param-desc">Metadata: <a t-att-href="scheme.def.oauth2MetadataUrl" target="_blank" rel="noopener noreferrer" t-esc="scheme.def.oauth2MetadataUrl"/></p>
+        <p t-if="scheme.def.type === 'apiKey'" class="param-desc">Sent as <t t-esc="scheme.def.in === 'query' ? 'query parameter' : 'header'"/> <code t-esc="scheme.def.name"/> using the <strong>API Key</strong> above.</p>
+        <p t-elif="scheme.def.type === 'basic'" class="param-desc">Sent as <code>Authorization: Basic &lt;API Key&gt;</code> using the <strong>API Key</strong> above.</p>
+        <p t-elif="scheme.def.type === 'bearer'" class="param-desc">Sent as <code>Authorization: Bearer &lt;token&gt;</code> using the <strong>Bearer / OAuth token</strong> above.</p>
+        <p t-elif="scheme.def.type === 'mutualTLS'" class="param-desc">This scheme authenticates via a client TLS certificate negotiated at the transport layer — there is nothing to fill in here.</p>
+        <t t-elif="scheme.def.type === 'oauth2'">
+          <t t-set="fields" t-value="state.oauth[scheme.key]"/>
+          <t t-set="flow" t-value="scheme.def.flow"/>
+          <p class="param-desc">Flow: <code t-esc="oauthFlowLabel(flow)"/></p>
+          <div t-if="scheme.scopes.length" class="tryit-field auth-field">
+            <span class="auth-field-label">Scopes</span>
+            <ul class="auth-scope-list">
+              <li t-foreach="scheme.scopes" t-as="scope" t-key="scope[0]">
+                <Checkbox checked="fields.scopes.includes(scope[0])" onChange="() => this.toggleScope(scheme.key, scope[0])"><code t-esc="scope[0]"/> — <t t-esc="scope[1]"/></Checkbox>
+              </li>
+            </ul>
+          </div>
+          <label class="tryit-field auth-field">
+            <span class="auth-field-label">Client ID</span>
+            <Input type="'text'" value="fields.clientId" onInput="(v) => this.setField(fields, 'clientId', v)"/>
+          </label>
+          <t t-if="flow === 'accessCode' or flow === 'application' or flow === 'password'">
+            <label class="tryit-field auth-field">
+              <span class="auth-field-label">Client secret</span>
+              <Input type="'password'" value="fields.clientSecret" onInput="(v) => this.setField(fields, 'clientSecret', v)"/>
+            </label>
+            <p class="param-desc auth-field-help">Client secret is sent from the browser — only use a test/dev OAuth client here.</p>
+          </t>
+          <t t-if="flow === 'password'">
+            <label class="tryit-field auth-field">
+              <span class="auth-field-label">Username</span>
+              <Input type="'text'" value="fields.username" onInput="(v) => this.setField(fields, 'username', v)"/>
+            </label>
+            <label class="tryit-field auth-field">
+              <span class="auth-field-label">Password</span>
+              <Input type="'password'" value="fields.password" onInput="(v) => this.setField(fields, 'password', v)"/>
+            </label>
+          </t>
+          <div t-if="flow" class="tryit-field auth-field auth-action-row">
+            <Button variant="'outline'" size="'sm'" label="flow === 'implicit' or flow === 'accessCode' ? 'Authorize' : 'Get token'" onClick="() => this.startOAuth2Flow(scheme.key)"/>
+            <p class="param-desc auth-field-help" t-att-data-state="state.oauthStatus[scheme.key] ? (state.oauthStatus[scheme.key].isError ? 'error' : 'ok') : null" t-esc="state.oauthStatus[scheme.key] ? state.oauthStatus[scheme.key].message : ''"/>
+          </div>
+        </t>
+        <p t-else="" class="param-desc">Unsupported scheme type: <t t-esc="scheme.def.type"/></p>
+      </details>
+    </div>
+  </t>
+<t t-name="nodexui.accordion">
+    <div b-ui="accordion"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.Accordion">
+    <div data-slot="accordion" t-att-class="'accordion b-accordion' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" role="presentation">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="Accordion" t-call="nodexui.Accordion"/>
+  <t t-name="nodexui.AccordionItem">
+    <div data-slot="accordion-item" class="accordion-item b-accordion-item" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="AccordionItem" t-call="nodexui.AccordionItem"/>
+  <t t-name="nodexui.AccordionTrigger">
+    <div class="accordion-header b-accordion-header" t-att-style="props.style">
+      <Button unstyled="true" className="'accordion-button b-accordion-trigger'" attrs="triggerAttrs" onClick="() => this.onClick()">
+        <t t-slot="default"/>
+        <Icon name="'chevron-down'" className="'b-accordion-trigger-icon'"/>
+      </Button>
+    </div>
+  </t>
+  <t t-name="AccordionTrigger" t-call="nodexui.AccordionTrigger"/>
+  <t t-name="nodexui.AccordionContent">
+    <div t-ref="root" data-slot="accordion-content" t-att-class="'accordion-collapse collapse b-accordion-content' + (initialOpen ? ' show' : '')" t-att-style="props.style" t-att-aria-hidden="open ? undefined : 'true'">
+      <div class="accordion-body b-accordion-content-inner"><t t-slot="default"/></div>
+    </div>
+  </t>
+  <t t-name="AccordionContent" t-call="nodexui.AccordionContent"/>
+<t t-name="nodexui.aspect-ratio">
+    <div b-ui="aspect-ratio"><t t-esc="props.content"/></div>
+  </t>
+  <t t-name="nodexui.AspectRatio">
+    <div t-att-class="classNames" t-att-style="style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="AspectRatio" t-call="nodexui.AspectRatio"/>
+<t t-name="nodexui.attachment">
+    <div class="b-attachment"/>
+  </t>
+  <t t-name="nodexui.Attachment">
+    <div
+      t-att-class="classNames"
+      t-att-data-state="state"
+      t-att-data-size="size"
+      t-att-data-orientation="orientation"
+      data-slot="attachment"
+      t-att-style="props.style"
+    >
+      <t t-if="hasContent" t-slot="default"/>
+      <input t-else="" type="file" class="form-control" t-att-multiple="props.multiple" t-on-change="onChange"/>
+    </div>
+  </t>
+  <t t-name="nodexui.AttachmentMedia">
+    <div t-att-class="classNames" t-att-data-variant="variant" data-slot="attachment-media" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.AttachmentContent">
+    <div t-att-class="'b-attachment-content' + (props.className ? ' ' + props.className : '')" data-slot="attachment-content" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.AttachmentTitle">
+    <div t-att-class="'b-attachment-title' + (props.className ? ' ' + props.className : '')" data-slot="attachment-title" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.AttachmentDescription">
+    <div t-att-class="'b-attachment-description' + (props.className ? ' ' + props.className : '')" data-slot="attachment-description" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.AttachmentActions">
+    <div t-att-class="'b-attachment-actions' + (props.className ? ' ' + props.className : '')" data-slot="attachment-actions" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.AttachmentAction">
+    <Button
+      variant="variant"
+      size="size"
+      type="props.type || 'button'"
+      disabled="props.disabled"
+      label="props.label"
+      className="className"
+      aria-label="ariaLabel"
+      style="props.style"
+      attrs="{'data-slot': 'attachment-action'}"
+      onClick="(event) => this.onClick(event)"
+    ><t t-slot="default"/></Button>
+  </t>
+  <t t-name="nodexui.AttachmentTrigger">
+    <Button
+      unstyled="true"
+      href="props.href"
+      type="props.type || 'button'"
+      className="classNames"
+      aria-label="ariaLabel"
+      style="props.style"
+      attrs="{'data-slot': 'attachment-trigger', 'target': props.target, 'rel': props.rel || (props.target === '_blank' ? 'noreferrer' : undefined)}"
+      onClick="(event) => this.onClick(event)"
+    />
+  </t>
+  <t t-name="nodexui.AttachmentGroup">
+    <div t-att-class="classNames" data-slot="attachment-group" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.AttachmentDropzone">
+    <div
+      t-att-class="classNames"
+      data-slot="attachment-dropzone"
+      t-att-style="props.style"
+      t-on-dragover="onDragOver"
+      t-on-dragleave="onDragLeave"
+      t-on-drop="onDrop"
+      t-on-click="openPicker"
+    >
+      <input
+        type="file"
+        class="visually-hidden"
+        t-att-multiple="props.multiple"
+        t-att-disabled="props.disabled"
+        t-ref="fileInput"
+        tabindex="-1"
+        t-on-change="onInputChange"
+      />
+      <t t-if="hasContent" t-slot="default"/>
+      <t t-else="">
+        <p class="b-attachment-dropzone-hint">Drag and drop a file here, or click to browse.</p>
+      </t>
+    </div>
+  </t>
+  <t t-name="Attachment" t-call="nodexui.Attachment"/>
+  <t t-name="AttachmentMedia" t-call="nodexui.AttachmentMedia"/>
+  <t t-name="AttachmentContent" t-call="nodexui.AttachmentContent"/>
+  <t t-name="AttachmentTitle" t-call="nodexui.AttachmentTitle"/>
+  <t t-name="AttachmentDescription" t-call="nodexui.AttachmentDescription"/>
+  <t t-name="AttachmentActions" t-call="nodexui.AttachmentActions"/>
+  <t t-name="AttachmentAction" t-call="nodexui.AttachmentAction"/>
+  <t t-name="AttachmentTrigger" t-call="nodexui.AttachmentTrigger"/>
+  <t t-name="AttachmentGroup" t-call="nodexui.AttachmentGroup"/>
+  <t t-name="AttachmentDropzone" t-call="nodexui.AttachmentDropzone"/>
+<t t-name="nodexui.avatar">
+    <span class="b-avatar"><t t-out="props.content"/></span>
+  </t>
+  <t t-name="nodexui.Avatar">
+    <span t-att-class="'b-avatar' + (props.className ? ' ' + props.className : '')" t-att-title="props.title" t-att-style="props.style">
+      <img t-if="showImage" t-att-src="props.src" t-att-alt="props.alt" t-on-error="onError"/>
+      <t t-if="!showImage" t-slot="fallback"/>
+    </span>
+  </t>
+  <t t-name="Avatar" t-call="nodexui.Avatar"/>
+<t t-name="nodexui.Badge">
+    <span t-att-class="classNames" t-att-style="props.style">
+      <t t-if="props.label" t-esc="props.label"/>
+      <t t-else="" t-slot="default"/>
+    </span>
+  </t>
+  <t t-name="Badge" t-call="nodexui.Badge"/>
+<t t-name="nodexui.BlockViewer">
+    <t t-if="state.embed">
+      <div class="b-block-embed-root" t-ref="embedRoot"></div>
+    </t>
+    <t t-else="">
+      <div class="b-block-viewer">
+        <t t-call="nodexui.BlockViewerNav"/>
+        <div class="b-block-viewer-shell">
+          <header class="b-block-viewer-header">
+            <div class="b-block-viewer-title">
+              <a href="/blocks" class="b-block-muted">Blocks</a>
+              <h1 t-esc="title"/>
+              <p t-esc="description"/>
+            </div>
+            <div class="b-block-viewer-actions">
+              <Button variant="'outline'" type="'button'" ariaPressed="state.mode === 'preview' ? 'true' : 'false'" onClick="() => this.setMode('preview')">
+                <Icon name="'eye'"/>
+                Preview
+              </Button>
+              <Button variant="'outline'" type="'button'" ariaPressed="state.mode === 'code' ? 'true' : 'false'" onClick="() => this.setMode('code')">
+                <Icon name="'code'"/>
+                Code
+              </Button>
+              <Button variant="'ghost'" type="'button'" className="'b-icon-button'" ariaLabel="'Desktop preview'" ariaPressed="state.viewport === 'desktop' ? 'true' : 'false'" onClick="() => this.setViewport('desktop')">
+                <Icon name="'monitor'"/>
+              </Button>
+              <Button variant="'ghost'" type="'button'" className="'b-icon-button'" ariaLabel="'Tablet preview'" ariaPressed="state.viewport === 'tablet' ? 'true' : 'false'" onClick="() => this.setViewport('tablet')">
+                <Icon name="'tablet'"/>
+              </Button>
+              <Button variant="'ghost'" type="'button'" className="'b-icon-button'" ariaLabel="'Mobile preview'" ariaPressed="state.viewport === 'mobile' ? 'true' : 'false'" onClick="() => this.setViewport('mobile')">
+                <Icon name="'smartphone'"/>
+              </Button>
+              <Button variant="'outline'" type="'button'" onClick="() => this.copyCode()">
+                <Icon name="'copy'"/>
+                <span t-esc="state.copyLabel"/>
+              </Button>
+            </div>
+          </header>
+          <main class="b-block-viewer-main">
+            <section t-att-class="state.mode === 'code' ? 'b-block-preview-panel is-hidden' : 'b-block-preview-panel'">
+              <div class="b-block-preview-frame" t-att-style="previewStyle" t-ref="previewFrame"></div>
+            </section>
+            <section t-att-class="state.mode === 'code' ? 'b-block-code-panel is-active' : 'b-block-code-panel'">
+              <div class="b-block-code-toolbar" role="group" aria-label="Code source">
+                <Button variant="'ghost'" type="'button'" ariaPressed="state.codeVariant === 'owl' ? 'true' : 'false'" onClick="() => this.setCodeVariant('owl')">
+                  Nodex UI Component
+                </Button>
+                <Button variant="'ghost'" type="'button'" ariaPressed="state.codeVariant === 'template' ? 'true' : 'false'" onClick="() => this.setCodeVariant('template')">
+                  Template
+                </Button>
+              </div>
+              <pre class="b-block-code" t-esc="activeCode"/>
+            </section>
+          </main>
+        </div>
+      </div>
+    </t>
+  </t>
+
+  <t t-name="nodexui.BlockViewerNav">
+    <header class="b-example-header">
+      <nav class="container b-example-nav" aria-label="NodexUI pages">
+        <a class="navbar-brand fw-semibold text-decoration-none b-example-brand" href="/docs">NodexUI</a>
+        <div class="b-example-nav-menu" aria-label="NodexUI pages">
+          <a t-foreach="navItems" t-as="item" t-key="item.key" t-att-href="item.href" t-att-class="item.key === 'blocks' ? 'is-active' : ''" t-att-aria-current="item.key === 'blocks' ? 'page' : undefined">
+            <t t-esc="item.label"/>
+          </a>
+        </div>
+        <ThemeButton variant="'outline'" storageKey="'b-example-theme'"/>
+      </nav>
+    </header>
+  </t>
+
+  <t t-name="BlockViewer" t-call="nodexui.BlockViewer"/>
+<t t-name="nodexui.breadcrumb">
+    <nav b-ui="breadcrumb" aria-label="breadcrumb"><ol><t t-slot="default"/></ol></nav>
+  </t>
+  <t t-name="nodexui.Breadcrumb">
+    <nav
+      data-slot="breadcrumb"
+      t-att-class="'b-breadcrumb' + (props.className ? ' ' + props.className : '')"
+      aria-label="breadcrumb"
+      t-att-style="props.style"
+    >
+      <t t-slot="default"/>
+    </nav>
+  </t>
+  <t t-name="Breadcrumb" t-call="nodexui.Breadcrumb"/>
+  <t t-name="nodexui.BreadcrumbList">
+    <ol
+      data-slot="breadcrumb-list"
+      t-att-class="'breadcrumb b-breadcrumb-list' + (props.className ? ' ' + props.className : '')"
+      t-att-style="props.style"
+    >
+      <t t-slot="default"/>
+    </ol>
+  </t>
+  <t t-name="BreadcrumbList" t-call="nodexui.BreadcrumbList"/>
+  <t t-name="nodexui.BreadcrumbItem">
+    <li data-slot="breadcrumb-item" t-att-class="classNames" t-att-aria-current="props.current ? 'page' : undefined" t-att-style="props.style">
+      <t t-slot="default"/>
+    </li>
+  </t>
+  <t t-name="BreadcrumbItem" t-call="nodexui.BreadcrumbItem"/>
+  <t t-name="nodexui.BreadcrumbLink">
+    <a
+      data-slot="breadcrumb-link"
+      t-att-href="props.href || '#'"
+      t-att-target="props.target"
+      t-att-rel="props.rel"
+      t-att-class="classNames"
+      t-att-style="props.style"
+      t-on-click="onClick"
+    >
+      <t t-slot="default"/>
+    </a>
+  </t>
+  <t t-name="BreadcrumbLink" t-call="nodexui.BreadcrumbLink"/>
+  <t t-name="nodexui.BreadcrumbPage">
+    <span
+      data-slot="breadcrumb-page"
+      role="link"
+      aria-disabled="true"
+      aria-current="page"
+      t-att-class="classNames"
+      t-att-style="props.style"
+    >
+      <t t-slot="default"/>
+    </span>
+  </t>
+  <t t-name="BreadcrumbPage" t-call="nodexui.BreadcrumbPage"/>
+  <t t-name="nodexui.BreadcrumbSeparator">
+    <li
+      data-slot="breadcrumb-separator"
+      role="presentation"
+      aria-hidden="true"
+      t-att-class="classNames"
+      t-att-style="props.style"
+    >
+      <t t-if="hasCustomContent" t-slot="default"/>
+      <Icon t-else="" name="'chevron-right'" className="'b-breadcrumb-separator-icon'"/>
+    </li>
+  </t>
+  <t t-name="BreadcrumbSeparator" t-call="nodexui.BreadcrumbSeparator"/>
+  <t t-name="nodexui.BreadcrumbEllipsis">
+    <span
+      data-slot="breadcrumb-ellipsis"
+      role="presentation"
+      aria-hidden="true"
+      t-att-class="classNames"
+      t-att-style="props.style"
+    >
+      <t t-if="hasCustomContent" t-slot="default"/>
+      <Icon t-else="" name="'ellipsis'" className="'b-breadcrumb-ellipsis-icon'"/>
+      <span class="visually-hidden">More</span>
+    </span>
+  </t>
+  <t t-name="BreadcrumbEllipsis" t-call="nodexui.BreadcrumbEllipsis"/>
+<t t-name="nodexui.bubble"><div b-ui="bubble"><t t-esc="props.content"/></div></t>
+  <t t-name="nodexui.Bubble">
+    <div t-att-class="classNames" t-att-data-side="side" t-att-style="props.style" role="listitem"><t t-slot="default"/></div>
+  </t>
+  <t t-name="Bubble" t-call="nodexui.Bubble"/>
+<t t-name="nodexui.Button">
+    <a
+      t-if="props.href"
+      t-ref="root"
+      t-att-class="classNames"
+      t-att-href="props.href"
+      data-slot="button"
+      t-att-id="props.id"
+      t-att-title="props.title"
+      t-att-aria-label="ariaLabel"
+      t-att-aria-pressed="ariaPressed"
+      t-att-aria-invalid="ariaInvalid"
+      t-att-aria-disabled="props.disabled ? 'true' : undefined"
+      t-att-data-icon-only="isIconOnly ? 'true' : undefined"
+      t-att-data-icon="props.icon ? 'inline-' + iconPosition : undefined"
+      t-att-style="props.style"
+      t-att="props.attrs || {}"
+      t-on-click="onClick"
+    >
+      <Icon t-if="props.icon &amp;&amp; iconPosition !== 'end'" name="props.icon"/>
+      <span t-if="props.label" t-esc="props.label"/>
+      <t t-else="" t-slot="default"/>
+      <Icon t-if="props.icon &amp;&amp; iconPosition === 'end'" name="props.icon"/>
+    </a>
+    <button
+      t-else=""
+      t-ref="root"
+      t-att-class="classNames"
+      t-att-type="props.type || 'button'"
+      data-slot="button"
+      t-att-disabled="props.disabled"
+      t-att-id="props.id"
+      t-att-title="props.title"
+      t-att-aria-label="ariaLabel"
+      t-att-aria-pressed="ariaPressed"
+      t-att-aria-invalid="ariaInvalid"
+      t-att-data-icon-only="isIconOnly ? 'true' : undefined"
+      t-att-data-icon="props.icon ? 'inline-' + iconPosition : undefined"
+      t-att-style="props.style"
+      t-att="props.attrs || {}"
+      t-on-click="onClick"
+    >
+      <Icon t-if="props.icon &amp;&amp; iconPosition !== 'end'" name="props.icon"/>
+      <span t-if="props.label" t-esc="props.label"/>
+      <t t-else="" t-slot="default"/>
+      <Icon t-if="props.icon &amp;&amp; iconPosition === 'end'" name="props.icon"/>
+    </button>
+  </t>
+  <t t-name="Button" t-call="nodexui.Button"/>
+<t t-name="nodexui.button-group">
+    <div b-ui="button-group"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.ButtonGroup">
+    <div
+      t-att-class="classNames"
+      t-att-aria-label="ariaLabel"
+      t-att-aria-labelledby="ariaLabelledby"
+      t-att-style="props.style"
+      role="group"
+    ><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.ButtonGroupSeparator">
+    <span
+      t-att-class="classNames"
+      t-att-data-orientation="orientation"
+      t-att-style="props.style"
+      role="separator"
+    ></span>
+  </t>
+  <t t-name="nodexui.ButtonGroupText">
+    <span t-att-class="classNames" t-att-style="props.style"><t t-slot="default"/></span>
+  </t>
+  <t t-name="ButtonGroup" t-call="nodexui.ButtonGroup"/>
+  <t t-name="ButtonGroupSeparator" t-call="nodexui.ButtonGroupSeparator"/>
+  <t t-name="ButtonGroupText" t-call="nodexui.ButtonGroupText"/>
+<t t-name="nodexui.calendar">
+    <div class="b-calendar"/>
+  </t>
+  <t t-name="nodexui.Calendar">
+    <div t-att-class="'b-calendar' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <div class="b-calendar__header"><t t-esc="headerLabel"/></div>
+      <div class="b-calendar__weekdays">
+        <span t-foreach="weekdays" t-as="weekday" t-key="weekday" t-esc="weekday"/>
+      </div>
+      <div class="b-calendar__grid">
+        <t t-foreach="days" t-as="cell" t-key="cell_index">
+          <span t-if="!cell"/>
+          <Button
+            t-else=""
+            unstyled="true"
+            attrs="{ 'aria-pressed': cell.selected ? 'true' : 'false' }"
+            onClick="() => this.onSelect(cell.value)"
+          >
+            <t t-esc="cell.day"/>
+          </Button>
+        </t>
+      </div>
+    </div>
+  </t>
+  <t t-name="Calendar" t-call="nodexui.Calendar"/>
+<t t-name="nodexui.Card">
+    <div t-tag="tag" t-att-class="'card b-card' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="Card" t-call="nodexui.Card"/>
+
+  <t t-name="nodexui.CardHeader">
+    <div t-att-class="'card-header' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="CardHeader" t-call="nodexui.CardHeader"/>
+
+  <t t-name="nodexui.CardBody">
+    <div t-att-class="'card-body' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="CardBody" t-call="nodexui.CardBody"/>
+
+  <t t-name="nodexui.CardFooter">
+    <div t-att-class="'card-footer' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="CardFooter" t-call="nodexui.CardFooter"/>
+
+  <t t-name="nodexui.CardTitle">
+    <h3 t-att-class="'card-title' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </h3>
+  </t>
+  <t t-name="CardTitle" t-call="nodexui.CardTitle"/>
+
+  <t t-name="nodexui.CardDescription">
+    <p t-att-class="'card-text text-body-secondary' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </p>
+  </t>
+  <t t-name="CardDescription" t-call="nodexui.CardDescription"/>
+<t t-name="nodexui.carousel">
+    <div class="b-carousel"/>
+  </t>
+  <t t-name="nodexui.Carousel">
+    <div t-ref="root" t-att-class="'b-carousel carousel slide' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <div class="carousel-inner">
+        <t t-slot="default"/>
+      </div>
+    </div>
+  </t>
+  <t t-name="Carousel" t-call="nodexui.Carousel"/>
+  <t t-name="nodexui.CarouselSlide">
+    <div t-ref="root" t-att-class="'b-carousel-slide carousel-item' + (initialActive ? ' active' : '')" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="CarouselSlide" t-call="nodexui.CarouselSlide"/>
+  <t t-name="nodexui.CarouselPrevious">
+    <Button unstyled="true" className="'b-carousel-prev'" style="props.style" onClick="() => this.onClick()"><t t-slot="default"/></Button>
+  </t>
+  <t t-name="CarouselPrevious" t-call="nodexui.CarouselPrevious"/>
+  <t t-name="nodexui.CarouselNext">
+    <Button unstyled="true" className="'b-carousel-next'" style="props.style" onClick="() => this.onClick()"><t t-slot="default"/></Button>
+  </t>
+  <t t-name="CarouselNext" t-call="nodexui.CarouselNext"/>
+<t t-name="nodexui.chart">
+    <div class="b-chart"/>
+  </t>
+  <t t-name="nodexui.Chart">
+    <div
+      b-ui="chart"
+      t-att-b-att-variant="props.variant"
+      t-att-b-att-type="props.type"
+      t-att-class="classNames"
+      t-att-style="props.style"
+    ><t t-slot="default"/></div>
+  </t>
+  <t t-name="Chart" t-call="nodexui.Chart"/>
+<t t-name="nodexui.checkbox">
+    <label b-ui="checkbox"><input type="checkbox"/><t t-slot="default"/></label>
+  </t>
+  <t t-name="nodexui.Checkbox">
+    <label t-att-class="'form-check b-check ' + (props.className || '')" t-att-style="props.style">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        t-att-checked="props.checked"
+        t-att-disabled="props.disabled"
+        t-att-id="props.id"
+        t-on-change="onChange"
+      />
+      <t t-slot="default"/>
+    </label>
+  </t>
+  <t t-name="Checkbox" t-call="nodexui.Checkbox"/>
+<t t-name="nodexui.ClipboardButton">
+    <Button
+      unstyled="true"
+      className="classNames"
+      style="props.style"
+      disabled="props.disabled"
+      ariaLabel="ariaLabel"
+      attrs="attrs"
+      icon="iconName"
+      label="label"
+      onClick="(event) => this.onClick(event)"
+    >
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="ClipboardButton" t-call="nodexui.ClipboardButton"/>
+<t t-name="nodexui.CodeEditor">
+    <section t-att-class="classNames" t-att-style="props.style">
+      <div class="b-code-editor-header">
+        <div class="b-code-editor-heading">
+          <h3 t-if="props.title" class="fs-6 fw-semibold mb-0" t-esc="props.title"/>
+          <small t-if="globals.length or props.hint" class="text-body-secondary">
+            <t t-if="globals.length">Globals: <t t-foreach="globals" t-as="name" t-key="name"><code t-esc="name"/><t t-if="!name_last">, </t></t>. </t>
+            <t t-esc="props.hint"/>
+          </small>
+        </div>
+        <div class="b-code-editor-actions">
+          <Spinner t-if="state.loading" className="'spinner-border-sm'" label="'Loading'"/>
+          <Badge variant="'muted'" label="language.label"/>
+          <Badge variant="'secondary'" label="lineLabel"/>
+          <t t-if="props.upload">
+            <input type="file" class="d-none" t-ref="fileInput" t-on-change="onFileChange"/>
+            <Button variant="'outline'" size="'sm'" icon="'upload'" label="'Open file'" onClick="() => this.openPicker()"/>
+          </t>
+          <Button t-if="showFormat" variant="'outline'" size="'sm'" icon="'wand-sparkles'" label="'Format'" disabled="!code" onClick="() => this.format()"/>
+          <ClipboardButton variant="'outline'" size="'sm'" value="code" label="'Copy'" copiedLabel="'Copied'" disabled="!code"/>
+          <Button t-if="showToggle" variant="'outline'" size="'sm'" icon="isReadonly ? 'pencil' : 'eye'" label="isReadonly ? 'Edit' : 'View'" onClick="() => this.toggleEditing()"/>
+        </div>
+      </div>
+      <Alert t-if="state.error" variant="'destructive'"><AlertDescription t-esc="state.error"/></Alert>
+
+      <!-- One scroll container for gutter + code: the transparent textarea is stretched over the colouring pre, so both scroll together and no scroll-sync code is needed. -->
+      <div class="b-code-editor-box" t-att-class="{ 'is-readonly': isReadonly }">
+        <pre aria-hidden="true" class="b-code-editor-text b-code-editor-gutter" t-esc="lineNumbers"/>
+        <div class="b-code-editor-body">
+          <pre aria-hidden="true" class="b-code-editor-text"><t t-foreach="tokens" t-as="tok" t-key="tok_index"><span t-att-class="tok.className" t-esc="tok.text"/></t></pre>
+          <textarea t-if="!isReadonly" class="b-code-editor-text b-code-editor-input"
+                    wrap="off" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"
+                    t-ref="input" t-att-id="props.id" t-att-aria-label="ariaLabel"
+                    t-on-input="onInput" t-on-keydown="onKeydown" t-on-click="(ev) => this.revealCaret(ev.target)"/>
+        </div>
+      </div>
+      <small t-if="!isReadonly" class="text-body-secondary">
+        <Kbd>Tab</Kbd> indents, <Kbd>Shift</Kbd>+<Kbd>Tab</Kbd> outdents, <Kbd>Esc</Kbd> then <Kbd>Tab</Kbd> leaves the editor.
+      </small>
+    </section>
+  </t>
+  <t t-name="CodeEditor" t-call="nodexui.CodeEditor"/>
+<t t-name="nodexui.collapsible">
+    <div b-ui="collapsible"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.Collapsible">
+    <div t-att-class="'b-collapsible' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="Collapsible" t-call="nodexui.Collapsible"/>
+  <t t-name="nodexui.CollapsibleTrigger">
+    <Button unstyled="true" className="'b-collapsible-trigger'" style="props.style" attrs="attrs" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="CollapsibleTrigger" t-call="nodexui.CollapsibleTrigger"/>
+  <t t-name="nodexui.CollapsibleContent">
+    <div t-ref="root" t-att-class="'collapse b-collapsible-content' + (initialOpen ? ' show' : '')" t-att-style="props.style" t-att-aria-hidden="open ? undefined : 'true'">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="CollapsibleContent" t-call="nodexui.CollapsibleContent"/>
+<t t-name="nodexui.combobox">
+    <div class="b-combobox"/>
+  </t>
+  <t t-name="nodexui.Combobox">
+    <div t-att-class="'b-combobox' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" t-ref="root">
+      <t t-call="nodexui.Outlined"><t t-call="nodexui.Combobox.field"/></t>
+      <div t-if="disclosure.open" class="b-combobox-list" role="listbox">
+        <div
+          t-foreach="filteredOptions"
+          t-as="option"
+          t-key="option.value"
+          role="option"
+          class="b-combobox-option"
+          t-on-click="() => this.choose(option)"
+        >
+          <t t-esc="option.label"/>
+        </div>
+      </div>
+    </div>
+  </t>
+  <t t-name="nodexui.Combobox.field">
+    <input
+      t-att-class="classNames"
+      role="combobox"
+      t-att-id="props.id"
+      t-att-disabled="props.disabled"
+      t-att-aria-expanded="disclosure.open ? 'true' : 'false'"
+      t-att-aria-invalid="isInvalid ? 'true' : undefined"
+      t-att-aria-describedby="describedBy"
+      t-att-placeholder="fieldPlaceholder"
+      t-att-value="state.query"
+      t-on-input="onInput"
+      t-on-focus="onFocus"
+    />
+  </t>
+  <t t-name="Combobox" t-call="nodexui.Combobox"/>
+<t t-name="nodexui.command">
+    <div b-ui="command" class="b-command"/>
+  </t>
+  <t t-name="nodexui.Command">
+    <div t-att-class="'b-command' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" role="dialog">
+      <input class="form-control" t-att-placeholder="props.placeholder" t-on-input="onInput"/>
+      <div class="b-command-list">
+        <div
+          t-foreach="filteredItems"
+          t-as="item"
+          t-key="item.value"
+          class="b-command-item"
+          t-on-click="() => this.select(item)"
+        >
+          <t t-esc="item.label"/>
+        </div>
+      </div>
+    </div>
+  </t>
+  <t t-name="Command" t-call="nodexui.Command"/>
+<t t-name="nodexui.context-menu">
+    <div class="b-context-menu"/>
+  </t>
+  <t t-name="nodexui.ContextMenu">
+    <t t-slot="default"/>
+  </t>
+  <t t-name="ContextMenu" t-call="nodexui.ContextMenu"/>
+  <t t-name="nodexui.ContextMenuTrigger">
+    <div class="b-context-menu-trigger" t-on-contextmenu="onContextMenu">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="ContextMenuTrigger" t-call="nodexui.ContextMenuTrigger"/>
+  <t t-name="nodexui.ContextMenuContent">
+    <div t-if="open" class="b-context-menu-content" role="menu" t-att-style="style" t-ref="root">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="ContextMenuContent" t-call="nodexui.ContextMenuContent"/>
+  <t t-name="nodexui.ContextMenuItem">
+    <div class="b-context-menu-item" role="menuitem" tabindex="0" t-on-click="onClick">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="ContextMenuItem" t-call="nodexui.ContextMenuItem"/>
+<t t-name="nodexui.data-table">
+    <div class="b-data-table"/>
+  </t>
+  <t t-name="nodexui.DataTable.Table">
+    <div class="b-data-table__viewport" t-att-style="viewportStyle">
+      <table class="table b-data-table__table">
+        <thead>
+          <tr>
+            <th t-if="hasSelection" class="b-data-table__selection-cell">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                aria-label="Select all rows"
+                t-att-checked="pageRows.length &amp;&amp; pageRows.every((row, index) => this.isSelected(row, index))"
+                t-on-change="(event) => this.toggleAllVisible(event.target.checked)"
+              />
+            </th>
+            <th
+              t-foreach="visibleColumns"
+              t-as="column"
+              t-key="column.key"
+              t-att-class="column.align === 'right' ? 'text-end' : column.align === 'center' ? 'text-center' : ''"
+              t-att-b-att-sort="state.sortKey === column.key ? (state.sortDir === 1 ? 'asc' : 'desc') : undefined"
+            >
+              <Button
+                t-if="isColumnSortable(column)"
+                unstyled="true"
+                className="'b-data-table__header-button'"
+                onClick="() => this.sortBy(column.key)"
+              >
+                <span><t t-esc="columnLabel(column)"/></span>
+                <span class="b-data-table__sort-icon" t-att-data-icon="sortIcon(column.key)" aria-hidden="true"></span>
+              </Button>
+              <t t-else="" t-esc="columnLabel(column)"/>
+            </th>
+            <th t-if="rowActions.length" class="b-data-table__actions-cell"><span class="visually-hidden">Actions</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr t-if="!pageRows.length">
+            <td t-att-colspan="visibleColumns.length + (hasSelection ? 1 : 0) + (rowActions.length ? 1 : 0)" class="b-data-table__empty">
+              <t t-esc="emptyLabel"/>
+            </td>
+          </tr>
+          <tr
+            t-foreach="pageRows"
+            t-as="row"
+            t-key="rowKey(row, row_index)"
+            t-att-data-state="isSelected(row, row_index) ? 'selected' : undefined"
+          >
+            <td t-if="hasSelection" class="b-data-table__selection-cell">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                aria-label="Select row"
+                t-att-checked="isSelected(row, row_index)"
+                t-on-change="(event) => this.toggleRow(row, row_index, event.target.checked)"
+              />
+            </td>
+            <td
+              t-foreach="visibleColumns"
+              t-as="column"
+              t-key="column.key"
+              t-att-class="column.align === 'right' ? 'text-end' : column.align === 'center' ? 'text-center' : ''"
+            >
+              <t t-if="column.component">
+                <t t-component="column.component" t-props="cellComponentProps(row, column)"/>
+              </t>
+              <span t-else="" t-att-class="column.format === 'currency' ? 'b-data-table__money' : ''"><t t-esc="cellValue(row, column)"/></span>
+            </td>
+            <td t-if="rowActions.length" class="b-data-table__actions-cell">
+              <div class="b-data-table__actions">
+                <Button variant="'ghost'" size="'icon'" icon="'ellipsis'" aria-label="'Open menu'" onClick="(event) => this.toggleRowActions(row, row_index, event)"/>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </t>
+  <t t-name="nodexui.DataTable">
+    <div t-att-class="classNames" t-att-style="props.style" data-slot="data-table">
+      <div class="b-data-table__toolbar" t-if="hasSearch || hasColumnToggle || hasToolbarActions">
+        <input
+          t-if="hasSearch"
+          type="search"
+          class="form-control b-data-table__search"
+          t-att-placeholder="filterPlaceholder"
+          t-att-value="state.query"
+          t-on-input="onSearchInput"
+        />
+        <div t-if="hasColumnToggle || hasToolbarActions" class="b-data-table__toolbar-end">
+          <t t-if="hasToolbarActions" t-slot="toolbarActions"/>
+          <div t-if="hasColumnToggle" class="b-data-table__columns">
+            <Button variant="'outline'" label="'Columns'" icon="'chevron-down'" iconPosition="'end'" aria-label="'Toggle columns'" onClick="() => this.toggleColumnsMenu()"/>
+            <div t-if="state.columnsOpen" class="b-data-table__columns-menu" role="menu" data-state="open">
+              <label
+                t-foreach="columns.filter((column) => column.hideable !== false)"
+                t-as="column"
+                t-key="column.key"
+                class="b-data-table__columns-item"
+              >
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  t-att-checked="!state.hiddenColumns.includes(column.key)"
+                  t-on-change="() => this.toggleColumn(column.key)"
+                />
+                <span><t t-esc="columnLabel(column)"/></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <t t-call="nodexui.DataTable.Table"/>
+      <t t-call="nodexui.DataTable.Cards"/>
+      <div class="b-data-table__pagination" t-if="hasPagination">
+        <div class="b-data-table__selection-summary">
+          <t t-esc="selectionLabel"/>
+        </div>
+        <div class="b-data-table__pager">
+          <div t-if="pageSizeOptions.length" class="b-data-table__page-size">
+            <span>Rows per page</span>
+            <select class="form-select form-select-sm" t-on-change="(event) => this.setPageSize(event.target.value)">
+              <option t-foreach="pageSizeOptions" t-as="option" t-key="option" t-att-value="optionValue(option)" t-att-selected="option === state.pageSize"><t t-esc="option"/></option>
+            </select>
+          </div>
+          <div class="b-data-table__page-label"><t t-esc="pageLabel"/></div>
+          <Button variant="'outline'" size="'sm'" label="'Previous'" aria-label="'Go to previous page'" disabled="!canPreviousPage" onClick="() => this.setPage(state.page - 1)"/>
+          <Button variant="'outline'" size="'sm'" label="'Next'" aria-label="'Go to next page'" disabled="!canNextPage" onClick="() => this.setPage(state.page + 1)"/>
+        </div>
+      </div>
+      <div t-if="openRowAction" t-portal="'body'" class="b-data-table__actions-menu" role="menu" data-state="open" t-att-style="state.actionMenuStyle" t-ref="actionsMenu">
+        <Button
+          t-foreach="rowActions"
+          t-as="action"
+          t-key="action.label"
+          unstyled="true"
+          className="'b-data-table__actions-item'"
+          attrs="{ role: 'menuitem' }"
+          onClick="() => this.onAction(action, openRowAction.row, openRowAction.index)"
+        >
+          <t t-esc="action.label"/>
+        </Button>
+      </div>
+    </div>
+  </t>
+  <t t-name="DataTable" t-call="nodexui.DataTable"/>
+<t t-name="nodexui.DataTable.Cards">
+    <div class="b-data-table__cards">
+      <div t-if="!pageRows.length" class="b-data-table__empty-card">
+        <t t-esc="emptyLabel"/>
+      </div>
+      <div
+        t-foreach="pageRows"
+        t-as="row"
+        t-key="rowKey(row, row_index)"
+        class="b-data-table__card"
+        t-att-data-state="isSelected(row, row_index) ? 'selected' : undefined"
+      >
+        <div class="b-data-table__card-header" t-if="hasSelection || rowActions.length">
+          <input
+            t-if="hasSelection"
+            type="checkbox"
+            class="form-check-input"
+            aria-label="Select row"
+            t-att-checked="isSelected(row, row_index)"
+            t-on-change="(event) => this.toggleRow(row, row_index, event.target.checked)"
+          />
+          <div t-if="rowActions.length" class="b-data-table__actions">
+            <Button variant="'ghost'" size="'icon'" icon="'ellipsis'" aria-label="'Open menu'" onClick="(event) => this.toggleRowActions(row, row_index, event)"/>
+          </div>
+        </div>
+        <div class="b-data-table__card-field" t-foreach="visibleColumns" t-as="column" t-key="column.key">
+          <span class="b-data-table__card-label"><t t-esc="columnLabel(column)"/></span>
+          <span class="b-data-table__card-value">
+            <t t-if="column.component">
+              <t t-component="column.component" t-props="cellComponentProps(row, column)"/>
+            </t>
+            <span t-else="" t-att-class="column.format === 'currency' ? 'b-data-table__money' : ''"><t t-esc="cellValue(row, column)"/></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </t>
+<t t-name="nodexui.date-picker">
+    <input class="form-control" type="date"/>
+  </t>
+  <t t-name="nodexui.DatePicker">
+    <t t-call="nodexui.Outlined"><t t-call="nodexui.DatePicker.field"/></t>
+  </t>
+  <t t-name="nodexui.DatePicker.field">
+    <input
+      type="date"
+      t-att-class="classNames"
+      t-att-style="props.style"
+      t-att-value="props.value"
+      t-att-disabled="props.disabled"
+      t-att-aria-invalid="isInvalid ? 'true' : undefined"
+      t-att-aria-describedby="describedBy"
+      t-on-input="onInput"
+    />
+  </t>
+  <t t-name="DatePicker" t-call="nodexui.DatePicker"/>
+<t t-name="nodexui.Dialog">
+    <div data-slot="dialog" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="Dialog" t-call="nodexui.Dialog"/>
+
+  <t t-name="nodexui.DialogTrigger">
+    <span class="b-dialog-trigger" data-slot="dialog-trigger" t-att-style="props.style" t-on-click="onClick">
+      <t t-slot="default"/>
+    </span>
+  </t>
+  <t t-name="DialogTrigger" t-call="nodexui.DialogTrigger"/>
+
+  <t t-name="nodexui.DialogContent">
+    <div t-ref="root" class="modal fade b-dialog-backdrop" data-slot="dialog-overlay" tabindex="-1" aria-hidden="true" t-att-style="props.style">
+      <div class="modal-dialog modal-dialog-centered">
+        <div t-att-class="'modal-content b-dialog-panel' + (props.className ? ' ' + props.className : '')" data-slot="dialog-content">
+          <t t-slot="default"/>
+          <Button
+            t-if="showCloseButton"
+            variant="'ghost'"
+            size="'icon-sm'"
+            className="'b-dialog-close b-dialog-close-control'"
+            aria-label="'Close'"
+            icon="'x'"
+            attrs="{'data-slot': 'dialog-close', 'data-bs-dismiss': 'modal'}"
+          >
+            <span class="visually-hidden">Close</span>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </t>
+  <t t-name="DialogContent" t-call="nodexui.DialogContent"/>
+
+  <t t-name="nodexui.DialogHeader">
+    <div t-att-class="'b-dialog-header' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-slot="dialog-header">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DialogHeader" t-call="nodexui.DialogHeader"/>
+
+  <t t-name="nodexui.DialogFooter">
+    <div t-att-class="'b-dialog-footer' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-slot="dialog-footer">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DialogFooter" t-call="nodexui.DialogFooter"/>
+
+  <t t-name="nodexui.DialogTitle">
+    <h2 t-att-class="'b-dialog-title' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-slot="dialog-title">
+      <t t-slot="default"/>
+    </h2>
+  </t>
+  <t t-name="DialogTitle" t-call="nodexui.DialogTitle"/>
+
+  <t t-name="nodexui.DialogDescription">
+    <p t-att-class="'b-dialog-description' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-slot="dialog-description">
+      <t t-slot="default"/>
+    </p>
+  </t>
+  <t t-name="DialogDescription" t-call="nodexui.DialogDescription"/>
+
+  <t t-name="nodexui.DialogClose">
+    <Button
+      variant="'outline'"
+      className="'b-dialog-close' + (props.className ? ' ' + props.className : '')"
+      style="props.style"
+      attrs="{'data-slot': 'dialog-close', 'data-bs-dismiss': 'modal'}"
+    >
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="DialogClose" t-call="nodexui.DialogClose"/>
+<t t-name="nodexui.direction"><div b-ui="direction"><t t-esc="props.content"/></div></t>
+  <t t-name="nodexui.Direction">
+    <div t-att-class="'b-direction' + (props.className ? ' ' + props.className : '')" t-att-dir="dir" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="Direction" t-call="nodexui.Direction"/>
+<t t-name="nodexui.drawer"><div b-ui="drawer"><div b-drawer-panel=""><t t-esc="props.content"/></div></div></t>
+  <t t-name="nodexui.Drawer"><t t-slot="default"/></t>
+  <t t-name="Drawer" t-call="nodexui.Drawer"/>
+  <t t-name="nodexui.DrawerTrigger">
+    <Button variant="'outline'" className="'b-drawer-trigger'" style="props.style" onClick="() => this.onClick()"><t t-slot="default"/></Button>
+  </t>
+  <t t-name="DrawerTrigger" t-call="nodexui.DrawerTrigger"/>
+  <t t-name="nodexui.DrawerContent">
+    <div t-ref="root" class="offcanvas offcanvas-bottom b-drawer-overlay" tabindex="-1" t-att-style="props.style">
+      <div class="b-drawer-panel">
+        <t t-slot="default"/>
+      </div>
+    </div>
+  </t>
+  <t t-name="DrawerContent" t-call="nodexui.DrawerContent"/>
+  <t t-name="nodexui.DrawerHeader"><div class="b-drawer-header" t-att-style="props.style"><t t-slot="default"/></div></t>
+  <t t-name="DrawerHeader" t-call="nodexui.DrawerHeader"/>
+  <t t-name="nodexui.DrawerFooter"><div class="b-drawer-footer" t-att-style="props.style"><t t-slot="default"/></div></t>
+  <t t-name="DrawerFooter" t-call="nodexui.DrawerFooter"/>
+  <t t-name="nodexui.DrawerTitle"><h2 class="b-drawer-title" t-att-style="props.style"><t t-slot="default"/></h2></t>
+  <t t-name="DrawerTitle" t-call="nodexui.DrawerTitle"/>
+  <t t-name="nodexui.DrawerDescription"><p class="b-drawer-description" t-att-style="props.style"><t t-slot="default"/></p></t>
+  <t t-name="DrawerDescription" t-call="nodexui.DrawerDescription"/>
+  <t t-name="nodexui.DrawerClose">
+    <Button variant="'outline'" attrs="attrs" className="'b-drawer-close'" style="props.style"><t t-slot="default"/></Button>
+  </t>
+  <t t-name="DrawerClose" t-call="nodexui.DrawerClose"/>
+<t t-name="nodexui.dropdown-menu">
+    <div b-ui="dropdown-menu">
+      <button b-dropdown-trigger="" type="button"><t t-esc="props.label"/></button>
+      <div b-dropdown-menu=""><t t-slot="default"/></div>
+    </div>
+  </t>
+  <t t-name="nodexui.DropdownMenu">
+    <div data-slot="dropdown-menu" t-att-class="'b-dropdown-menu dropdown' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" t-ref="root">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenu" t-call="nodexui.DropdownMenu"/>
+  <t t-name="nodexui.DropdownMenuTrigger">
+    <Button unstyled="true" getRef="getRef" className="classNames" style="props.style" attrs="attrs" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="DropdownMenuTrigger" t-call="nodexui.DropdownMenuTrigger"/>
+  <t t-name="nodexui.DropdownMenuContent">
+    <div data-slot="dropdown-menu-content" t-att-class="classNames" t-att-style="props.style" role="menu" t-att-data-state="open ? 'open' : 'closed'" data-side="bottom" tabindex="-1">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuContent" t-call="nodexui.DropdownMenuContent"/>
+  <t t-name="nodexui.DropdownMenuGroup">
+    <div data-slot="dropdown-menu-group" role="group" t-att-class="props.className" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuGroup" t-call="nodexui.DropdownMenuGroup"/>
+  <t t-name="nodexui.DropdownMenuLabel">
+    <div data-slot="dropdown-menu-label" t-att-data-inset="props.inset ? '' : undefined" t-att-class="'dropdown-header b-dropdown-menu-label' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuLabel" t-call="nodexui.DropdownMenuLabel"/>
+  <t t-name="nodexui.DropdownMenuItem">
+    <div data-slot="dropdown-menu-item" t-att-data-inset="props.inset ? '' : undefined" t-att-data-variant="variant" t-att-aria-disabled="props.disabled ? 'true' : undefined" t-att-class="'dropdown-item b-dropdown-menu-item' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" role="menuitem" tabindex="0" t-on-click="onClick">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuItem" t-call="nodexui.DropdownMenuItem"/>
+  <t t-name="nodexui.DropdownMenuCheckboxItem">
+    <div data-slot="dropdown-menu-checkbox-item" t-att-data-inset="props.inset ? '' : undefined" t-att-data-checked="props.checked ? '' : undefined" t-att-aria-checked="props.checked ? 'true' : 'false'" t-att-aria-disabled="props.disabled ? 'true' : undefined" t-att-class="'dropdown-item b-dropdown-menu-checkbox-item' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" role="menuitemcheckbox" tabindex="0" t-on-click="onClick">
+      <span data-slot="dropdown-menu-checkbox-item-indicator" class="b-dropdown-menu-item-indicator">
+        <Icon t-if="props.checked" name="'check'"/>
+      </span>
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuCheckboxItem" t-call="nodexui.DropdownMenuCheckboxItem"/>
+  <t t-name="nodexui.DropdownMenuRadioGroup">
+    <div data-slot="dropdown-menu-radio-group" role="group" t-att-class="props.className" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuRadioGroup" t-call="nodexui.DropdownMenuRadioGroup"/>
+  <t t-name="nodexui.DropdownMenuRadioItem">
+    <div data-slot="dropdown-menu-radio-item" t-att-data-inset="props.inset ? '' : undefined" t-att-data-checked="checked ? '' : undefined" t-att-aria-checked="checked ? 'true' : 'false'" t-att-aria-disabled="props.disabled ? 'true' : undefined" t-att-class="'dropdown-item b-dropdown-menu-radio-item' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" role="menuitemradio" tabindex="0" t-on-click="onClick">
+      <span data-slot="dropdown-menu-radio-item-indicator" class="b-dropdown-menu-item-indicator">
+        <Icon t-if="checked" name="'check'"/>
+      </span>
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuRadioItem" t-call="nodexui.DropdownMenuRadioItem"/>
+  <t t-name="nodexui.DropdownMenuSeparator">
+    <div data-slot="dropdown-menu-separator" class="dropdown-divider b-dropdown-menu-separator" t-att-style="props.style" role="separator"/>
+  </t>
+  <t t-name="DropdownMenuSeparator" t-call="nodexui.DropdownMenuSeparator"/>
+  <t t-name="nodexui.DropdownMenuShortcut">
+    <span data-slot="dropdown-menu-shortcut" t-att-class="'b-dropdown-menu-shortcut' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </span>
+  </t>
+  <t t-name="DropdownMenuShortcut" t-call="nodexui.DropdownMenuShortcut"/>
+  <t t-name="nodexui.DropdownMenuSub">
+    <div data-slot="dropdown-menu-sub" class="b-dropdown-menu-sub" t-att-style="props.style" t-ref="root" t-on-mouseleave="env.dropdownSubClose">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuSub" t-call="nodexui.DropdownMenuSub"/>
+  <t t-name="nodexui.DropdownMenuSubTrigger">
+    <div data-slot="dropdown-menu-sub-trigger" t-att-data-inset="props.inset ? '' : undefined" t-att-data-state="env.dropdownSub.open ? 'open' : 'closed'" t-att-aria-expanded="env.dropdownSub.open ? 'true' : 'false'" t-att-aria-disabled="props.disabled ? 'true' : undefined" t-att-class="'b-dropdown-menu-sub-trigger' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" role="menuitem" tabindex="0" aria-haspopup="menu" t-on-mouseenter="onMouseEnter" t-on-focus="onMouseEnter" t-on-click="onClick">
+      <t t-slot="default"/>
+      <Icon name="'chevron-right'" className="'b-dropdown-menu-sub-trigger-icon'"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuSubTrigger" t-call="nodexui.DropdownMenuSubTrigger"/>
+  <t t-name="nodexui.DropdownMenuSubContent">
+    <div t-if="open" data-slot="dropdown-menu-sub-content" t-att-class="'b-dropdown-menu-sub-content' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" role="menu" data-state="open" data-side="right" tabindex="-1">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="DropdownMenuSubContent" t-call="nodexui.DropdownMenuSubContent"/>
+<t t-name="nodexui.empty">
+    <div b-ui="empty"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.Empty">
+    <div t-att-class="classNames" t-att-style="props.style" role="status"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.EmptyHeader">
+    <div t-att-class="'b-empty-header' + (props.className ? ' ' + props.className : '')" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.EmptyMedia">
+    <div t-att-class="classNames" t-att-data-variant="variant" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.EmptyTitle">
+    <div t-att-class="'b-empty-title' + (props.className ? ' ' + props.className : '')" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.EmptyDescription">
+    <div t-att-class="'b-empty-description' + (props.className ? ' ' + props.className : '')" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.EmptyContent">
+    <div t-att-class="'b-empty-content' + (props.className ? ' ' + props.className : '')" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="Empty" t-call="nodexui.Empty"/>
+  <t t-name="EmptyHeader" t-call="nodexui.EmptyHeader"/>
+  <t t-name="EmptyMedia" t-call="nodexui.EmptyMedia"/>
+  <t t-name="EmptyTitle" t-call="nodexui.EmptyTitle"/>
+  <t t-name="EmptyDescription" t-call="nodexui.EmptyDescription"/>
+  <t t-name="EmptyContent" t-call="nodexui.EmptyContent"/>
+<t t-name="nodexui.field">
+    <div b-ui="field" class="b-field" role="group"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.FieldSet">
+    <fieldset t-att-class="classNames" t-att-style="props.style" data-slot="field-set">
+      <t t-slot="default"/>
+    </fieldset>
+  </t>
+  <t t-name="FieldSet" t-call="nodexui.FieldSet"/>
+
+  <t t-name="nodexui.FieldLegend">
+    <legend t-att-class="classNames" t-att-style="props.style" data-slot="field-legend" t-att-data-variant="variant">
+      <t t-slot="default"/>
+    </legend>
+  </t>
+  <t t-name="FieldLegend" t-call="nodexui.FieldLegend"/>
+
+  <t t-name="nodexui.FieldGroup">
+    <div t-att-class="classNames" t-att-style="props.style" data-slot="field-group">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="FieldGroup" t-call="nodexui.FieldGroup"/>
+
+  <t t-name="nodexui.Field">
+    <div
+      role="group"
+      data-slot="field"
+      t-att-data-orientation="orientation"
+      t-att-data-invalid="props.invalid ? 'true' : undefined"
+      t-att-class="classNames"
+      t-att-style="props.style"
+    >
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="Field" t-call="nodexui.Field"/>
+
+  <t t-name="nodexui.FieldContent">
+    <div t-att-class="classNames" t-att-style="props.style" data-slot="field-content">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="FieldContent" t-call="nodexui.FieldContent"/>
+
+  <t t-name="nodexui.FieldLabel">
+    <label t-att-class="classNames" t-att-style="props.style" t-att-for="props.for" data-slot="field-label">
+      <t t-slot="default"/>
+    </label>
+  </t>
+  <t t-name="FieldLabel" t-call="nodexui.FieldLabel"/>
+
+  <t t-name="nodexui.FieldTitle">
+    <div t-att-class="classNames" t-att-style="props.style" data-slot="field-label">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="FieldTitle" t-call="nodexui.FieldTitle"/>
+
+  <t t-name="nodexui.FieldDescription">
+    <p t-att-class="classNames" t-att-style="props.style" data-slot="field-description">
+      <t t-slot="default"/>
+    </p>
+  </t>
+  <t t-name="FieldDescription" t-call="nodexui.FieldDescription"/>
+
+  <t t-name="nodexui.FieldSeparator">
+    <div t-att-class="classNames" t-att-style="props.style" data-slot="field-separator" t-att-data-content="hasContent ? 'true' : 'false'">
+      <span class="b-field-separator-line" aria-hidden="true"></span>
+      <span t-if="hasContent" class="b-field-separator-content" data-slot="field-separator-content">
+        <t t-slot="default"/>
+      </span>
+    </div>
+  </t>
+  <t t-name="FieldSeparator" t-call="nodexui.FieldSeparator"/>
+
+  <t t-name="nodexui.FieldError">
+    <div role="alert" t-att-class="classNames" t-att-style="props.style" data-slot="field-error">
+      <t t-if="props.message" t-esc="props.message"/>
+      <t t-else="" t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="FieldError" t-call="nodexui.FieldError"/>
+<t t-name="nodexui.Form">
+    <form t-att-class="classNames" t-att-style="props.style" data-slot="form" novalidate="novalidate" t-on-submit="submit">
+      <div class="b-form-header">
+        <h3 class="b-form-title">Bug Report</h3>
+        <p class="b-form-description">Help us improve by reporting bugs you encounter.</p>
+      </div>
+
+      <FieldGroup className="'b-form-fields'">
+        <Field invalid="titleInvalid">
+          <FieldLabel for="'b-form-title'">Bug Title</FieldLabel>
+          <input
+            id="b-form-title"
+            name="title"
+            class="form-control b-form-control"
+            type="text"
+            t-att-placeholder="titlePlaceholder"
+            t-model="state.title"
+            autocomplete="off"
+            t-att-aria-invalid="titleInvalid ? 'true' : undefined"
+          />
+          <FieldError t-if="titleInvalid" message="errors.title"/>
+        </Field>
+
+        <Field invalid="descriptionInvalid">
+          <FieldLabel for="'b-form-description'">Description</FieldLabel>
+          <div class="b-form-input-group" data-slot="input-group" role="group">
+            <textarea
+              id="b-form-description"
+              name="description"
+              class="form-control b-form-textarea"
+              rows="6"
+              t-att-placeholder="descriptionPlaceholder"
+              t-att-maxlength="maxDescriptionLength"
+              t-model="state.description"
+              t-att-aria-invalid="descriptionInvalid ? 'true' : undefined"
+            ></textarea>
+            <div class="b-form-counter" data-slot="input-group-addon" data-align="block-end">
+              <span class="b-form-counter-text">
+                <t t-esc="descriptionLength"/>/<t t-esc="maxDescriptionLength"/> characters
+              </span>
+            </div>
+          </div>
+          <FieldDescription>Include steps to reproduce, expected behavior, and what actually happened.</FieldDescription>
+          <FieldError t-if="descriptionInvalid" message="errors.description"/>
+        </Field>
+      </FieldGroup>
+
+      <Field orientation="'horizontal'" className="'b-form-actions'">
+        <Button type="'button'" variant="'outline'" onClick="() => this.reset()">Reset</Button>
+        <Button type="'submit'">Submit</Button>
+      </Field>
+    </form>
+  </t>
+  <t t-name="Form" t-call="nodexui.Form"/>
+<t t-name="nodexui.hover-card"><span b-ui="hover-card"><t t-esc="props.content"/></span></t>
+  <t t-name="nodexui.HoverCard">
+    <span
+      t-att-class="'b-hover-card' + (props.className ? ' ' + props.className : '')"
+      t-att-style="props.style"
+      t-on-mouseenter="() => this.open()"
+      t-on-mouseleave="() => this.close()"
+      t-on-focusin="() => this.open()"
+      t-on-focusout="() => this.close()"
+      t-on-keydown="onKeyDown"
+    >
+      <t t-slot="default"/>
+    </span>
+  </t>
+  <t t-name="HoverCard" t-call="nodexui.HoverCard"/>
+  <t t-name="nodexui.HoverCardTrigger">
+    <span class="b-hover-card-trigger" t-att-style="props.style" aria-haspopup="dialog"><t t-slot="default"/></span>
+  </t>
+  <t t-name="HoverCardTrigger" t-call="nodexui.HoverCardTrigger"/>
+  <t t-name="nodexui.HoverCardContent">
+    <span t-if="open" t-att-class="'b-hover-card-content' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" role="dialog"><t t-slot="default"/></span>
+  </t>
+  <t t-name="HoverCardContent" t-call="nodexui.HoverCardContent"/>
+<t t-name="nodexui.Icon">
+    <span
+      t-att-b-icon="name"
+      t-att-class="classNames"
+      t-att-style="style"
+      t-att-title="props.title"
+      t-att-role="props.label ? 'img' : undefined"
+      t-att-aria-label="props.label || undefined"
+      t-att-aria-hidden="props.label ? undefined : 'true'"
+    ></span>
+  </t>
+  <t t-name="Icon" t-call="nodexui.Icon"/>
+<t t-name="nodexui.Outlined.label">
+    <div t-if="label" class="b-input-label">
+      <span class="b-input-label-text" t-esc="label"/>
+      <Tooltip t-if="tipText" content="tipText" className="'b-input-tip'"><t t-set-slot="trigger"><IconCircleQuestionMark/></t></Tooltip>
+    </div>
+  </t>
+  <t t-name="nodexui.Outlined">
+    <div t-if="isOutlined" t-att-class="outlinedClassNames" t-att-style="labelStyle">
+      <div class="b-input-box" t-ref="box">
+        <Icon t-if="leadingIcon" name="leadingIcon" className="'b-input-icon b-input-leading'"/>
+        <t t-out="0"/>
+        <t t-call="nodexui.Outlined.label"/>
+        <Icon t-if="trailingIcon" name="trailingIcon" className="'b-input-icon b-input-trailing'"/>
+        <div t-if="hasStart" class="b-input-slot b-input-slot-start" t-ref="start"><t t-slot="start"/></div>
+        <div t-if="hasEnd" class="b-input-slot b-input-slot-end" t-ref="end"><t t-slot="end"/></div>
+        <div t-if="hasFooter" class="b-input-slot b-input-slot-footer" t-ref="footer"><t t-slot="footer"/></div>
+      </div>
+      <div t-if="supportingText or props.maxLength" class="b-input-support">
+        <span t-att-id="supportId" t-esc="supportingText"/>
+        <span t-if="props.maxLength" class="b-input-counter" t-esc="counter"/>
+      </div>
+    </div>
+    <t t-else="" t-out="0"/>
+  </t>
+  <t t-name="nodexui.Input">
+    <t t-call="nodexui.Outlined"><t t-call="nodexui.Input.field"/></t>
+  </t>
+  <t t-name="nodexui.Input.field">
+    <input
+      t-att-class="classNames"
+      t-att-style="props.style"
+      t-att-type="props.type || 'text'"
+      t-att-placeholder="fieldPlaceholder"
+      t-att-value="props.value"
+      t-att-disabled="props.disabled"
+      t-att-readonly="props.readonly"
+      t-att-id="props.id"
+      t-att-list="props.list"
+      t-att-autocomplete="props.autocomplete"
+      t-att-maxlength="props.maxLength"
+      t-att-aria-label="ariaLabel"
+      t-att-aria-invalid="isInvalid ? 'true' : undefined"
+      t-att-aria-describedby="describedBy"
+      t-att-min="props.min"
+      t-att-max="props.max"
+      t-att-step="props.step"
+      t-on-input="onInput"
+      t-on-change="onChange"
+    />
+  </t>
+  <t t-name="Input" t-call="nodexui.Input"/>
+<t t-name="nodexui.input-otp">
+    <div class="b-input-otp"/>
+  </t>
+  <t t-name="nodexui.InputOtp">
+    <div t-att-class="classNames" t-att-style="props.style" t-ref="root" t-on-paste="onPaste">
+      <input
+        t-foreach="boxes"
+        t-as="box"
+        t-key="box.index"
+        class="form-control"
+        inputmode="numeric"
+        maxlength="1"
+        t-att-value="box.value"
+        t-att-disabled="props.disabled"
+        t-on-input="(ev) => this.onInput(box.index, ev)"
+      />
+    </div>
+  </t>
+  <t t-name="InputOtp" t-call="nodexui.InputOtp"/>
+<t t-name="nodexui.item"><div b-ui="item"><t t-esc="props.content"/></div></t>
+  <t t-name="nodexui.Item">
+    <div t-att-class="classNames" t-att-data-variant="variant" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="Item" t-call="nodexui.Item"/>
+<t t-name="nodexui.kbd"><kbd b-ui="kbd"><t t-esc="props.content"/></kbd></t>
+  <t t-name="nodexui.Kbd"><kbd t-att-class="classNames" t-att-style="props.style"><t t-slot="default"/></kbd></t>
+  <t t-name="Kbd" t-call="nodexui.Kbd"/>
+<t t-name="nodexui.label">
+    <label b-ui="label"><t t-slot="default"/></label>
+  </t>
+  <t t-name="nodexui.Label">
+    <label t-att-class="classNames" t-att-for="props.for" t-att-data-state="state" t-att-style="props.style">
+      <t t-slot="default"/>
+    </label>
+  </t>
+  <t t-name="Label" t-call="nodexui.Label"/>
+<t t-name="nodexui.marker"><span b-ui="marker"><t t-esc="props.content"/></span></t>
+  <t t-name="nodexui.Marker"><span t-att-class="classNames" t-att-data-variant="variant" t-att-style="props.style"><t t-slot="default"/></span></t>
+  <t t-name="Marker" t-call="nodexui.Marker"/>
+<t t-name="nodexui.markdown">
+    <div class="b-markdown"/>
+  </t>
+  <t t-name="nodexui.Markdown">
+    <div t-ref="root" t-att-class="classNames" t-att-style="props.style" data-slot="markdown" t-att-data-status="state.status">
+      <div t-if="state.status === 'loading'" class="b-markdown-loading" role="status">Loading…</div>
+      <div t-elif="state.status === 'error'" class="b-markdown-error" role="alert">
+        <t t-esc="state.error"/>
+      </div>
+      <div
+        t-elif="props.editable"
+        t-ref="editor"
+        class="b-markdown-editor"
+        data-slot="markdown-editor"
+        role="group"
+        t-att-aria-label="editorLabel"
+      />
+      <t t-else="">
+        <div t-if="hasFrontmatterMeta" class="b-markdown-meta">
+          <div t-if="state.frontmatter.authors and state.frontmatter.authors.length" class="b-markdown-meta-authors">
+            By <t t-esc="state.frontmatter.authors.join(', ')"/>
+          </div>
+          <div t-if="state.frontmatter.tags and state.frontmatter.tags.length" class="b-markdown-meta-tags">
+            <Badge t-foreach="state.frontmatter.tags" t-as="tag" t-key="tag" variant="'secondary'" pill="true"><t t-esc="tag"/></Badge>
+          </div>
+        </div>
+        <div t-out="state.html"/>
+      </t>
+    </div>
+  </t>
+  <t t-name="Markdown" t-call="nodexui.Markdown"/>
+
+  <t t-name="nodexui.MarkdownTree">
+    <div t-att-class="'b-markdown-tree' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-slot="markdown-tree">
+      <div t-if="state.status === 'loading'" class="b-markdown-tree-loading" role="status">Loading…</div>
+      <div t-elif="state.status === 'error'" class="b-markdown-tree-error" role="alert">
+        <t t-esc="state.error"/>
+      </div>
+      <SidebarGroup t-else="">
+        <SidebarMenu>
+          <t t-foreach="state.tree.children || []" t-as="child" t-key="child.path || child.name">
+            <MarkdownTreeNode node="child" activePath="props.activePath" onSelect="props.onSelect"/>
+          </t>
+        </SidebarMenu>
+      </SidebarGroup>
+    </div>
+  </t>
+  <t t-name="MarkdownTree" t-call="nodexui.MarkdownTree"/>
+
+  <t t-name="nodexui.MarkdownTreeNode">
+    <t t-if="props.node.type === 'file'">
+      <t t-if="props.nested">
+        <DropdownMenuItem onClick="() => this.select(props.node.path)">
+          <t t-esc="label"/>
+        </DropdownMenuItem>
+      </t>
+      <t t-else="">
+        <SidebarMenuItem>
+          <SidebarMenuButton icon="'file-text'" active="props.activePath === props.node.path" onClick="() => this.select(props.node.path)">
+            <t t-esc="label"/>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </t>
+    </t>
+    <t t-elif="hasSubfolders">
+      <t t-if="props.nested">
+        <DropdownMenuSub>
+          <DropdownMenuSubTrigger><t t-esc="label"/></DropdownMenuSubTrigger>
+          <DropdownMenuSubContent>
+            <t t-foreach="props.node.children" t-as="child" t-key="child.path || child.name">
+              <MarkdownTreeNode node="child" activePath="props.activePath" onSelect="props.onSelect" nested="true"/>
+            </t>
+          </DropdownMenuSubContent>
+        </DropdownMenuSub>
+      </t>
+      <t t-else="">
+        <SidebarMenuItem>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="'b-sidebar-menu-button b-markdown-tree-folder-trigger'"><Icon name="'folder'" className="'b-sidebar-menu-icon'"/><span class="b-sidebar-menu-label"><t t-esc="label"/></span><Icon name="'chevron-right'" className="'b-markdown-tree-folder-trigger-icon'"/></DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <t t-foreach="props.node.children" t-as="child" t-key="child.path || child.name">
+                <MarkdownTreeNode node="child" activePath="props.activePath" onSelect="props.onSelect" nested="true"/>
+              </t>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </SidebarMenuItem>
+      </t>
+    </t>
+    <t t-else="">
+      <t t-if="props.nested">
+        <DropdownMenuSub>
+          <DropdownMenuSubTrigger><t t-esc="label"/></DropdownMenuSubTrigger>
+          <DropdownMenuSubContent>
+            <t t-foreach="props.node.children" t-as="child" t-key="child.path || child.name">
+              <MarkdownTreeNode node="child" activePath="props.activePath" onSelect="props.onSelect" nested="true"/>
+            </t>
+          </DropdownMenuSubContent>
+        </DropdownMenuSub>
+      </t>
+      <t t-else="">
+        <div class="b-markdown-tree-group">
+          <SidebarGroupLabel><t t-esc="label"/></SidebarGroupLabel>
+          <SidebarMenu>
+            <t t-foreach="props.node.children" t-as="child" t-key="child.path || child.name">
+              <MarkdownTreeNode node="child" activePath="props.activePath" onSelect="props.onSelect"/>
+            </t>
+          </SidebarMenu>
+        </div>
+      </t>
+    </t>
+  </t>
+  <t t-name="MarkdownTreeNode" t-call="nodexui.MarkdownTreeNode"/>
+<t t-name="nodexui.message">
+    <article class="b-message"/>
+  </t>
+  <t t-name="nodexui.Message">
+    <article t-att-class="classNames" t-att-data-side="side" role="listitem" t-att-style="props.style">
+      <t t-slot="default"/>
+    </article>
+  </t>
+  <t t-name="Message" t-call="nodexui.Message"/>
+<t t-name="nodexui.message-scroller">
+    <div class="b-message-scroller"/>
+  </t>
+  <t t-name="nodexui.MessageScroller">
+    <div t-att-class="'b-message-scroller' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" t-ref="root">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="MessageScroller" t-call="nodexui.MessageScroller"/>
+<t t-name="nodexui.menubar"><nav b-ui="menubar"><t t-esc="props.content"/></nav></t>
+  <t t-name="nodexui.Menubar"><nav t-att-class="classNames" role="menubar" t-att-style="props.style"><t t-slot="default"/></nav></t>
+  <t t-name="Menubar" t-call="nodexui.Menubar"/>
+<t t-name="nodexui.native-select">
+    <select b-ui="native-select"><t t-slot="default"/></select>
+  </t>
+  <t t-name="nodexui.NativeSelect">
+    <t t-call="nodexui.Outlined"><t t-call="nodexui.NativeSelect.field"/></t>
+  </t>
+  <t t-name="nodexui.NativeSelect.field">
+    <select t-att-class="classNames" t-att-disabled="props.disabled" t-att-value="props.value"
+            t-att-aria-label="ariaLabel" t-att-id="props.id" t-att-style="props.style"
+            t-att-aria-invalid="isInvalid ? 'true' : undefined" t-att-aria-describedby="describedBy"
+            t-on-change="onChange">
+      <t t-slot="default"/>
+    </select>
+  </t>
+  <t t-name="NativeSelect" t-call="nodexui.NativeSelect"/>
+<t t-name="nodexui.navigation-menu">
+    <nav b-ui="navigation-menu"><t t-slot="default"/></nav>
+  </t>
+  <t t-name="nodexui.NavigationMenu">
+    <nav
+      t-att-class="'nav b-navigation-menu' + (props.className ? ' ' + props.className : '')"
+      role="menubar"
+      t-ref="root"
+      t-att-style="props.style"
+      t-on-keydown="onKeyDown"
+    >
+      <t t-slot="default"/>
+    </nav>
+  </t>
+  <t t-name="NavigationMenu" t-call="nodexui.NavigationMenu"/>
+  <t t-name="nodexui.NavigationMenuItem">
+    <a t-att-href="props.href || '#'" role="menuitem" t-att-class="'nav-link' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </a>
+  </t>
+  <t t-name="NavigationMenuItem" t-call="nodexui.NavigationMenuItem"/>
+<t t-name="nodexui.pagination">
+    <nav b-ui="pagination" aria-label="Pagination"><ul><t t-slot="default"/></ul></nav>
+  </t>
+  <t t-name="nodexui.Pagination">
+    <nav t-att-class="classNames" aria-label="Pagination" t-att-style="props.style"><ul class="pagination"><t t-slot="default"/></ul></nav>
+  </t>
+  <t t-name="Pagination" t-call="nodexui.Pagination"/>
+  <t t-name="nodexui.PaginationItem">
+    <li t-att-class="classNames" t-att-style="props.style">
+      <a href="#" class="page-link" t-att-aria-current="props.current ? 'page' : undefined" t-on-click.prevent="onClick">
+        <t t-slot="default"/>
+      </a>
+    </li>
+  </t>
+  <t t-name="PaginationItem" t-call="nodexui.PaginationItem"/>
+<t t-name="nodexui.popover">
+    <span b-ui="popover">
+      <button b-popover-trigger="" type="button"><t t-esc="props.label"/></button>
+      <span b-popover-content=""><t t-slot="default"/></span>
+    </span>
+  </t>
+  <t t-name="nodexui.Popover">
+    <span t-att-class="'b-popover' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </span>
+  </t>
+  <t t-name="Popover" t-call="nodexui.Popover"/>
+  <t t-name="nodexui.PopoverTrigger">
+    <Button unstyled="true" getRef="getRef" className="'btn b-button btn-outline-secondary b-popover-trigger'" attrs="attrs" style="props.style" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="PopoverTrigger" t-call="nodexui.PopoverTrigger"/>
+  <!-- Rendered but never shown: Owl keeps this reactive so PopoverTrigger
+       can read its innerHTML as the bootstrap.Popover content string (see
+       popover.component.js). Bootstrap renders the actual visible popup
+       itself, appended to document.body. -->
+  <t t-name="nodexui.PopoverContent">
+    <span t-ref="buffer" class="b-popover-content" t-att-style="style" aria-hidden="true">
+      <t t-if="props.content" t-esc="props.content"/>
+      <t t-else="" t-slot="default"/>
+    </span>
+  </t>
+  <t t-name="PopoverContent" t-call="nodexui.PopoverContent"/>
+<t t-name="nodexui.progress"><div b-ui="progress"></div></t>
+  <t t-name="nodexui.Progress">
+    <div
+      t-att-class="classNames"
+      role="progressbar"
+      aria-valuemin="0"
+      t-att-aria-valuemax="max"
+      t-att-aria-valuenow="value"
+      t-att-style="style"
+    >
+      <span class="progress-bar b-progress-indicator"></span>
+    </div>
+  </t>
+  <t t-name="Progress" t-call="nodexui.Progress"/>
+<t t-name="nodexui.pwa">
+    <div b-ui="pwa" hidden="hidden">
+      <div b-pwa-panel="">
+        <t t-slot="default"/>
+      </div>
+    </div>
+  </t>
+  <t t-name="nodexui.Pwa"><t t-slot="default"/></t>
+  <t t-name="Pwa" t-call="nodexui.Pwa"/>
+  <t t-name="nodexui.PwaTrigger">
+    <Button variant="'default'" className="'b-pwa-trigger'" style="props.style" onClick="() => this.onClick()"><t t-slot="default"/></Button>
+  </t>
+  <t t-name="PwaTrigger" t-call="nodexui.PwaTrigger"/>
+  <t t-name="nodexui.PwaContent">
+    <div
+      t-if="open"
+      class="b-pwa-overlay"
+      t-ref="root"
+      t-att-style="props.style"
+      t-on-keydown="onKeyDown"
+      t-on-click="onBackdropClick"
+    >
+      <div class="b-pwa-panel" role="dialog" aria-modal="true">
+        <t t-slot="default"/>
+      </div>
+    </div>
+  </t>
+  <t t-name="PwaContent" t-call="nodexui.PwaContent"/>
+  <t t-name="nodexui.PwaHeader"><div class="b-pwa-header" t-att-style="props.style"><t t-slot="default"/></div></t>
+  <t t-name="PwaHeader" t-call="nodexui.PwaHeader"/>
+  <t t-name="nodexui.PwaTitle"><h2 class="b-pwa-title" t-att-style="props.style"><t t-slot="default"/></h2></t>
+  <t t-name="PwaTitle" t-call="nodexui.PwaTitle"/>
+  <t t-name="nodexui.PwaDescription"><p class="b-pwa-description" t-att-style="props.style"><t t-slot="default"/></p></t>
+  <t t-name="PwaDescription" t-call="nodexui.PwaDescription"/>
+  <t t-name="nodexui.PwaBody"><div class="b-pwa-body" t-att-style="props.style"><t t-slot="default"/></div></t>
+  <t t-name="PwaBody" t-call="nodexui.PwaBody"/>
+  <t t-name="nodexui.PwaSteps">
+    <ol class="b-pwa-steps" t-att-style="props.style">
+      <t t-foreach="steps" t-as="step" t-key="step_index">
+        <li>
+          <span class="b-pwa-step-index" t-esc="step_index + 1"/>
+          <span t-esc="step"/>
+        </li>
+      </t>
+    </ol>
+  </t>
+  <t t-name="PwaSteps" t-call="nodexui.PwaSteps"/>
+  <t t-name="nodexui.PwaFooter"><div class="b-pwa-footer" t-att-style="props.style"><t t-slot="default"/></div></t>
+  <t t-name="PwaFooter" t-call="nodexui.PwaFooter"/>
+  <t t-name="nodexui.PwaClose">
+    <Button variant="'outline'" className="'b-pwa-close'" style="props.style" onClick="() => this.onClick()"><t t-slot="default"/></Button>
+  </t>
+  <t t-name="PwaClose" t-call="nodexui.PwaClose"/>
+<t t-name="nodexui.qr-card">
+    <div class="card b-card b-qr-card"><t t-out="props.content"/></div>
+  </t>
+  <t t-name="nodexui.QRCard">
+    <Card className="'b-qr-card' + (props.className ? ' ' + props.className : '')" style="props.style">
+      <CardBody className="'b-qr-card-body'">
+        <div class="b-qr-card-frame">
+          <svg t-if="size" class="b-qr-card-code" t-att-viewBox="'0 0 ' + size + ' ' + size" role="img" t-att-aria-label="props.label || props.title || 'QR code'" shape-rendering="crispEdges">
+            <rect t-att-width="size" t-att-height="size" fill="#fff"/>
+            <path t-att-d="path" fill="#000"/>
+          </svg>
+        </div>
+      </CardBody>
+      <CardHeader t-if="props.title or props.description" className="'b-qr-card-header'">
+        <CardTitle t-if="props.title"><t t-out="props.title"/></CardTitle>
+        <CardDescription t-if="props.description"><t t-out="props.description"/></CardDescription>
+      </CardHeader>
+      <t t-slot="default"/>
+    </Card>
+  </t>
+  <t t-name="QRCard" t-call="nodexui.QRCard"/>
+<t t-name="nodexui.questionnaire">
+    <form class="b-questionnaire"/>
+  </t>
+  <t t-name="nodexui.Questionnaire">
+    <form t-att-class="'b-questionnaire' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" t-on-submit.prevent="">
+      <t t-slot="default"/>
+    </form>
+  </t>
+  <t t-name="Questionnaire" t-call="nodexui.Questionnaire"/>
+  <t t-name="nodexui.QuestionnaireStep">
+    <div t-if="active" class="b-questionnaire-step" t-att-style="props.style"><t t-slot="default"/></div>
+  </t>
+  <t t-name="QuestionnaireStep" t-call="nodexui.QuestionnaireStep"/>
+  <t t-name="nodexui.QuestionnairePrevious">
+    <Button unstyled="true" className="'b-questionnaire-prev'" style="props.style" disabled="disabled" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="QuestionnairePrevious" t-call="nodexui.QuestionnairePrevious"/>
+  <t t-name="nodexui.QuestionnaireNext">
+    <Button unstyled="true" className="'b-questionnaire-next'" style="props.style" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="QuestionnaireNext" t-call="nodexui.QuestionnaireNext"/>
+<t t-name="nodexui.radio-group">
+    <label b-ui="radio-group"><input type="radio"/><t t-slot="default"/></label>
+  </t>
+  <t t-name="nodexui.RadioGroup">
+    <div t-att-class="classNames" t-att-style="props.style" role="radiogroup"><t t-slot="default"/></div>
+  </t>
+  <t t-name="RadioGroup" t-call="nodexui.RadioGroup"/>
+  <t t-name="nodexui.RadioGroupItem">
+    <label t-att-class="'form-check b-check ' + (props.className || '')" t-att-style="props.style">
+      <input
+        type="radio"
+        class="form-check-input"
+        t-att-name="env.radioGroupName()"
+        t-att-checked="checked"
+        t-att-disabled="disabled"
+        t-on-change="onChange"
+      />
+      <t t-slot="default"/>
+    </label>
+  </t>
+  <t t-name="RadioGroupItem" t-call="nodexui.RadioGroupItem"/>
+<t t-name="nodexui.resizable">
+    <div class="b-resizable"/>
+  </t>
+  <t t-name="nodexui.Resizable">
+    <div t-att-class="'b-resizable' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <div class="b-resizable-panel" t-ref="panel" t-att-style="panelStyle">
+        <t t-slot="default"/>
+      </div>
+      <div class="b-resizable-handle" t-on-pointerdown="onPointerDown"></div>
+    </div>
+  </t>
+  <t t-name="Resizable" t-call="nodexui.Resizable"/>
+<t t-name="nodexui.scroll-area">
+    <div class="b-scroll-area"/>
+  </t>
+  <t t-name="nodexui.ScrollArea">
+    <div t-att-class="classNames" t-att-style="props.style" role="region" tabindex="0"><t t-slot="default"/></div>
+  </t>
+  <t t-name="ScrollArea" t-call="nodexui.ScrollArea"/>
+<t t-name="nodexui.separator">
+    <hr b-ui="separator"/>
+  </t>
+  <t t-name="nodexui.Separator">
+    <hr t-att-class="classNames" t-att-style="props.style" role="separator" t-att-aria-orientation="vertical ? 'vertical' : 'horizontal'"/>
+  </t>
+  <t t-name="Separator" t-call="nodexui.Separator"/>
+<t t-name="nodexui.select"><div b-ui="select"><t t-esc="props.content"/></div></t>
+  <t t-name="nodexui.Select">
+    <div t-att-class="classNames" t-att-style="rootStyle" t-ref="root">
+      <t t-slot="default"/>
+      <t t-if="isOutlined" t-call="nodexui.Outlined.label"/>
+      <div t-if="isOutlined and supportingText" class="b-input-support">
+        <span t-att-id="supportId" t-esc="supportingText"/>
+      </div>
+    </div>
+  </t>
+  <t t-name="Select" t-call="nodexui.Select"/>
+  <t t-name="nodexui.SelectTrigger">
+    <Button
+      unstyled="true"
+      className="'b-select-trigger'"
+      attrs="attrs"
+      style="props.style"
+      onClick="() => this.onClick()"
+    >
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="SelectTrigger" t-call="nodexui.SelectTrigger"/>
+  <t t-name="nodexui.SelectContent">
+    <div t-if="open" class="b-select-content" t-att-style="props.style" role="listbox">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="SelectContent" t-call="nodexui.SelectContent"/>
+  <t t-name="nodexui.SelectItem">
+    <div
+      class="b-select-item"
+      role="option"
+      t-att-aria-selected="selected ? 'true' : 'false'"
+      t-att-style="props.style"
+      t-on-click="onClick"
+    >
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="SelectItem" t-call="nodexui.SelectItem"/>
+<t t-name="nodexui.shell">
+    <div b-ui="shell"><t t-slot="default"/></div>
+  </t>
+
+  <t t-name="nodexui.Shell">
+    <div t-att-class="'b-shell' + (props.className ? ' ' + props.className : '')"
+         t-att-style="props.style"
+         t-att-b-att-collapsed="state.collapsed ? 'true' : 'false'">
+      <Sidebar open="props.open" defaultOpen="props.defaultOpen" onOpenChange="props.onOpenChange">
+        <t t-slot="default"/>
+      </Sidebar>
+
+      <t t-if="props.toast">
+        <Toast open="!!props.toast" variant="props.toast.variant or 'info'"
+               delay="props.toast.persistent ? 0 : (props.toast.delay or 4000)"
+               className="'b-shell-toast' + (props.toast.className ? ' ' + props.toast.className : '')"
+               onOpenChange="(open) => !open and this.dismissToast()">
+          <div t-esc="props.toast.message"/>
+          <t t-if="props.toast.actionLabel">
+            <t t-set-slot="action">
+              <Button variant="'outline'" size="'sm'"
+                      label="props.toast.actionLabel" onClick="() => this.runToastAction()"/>
+            </t>
+          </t>
+        </Toast>
+      </t>
+
+      <t t-if="props.notificationPage">
+        <t t-component="props.notificationPage"/>
+      </t>
+
+      <t t-if="props.pwa">
+        <t t-component="props.pwa"/>
+      </t>
+    </div>
+  </t>
+  <t t-name="Shell" t-call="nodexui.Shell"/>
+
+  <t t-name="nodexui.ShellSidebar">
+    <SidebarContent className="props.className" style="props.style">
+      <t t-slot="default"/>
+    </SidebarContent>
+  </t>
+  <t t-name="ShellSidebar" t-call="nodexui.ShellSidebar"/>
+
+  <t t-name="nodexui.ShellSidebarHeader">
+    <div t-att-class="'b-shell-sidebar-header' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="ShellSidebarHeader" t-call="nodexui.ShellSidebarHeader"/>
+
+  <t t-name="nodexui.ShellNav">
+    <nav t-att-class="'b-shell-nav' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </nav>
+  </t>
+  <t t-name="ShellNav" t-call="nodexui.ShellNav"/>
+
+  <t t-name="nodexui.ShellMain">
+    <div t-att-class="'b-shell-main' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="ShellMain" t-call="nodexui.ShellMain"/>
+
+  <t t-name="nodexui.ShellHeader">
+    <header t-att-class="'b-shell-header' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </header>
+  </t>
+  <t t-name="ShellHeader" t-call="nodexui.ShellHeader"/>
+
+  <t t-name="nodexui.ShellContent">
+    <main t-att-class="'b-shell-content' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-if="props.loading">
+        <div class="b-shell-content-skeleton" aria-busy="true" aria-live="polite">
+          <Skeleton className="'b-shell-content-skeleton-bar b-shell-content-skeleton-title'"/>
+          <Skeleton className="'b-shell-content-skeleton-bar'"/>
+          <Skeleton className="'b-shell-content-skeleton-bar'"/>
+          <Skeleton className="'b-shell-content-skeleton-bar b-shell-content-skeleton-short'"/>
+        </div>
+      </t>
+      <t t-else="">
+        <t t-slot="default"/>
+      </t>
+    </main>
+  </t>
+  <t t-name="ShellContent" t-call="nodexui.ShellContent"/>
+
+  <t t-name="nodexui.ShellUserMenu">
+    <div t-if="authState" t-att-class="'b-shell-user' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default">
+        <span class="b-shell-user-name" t-esc="authState.username"/>
+        <Button variant="'outline'" size="'sm'" label="'Logout'" onClick="() => this.logout()"/>
+      </t>
+    </div>
+  </t>
+  <t t-name="ShellUserMenu" t-call="nodexui.ShellUserMenu"/>
+<t t-name="nodexui.skeleton">
+    <span b-ui="skeleton"></span>
+  </t>
+  <t t-name="nodexui.Skeleton">
+    <span t-att-class="classNames" t-att-style="props.style" aria-hidden="true"></span>
+  </t>
+  <t t-name="Skeleton" t-call="nodexui.Skeleton"/>
+<t t-name="nodexui.sheet">
+    <div b-ui="sheet">
+      <aside b-sheet-panel="">
+        <t t-slot="default"/>
+      </aside>
+    </div>
+  </t>
+  <t t-name="nodexui.Sheet"><t t-slot="default"/></t>
+  <t t-name="Sheet" t-call="nodexui.Sheet"/>
+  <t t-name="nodexui.SheetTrigger">
+    <Button variant="'outline'" className="'b-sheet-trigger'" style="props.style" onClick="() => this.onClick()"><t t-slot="default"/></Button>
+  </t>
+  <t t-name="SheetTrigger" t-call="nodexui.SheetTrigger"/>
+  <t t-name="nodexui.SheetContent">
+    <div t-ref="root" t-att-class="'offcanvas ' + placementClass + ' b-sheet-overlay'" t-att-style="props.style" tabindex="-1">
+      <aside class="b-sheet-panel">
+        <t t-slot="default"/>
+      </aside>
+    </div>
+  </t>
+  <t t-name="SheetContent" t-call="nodexui.SheetContent"/>
+  <t t-name="nodexui.SheetHeader"><div class="b-sheet-header" t-att-style="props.style"><t t-slot="default"/></div></t>
+  <t t-name="SheetHeader" t-call="nodexui.SheetHeader"/>
+  <t t-name="nodexui.SheetFooter"><div class="b-sheet-footer" t-att-style="props.style"><t t-slot="default"/></div></t>
+  <t t-name="SheetFooter" t-call="nodexui.SheetFooter"/>
+  <t t-name="nodexui.SheetTitle"><h2 class="b-sheet-title" t-att-style="props.style"><t t-slot="default"/></h2></t>
+  <t t-name="SheetTitle" t-call="nodexui.SheetTitle"/>
+  <t t-name="nodexui.SheetDescription"><p class="b-sheet-description" t-att-style="props.style"><t t-slot="default"/></p></t>
+  <t t-name="SheetDescription" t-call="nodexui.SheetDescription"/>
+  <t t-name="nodexui.SheetClose">
+    <Button variant="'outline'" className="'b-sheet-close'" style="props.style" attrs="{'data-bs-dismiss': 'offcanvas'}"><t t-slot="default"/></Button>
+  </t>
+  <t t-name="SheetClose" t-call="nodexui.SheetClose"/>
+<t t-name="nodexui.sidebar">
+    <aside b-ui="sidebar"><t t-slot="default"/></aside>
+  </t>
+  <t t-name="nodexui.Sidebar">
+    <div t-att-class="classNames"
+         t-att-style="props.style"
+         data-slot="sidebar-wrapper"
+         t-att-data-state="sidebarState"
+         t-att-data-collapsible="collapsible"
+         t-att-data-variant="variant"
+         t-att-data-side="side"
+         t-on-keydown="onKeyDown">
+      <div t-if="state.open" class="b-sidebar-backdrop" data-slot="sidebar-backdrop" t-on-click="() => this.setOpen(false)"></div>
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="Sidebar" t-call="nodexui.Sidebar"/>
+  <t t-name="SidebarProvider" t-call="nodexui.Sidebar"/>
+  <t t-name="nodexui.SidebarContent">
+    <aside t-att-class="'b-sidebar' + (open ? ' is-open' : '') + (props.className ? ' ' + props.className : '')"
+           t-att-style="props.style"
+           data-sidebar="sidebar"
+           data-slot="sidebar"
+           t-att-data-state="open ? 'expanded' : 'collapsed'">
+      <t t-slot="default"/>
+    </aside>
+  </t>
+  <t t-name="SidebarContent" t-call="nodexui.SidebarContent"/>
+  <t t-name="nodexui.SidebarHeader">
+    <div t-att-class="'b-sidebar-header' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="header" data-slot="sidebar-header">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="SidebarHeader" t-call="nodexui.SidebarHeader"/>
+  <t t-name="nodexui.SidebarFooter">
+    <div t-att-class="'b-sidebar-footer' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="footer" data-slot="sidebar-footer">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="SidebarFooter" t-call="nodexui.SidebarFooter"/>
+  <t t-name="nodexui.SidebarInset">
+    <main t-att-class="'b-sidebar-inset' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-slot="sidebar-inset">
+      <t t-slot="default"/>
+    </main>
+  </t>
+  <t t-name="SidebarInset" t-call="nodexui.SidebarInset"/>
+  <t t-name="nodexui.SidebarRail">
+    <Button type="'button'" unstyled="true"
+            className="'b-sidebar-rail' + (props.className ? ' ' + props.className : '')"
+            style="props.style"
+            attrs="{ 'data-sidebar': 'rail', 'data-slot': 'sidebar-rail', tabindex: '-1' }"
+            ariaLabel="'Toggle Sidebar'"
+            title="'Toggle Sidebar'"
+            onClick="() => this.onClick()"/>
+  </t>
+  <t t-name="SidebarRail" t-call="nodexui.SidebarRail"/>
+  <t t-name="nodexui.SidebarInput">
+    <input t-att-class="'b-sidebar-input' + (props.className ? ' ' + props.className : '')"
+           t-att-style="props.style"
+           data-sidebar="input"
+           data-slot="sidebar-input"
+           t-att-type="props.type || 'text'"
+           t-att-placeholder="props.placeholder"
+           t-att-value="props.value"/>
+  </t>
+  <t t-name="SidebarInput" t-call="nodexui.SidebarInput"/>
+  <t t-name="nodexui.SidebarSeparator">
+    <div t-att-class="'b-sidebar-separator' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="separator" data-slot="sidebar-separator"/>
+  </t>
+  <t t-name="SidebarSeparator" t-call="nodexui.SidebarSeparator"/>
+  <t t-name="nodexui.SidebarClose">
+    <Button type="'button'" unstyled="true"
+            className="'b-sidebar-close' + (props.className ? ' ' + props.className : '')"
+            style="props.style"
+            attrs="{ 'data-sidebar': 'close', 'data-slot': 'sidebar-close' }"
+            ariaLabel="props.label || 'Close Sidebar'"
+            onClick="() => this.onClick()">
+      <Icon name="props.icon || 'x'" className="'b-sidebar-close-icon'"/>
+      <span t-if="props.label"><t t-esc="props.label"/></span>
+      <span t-else="" class="visually-hidden">Close Sidebar</span>
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="SidebarClose" t-call="nodexui.SidebarClose"/>
+  <t t-name="nodexui.SidebarGroup">
+    <div t-att-class="'b-sidebar-group' + (props.muted ? ' is-muted' : '') + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="group" data-slot="sidebar-group">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="SidebarGroup" t-call="nodexui.SidebarGroup"/>
+  <t t-name="nodexui.SidebarGroupLabel">
+    <a t-if="props.href" t-att-href="props.href" t-att-class="'b-sidebar-group-label' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="group-label" data-slot="sidebar-group-label">
+      <t t-slot="default"/>
+    </a>
+    <div t-else="" t-att-class="'b-sidebar-group-label' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="group-label" data-slot="sidebar-group-label">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="SidebarGroupLabel" t-call="nodexui.SidebarGroupLabel"/>
+  <t t-name="nodexui.SidebarGroupAction">
+    <Button type="'button'" unstyled="true"
+            className="'b-sidebar-group-action' + (props.className ? ' ' + props.className : '')"
+            style="props.style"
+            attrs="{ 'data-sidebar': 'group-action', 'data-slot': 'sidebar-group-action' }"
+            ariaLabel="ariaLabel"
+            icon="props.icon"
+            onClick="(event) => this.onClick(event)">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="SidebarGroupAction" t-call="nodexui.SidebarGroupAction"/>
+  <t t-name="nodexui.SidebarGroupContent">
+    <div t-att-class="'b-sidebar-group-content' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="group-content" data-slot="sidebar-group-content">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="SidebarGroupContent" t-call="nodexui.SidebarGroupContent"/>
+  <t t-name="nodexui.SidebarGroupCollapsible">
+    <div t-att-class="'b-sidebar-group' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <Button type="'button'" unstyled="true"
+              className="'b-sidebar-group-trigger'"
+              attrs="{ 'data-sidebar': 'group-label', 'data-slot': 'sidebar-group-label', 'aria-expanded': open ? 'true' : 'false' }"
+              onClick="() => this.toggle()">
+        <t t-esc="props.label"/>
+        <Icon name="'chevron-down'" className="'b-sidebar-group-chevron' + (open ? ' is-open' : '')"/>
+      </Button>
+      <div t-if="open" class="b-sidebar-group-content">
+        <t t-slot="default"/>
+      </div>
+    </div>
+  </t>
+  <t t-name="SidebarGroupCollapsible" t-call="nodexui.SidebarGroupCollapsible"/>
+  <t t-name="nodexui.SidebarMenu">
+    <ul t-att-class="'b-sidebar-menu' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="menu" data-slot="sidebar-menu">
+      <t t-slot="default"/>
+    </ul>
+  </t>
+  <t t-name="SidebarMenu" t-call="nodexui.SidebarMenu"/>
+  <t t-name="nodexui.SidebarMenuItem">
+    <li t-att-class="'b-sidebar-menu-item' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="menu-item" data-slot="sidebar-menu-item">
+      <t t-slot="default"/>
+    </li>
+  </t>
+  <t t-name="SidebarMenuItem" t-call="nodexui.SidebarMenuItem"/>
+  <t t-name="nodexui.SidebarMenuButton">
+    <Button href="props.href" unstyled="true"
+            className="classNames"
+            style="props.style"
+            attrs="{ 'data-sidebar': 'menu-button', 'data-slot': 'sidebar-menu-button', 'data-active': isActive ? 'true' : undefined, 'data-size': props.size || 'default', 'aria-current': isActive ? 'page' : undefined }"
+            disabled="props.disabled"
+            onClick="(event) => this.onClick(event)">
+      <Icon t-if="props.icon" name="props.icon" className="'b-sidebar-menu-icon'"/>
+      <span class="b-sidebar-menu-label"><t t-slot="default"/></span>
+    </Button>
+  </t>
+  <t t-name="SidebarMenuButton" t-call="nodexui.SidebarMenuButton"/>
+  <t t-name="nodexui.SidebarMenuAction">
+    <Button type="'button'" unstyled="true"
+            className="'b-sidebar-menu-action' + (props.showOnHover ? ' show-on-hover' : '') + (props.className ? ' ' + props.className : '')"
+            style="props.style"
+            attrs="{ 'data-sidebar': 'menu-action', 'data-slot': 'sidebar-menu-action' }"
+            ariaLabel="ariaLabel"
+            icon="props.icon"
+            onClick="(event) => this.onClick(event)">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="SidebarMenuAction" t-call="nodexui.SidebarMenuAction"/>
+  <t t-name="nodexui.SidebarMenuSub">
+    <ul t-att-class="'b-sidebar-menu-sub' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="menu-sub" data-slot="sidebar-menu-sub">
+      <t t-slot="default"/>
+    </ul>
+  </t>
+  <t t-name="SidebarMenuSub" t-call="nodexui.SidebarMenuSub"/>
+  <t t-name="nodexui.SidebarMenuBadge">
+    <div t-att-class="'b-sidebar-menu-badge' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="menu-badge" data-slot="sidebar-menu-badge">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="SidebarMenuBadge" t-call="nodexui.SidebarMenuBadge"/>
+  <t t-name="nodexui.SidebarMenuSkeleton">
+    <div t-att-class="'b-sidebar-menu-skeleton' + (props.className ? ' ' + props.className : '')" t-att-style="style" data-sidebar="menu-skeleton" data-slot="sidebar-menu-skeleton">
+      <span t-if="props.showIcon" class="b-sidebar-menu-skeleton-icon" data-sidebar="menu-skeleton-icon"></span>
+      <span class="b-sidebar-menu-skeleton-text" data-sidebar="menu-skeleton-text"></span>
+    </div>
+  </t>
+  <t t-name="SidebarMenuSkeleton" t-call="nodexui.SidebarMenuSkeleton"/>
+  <t t-name="nodexui.SidebarMenuSubItem">
+    <li t-att-class="'b-sidebar-menu-sub-item' + (props.className ? ' ' + props.className : '')" t-att-style="props.style" data-sidebar="menu-sub-item" data-slot="sidebar-menu-sub-item">
+      <t t-slot="default"/>
+    </li>
+  </t>
+  <t t-name="SidebarMenuSubItem" t-call="nodexui.SidebarMenuSubItem"/>
+  <t t-name="nodexui.SidebarMenuSubButton">
+    <Button href="props.href" unstyled="true"
+            className="classNames"
+            style="props.style"
+            attrs="{ 'data-sidebar': 'menu-sub-button', 'data-slot': 'sidebar-menu-sub-button', 'data-active': (props.active || props.isActive) ? 'true' : undefined }"
+            onClick="(event) => this.onClick(event)">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="SidebarMenuSubButton" t-call="nodexui.SidebarMenuSubButton"/>
+<t t-name="nodexui.SidebarTrigger">
+    <Button type="'button'" unstyled="true"
+            className="'b-sidebar-trigger' + (props.className ? ' ' + props.className : '')"
+            style="props.style"
+            attrs="{ 'data-sidebar': 'trigger', 'data-slot': 'sidebar-trigger' }"
+            ariaLabel="'Toggle Sidebar'"
+            onClick="() => this.onClick()">
+      <Icon name="props.icon || 'panel-left'" className="'b-sidebar-trigger-icon'"/>
+      <span t-if="props.label"><t t-esc="props.label"/></span>
+      <span t-else="" class="visually-hidden">Toggle Sidebar</span>
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="SidebarTrigger" t-call="nodexui.SidebarTrigger"/>
+<t t-name="nodexui.slider"><input b-ui="slider" type="range"/></t>
+  <t t-name="nodexui.Slider">
+    <input
+      type="range"
+      t-att-class="classNames"
+      t-att-min="props.min"
+      t-att-max="props.max"
+      t-att-step="props.step"
+      t-att-value="props.value"
+      t-att-disabled="props.disabled"
+      t-att-style="props.style"
+      t-on-input="onInput"
+    />
+  </t>
+  <t t-name="Slider" t-call="nodexui.Slider"/>
+<t t-name="nodexui.spinner">
+    <span b-ui="spinner"></span>
+  </t>
+  <t t-name="nodexui.Spinner">
+    <span t-att-class="classNames" t-att-style="props.style" role="status">
+      <span class="visually-hidden" t-esc="label"/>
+    </span>
+  </t>
+  <t t-name="Spinner" t-call="nodexui.Spinner"/>
+<t t-name="nodexui.switch">
+    <label b-ui="switch"><input type="checkbox" role="switch"/><t t-slot="default"/></label>
+  </t>
+  <t t-name="nodexui.Switch">
+    <label t-att-class="'form-check form-switch b-switch ' + (props.className || '')" t-att-style="props.style">
+      <input
+        type="checkbox"
+        role="switch"
+        class="form-check-input"
+        t-att-checked="props.checked"
+        t-att-disabled="props.disabled"
+        t-on-change="onChange"
+      />
+      <span class="b-switch-label">
+        <t t-slot="default"/>
+        <span t-if="tipText" class="b-switch-tip" t-on-click.prevent.stop="">
+          <Tooltip content="tipText" className="'b-input-tip'"><t t-set-slot="trigger"><IconCircleQuestionMark/></t></Tooltip>
+        </span>
+      </span>
+      <small t-if="supportingText" class="b-switch-support" t-esc="supportingText"/>
+    </label>
+  </t>
+  <t t-name="Switch" t-call="nodexui.Switch"/>
+<t t-name="nodexui.table">
+    <table b-ui="table"><t t-slot="default"/></table>
+  </t>
+  <t t-name="nodexui.Table">
+    <div t-if="props.responsive" class="table-responsive" t-att-style="props.style"><table t-att-class="classNames"><t t-slot="default"/></table></div>
+    <table t-else="" t-att-class="classNames" t-att-style="props.style"><t t-slot="default"/></table>
+  </t>
+  <t t-name="Table" t-call="nodexui.Table"/>
+<t t-name="nodexui.Tabs">
+    <div t-att-class="classNames" t-att-data-orientation="orientation" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="Tabs" t-call="nodexui.Tabs"/>
+
+  <t t-name="nodexui.TabsList">
+    <div t-ref="list" role="tablist" t-att-class="classNames" t-att-style="props.style" t-on-keydown="onKeyDown">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="TabsList" t-call="nodexui.TabsList"/>
+
+  <t t-name="nodexui.TabTrigger">
+    <Button unstyled="true" className="classNames" style="props.style" disabled="props.disabled" attrs="tabAttrs" getRef="(el) => this.onRootRef(el)" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="TabTrigger" t-call="nodexui.TabTrigger"/>
+
+  <t t-name="nodexui.TabsContainer">
+    <div t-att-class="'tab-content b-tabs-contents' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="TabsContainer" t-call="nodexui.TabsContainer"/>
+
+  <t t-name="nodexui.TabContent">
+    <div t-att-id="panelId" role="tabpanel" t-att-class="'tab-pane fade b-tabs-panel' + (initialActive ? ' show active' : '') + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="TabContent" t-call="nodexui.TabContent"/>
+<t t-name="nodexui.textarea">
+    <textarea b-ui="textarea"></textarea>
+  </t>
+  <t t-name="nodexui.Textarea">
+    <t t-call="nodexui.Outlined"><t t-call="nodexui.Textarea.field"/></t>
+  </t>
+  <t t-name="nodexui.Textarea.field">
+    <textarea
+      t-att-class="classNames"
+      t-att-style="props.style"
+      t-att-placeholder="fieldPlaceholder"
+      t-att-rows="props.rows"
+      t-att-disabled="props.disabled"
+      t-att-readonly="props.readonly"
+      t-att-value="props.value"
+      t-att-id="props.id"
+      t-att-maxlength="props.maxLength"
+      t-att-aria-invalid="isInvalid ? 'true' : undefined"
+      t-att-aria-describedby="describedBy"
+      t-on-input="onInput"
+      t-on-change="onChange"
+    ></textarea>
+  </t>
+  <t t-name="Textarea" t-call="nodexui.Textarea"/>
+<t t-name="nodexui.text-editor">
+    <div class="b-text-editor"/>
+  </t>
+  <t t-name="nodexui.TextEditor">
+    <div t-att-class="classNames" t-att-style="props.style" data-slot="text-editor" t-att-data-status="state.status">
+      <div t-if="state.status === 'loading'" class="b-text-editor-loading" role="status">Loading…</div>
+      <div t-elif="state.status === 'error'" class="b-text-editor-error" role="alert">
+        <t t-esc="state.error"/>
+      </div>
+      <div
+        t-else=""
+        t-ref="editor"
+        class="b-text-editor-shell"
+        data-slot="text-editor-shell"
+        role="group"
+        t-att-aria-label="editorLabel"
+      />
+    </div>
+  </t>
+  <t t-name="TextEditor" t-call="nodexui.TextEditor"/>
+<t t-name="nodexui.ThemeButton">
+    <Button
+      unstyled="true"
+      className="classNames"
+      style="props.style"
+      attrs="attrs"
+      ariaLabel="label"
+      title="label"
+      ariaPressed="pressed"
+      onClick="() => this.onClick()"
+    >
+      <Icon name="iconName" base-url="baseUrl"/>
+      <span class="visually-hidden" b-theme-button-label="" t-esc="label"/>
+    </Button>
+  </t>
+  <t t-name="ThemeButton" t-call="nodexui.ThemeButton"/>
+<t t-name="nodexui.toast">
+    <div b-ui="toast"><t t-slot="default"/></div>
+  </t>
+  <t t-name="nodexui.Toast">
+    <div t-ref="root" t-att-class="classNames" t-att-style="props.style" t-att-role="role">
+      <div class="b-toast-content"><t t-slot="default"/></div>
+      <div class="b-toast-actions">
+        <t t-if="hasActionSlot" t-slot="action"/>
+        <Button variant="'ghost'" size="'icon-sm'" className="'b-toast-close'" aria-label="'Close'" onClick="() => this.close()">x</Button>
+      </div>
+    </div>
+  </t>
+  <t t-name="Toast" t-call="nodexui.Toast"/>
+<t t-name="nodexui.tooltip">
+    <span b-ui="tooltip">
+      <span b-tooltip-trigger=""><t t-slot="trigger"/></span>
+      <span b-tooltip-content=""><t t-slot="default"/></span>
+    </span>
+  </t>
+  <t t-name="nodexui.Tooltip">
+    <span t-att-class="'b-tooltip' + (props.className ? ' ' + props.className : '')" t-att-style="props.style">
+      <span t-ref="trigger" class="b-tooltip-trigger">
+        <t t-slot="trigger"/>
+      </span>
+      <!-- Rendered but never shown: Owl keeps this reactive so the component
+           can read its innerHTML as the bootstrap.Tooltip title/content
+           string (see tooltip.component.js). Bootstrap renders the actual
+           visible popup itself, appended to document.body. -->
+      <span t-ref="buffer" style="display:none" aria-hidden="true">
+        <t t-if="props.content" t-esc="props.content"/>
+        <t t-else="" t-slot="default"/>
+      </span>
+    </span>
+  </t>
+  <t t-name="Tooltip" t-call="nodexui.Tooltip"/>
+<t t-name="nodexui.toggle">
+    <button type="button"><t t-out="props.label"/></button>
+  </t>
+  <t t-name="nodexui.Toggle">
+    <Button unstyled="true" className="classNames" style="props.style" aria-pressed="pressed ? 'true' : 'false'" onClick="() => this.onClick()">
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="Toggle" t-call="nodexui.Toggle"/>
+<t t-name="nodexui.toggle-group">
+    <div class="btn-group" role="group"/>
+  </t>
+  <t t-name="nodexui.ToggleGroup">
+    <div
+      t-att-class="'btn-group b-toggle-group' + (props.className ? ' ' + props.className : '')"
+      t-att-style="props.style"
+      t-att-role="props.multiple ? 'group' : 'radiogroup'"
+    >
+      <t t-slot="default"/>
+    </div>
+  </t>
+  <t t-name="ToggleGroup" t-call="nodexui.ToggleGroup"/>
+  <t t-name="nodexui.ToggleGroupItem">
+    <Button
+      unstyled="true"
+      className="'btn btn-outline-secondary'"
+      style="props.style"
+      ariaPressed="pressed ? 'true' : 'false'"
+      onClick="() => this.onClick()"
+    >
+      <t t-slot="default"/>
+    </Button>
+  </t>
+  <t t-name="ToggleGroupItem" t-call="nodexui.ToggleGroupItem"/>
+<t t-name="nodexui.typography">
+    <p b-ui="typography"><t t-slot="default"/></p>
+  </t>
+  <t t-name="nodexui.Typography">
+    <p t-tag="tag" t-att-class="classNames" t-att-style="props.style"><t t-slot="default"/></p>
+  </t>
+  <t t-name="Typography" t-call="nodexui.Typography"/>
+</templates>

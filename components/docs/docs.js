@@ -14,7 +14,8 @@ const exampleTheme = createThemeController({
   labelSelector: "",
 });
 
-const registryUrl = "/dist/nodexui.registry.json";
+// Component registry shipped with the nodexui version pinned in the page's import map.
+const registryUrl = new URL("nodexui.registry.json", import.meta.resolve("nodexui")).href;
 export const guidePages = [
   {
     slug: "usage-guide",

@@ -1,0 +1,203 @@
+{
+  "name": "v2",
+  "type": "dir",
+  "path": "docs/v2",
+  "children": [
+    {
+      "name": "learning",
+      "type": "dir",
+      "path": "docs/v2/learning",
+      "children": [
+        {
+          "name": "how_to_test.md",
+          "type": "file",
+          "path": "docs/v2/learning/how_to_test.md",
+          "meta": {}
+        },
+        {
+          "name": "quick_start.md",
+          "type": "file",
+          "path": "docs/v2/learning/quick_start.md",
+          "meta": {}
+        },
+        {
+          "name": "tutorial_todoapp.md",
+          "type": "file",
+          "path": "docs/v2/learning/tutorial_todoapp.md",
+          "meta": {}
+        }
+      ]
+    },
+    {
+      "name": "miscellaneous",
+      "type": "dir",
+      "path": "docs/v2/miscellaneous",
+      "children": [
+        {
+          "name": "architecture.md",
+          "type": "file",
+          "path": "docs/v2/miscellaneous/architecture.md",
+          "meta": {}
+        },
+        {
+          "name": "comparison.md",
+          "type": "file",
+          "path": "docs/v2/miscellaneous/comparison.md",
+          "meta": {}
+        },
+        {
+          "name": "compiled_template.md",
+          "type": "file",
+          "path": "docs/v2/miscellaneous/compiled_template.md",
+          "meta": {}
+        },
+        {
+          "name": "why_owl.md",
+          "type": "file",
+          "path": "docs/v2/miscellaneous/why_owl.md",
+          "meta": {}
+        }
+      ]
+    },
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "docs/v2/reference",
+      "children": [
+        {
+          "name": "app.md",
+          "type": "file",
+          "path": "docs/v2/reference/app.md",
+          "meta": {}
+        },
+        {
+          "name": "component.md",
+          "type": "file",
+          "path": "docs/v2/reference/component.md",
+          "meta": {}
+        },
+        {
+          "name": "concurrency_model.md",
+          "type": "file",
+          "path": "docs/v2/reference/concurrency_model.md",
+          "meta": {}
+        },
+        {
+          "name": "environment.md",
+          "type": "file",
+          "path": "docs/v2/reference/environment.md",
+          "meta": {}
+        },
+        {
+          "name": "error_handling.md",
+          "type": "file",
+          "path": "docs/v2/reference/error_handling.md",
+          "meta": {}
+        },
+        {
+          "name": "event_handling.md",
+          "type": "file",
+          "path": "docs/v2/reference/event_handling.md",
+          "meta": {}
+        },
+        {
+          "name": "hooks.md",
+          "type": "file",
+          "path": "docs/v2/reference/hooks.md",
+          "meta": {}
+        },
+        {
+          "name": "input_bindings.md",
+          "type": "file",
+          "path": "docs/v2/reference/input_bindings.md",
+          "meta": {}
+        },
+        {
+          "name": "portal.md",
+          "type": "file",
+          "path": "docs/v2/reference/portal.md",
+          "meta": {}
+        },
+        {
+          "name": "precompiling_templates.md",
+          "type": "file",
+          "path": "docs/v2/reference/precompiling_templates.md",
+          "meta": {}
+        },
+        {
+          "name": "props.md",
+          "type": "file",
+          "path": "docs/v2/reference/props.md",
+          "meta": {}
+        },
+        {
+          "name": "reactivity.md",
+          "type": "file",
+          "path": "docs/v2/reference/reactivity.md",
+          "meta": {}
+        },
+        {
+          "name": "refs.md",
+          "type": "file",
+          "path": "docs/v2/reference/refs.md",
+          "meta": {}
+        },
+        {
+          "name": "slots.md",
+          "type": "file",
+          "path": "docs/v2/reference/slots.md",
+          "meta": {}
+        },
+        {
+          "name": "templates.md",
+          "type": "file",
+          "path": "docs/v2/reference/templates.md",
+          "meta": {}
+        },
+        {
+          "name": "translations.md",
+          "type": "file",
+          "path": "docs/v2/reference/translations.md",
+          "meta": {}
+        },
+        {
+          "name": "utils.md",
+          "type": "file",
+          "path": "docs/v2/reference/utils.md",
+          "meta": {}
+        }
+      ]
+    },
+    {
+      "name": "tools",
+      "type": "dir",
+      "path": "docs/v2/tools",
+      "children": [
+        {
+          "name": "screenshots",
+          "type": "dir",
+          "path": "docs/v2/tools/screenshots",
+          "children": []
+        },
+        {
+          "name": "devtools_guide.md",
+          "type": "file",
+          "path": "docs/v2/tools/devtools_guide.md",
+          "meta": {}
+        },
+        {
+          "name": "devtools.md",
+          "type": "file",
+          "path": "docs/v2/tools/devtools.md",
+          "meta": {}
+        }
+      ]
+    },
+    {
+      "name": "readme.md",
+      "type": "file",
+      "path": "docs/v2/readme.md",
+      "meta": {}
+    }
+  ]
+}

@@ -7,4 +7,4 @@ cd server-go && DEMO_SEED=1 go run .                                            
 cd server-fastapi && pip install -r requirements.txt && DEMO_SEED=1 fastapi run main.py --port 8080   # Python 3.10+
 ```
 
-Then open http://localhost:8080/. See [docs/analytics.md](../../docs/analytics.md#sample-dashboard) for the stats API and configuration. These servers keep events in memory and do not authenticate `/api/stats`, so treat them as demos only.
+Then open http://localhost:8080/. See [docs/analytics.md](../docs/analytics.md) for the stats API and configuration. These servers keep events in memory and do not authenticate `/api/stats`, so treat them as demos only.

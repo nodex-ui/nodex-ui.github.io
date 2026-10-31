@@ -1,4 +1,4 @@
-const CACHE_NAME = "nodexui-examples-cache-v3";
+const CACHE_NAME = "nodexui-examples-cache-v4";
 const NODEXUI_CDN = "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/";
 
 const PRECACHE_URLS = [
@@ -14,11 +14,7 @@ const PRECACHE_URLS = [
   "/pwa/logo/dark/pwa/icon-192.png",
   "/pwa/logo/dark/pwa/icon-512.png",
   "/pwa/logo/light/ios/AppIcon-180-iphone@3x.png",
-  "/dist/nodexui.min.css",
-  "/dist/nodexui.min.js",
-  "/dist/nodexui.esm.js",
-  "/dist/nodexui.templates.xml",
-  "/dist/nodexui.i18n.esm.js",
+  "/templates.xml",
   "/index-router.js",
   "/i18n.js",
   "/components/landing/landing.js",
@@ -29,11 +25,14 @@ const PRECACHE_URLS = [
   "/components/language-switcher/i18n/vi.po",
   "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.min.css",
   "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.esm.js",
-  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.templates.xml"
+  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.templates.xml",
+  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.min.js",
+  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.i18n.esm.js",
+  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.qr.esm.js"
 ];
 
 /** Last-seen app version lives in its own cache so wiping the app caches never forgets it. */
-const VERSION_CACHE = "nodexui-examples-cache-v3-version";
+const VERSION_CACHE = "nodexui-examples-cache-v4-version";
 const VERSION_URL = new URL("version.json", self.registration.scope).href;
 let pendingCheck = null;
 

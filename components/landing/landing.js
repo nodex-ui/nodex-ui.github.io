@@ -61,7 +61,7 @@ class Root extends Component {
 
 await mount(Root, document.getElementById("app"), { templates });`,
   apidoc: `<link rel="stylesheet" href="${cdn}/dist/nodexui.min.css">
-<script src="${cdn}/dist/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="${cdn}/dist/nodexui.apidoc.min.js"></script>
 
 <div id="docs"></div>
