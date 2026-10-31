@@ -3,7 +3,9 @@
     <header class="border-bottom sticky-top bg-body">
       <nav class="container d-flex flex-wrap align-items-center justify-content-between gap-2 py-3" t-att-aria-label="t('Main')">
         <a class="fw-semibold fs-5 text-decoration-none text-body d-inline-flex align-items-center gap-2 thebase-event-name=Brand+Click" href="/">
-          <Icon name="'box'" size="'22px'"/>Nodex UI
+          <img class="b-brand-logo b-brand-logo-light" src="/pwa/logo/nodexui-logo-square-light.svg" alt="" width="28" height="28"/>
+          <img class="b-brand-logo b-brand-logo-dark" src="/pwa/logo/nodexui-logo-square-dark.svg" alt="" width="28" height="28"/>
+          Nodex UI
         </a>
         <div class="d-flex align-items-center gap-2">
           <a class="btn btn-link text-body text-decoration-none px-2" href="/index.html#/docs"><t t-esc="t('Docs')"/></a>

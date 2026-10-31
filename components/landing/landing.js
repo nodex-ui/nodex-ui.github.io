@@ -95,7 +95,7 @@ export class Landing extends Component {
   setup() {
     setPageMeta({
       title: t("Nodex UI — Ready-to-use UI components, straight from a CDN"),
-      description: t("Nodex UI (nodexui) is a free, no-build JavaScript UI component library, usable as Nodex UI components or plain b-ui HTML markup, loaded from a CDN."),
+      description: t("Nodex UI (nodexui) is a free, no-build JavaScript UI component library: 73 responsive, accessible components, blocks, icons and themes you can load from a CDN or install with npm."),
     });
     this.cdn = cdn;
     this.version = version;

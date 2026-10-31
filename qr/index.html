@@ -3,9 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>QR example</title>
-  <meta name="description" content="Generate a QR code and a VietQR payment code with the Nodex UI QR service.">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <title>JavaScript QR Code and VietQR Generator Example | Nodex UI</title>
+  <meta name="description" content="Generate a QR code and a VietQR payment code in the browser with the Nodex UI QR service (nodexui/qr), loaded as an ES module from a CDN.">
+  <link rel="canonical" href="https://nodex-ui.github.io/qr/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nodex UI">
+  <meta property="og:title" content="JavaScript QR Code and VietQR Generator Example | Nodex UI">
+  <meta property="og:description" content="Generate a QR code and a VietQR payment code in the browser with the Nodex UI QR service.">
+  <meta property="og:url" content="https://nodex-ui.github.io/qr/">
+  <meta property="og:image" content="https://nodex-ui.github.io/pwa/logo/light/pwa/icon-512.png">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/pwa/logo/nodexui-logo-square-light.svg" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/svg+xml" href="/pwa/logo/nodexui-logo-square-dark.svg" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="/pwa/logo/light/ios/AppIcon-180-iphone@3x.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.min.css">
   <script type="importmap">
   { "imports": { "nodexui/qr": "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.qr.esm.js" } }
@@ -15,7 +25,7 @@
   <main class="container py-5" style="max-width: 40rem">
     <h1 class="h3 mb-4">QR service</h1>
     <label class="form-label" for="text">Text or URL</label>
-    <input class="form-control mb-3" id="text" value="https://ui.thebase.vn">
+    <input class="form-control mb-3" id="text" value="https://nodex-ui.github.io">
     <div class="mb-4" id="qr" style="width: 14rem"></div>
     <h2 class="h5">VietQR</h2>
     <div class="row g-2 mb-3">

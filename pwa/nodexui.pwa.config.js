@@ -9,7 +9,7 @@ export default {
     iconsBase: "/pwa/logo/light/pwa/",
   },
   serviceWorker: {
-    cacheName: "nodexui-examples-cache-v4",
+    cacheName: "nodexui-examples-cache-v5",
     cdnVersion: "1.3.1",
     iconsBase: "/pwa/logo/light/pwa/",
     manifestUrl: "/pwa/manifest.webmanifest",
