@@ -7,7 +7,7 @@ A centred card with a QR code, a title and a description, built from the Card pa
 ```base-ui
 <div style="max-width: 24rem">
   <QRCard
-    qrContent="'https://ui.thebase.vn'"
+    qrContent="'https://nodex-ui.github.io'"
     label="'Connect device QR code'"
     title="'Scan to connect your mobile device'"
     description="'Open the Ledger mobile app and scan this code to link your device.'"/>

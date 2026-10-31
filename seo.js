@@ -1,5 +1,5 @@
 /** Canonical origin of the public site; canonical and Open Graph URLs always point here, never at a mirror or localhost. */
-export const SITE_URL = "https://ui.thebase.vn";
+export const SITE_URL = "https://nodex-ui.github.io";
 
 /** Finds the head tag matching `selector`, creating it with `attrs` first when the page doesn't have one. */
 function ensureHeadTag(tag, selector, attrs) {

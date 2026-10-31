@@ -1,18 +1,14 @@
-const CACHE_NAME = "nodexui-examples-cache-v4";
+const CACHE_NAME = "nodexui-examples-cache-v5";
 const NODEXUI_CDN = "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/";
 
 const PRECACHE_URLS = [
   "/",
   "/pwa/manifest.webmanifest",
   "/favicon.ico",
-  "/pwa/logo/light/pwa/favicon-16.png",
-  "/pwa/logo/light/pwa/favicon-32.png",
+  "/pwa/logo/nodexui-logo-square-light.svg",
+  "/pwa/logo/nodexui-logo-square-dark.svg",
   "/pwa/logo/light/pwa/icon-192.png",
   "/pwa/logo/light/pwa/icon-512.png",
-  "/pwa/logo/dark/pwa/favicon-16.png",
-  "/pwa/logo/dark/pwa/favicon-32.png",
-  "/pwa/logo/dark/pwa/icon-192.png",
-  "/pwa/logo/dark/pwa/icon-512.png",
   "/pwa/logo/light/ios/AppIcon-180-iphone@3x.png",
   "/templates.xml",
   "/index-router.js",
