@@ -1,0 +1,3 @@
+[b-block="sidebar-14"] [b-block-shell] { grid-template-columns: minmax(0, 1fr) 18rem; }
+[b-block="sidebar-14"] [b-block-right-sidebar] { border-left: 1px solid var(--b-border); padding: 1rem; }
+[b-block="sidebar-14"] article[b-block-content] { max-width: 64rem; }

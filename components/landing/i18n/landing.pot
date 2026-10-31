@@ -1,0 +1,238 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/landing\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: landing.js
+msgid "No build step"
+msgstr ""
+
+#: landing.js
+msgid "One stylesheet and one script from jsDelivr or unpkg. Nothing to compile."
+msgstr ""
+
+#: landing.js
+msgid "Two APIs, one source"
+msgstr ""
+
+#: landing.js
+msgid "Pure Nodex UI <Button/> classes and base static markup (`b-ui`) share the same components."
+msgstr ""
+
+#: landing.js
+msgid "Modular"
+msgstr ""
+
+#: landing.js
+msgid "Each component is self-contained. Use one or all 73, plus a full Lucide icon set."
+msgstr ""
+
+#: landing.js
+msgid "Themeable"
+msgstr ""
+
+#: landing.js
+msgid "--b-* design tokens with light and dark themes built in."
+msgstr ""
+
+#: landing.js landing.xml
+msgid "Docs"
+msgstr ""
+
+#: landing.js
+msgid "Install paths, usage guides, and live previews for every component."
+msgstr ""
+
+#: landing.js landing.xml
+msgid "Blocks"
+msgstr ""
+
+#: landing.js
+msgid "Dashboards, sidebars, data tables, and auth screens ready to copy."
+msgstr ""
+
+#: landing.js
+msgid "Icons"
+msgstr ""
+
+#: landing.js
+msgid "The full Lucide set through b-icon and the Icon component."
+msgstr ""
+
+#: landing.js
+msgid "Charts"
+msgstr ""
+
+#: landing.js
+msgid "Bar and area charts built from native Nodex UI markup."
+msgstr ""
+
+#: landing.js
+msgid "Cookieless: no visitor ID leaves the browser, and nothing is sent until init()."
+msgstr ""
+
+#: landing.js
+msgid "Standalone ~5.6 KB bundle with no framework or component runtime."
+msgstr ""
+
+#: landing.js
+msgid "Automatic pageviews, including pushState and hash-routed SPAs."
+msgstr ""
+
+#: landing.js
+msgid "Engagement: time on page and max scroll depth."
+msgstr ""
+
+#: landing.js
+msgid "Outbound links, file downloads, form submits, and custom events with props and revenue."
+msgstr ""
+
+#: landing.js
+msgid "One POST route on your backend. Go Fiber and FastAPI samples ship with a ready-made dashboard."
+msgstr ""
+
+#: landing.js
+msgid "Renders an OpenAPI 3.x JSON file as browsable docs: grouped sidebar, parameters, request bodies, responses, callbacks."
+msgstr ""
+
+#: landing.js
+msgid "Try It panel with request code samples in 17 languages and a Send API Request button."
+msgstr ""
+
+#: landing.js
+msgid "Authorize dialog for API key, basic, bearer, OpenID Connect, and OAuth2 flows."
+msgstr ""
+
+#: landing.js
+msgid "Markdown descriptions with Mermaid diagrams, light and dark themes, and linkable pages."
+msgstr ""
+
+#: landing.js
+msgid "Standalone bundle: the runtime and its templates are embedded, so it needs no other Nodex UI script."
+msgstr ""
+
+#: landing.js
+msgid "Nodex UI is a CDN-installable kit of 73 Nodex UI components with built-in theming. Use them as pure Nodex UI components in your app, or as plain <code>b-ui</code> HTML markup on any page."
+msgstr ""
+
+#: landing.js
+msgid "<code>nodexui/apidoc</code> turns any OpenAPI 3.x JSON document into interactive API docs. Use it as the <code>ApiDoc</code> Nodex UI component, as <code>b-ui=\"apidoc\"</code> markup, or as its own bundle."
+msgstr ""
+
+#: landing.js
+msgid "<code>nodexui/analytics</code> is a cookieless pageview and event tracker you can load on any page, with or without the rest of Nodex UI. Point it at your own backend and keep the data."
+msgstr ""
+
+#: landing.js
+msgid "Nodex UI — Ready-to-use UI components, straight from a CDN"
+msgstr ""
+
+#: landing.xml
+msgid "Main"
+msgstr ""
+
+#: landing.xml
+msgid "API docs"
+msgstr ""
+
+#: landing.xml
+msgid "Analytics"
+msgstr ""
+
+#: landing.xml
+msgid "Examples"
+msgstr ""
+
+#: landing.xml
+msgid "v{version} · SemVer stable"
+msgstr ""
+
+#: landing.xml
+msgid "UI components with no build step."
+msgstr ""
+
+#: landing.xml
+msgid "Browse examples"
+msgstr ""
+
+#: landing.xml
+msgid "Read the docs"
+msgstr ""
+
+#: landing.xml
+msgid "Copy install command"
+msgstr ""
+
+#: landing.xml
+msgid "Why Nodex UI"
+msgstr ""
+
+#: landing.xml
+msgid "Built for pages that mount, unmount, and re-render from markup — like WYSIWYG website builders."
+msgstr ""
+
+#: landing.xml
+msgid "Start in two lines"
+msgstr ""
+
+#: landing.xml
+msgid "Pick the API that fits your page. Pin an exact version in production."
+msgstr ""
+
+#: landing.xml
+msgid "Static HTML"
+msgstr ""
+
+#: landing.xml
+msgid "Pure Nodex UI"
+msgstr ""
+
+#: landing.xml
+msgid "Optional · standalone"
+msgstr ""
+
+#: landing.xml
+msgid "API documentation from an OpenAPI file"
+msgstr ""
+
+#: landing.xml
+msgid "Live Petstore demo"
+msgstr ""
+
+#: landing.xml
+msgid "ApiDoc docs"
+msgstr ""
+
+#: landing.xml
+msgid "Copy ApiDoc snippet"
+msgstr ""
+
+#: landing.xml
+msgid "New in 1.3.0 · optional"
+msgstr ""
+
+#: landing.xml
+msgid "Privacy-friendly analytics, built in"
+msgstr ""
+
+#: landing.xml
+msgid "Analytics guide"
+msgstr ""
+
+#: landing.xml
+msgid "View bundle"
+msgstr ""
+
+#: landing.xml
+msgid "Copy analytics snippet"
+msgstr ""
+
+#: landing.xml
+msgid "Explore the examples"
+msgstr ""
+
+#: landing.xml
+msgid "Open all examples"
+msgstr ""
+
+#: landing.xml
+msgid "nodexui · MIT License"
+msgstr ""

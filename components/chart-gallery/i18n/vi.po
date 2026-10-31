@@ -1,0 +1,154 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/chart-gallery\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: vi\n"
+
+#: chart-gallery.js chart-gallery.xml
+msgid "Bar Charts"
+msgstr "Biểu đồ cột"
+
+#: chart-gallery.js chart-gallery.xml
+msgid "Area Charts"
+msgstr "Biểu đồ vùng"
+
+#: chart-gallery.xml
+msgid "Bar Chart"
+msgstr "Biểu đồ cột"
+
+#: chart-gallery.xml
+msgid "Monthly visitors, native Nodex UI bar plot"
+msgstr "Lượt truy cập hàng tháng, biểu đồ cột Nodex UI gốc"
+
+#: chart-gallery.xml
+msgid "Trending up by 5.2% this month"
+msgstr "Tăng 5,2% trong tháng này"
+
+#: chart-gallery.xml
+msgid "January - June 2026"
+msgstr "Tháng 1 - Tháng 6 năm 2026"
+
+#: chart-gallery.xml
+msgid "Weekly active users, native Nodex UI bar plot"
+msgstr "Người dùng hoạt động hàng tuần, biểu đồ cột Nodex UI gốc"
+
+#: chart-gallery.xml
+msgid "Trending up by 3.1% this week"
+msgstr "Tăng 3,1% trong tuần này"
+
+#: chart-gallery.xml
+msgid "Week of Aug 24, 2026"
+msgstr "Tuần của 24 Th8, 2026"
+
+#: chart-gallery.xml
+msgid "Area Chart - Interactive"
+msgstr "Biểu đồ vùng - Tương tác"
+
+#: chart-gallery.xml
+msgid "Showing total visitors for the last 3 months"
+msgstr "Tổng lượt truy cập trong 3 tháng qua"
+
+#: chart-gallery.xml
+msgid "Select a value"
+msgstr "Chọn một giá trị"
+
+#: chart-gallery.xml
+msgid "Last 3 months"
+msgstr "3 tháng qua"
+
+#: chart-gallery.xml
+msgid "Last 30 days"
+msgstr "30 ngày qua"
+
+#: chart-gallery.xml
+msgid "Last 7 days"
+msgstr "7 ngày qua"
+
+#: chart-gallery.xml
+msgid "Desktop and mobile visitors from April to June"
+msgstr "Lượt truy cập trên máy tính và di động từ tháng 4 đến tháng 6"
+
+#: chart-gallery.xml
+msgid "Apr 1"
+msgstr "1 Th4"
+
+#: chart-gallery.xml
+msgid "May 1"
+msgstr "1 Th5"
+
+#: chart-gallery.xml
+msgid "Jun 1"
+msgstr "1 Th6"
+
+#: chart-gallery.xml
+msgid "Jun 30"
+msgstr "30 Th6"
+
+#: chart-gallery.xml
+msgid "Mobile"
+msgstr "Di động"
+
+#: chart-gallery.xml
+msgid "Desktop"
+msgstr "Máy tính"
+
+#: chart-gallery.xml
+msgid "Area Chart"
+msgstr "Biểu đồ vùng"
+
+#: chart-gallery.xml
+msgid "Showing total visitors for the last 6 months"
+msgstr "Tổng lượt truy cập trong 6 tháng qua"
+
+#: chart-gallery.xml
+msgid "Area Chart default"
+msgstr "Biểu đồ vùng mặc định"
+
+#: chart-gallery.xml
+msgid "Jan"
+msgstr "Th1"
+
+#: chart-gallery.xml
+msgid "Feb"
+msgstr "Th2"
+
+#: chart-gallery.xml
+msgid "Mar"
+msgstr "Th3"
+
+#: chart-gallery.xml
+msgid "Apr"
+msgstr "Th4"
+
+#: chart-gallery.xml
+msgid "May"
+msgstr "Th5"
+
+#: chart-gallery.xml
+msgid "Jun"
+msgstr "Th6"
+
+#: chart-gallery.xml
+msgid "January - June 2024"
+msgstr "Tháng 1 - Tháng 6 năm 2024"
+
+#: chart-gallery.xml
+msgid "Area Chart - Legend"
+msgstr "Biểu đồ vùng - Chú giải"
+
+#: chart-gallery.xml
+msgid "Area Chart Legend"
+msgstr "Biểu đồ vùng có chú giải"
+
+#: chart-gallery.xml
+msgid "Area Chart - Icons"
+msgstr "Biểu đồ vùng - Biểu tượng"
+
+#: chart-gallery.xml
+msgid "Area Chart Icons"
+msgstr "Biểu đồ vùng có biểu tượng"
+
+#: chart-gallery.xml
+msgid "Area Chart - Gradient"
+msgstr "Biểu đồ vùng - Chuyển màu"
+
+#: chart-gallery.xml
+msgid "Area Chart Gradient"
+msgstr "Biểu đồ vùng chuyển màu"

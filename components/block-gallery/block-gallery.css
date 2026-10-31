@@ -1,0 +1,12 @@
+.b-blocks-sidebar-inner {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 1.5rem;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: var(--b2, 0.5rem);
+}
+
+.b-block-gallery-frame {
+  background: var(--b-background);
+}

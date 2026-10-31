@@ -1,0 +1,51 @@
+<templates>
+  <t t-name="examples.IconsSidebar">
+    <div class="d-grid gap-3 overflow-y-auto">
+      <Input className="'mt-1 mb-2'" type="'search'" placeholder="t('Filter icons...')" value="state.query" onInput="(value) => this.onQueryInput(value)"/>
+      <p class="text-muted small mb-0">
+        <t t-esc="shownCount &lt; total ? t('Showing {shown} of {total} icons (refine your search to see more).', { shown: shownCount, total }) : t('Showing {shown} of {total} icons.', { shown: shownCount, total })"/>
+      </p>
+      <SidebarGroup>
+        <SidebarMenu>
+          <SidebarMenuItem t-foreach="filteredNames" t-as="name" t-key="name">
+            <SidebarMenuButton href="'#/icons/' + name" icon="name" active="state.name === name">
+              <t t-esc="name"/>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroup>
+    </div>
+  </t>
+
+  <t t-name="examples.IconsContent">
+    <div>
+      <div class="alert alert-danger" t-if="state.error">
+        <t t-esc="state.error"/>
+      </div>
+      <div class="text-muted small" t-elif="state.loading"><t t-esc="t('Loading icons...')"/></div>
+      <div class="text-muted small" t-elif="!state.name"><t t-esc="t('No icon matches your search.')"/></div>
+      <t t-else="">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <Icon name="state.name" size="'3rem'"/>
+          <h1 class="m-0" t-esc="state.name"/>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <strong class="d-block mb-1"><t t-esc="t('Static markup')"/></strong>
+            <pre><code t-esc="staticSnippet"/></pre>
+          </div>
+          <div class="col-md-6">
+            <strong class="d-block mb-1"><t t-esc="t('Pure Nodex UI')"/></strong>
+            <pre><code t-esc="owlSnippet"/></pre>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3 mt-3">
+          <span class="text-muted small"><t t-esc="t('Color follows the surrounding text color:')"/></span>
+          <span class="text-primary"><Icon name="state.name"/></span>
+          <span class="text-success"><Icon name="state.name"/></span>
+          <span class="text-danger"><Icon name="state.name"/></span>
+        </div>
+      </t>
+    </div>
+  </t>
+</templates>

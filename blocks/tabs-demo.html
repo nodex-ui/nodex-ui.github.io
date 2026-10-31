@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tabs-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="tabs-demo" data-block-description="A tabbed interface that switches between an account panel and a password panel, showing one content section at a time.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="tabs-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 25rem" class="w-100">
+        <Tabs defaultValue="'account'">
+          <TabsList>
+            <TabTrigger value="'account'">Account</TabTrigger>
+            <TabTrigger value="'password'">Password</TabTrigger>
+          </TabsList>
+          <TabContent value="'account'">Make changes to your account here.</TabContent>
+          <TabContent value="'password'">Change your password here.</TabContent>
+        </Tabs>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

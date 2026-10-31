@@ -1,0 +1,26 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/block-gallery\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: block-gallery.xml
+msgid "Feature blocks"
+msgstr ""
+
+#: block-gallery.xml
+msgid "Sidebar blocks"
+msgstr ""
+
+#: block-gallery.xml
+msgid "Auth blocks"
+msgstr ""
+
+#: block-gallery.xml
+msgid "Component demos"
+msgstr ""
+
+#: block-gallery.xml
+msgid "Open block"
+msgstr ""
+
+#: block-gallery.xml
+msgid "{label} preview"
+msgstr ""

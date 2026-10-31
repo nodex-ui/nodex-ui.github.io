@@ -1,0 +1,42 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/icons\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: icons.js
+msgid "Unable to load the Lucide icon manifest."
+msgstr ""
+
+#: icons.js
+msgid "Unable to load icons."
+msgstr ""
+
+#: icons.xml
+msgid "Filter icons..."
+msgstr ""
+
+#: icons.xml
+msgid "Showing {shown} of {total} icons (refine your search to see more)."
+msgstr ""
+
+#: icons.xml
+msgid "Showing {shown} of {total} icons."
+msgstr ""
+
+#: icons.xml
+msgid "Loading icons..."
+msgstr ""
+
+#: icons.xml
+msgid "No icon matches your search."
+msgstr ""
+
+#: icons.xml
+msgid "Static markup"
+msgstr ""
+
+#: icons.xml
+msgid "Pure Nodex UI"
+msgstr ""
+
+#: icons.xml
+msgid "Color follows the surrounding text color:"
+msgstr ""

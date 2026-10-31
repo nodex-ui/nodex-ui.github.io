@@ -1,0 +1,43 @@
+<templates>
+  <t t-name="examples.MainApp">
+    <Shell collapsed="state.collapsed" onCollapsedChange="(value) => { state.collapsed = value; }">
+      <ShellSidebar>
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold text-decoration-none fs-5 mb-2 px-2 thebase-event-name=Brand+Click" href="/">
+          <img class="b-brand-logo b-brand-logo-light" src="/examples/pwa/logo/nodexui-logo-square-light.svg" alt="" width="28" height="28"/>
+          <img class="b-brand-logo b-brand-logo-dark" src="/examples/pwa/logo/nodexui-logo-square-dark.svg" alt="" width="28" height="28"/>
+          <span>Nodex UI</span>
+        </a>
+        <t t-if="state.route === 'docs'"><DocsSidebar/></t>
+        <t t-elif="state.route === 'blocks'"><BlocksSidebar/></t>
+        <t t-elif="state.route === 'icons'"><IconsSidebar/></t>
+        <t t-elif="state.route === 'chart'"><ChartSidebar/></t>
+        <t t-elif="state.route === 'theme'"><ThemeCreatorSidebar/></t>
+        <t t-else=""><OwlFrameworkSidebar/></t>
+      </ShellSidebar>
+
+      <ShellMain>
+        <ShellHeader className="'bg-body border-bottom justify-content-between py-3'">
+          <SidebarTrigger/>
+          <nav id="main-nav" class="b-navigation-menu" role="menubar" t-att-aria-label="t('Nodex UI pages')">
+            <a t-foreach="routes" t-as="route" t-key="route.id" role="menuitem" t-att-href="'#/' + route.id" t-att-aria-current="route.id === state.route ? 'page' : undefined" t-on-click="() => this.selectRoute(route.id)">
+              <t t-esc="route.label"/>
+            </a>
+          </nav>
+          <div class="d-flex align-items-center gap-2">
+            <LanguageSwitcher/>
+            <ThemeButton variant="'outline'" storageKey="'b-example-theme'" onChange="(theme) => this.onThemeChange(theme)"/>
+          </div>
+        </ShellHeader>
+
+        <ShellContent className="'p-4'">
+          <section t-if="state.route === 'docs'"><DocsContent/></section>
+          <section t-elif="state.route === 'blocks'"><BlocksContent/></section>
+          <section t-elif="state.route === 'icons'"><IconsContent/></section>
+          <section t-elif="state.route === 'chart'"><ChartContent/></section>
+          <section t-elif="state.route === 'theme'"><ThemeCreatorContent/></section>
+          <section t-else=""><OwlFrameworkContent/></section>
+        </ShellContent>
+      </ShellMain>
+    </Shell>
+  </t>
+</templates>

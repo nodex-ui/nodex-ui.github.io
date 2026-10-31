@@ -1,0 +1,54 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/main\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: main.js
+msgid "Docs"
+msgstr ""
+
+#: main.js
+msgid "Install paths, usage guidance, and per-component sample code with live Nodex UI previews."
+msgstr ""
+
+#: main.js
+msgid "Blocks"
+msgstr ""
+
+#: main.js
+msgid "Catalog of composed Nodex UI block examples."
+msgstr ""
+
+#: main.js
+msgid "Icons"
+msgstr ""
+
+#: main.js
+msgid "Lucide-backed icon usage through the Icon component."
+msgstr ""
+
+#: main.js
+msgid "Chart"
+msgstr ""
+
+#: main.js
+msgid "Interactive Nodex UI chart catalog."
+msgstr ""
+
+#: main.js
+msgid "Concept"
+msgstr ""
+
+#: main.js
+msgid "Reference for everything exported by the underlying runtime."
+msgstr ""
+
+#: main.js
+msgid "Theme"
+msgstr ""
+
+#: main.js
+msgid "Pick colours and radius, preview Nodex UI live, and download nodexui-light.css / nodexui-dark.css."
+msgstr ""
+
+#: main.xml
+msgid "Nodex UI pages"
+msgstr ""

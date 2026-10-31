@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>data-table-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="data-table-demo" data-block-description="A payments table with filtering, sorting, column visibility, row selection, and pagination.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="data-table-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="w-100" style="max-width: 56rem">
+        <DataTable searchable="true" sortable="true" selectable="true" columnToggle="true" pagination="true"/>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

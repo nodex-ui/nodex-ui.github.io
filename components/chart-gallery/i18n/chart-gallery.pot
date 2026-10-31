@@ -1,0 +1,154 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/chart-gallery\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: chart-gallery.js chart-gallery.xml
+msgid "Bar Charts"
+msgstr ""
+
+#: chart-gallery.js chart-gallery.xml
+msgid "Area Charts"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Bar Chart"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Monthly visitors, native Nodex UI bar plot"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Trending up by 5.2% this month"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "January - June 2026"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Weekly active users, native Nodex UI bar plot"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Trending up by 3.1% this week"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Week of Aug 24, 2026"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Interactive"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Showing total visitors for the last 3 months"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Select a value"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Last 3 months"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Last 30 days"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Last 7 days"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Desktop and mobile visitors from April to June"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Apr 1"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "May 1"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Jun 1"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Jun 30"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Mobile"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Desktop"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Showing total visitors for the last 6 months"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart default"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Jan"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Feb"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Mar"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Apr"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "May"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Jun"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "January - June 2024"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Legend"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart Legend"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Icons"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart Icons"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart - Gradient"
+msgstr ""
+
+#: chart-gallery.xml
+msgid "Area Chart Gradient"
+msgstr ""

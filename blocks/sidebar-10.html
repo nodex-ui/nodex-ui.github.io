@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sidebar-10</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="sidebar-10" data-block-description="A workspace sidebar with favorites and utility navigation.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="sidebar-10">
+      <Shell className="'b-block-shell'" collapsed="state.collapsed" onCollapsedChange="(value) => { state.collapsed = value; }">
+        <ShellSidebar className="'b-block-sidebar'">
+          <a href="#" b-block-brand=""><span b-block-mark=""><Icon name="'gallery-vertical-end'"/></span><span>Acme Inc<small></small></span></a>
+          <nav b-block-nav="" aria-label="Workspace">
+            <SidebarMenu>
+              <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'search'">Search</SidebarMenuButton></SidebarMenuItem>
+              <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'sparkles'">Ask AI</SidebarMenuButton></SidebarMenuItem>
+              <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'home'">Home</SidebarMenuButton></SidebarMenuItem>
+              <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'inbox'">Inbox</SidebarMenuButton></SidebarMenuItem>
+            </SidebarMenu>
+            <SidebarGroup>
+              <SidebarGroupLabel>Favorites</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'file-text'">Project Management &amp; Task Tracking</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'file-text'">Family Recipe Collection &amp; Meal Planning</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'file-text'">Fitness Tracker &amp; Workout Routines</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'file-text'">Book Notes &amp; Reading List</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'file-text'">Sustainable Gardening Tips &amp; Plant Care</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'file-text'">Language Learning Progress &amp; Resources</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'file-text'">Home Renovation Ideas &amp; Budget Tracker</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup>
+              <SidebarGroupLabel>Workspaces</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'folder'">Personal Life Management</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'folder'">Professional Development</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'folder'">Creative Projects</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'folder'">Home Management</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'folder'">Travel &amp; Adventure</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup muted="true">
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'calendar'">Calendar</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'settings'">Settings</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'layers'">Templates</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'trash'">Trash</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'circle-help'">Help</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+          </nav>
+        </ShellSidebar>
+        <ShellMain className="'b-block-main'">
+          <ShellHeader className="'b-block-header'">
+            <SidebarTrigger/>
+            <Separator orientation="'vertical'"/>
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem><a class="b-breadcrumb-link" href="#">Build Your Application</a></BreadcrumbItem>
+                    <BreadcrumbSeparator/>
+                    <BreadcrumbItem><BreadcrumbPage>Project Management &amp; Task Tracking</BreadcrumbPage></BreadcrumbItem>
+                </BreadcrumbList>
+                </Breadcrumb>
+          </ShellHeader>
+          <ShellContent className="'b-block-content'">
+            <div b-block-placeholders="">
+              <div b-block-placeholder=""></div>
+              <div b-block-placeholder=""></div>
+              <div b-block-placeholder=""></div>
+            </div>
+            <div b-block-canvas=""></div>
+          </ShellContent>
+        </ShellMain>
+
+      </Shell>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

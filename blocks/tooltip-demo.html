@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tooltip-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="tooltip-demo" data-block-description="A tooltip that displays additional text when hovering over a button trigger.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="tooltip-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100 d-flex align-items-center justify-content-center">
+        <Tooltip content="'Add to library'">
+          <t t-set-slot="trigger">
+            <Button variant="'outline'">Hover</Button>
+          </t>
+        </Tooltip>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApiDoc examples</title>
+  <link rel="icon" href="/examples/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="../../dist/nodexui.min.css" />
+  <style>
+    .apidoc-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; padding: .5rem 1rem; border-bottom: 1px solid var(--bs-border-color); }
+    .apidoc-bar a { text-decoration: none; }
+    .apidoc-bar a[aria-current="page"] { font-weight: 600; }
+  </style>
+</head>
+<body class="bg-body text-body">
+  <nav class="apidoc-bar" aria-label="ApiDoc samples">
+    <a class="fw-semibold" href="/examples/index.html#/docs">Nodex UI</a>
+    <span class="text-body-secondary">Standalone ApiDoc sample:</span>
+    <a href="?spec=petstore" data-spec="petstore">Swagger Petstore (OpenAPI 3.0, from petstore3.swagger.io)</a>
+    <a href="?spec=basehub" data-spec="basehub">Base HUB aliases (OpenAPI 3.1, large)</a>
+  </nav>
+
+  <!-- Standalone ApiDoc: dist/nodexui.apidoc.min.js embeds Owl and ApiDoc's templates, so no nodexui.min.js,
+       templates file or b-ui markup is needed. Bootstrap's JS is still required (Authorize dialog), and
+       nodexui.min.css above styles the page. -->
+  <div id="docs"></div>
+
+  <script src="../../dist/bootstrap.bundle.min.js"></script>
+  <script src="../../dist/nodexui.apidoc.min.js"></script>
+  <script>
+    // Picks the sample from ?spec= and points Try It at this origin when the sample has no live server.
+    const spec = new URLSearchParams(location.search).get("spec") === "basehub" ? "basehub" : "petstore";
+    document.querySelector(`[data-spec="${spec}"]`).setAttribute("aria-current", "page");
+    window.thebase.apidoc.mountApiDoc("#docs", {
+      src: spec === "basehub" ? "/src/components/apidoc/open_apidoc.json" : "./openapi.json",
+      serverUrl: spec === "basehub" ? location.origin : undefined,
+      hash: true,
+      themeToggle: true,
+      height: "calc(100vh - 3.25rem)",
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.b-landing-hero {
+  background:
+    radial-gradient(60rem 24rem at 50% -8rem, color-mix(in oklch, var(--b-primary) 12%, transparent), transparent),
+    var(--b-background);
+}
+
+.b-landing-hero h1 {
+  letter-spacing: -0.03em;
+}
+
+.b-landing-code {
+  /* Edge shadows appear only while there is more code to scroll to. */
+  background:
+    linear-gradient(to right, var(--b-muted) 30%, transparent) left center / 2rem 100% no-repeat local,
+    linear-gradient(to left, var(--b-muted) 30%, transparent) right center / 2rem 100% no-repeat local,
+    linear-gradient(to right, var(--b-border), transparent) left center / 0.5rem 100% no-repeat scroll,
+    linear-gradient(to left, var(--b-border), transparent) right center / 0.5rem 100% no-repeat scroll,
+    var(--b-muted);
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-lg);
+  color: var(--b-foreground);
+  font-size: 0.8125rem;
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.b-landing-feature-icon {
+  background: var(--b-muted);
+  border-radius: var(--b-radius-md);
+  display: inline-flex;
+  padding: 0.5rem;
+}
+
+/* Sidebar brand logo: show the variant that matches the active theme. */
+.b-brand-logo { border-radius: 6px; }
+.b-brand-logo-dark { display: none; }
+[b-theme="dark"] .b-brand-logo-light { display: none; }
+[b-theme="dark"] .b-brand-logo-dark { display: inline; }

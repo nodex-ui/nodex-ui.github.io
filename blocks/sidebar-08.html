@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sidebar-08</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="sidebar-08" data-block-description="An inset sidebar with secondary navigation.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="sidebar-08">
+      <Shell className="'b-block-shell'" collapsed="state.collapsed" onCollapsedChange="(value) => { state.collapsed = value; }">
+        <ShellSidebar className="'b-block-sidebar'">
+          <a href="#" b-block-brand=""><span b-block-mark=""><Icon name="'gallery-vertical-end'"/></span><span>Acme Inc<small>Enterprise</small></span></a>
+
+          <nav b-block-nav="" aria-label="Platform">
+            <SidebarGroup>
+              <SidebarGroupLabel>Platform</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton href="'#'" icon="'square-terminal'" active="true">Playground</SidebarMenuButton>
+                  <SidebarMenuAction icon="'chevron-right'" aria-label="'Toggle Playground'"/>
+                  <SidebarMenuSub>
+                    <SidebarMenuButton href="'#'">History</SidebarMenuButton>
+                    <SidebarMenuButton href="'#'">Starred</SidebarMenuButton>
+                    <SidebarMenuButton href="'#'">Settings</SidebarMenuButton>
+                  </SidebarMenuSub>
+                </SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'bot'">Models</SidebarMenuButton><SidebarMenuAction icon="'chevron-right'" aria-label="'Toggle Models'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'book-open'">Documentation</SidebarMenuButton><SidebarMenuAction icon="'chevron-right'" aria-label="'Toggle Documentation'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'settings-2'">Settings</SidebarMenuButton><SidebarMenuAction icon="'chevron-right'" aria-label="'Toggle Settings'"/></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup>
+              <SidebarGroupLabel>Projects</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'frame'">Design Engineering</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'pie-chart'">Sales &amp; Marketing</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'map'">Travel</SidebarMenuButton><SidebarMenuAction icon="'ellipsis'" aria-label="'More'"/></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup muted="true">
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'life-buoy'">Support</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'send'">Feedback</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+          </nav>
+          <div b-block-user=""><span b-block-avatar="">CN</span><span>shadcn<small>m@example.com</small></span></div>
+        </ShellSidebar>
+        <ShellMain className="'b-block-main'">
+          <ShellHeader className="'b-block-header'">
+            <SidebarTrigger/>
+            <Separator orientation="'vertical'"/>
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem><a class="b-breadcrumb-link" href="#">Build Your Application</a></BreadcrumbItem>
+                    <BreadcrumbSeparator/>
+                    <BreadcrumbItem><BreadcrumbPage>Data Fetching</BreadcrumbPage></BreadcrumbItem>
+                </BreadcrumbList>
+                </Breadcrumb>
+          </ShellHeader>
+          <ShellContent className="'b-block-content'">
+            <div b-block-placeholders="">
+              <div b-block-placeholder=""></div>
+              <div b-block-placeholder=""></div>
+              <div b-block-placeholder=""></div>
+            </div>
+            <div b-block-canvas=""></div>
+          </ShellContent>
+        </ShellMain>
+
+      </Shell>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

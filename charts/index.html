@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nodex UI Charts</title>
+    <link rel="icon" href="/examples/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="../../dist/nodexui.min.css">
+    <script src="../../dist/nodexui.min.js" defer></script>
+  </head>
+  <body class="bg-body text-body">
+    <header b-example-nav-header>
+      <nav class="container" b-example-nav-inner aria-label="Nodex UI pages">
+        <a class="navbar-brand fw-semibold text-decoration-none" href="/examples/index.html#/docs">Nodex UI</a>
+        <div b-ui="navigation-menu" aria-label="Nodex UI pages"><a href="/examples/index.html#/docs">Docs</a><a href="/examples/index.html#/components">Components</a><a href="/examples/index.html#/blocks">Blocks</a><a href="/examples/index.html#/icons">Icons</a><a href="/examples/index.html#/chart" aria-current="page">Chart</a></div>
+        <button b-ui="theme-button" b-att-variant="outline" b-att-storage-key="b-example-theme" type="button"></button>
+      </nav>
+    </header>
+    <script>
+      if (new URLSearchParams(location.search).get("embed") === "1") {
+        document.querySelector("[b-example-nav-header]")?.classList.add("d-none");
+      }
+    </script>
+
+    <main class="container py-5">
+      <section class="mb-4">
+        <h1 class="display-6 fw-semibold mb-2">Beautiful Charts &amp; Graphs</h1>
+        <p class="text-body-secondary mb-3">The NodexUI <code>Chart</code> component styled entirely from <code>dist/nodexui.min.css</code> — no page-specific CSS.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a b-ui="button" b-att-variant="outline" href="./area.html">Area chart examples</a>
+          <a b-ui="button" b-att-variant="outline" href="../../docs/components/chart.md">Documentation</a>
+        </div>
+      </section>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <article b-ui="chart">
+            <div b-chart-header>
+              <h3 b-chart-title>Bar Chart</h3>
+              <p b-chart-description>Monthly visitors, native Nodex UI bar plot</p>
+            </div>
+            <div b-chart-body>
+              <div b-chart-plot>
+                <div b-att-value="45" b-att-label="Jan"></div>
+                <div b-att-value="70" b-att-label="Feb"></div>
+                <div b-att-value="52" b-att-label="Mar"></div>
+                <div b-att-value="86" b-att-label="Apr"></div>
+                <div b-att-value="62" b-att-label="May"></div>
+                <div b-att-value="75" b-att-label="Jun"></div>
+              </div>
+            </div>
+            <div b-chart-footer>
+              <div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div>
+              <div b-chart-range>January - June 2026</div>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article b-ui="chart">
+            <div b-chart-header>
+              <h3 b-chart-title>Bar Chart</h3>
+              <p b-chart-description>Weekly active users, native Nodex UI bar plot</p>
+            </div>
+            <div b-chart-body>
+              <div b-chart-plot>
+                <div b-att-value="38" b-att-label="W1"></div>
+                <div b-att-value="54" b-att-label="W2"></div>
+                <div b-att-value="48" b-att-label="W3"></div>
+                <div b-att-value="90" b-att-label="W4"></div>
+                <div b-att-value="68" b-att-label="W5"></div>
+                <div b-att-value="58" b-att-label="W6"></div>
+                <div b-att-value="74" b-att-label="W7"></div>
+              </div>
+            </div>
+            <div b-chart-footer>
+              <div b-chart-trend>Trending up by 3.1% this week <span b-icon="trending-up" b-icon-size="1rem"></span></div>
+              <div b-chart-range>Week of Aug 24, 2026</div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <p class="text-body-secondary mt-4 mb-0">Area, line, gradient, and axis chart variants are demonstrated on the <a href="./area.html">area chart page</a> — also styled entirely with native <code>Chart</code> component CSS.</p>
+    </main>
+  </body>
+</html>

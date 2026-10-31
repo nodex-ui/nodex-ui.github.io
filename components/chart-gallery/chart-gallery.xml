@@ -1,0 +1,137 @@
+<templates>
+  <t t-name="examples.ChartSidebar">
+    <div class="d-grid gap-3">
+      <SidebarGroup>
+        <SidebarMenu>
+          <SidebarMenuItem t-foreach="categories" t-as="category" t-key="category.id">
+            <SidebarMenuButton href="'#/chart/' + category.id" active="state.activeCategory === category.id">
+              <t t-esc="category.label"/>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroup>
+    </div>
+  </t>
+
+  <t t-name="examples.ChartContent">
+    <div class="vstack gap-4">
+      <t t-if="state.activeCategory === 'bar'">
+        <h2 class="h4 fw-semibold mb-0"><t t-esc="t('Bar Charts')"/></h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <article b-ui="chart">
+              <div b-chart-header="">
+                <h3 b-chart-title=""><t t-esc="t('Bar Chart')"/></h3>
+                <p b-chart-description=""><t t-esc="t('Monthly visitors, native Nodex UI bar plot')"/></p>
+              </div>
+              <div b-chart-body="">
+                <div b-chart-plot="">
+                  <div b-att-value="45" b-att-label="Jan"></div>
+                  <div b-att-value="70" b-att-label="Feb"></div>
+                  <div b-att-value="52" b-att-label="Mar"></div>
+                  <div b-att-value="86" b-att-label="Apr"></div>
+                  <div b-att-value="62" b-att-label="May"></div>
+                  <div b-att-value="75" b-att-label="Jun"></div>
+                </div>
+              </div>
+              <div b-chart-footer="">
+                <div b-chart-trend=""><t t-esc="t('Trending up by 5.2% this month')"/> <span b-icon="trending-up" b-icon-size="1rem"></span></div>
+                <div b-chart-range=""><t t-esc="t('January - June 2026')"/></div>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article b-ui="chart">
+              <div b-chart-header="">
+                <h3 b-chart-title=""><t t-esc="t('Bar Chart')"/></h3>
+                <p b-chart-description=""><t t-esc="t('Weekly active users, native Nodex UI bar plot')"/></p>
+              </div>
+              <div b-chart-body="">
+                <div b-chart-plot="">
+                  <div b-att-value="38" b-att-label="W1"></div>
+                  <div b-att-value="54" b-att-label="W2"></div>
+                  <div b-att-value="48" b-att-label="W3"></div>
+                  <div b-att-value="90" b-att-label="W4"></div>
+                  <div b-att-value="68" b-att-label="W5"></div>
+                  <div b-att-value="58" b-att-label="W6"></div>
+                  <div b-att-value="74" b-att-label="W7"></div>
+                </div>
+              </div>
+              <div b-chart-footer="">
+                <div b-chart-trend=""><t t-esc="t('Trending up by 3.1% this week')"/> <span b-icon="trending-up" b-icon-size="1rem"></span></div>
+                <div b-chart-range=""><t t-esc="t('Week of Aug 24, 2026')"/></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </t>
+      <t t-elif="state.activeCategory === 'area'">
+        <h2 class="h4 fw-semibold mb-0"><t t-esc="t('Area Charts')"/></h2>
+        <div b-chart-example-grid="">
+          <article b-ui="chart" b-att-type="area" b-att-variant="area-card" t-att-aria-label="t('Area Chart - Interactive')">
+            <div b-chart-header="" b-att-layout="inline">
+              <div>
+                <h3 b-chart-title=""><t t-esc="t('Area Chart - Interactive')"/></h3>
+                <p b-chart-description=""><t t-esc="t('Showing total visitors for the last 3 months')"/></p>
+              </div>
+              <div b-ui="select" b-chart-select="" b-att-value="90d">
+                <button b-select-trigger="" type="button" t-att-aria-label="t('Select a value')"><span b-select-value=""><t t-esc="t('Last 3 months')"/></span></button>
+                <div b-select-content="">
+                  <div b-select-item="" b-att-value="90d"><t t-esc="t('Last 3 months')"/></div>
+                  <div b-select-item="" b-att-value="30d"><t t-esc="t('Last 30 days')"/></div>
+                  <div b-select-item="" b-att-value="7d"><t t-esc="t('Last 7 days')"/></div>
+                </div>
+              </div>
+            </div>
+            <div b-chart-body="" b-att-compact="">
+              <svg viewBox="0 0 640 250" role="img" t-att-aria-label="t('Desktop and mobile visitors from April to June')">
+                <defs>
+                  <linearGradient id="areaFillDesktop" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stop-color="var(--b-chart-1)" stop-opacity="0.8"/><stop offset="95%" stop-color="var(--b-chart-1)" stop-opacity="0.1"/></linearGradient>
+                  <linearGradient id="areaFillMobile" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stop-color="var(--b-chart-2)" stop-opacity="0.8"/><stop offset="95%" stop-color="var(--b-chart-2)" stop-opacity="0.1"/></linearGradient>
+                </defs>
+                <g b-chart-grid=""><line x1="0" y1="35" x2="640" y2="35"/><line x1="0" y1="90" x2="640" y2="90"/><line x1="0" y1="145" x2="640" y2="145"/><line x1="0" y1="200" x2="640" y2="200"/></g>
+                <path b-chart-area="" b-chart-series="" style="--b-chart-color: var(--b-chart-2)" fill="url(#areaFillMobile)" d="M0 162 C45 116 90 205 135 95 S225 56 270 116 S360 42 405 86 S495 34 540 75 S610 105 640 65 L640 220 L0 220 Z"/>
+                <path b-chart-area="" b-chart-series="" style="--b-chart-color: var(--b-chart-1)" fill="url(#areaFillDesktop)" d="M0 118 C45 190 90 75 135 42 S225 150 270 72 S360 120 405 48 S495 138 540 44 S610 156 640 70 L640 220 L0 220 Z"/>
+                <path b-chart-line="" b-chart-series="" style="--b-chart-color: var(--b-chart-2)" d="M0 162 C45 116 90 205 135 95 S225 56 270 116 S360 42 405 86 S495 34 540 75 S610 105 640 65"/>
+                <path b-chart-line="" b-chart-series="" style="--b-chart-color: var(--b-chart-1)" d="M0 118 C45 190 90 75 135 42 S225 150 270 72 S360 120 405 48 S495 138 540 44 S610 156 640 70"/>
+                <g b-chart-axis=""><text x="0" y="245"><t t-esc="t('Apr 1')"/></text><text x="210" y="245"><t t-esc="t('May 1')"/></text><text x="420" y="245"><t t-esc="t('Jun 1')"/></text><text x="590" y="245"><t t-esc="t('Jun 30')"/></text></g>
+              </svg>
+              <div b-chart-legend=""><span><t t-esc="t('Mobile')"/></span><span><t t-esc="t('Desktop')"/></span></div>
+            </div>
+          </article>
+
+          <article b-ui="chart" b-att-type="area" b-att-variant="area-card" t-att-aria-label="t('Area Chart')">
+            <div b-chart-header=""><h3 b-chart-title=""><t t-esc="t('Area Chart')"/></h3><p b-chart-description=""><t t-esc="t('Showing total visitors for the last 6 months')"/></p></div>
+            <div b-chart-body="">
+              <svg viewBox="0 0 640 250" role="img" t-att-aria-label="t('Area Chart default')">
+                <g b-chart-grid=""><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g>
+                <path b-chart-area="" b-chart-series="" d="M0 150 C60 70 120 110 180 56 S300 175 360 120 S480 78 540 95 S600 55 640 82 L640 220 L0 220 Z"/>
+                <path b-chart-line="" b-chart-series="" d="M0 150 C60 70 120 110 180 56 S300 175 360 120 S480 78 540 95 S600 55 640 82"/>
+                <g b-chart-axis=""><text x="0" y="245"><t t-esc="t('Jan')"/></text><text x="128" y="245"><t t-esc="t('Feb')"/></text><text x="256" y="245"><t t-esc="t('Mar')"/></text><text x="384" y="245"><t t-esc="t('Apr')"/></text><text x="512" y="245"><t t-esc="t('May')"/></text><text x="610" y="245"><t t-esc="t('Jun')"/></text></g>
+              </svg>
+            </div>
+            <div b-chart-footer=""><div b-chart-trend=""><t t-esc="t('Trending up by 5.2% this month')"/> <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range=""><t t-esc="t('January - June 2024')"/></div></div>
+          </article>
+
+          <article b-ui="chart" b-att-type="area" b-att-variant="area-card" t-att-aria-label="t('Area Chart - Legend')">
+            <div b-chart-header=""><h3 b-chart-title=""><t t-esc="t('Area Chart - Legend')"/></h3><p b-chart-description=""><t t-esc="t('Showing total visitors for the last 6 months')"/></p></div>
+            <div b-chart-body=""><svg viewBox="0 0 640 250" role="img" t-att-aria-label="t('Area Chart Legend')"><g b-chart-grid=""><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area="" b-chart-series="" style="--b-chart-color: var(--b-chart-1)" d="M0 170 C110 72 220 130 330 58 S520 130 640 74 L640 220 L0 220 Z"/><path b-chart-area="" b-chart-series="" style="--b-chart-color: var(--b-chart-2)" d="M0 185 C110 130 220 150 330 96 S520 150 640 105 L640 220 L0 220 Z"/><path b-chart-line="" b-chart-series="" style="--b-chart-color: var(--b-chart-1)" d="M0 170 C110 72 220 130 330 58 S520 130 640 74"/><path b-chart-line="" b-chart-series="" style="--b-chart-color: var(--b-chart-2)" d="M0 185 C110 130 220 150 330 96 S520 150 640 105"/></svg><div b-chart-legend=""><span><t t-esc="t('Desktop')"/></span><span><t t-esc="t('Mobile')"/></span></div></div>
+            <div b-chart-footer=""><div b-chart-trend=""><t t-esc="t('Trending up by 5.2% this month')"/> <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range=""><t t-esc="t('January - June 2024')"/></div></div>
+          </article>
+
+          <article b-ui="chart" b-att-type="area" b-att-variant="area-card" t-att-aria-label="t('Area Chart - Icons')">
+            <div b-chart-header=""><h3 b-chart-title=""><t t-esc="t('Area Chart - Icons')"/></h3><p b-chart-description=""><t t-esc="t('Showing total visitors for the last 6 months')"/></p></div>
+            <div b-chart-body=""><svg viewBox="0 0 640 250" role="img" t-att-aria-label="t('Area Chart Icons')"><g b-chart-grid=""><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area="" b-chart-series="" style="--b-chart-color: var(--b-chart-1)" d="M0 158 C100 76 230 108 320 55 S500 130 640 78 L640 220 L0 220 Z"/><path b-chart-line="" b-chart-series="" style="--b-chart-color: var(--b-chart-1)" d="M0 158 C100 76 230 108 320 55 S500 130 640 78"/><circle b-chart-dot="" b-chart-series="" style="--b-chart-color: var(--b-chart-1)" cx="320" cy="55" r="4"/></svg><div b-chart-legend=""><span><span b-icon="monitor" b-icon-size="0.875rem"></span> <t t-esc="t('Desktop')"/></span><span><span b-icon="smartphone" b-icon-size="0.875rem"></span> <t t-esc="t('Mobile')"/></span></div></div>
+            <div b-chart-footer=""><div b-chart-trend=""><t t-esc="t('Trending up by 5.2% this month')"/> <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range=""><t t-esc="t('January - June 2024')"/></div></div>
+          </article>
+
+          <article b-ui="chart" b-att-type="area" b-att-variant="area-card" t-att-aria-label="t('Area Chart - Gradient')">
+            <div b-chart-header=""><h3 b-chart-title=""><t t-esc="t('Area Chart - Gradient')"/></h3><p b-chart-description=""><t t-esc="t('Showing total visitors for the last 6 months')"/></p></div>
+            <div b-chart-body=""><svg viewBox="0 0 640 250" role="img" t-att-aria-label="t('Area Chart Gradient')"><defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stop-color="var(--b-chart-1)" stop-opacity="0.8"/><stop offset="95%" stop-color="var(--b-chart-1)" stop-opacity="0.1"/></linearGradient></defs><g b-chart-grid=""><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area="" b-chart-series="" fill="url(#areaGradient)" d="M0 170 C100 82 210 135 320 56 S500 122 640 72 L640 220 L0 220 Z"/><path b-chart-line="" b-chart-series="" d="M0 170 C100 82 210 135 320 56 S500 122 640 72"/></svg></div>
+            <div b-chart-footer=""><div b-chart-trend=""><t t-esc="t('Trending up by 5.2% this month')"/> <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range=""><t t-esc="t('January - June 2024')"/></div></div>
+          </article>
+        </div>
+      </t>
+    </div>
+  </t>
+</templates>

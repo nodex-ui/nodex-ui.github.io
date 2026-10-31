@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nodex UI Area Charts</title>
+    <link rel="stylesheet" href="../../dist/nodexui.min.css">
+    <style>html.b-embed .b-embed-hide { display: none; }</style>
+    <script src="../../dist/nodexui.min.js" defer></script>
+  </head>
+  <body class="bg-body text-body">
+    <script>
+      if (new URLSearchParams(location.search).get("embed") === "1") {
+        document.documentElement.classList.add("b-embed");
+      }
+    </script>
+    <header b-example-nav-header class="b-embed-hide">
+      <nav class="container" b-example-nav-inner aria-label="Nodex UI pages">
+        <a class="navbar-brand fw-semibold text-decoration-none" href="/examples/index.html#/docs">Nodex UI</a>
+        <div b-ui="navigation-menu" aria-label="Nodex UI pages"><a href="/examples/index.html#/docs">Docs</a><a href="/examples/index.html#/components">Components</a><a href="/examples/index.html#/blocks">Blocks</a><a href="/examples/index.html#/icons">Icons</a><a href="/examples/index.html#/chart" aria-current="page">Chart</a></div>
+        <button b-ui="theme-button" b-att-variant="outline" b-att-storage-key="b-example-theme" type="button"></button>
+      </nav>
+    </header>
+
+    <main class="container py-5">
+      <section class="mb-4">
+        <h1 class="display-6 fw-semibold mb-2">Beautiful Charts &amp; Graphs</h1>
+        <p class="text-body-secondary mb-3">A collection of ready-to-use chart components built with Recharts. From basic charts to rich data displays, copy and paste into your apps.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a b-ui="button" b-att-variant="outline" href="./area.html">Browse Charts</a>
+          <a b-ui="button" b-att-variant="outline" href="../../docs/components/chart.md">Documentation</a>
+        </div>
+      </section>
+
+      <nav b-ui="tabs" class="mb-4" aria-label="Chart categories">
+        <button b-tab="area" type="button">Area Charts</button>
+        <button b-tab="bar" type="button">Bar Charts</button>
+        <button b-tab="line" type="button">Line Charts</button>
+        <button b-tab="pie" type="button">Pie Charts</button>
+        <section b-panel="area">
+          <h2 class="h4 fw-semibold mb-3">Area Charts</h2>
+          <div b-chart-example-grid>
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Interactive">
+              <div b-chart-header b-att-layout="inline">
+                <div>
+                  <h3 b-chart-title>Area Chart - Interactive</h3>
+                  <p b-chart-description>Showing total visitors for the last 3 months</p>
+                </div>
+                <div b-ui="select" b-chart-select b-att-value="90d">
+                  <button b-select-trigger type="button" aria-label="Select a value"><span b-select-value>Last 3 months</span></button>
+                  <div b-select-content>
+                    <div b-select-item b-att-value="90d">Last 3 months</div>
+                    <div b-select-item b-att-value="30d">Last 30 days</div>
+                    <div b-select-item b-att-value="7d">Last 7 days</div>
+                  </div>
+                </div>
+              </div>
+              <div b-chart-body b-att-compact>
+                <svg viewBox="0 0 640 250" role="img" aria-label="Desktop and mobile visitors from April to June">
+                  <defs>
+                    <linearGradient id="areaFillDesktop" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stop-color="var(--b-chart-1)" stop-opacity="0.8"/><stop offset="95%" stop-color="var(--b-chart-1)" stop-opacity="0.1"/></linearGradient>
+                    <linearGradient id="areaFillMobile" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stop-color="var(--b-chart-2)" stop-opacity="0.8"/><stop offset="95%" stop-color="var(--b-chart-2)" stop-opacity="0.1"/></linearGradient>
+                  </defs>
+                  <g b-chart-grid><line x1="0" y1="35" x2="640" y2="35"/><line x1="0" y1="90" x2="640" y2="90"/><line x1="0" y1="145" x2="640" y2="145"/><line x1="0" y1="200" x2="640" y2="200"/></g>
+                  <path b-chart-area b-chart-series style="--b-chart-color: var(--b-chart-2)" fill="url(#areaFillMobile)" d="M0 162 C45 116 90 205 135 95 S225 56 270 116 S360 42 405 86 S495 34 540 75 S610 105 640 65 L640 220 L0 220 Z"/>
+                  <path b-chart-area b-chart-series style="--b-chart-color: var(--b-chart-1)" fill="url(#areaFillDesktop)" d="M0 118 C45 190 90 75 135 42 S225 150 270 72 S360 120 405 48 S495 138 540 44 S610 156 640 70 L640 220 L0 220 Z"/>
+                  <path b-chart-line b-chart-series style="--b-chart-color: var(--b-chart-2)" d="M0 162 C45 116 90 205 135 95 S225 56 270 116 S360 42 405 86 S495 34 540 75 S610 105 640 65"/>
+                  <path b-chart-line b-chart-series style="--b-chart-color: var(--b-chart-1)" d="M0 118 C45 190 90 75 135 42 S225 150 270 72 S360 120 405 48 S495 138 540 44 S610 156 640 70"/>
+                  <g b-chart-axis><text x="0" y="245">Apr 1</text><text x="210" y="245">May 1</text><text x="420" y="245">Jun 1</text><text x="590" y="245">Jun 30</text></g>
+                </svg>
+                <div b-chart-legend><span>Mobile</span><span>Desktop</span></div>
+              </div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart">
+              <div b-chart-header><h3 b-chart-title>Area Chart</h3><p b-chart-description>Showing total visitors for the last 6 months</p></div>
+              <div b-chart-body>
+                <svg viewBox="0 0 640 250" role="img" aria-label="Area Chart default">
+                  <g b-chart-grid><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g>
+                  <path b-chart-area b-chart-series d="M0 150 C60 70 120 110 180 56 S300 175 360 120 S480 78 540 95 S600 55 640 82 L640 220 L0 220 Z"/>
+                  <path b-chart-line b-chart-series d="M0 150 C60 70 120 110 180 56 S300 175 360 120 S480 78 540 95 S600 55 640 82"/>
+                  <g b-chart-axis><text x="0" y="245">Jan</text><text x="128" y="245">Feb</text><text x="256" y="245">Mar</text><text x="384" y="245">Apr</text><text x="512" y="245">May</text><text x="610" y="245">Jun</text></g>
+                </svg>
+              </div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Linear">
+              <div b-chart-header><h3 b-chart-title>Area Chart - Linear</h3><p b-chart-description>Showing total visitors for the last 6 months</p></div>
+              <div b-chart-body><svg viewBox="0 0 640 250" role="img" aria-label="Area Chart Linear"><g b-chart-grid><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area b-chart-series d="M0 168 L128 72 L256 118 L384 48 L512 132 L640 76 L640 220 L0 220 Z"/><path b-chart-line b-chart-series d="M0 168 L128 72 L256 118 L384 48 L512 132 L640 76"/><g b-chart-axis><text x="0" y="245">Jan</text><text x="128" y="245">Feb</text><text x="256" y="245">Mar</text><text x="384" y="245">Apr</text><text x="512" y="245">May</text><text x="610" y="245">Jun</text></g></svg></div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Step">
+              <div b-chart-header><h3 b-chart-title>Area Chart - Step</h3><p b-chart-description>Showing total visitors for the last 6 months</p></div>
+              <div b-chart-body><svg viewBox="0 0 640 250" role="img" aria-label="Area Chart Step"><g b-chart-grid><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area b-chart-series d="M0 170 H110 V82 H220 V125 H330 V58 H440 V142 H550 V74 H640 V220 H0 Z"/><path b-chart-line b-chart-series d="M0 170 H110 V82 H220 V125 H330 V58 H440 V142 H550 V74 H640"/><g b-chart-axis><text x="0" y="245">Jan</text><text x="128" y="245">Feb</text><text x="256" y="245">Mar</text><text x="384" y="245">Apr</text><text x="512" y="245">May</text><text x="610" y="245">Jun</text></g></svg></div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Legend">
+              <div b-chart-header><h3 b-chart-title>Area Chart - Legend</h3><p b-chart-description>Showing total visitors for the last 6 months</p></div>
+              <div b-chart-body><svg viewBox="0 0 640 250" role="img" aria-label="Area Chart Legend"><g b-chart-grid><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area b-chart-series style="--b-chart-color: var(--b-chart-1)" d="M0 170 C110 72 220 130 330 58 S520 130 640 74 L640 220 L0 220 Z"/><path b-chart-area b-chart-series style="--b-chart-color: var(--b-chart-2)" d="M0 185 C110 130 220 150 330 96 S520 150 640 105 L640 220 L0 220 Z"/><path b-chart-line b-chart-series style="--b-chart-color: var(--b-chart-1)" d="M0 170 C110 72 220 130 330 58 S520 130 640 74"/><path b-chart-line b-chart-series style="--b-chart-color: var(--b-chart-2)" d="M0 185 C110 130 220 150 330 96 S520 150 640 105"/></svg><div b-chart-legend><span>Desktop</span><span>Mobile</span></div></div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Stacked">
+              <div b-chart-header><h3 b-chart-title>Area Chart - Stacked</h3><p b-chart-description>Showing total visitors for the last 6 months</p></div>
+              <div b-chart-body><svg viewBox="0 0 640 250" role="img" aria-label="Area Chart Stacked"><g b-chart-grid><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area b-chart-series style="--b-chart-color: var(--b-chart-2)" d="M0 176 C100 140 180 155 260 118 S430 148 520 105 S600 130 640 92 L640 220 L0 220 Z"/><path b-chart-area b-chart-series b-att-strong style="--b-chart-color: var(--b-chart-1)" d="M0 118 C100 58 180 96 260 52 S430 90 520 45 S600 80 640 42 L640 176 C600 130 520 105 430 148 S260 118 180 155 S100 140 0 176 Z"/><path b-chart-line b-chart-series style="--b-chart-color: var(--b-chart-1)" d="M0 118 C100 58 180 96 260 52 S430 90 520 45 S600 80 640 42"/></svg></div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Stacked Expanded">
+              <div b-chart-header><h3 b-chart-title>Area Chart - Stacked Expanded</h3><p b-chart-description>Showing total visitors for the last 6months</p></div>
+              <div b-chart-body><svg viewBox="0 0 640 250" role="img" aria-label="Area Chart Stacked Expanded"><g b-chart-grid><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area b-chart-series style="--b-chart-color: var(--b-chart-2)" d="M0 138 C120 112 210 150 320 120 S510 92 640 118 L640 220 L0 220 Z"/><path b-chart-area b-chart-series b-att-strong style="--b-chart-color: var(--b-chart-1)" d="M0 38 H640 V118 C510 92 420 148 320 120 S120 112 0 138 Z"/></svg></div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Icons">
+              <div b-chart-header><h3 b-chart-title>Area Chart - Icons</h3><p b-chart-description>Showing total visitors for the last 6 months</p></div>
+              <div b-chart-body><svg viewBox="0 0 640 250" role="img" aria-label="Area Chart Icons"><g b-chart-grid><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area b-chart-series style="--b-chart-color: var(--b-chart-1)" d="M0 158 C100 76 230 108 320 55 S500 130 640 78 L640 220 L0 220 Z"/><path b-chart-line b-chart-series style="--b-chart-color: var(--b-chart-1)" d="M0 158 C100 76 230 108 320 55 S500 130 640 78"/><circle b-chart-dot b-chart-series style="--b-chart-color: var(--b-chart-1)" cx="320" cy="55" r="4"/></svg><div b-chart-legend><span><span b-icon="monitor" b-icon-size="0.875rem"></span> Desktop</span><span><span b-icon="smartphone" b-icon-size="0.875rem"></span> Mobile</span></div></div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Gradient">
+              <div b-chart-header><h3 b-chart-title>Area Chart - Gradient</h3><p b-chart-description>Showing total visitors for the last 6 months</p></div>
+              <div b-chart-body><svg viewBox="0 0 640 250" role="img" aria-label="Area Chart Gradient"><defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stop-color="var(--b-chart-1)" stop-opacity="0.8"/><stop offset="95%" stop-color="var(--b-chart-1)" stop-opacity="0.1"/></linearGradient></defs><g b-chart-grid><line x1="0" y1="40" x2="640" y2="40"/><line x1="0" y1="100" x2="640" y2="100"/><line x1="0" y1="160" x2="640" y2="160"/></g><path b-chart-area b-chart-series fill="url(#areaGradient)" d="M0 170 C100 82 210 135 320 56 S500 122 640 72 L640 220 L0 220 Z"/><path b-chart-line b-chart-series d="M0 170 C100 82 210 135 320 56 S500 122 640 72"/></svg></div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+
+            <article b-ui="chart" b-att-type="area" b-att-variant="area-card" aria-label="Area Chart - Axes">
+              <div b-chart-header><h3 b-chart-title>Area Chart - Axes</h3><p b-chart-description>Showing total visitors for the last 6 months</p></div>
+              <div b-chart-body><svg viewBox="0 0 640 250" role="img" aria-label="Area Chart Axes"><g b-chart-grid><line x1="36" y1="40" x2="640" y2="40"/><line x1="36" y1="100" x2="640" y2="100"/><line x1="36" y1="160" x2="640" y2="160"/></g><g b-chart-axis><text x="0" y="44">300</text><text x="0" y="104">200</text><text x="0" y="164">100</text><text x="36" y="245">Jan</text><text x="154" y="245">Feb</text><text x="272" y="245">Mar</text><text x="390" y="245">Apr</text><text x="508" y="245">May</text><text x="600" y="245">Jun</text></g><path b-chart-area b-chart-series d="M36 170 C128 82 230 135 330 56 S500 122 640 72 L640 220 L36 220 Z"/><path b-chart-line b-chart-series d="M36 170 C128 82 230 135 330 56 S500 122 640 72"/></svg></div>
+              <div b-chart-footer><div b-chart-trend>Trending up by 5.2% this month <span b-icon="trending-up" b-icon-size="1rem"></span></div><div b-chart-range>January - June 2024</div></div>
+            </article>
+          </div>
+        </section>
+        <section b-panel="bar">Bar chart examples are available from the shadcn charts catalog.</section>
+        <section b-panel="line">Line chart examples are available from the shadcn charts catalog.</section>
+        <section b-panel="pie">Pie chart examples are available from the shadcn charts catalog.</section>
+      </nav>
+    </main>
+  </body>
+</html>

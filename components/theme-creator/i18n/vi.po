@@ -1,0 +1,134 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/theme-creator\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: vi\n"
+
+#: theme-creator.js theme-creator.xml
+msgid "Success"
+msgstr "Thành công"
+
+#: theme-creator.js theme-creator.xml
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#: theme-creator.js
+msgid "Danger"
+msgstr "Nguy hiểm"
+
+#: theme-creator.js theme-creator.xml
+msgid "Info"
+msgstr "Thông tin"
+
+#: theme-creator.js
+msgid "Load the downloaded files after <code>nodexui.min.css</code>, or replace <code>src/themes/nodexui-*.css</code>."
+msgstr "Nạp các tệp đã tải sau <code>nodexui.min.css</code>, hoặc thay thế <code>src/themes/nodexui-*.css</code>."
+
+#: theme-creator.xml
+msgid "Theme creator"
+msgstr "Trình tạo giao diện"
+
+#: theme-creator.xml
+msgid "Reset"
+msgstr "Đặt lại"
+
+#: theme-creator.xml
+msgid "Base colour"
+msgstr "Màu nền"
+
+#: theme-creator.xml
+msgid "Accent"
+msgstr "Màu nhấn"
+
+#: theme-creator.xml
+msgid "Custom colour"
+msgstr "Màu tùy chọn"
+
+#: theme-creator.xml
+msgid "Status colours"
+msgstr "Màu trạng thái"
+
+#: theme-creator.xml
+msgid "Radius"
+msgstr "Độ bo góc"
+
+#: theme-creator.xml
+msgid "Preview mode"
+msgstr "Chế độ xem trước"
+
+#: theme-creator.xml
+msgid "Light"
+msgstr "Sáng"
+
+#: theme-creator.xml
+msgid "Dark"
+msgstr "Tối"
+
+#: theme-creator.xml
+msgid "Download nodexui-light.css"
+msgstr "Tải nodexui-light.css"
+
+#: theme-creator.xml
+msgid "Download nodexui-dark.css"
+msgstr "Tải nodexui-dark.css"
+
+#: theme-creator.xml
+msgid "Copied"
+msgstr "Đã sao chép"
+
+#: theme-creator.xml
+msgid "Copy both"
+msgstr "Sao chép cả hai"
+
+#: theme-creator.xml
+msgid "Create an account"
+msgstr "Tạo tài khoản"
+
+#: theme-creator.xml
+msgid "Enter your email below to create your account"
+msgstr "Nhập email của bạn bên dưới để tạo tài khoản"
+
+#: theme-creator.xml
+msgid "Email"
+msgstr "Email"
+
+#: theme-creator.xml
+msgid "Send me product updates"
+msgstr "Gửi cho tôi cập nhật sản phẩm"
+
+#: theme-creator.xml
+msgid "Create account"
+msgstr "Tạo tài khoản"
+
+#: theme-creator.xml
+msgid "Primary"
+msgstr "Chính"
+
+#: theme-creator.xml
+msgid "Secondary"
+msgstr "Phụ"
+
+#: theme-creator.xml
+msgid "Outline"
+msgstr "Viền"
+
+#: theme-creator.xml
+msgid "Delete"
+msgstr "Xóa"
+
+#: theme-creator.xml
+msgid "Default"
+msgstr "Mặc định"
+
+#: theme-creator.xml
+msgid "Destructive"
+msgstr "Nguy hiểm"
+
+#: theme-creator.xml
+msgid "Muted"
+msgstr "Mờ"
+
+#: theme-creator.xml
+msgid "Heads up"
+msgstr "Lưu ý"
+
+#: theme-creator.xml
+msgid "Colours, radius and borders on this page follow your choices."
+msgstr "Màu sắc, độ bo góc và viền trên trang này thay đổi theo lựa chọn của bạn."

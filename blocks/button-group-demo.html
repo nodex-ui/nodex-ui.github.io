@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>button-group-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="button-group-demo" data-block-description="Responsive button groups for an email toolbar, with a split action button that opens a dropdown menu of mark-as-read, snooze, and labeling options.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="button-group-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 32rem" class="w-100">
+        <ButtonGroup>
+          <ButtonGroup className="'d-none d-sm-flex'">
+            <Button variant="'outline'" size="'icon'" ariaLabel="'Go Back'" icon="'arrow-left'"/>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button variant="'outline'" label="'Archive'"/>
+            <Button variant="'outline'" label="'Report'"/>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button variant="'outline'" label="'Snooze'"/>
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <Icon name="'more-horizontal'"/>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="'end'" className="'w-52'">
+                <DropdownMenuGroup>
+                  <DropdownMenuItem>
+                    <Icon name="'mail-check'"/>
+                    Mark as Read
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Icon name="'archive'"/>
+                    Archive
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator/>
+                <DropdownMenuGroup>
+                  <DropdownMenuItem>
+                    <Icon name="'clock'"/>
+                    Snooze
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Icon name="'calendar-plus'"/>
+                    Add to Calendar
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Icon name="'list-filter'"/>
+                    Add to List
+                  </DropdownMenuItem>
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger>
+                      <Icon name="'tag'"/>
+                      Label As...
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuSubContent>
+                      <DropdownMenuRadioGroup value="'personal'">
+                        <DropdownMenuRadioItem value="'personal'">Personal</DropdownMenuRadioItem>
+                        <DropdownMenuRadioItem value="'work'">Work</DropdownMenuRadioItem>
+                        <DropdownMenuRadioItem value="'other'">Other</DropdownMenuRadioItem>
+                      </DropdownMenuRadioGroup>
+                    </DropdownMenuSubContent>
+                  </DropdownMenuSub>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator/>
+                <DropdownMenuGroup>
+                  <DropdownMenuItem variant="'destructive'">
+                    <Icon name="'trash-2'"/>
+                    Trash
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </ButtonGroup>
+        </ButtonGroup>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

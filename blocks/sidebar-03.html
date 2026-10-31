@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sidebar-03</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="sidebar-03" data-block-description="A sidebar with submenus.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="sidebar-03">
+      <Shell className="'border'" collapsed="state.collapsed" onCollapsedChange="(value) => { state.collapsed = value; }">
+        <ShellSidebar>
+          <ShellSidebarHeader>
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none fw-medium">
+              <Icon name="'gallery-vertical-end'"/>
+              Acme Inc.
+            </a>
+          </ShellSidebarHeader>
+          <ShellNav className="'d-flex flex-column gap-2'">
+            <SidebarGroup>
+              <SidebarGroupLabel>Platform</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton href="'#'" icon="'square-terminal'" active="true">Playground</SidebarMenuButton>
+                  <SidebarMenuSub>
+                    <SidebarMenuButton href="'#'">History</SidebarMenuButton>
+                    <SidebarMenuButton href="'#'">Starred</SidebarMenuButton>
+                    <SidebarMenuButton href="'#'">Settings</SidebarMenuButton>
+                  </SidebarMenuSub>
+                </SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'bot'">Models</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'book-open'">Documentation</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+            <SidebarGroup>
+              <SidebarGroupLabel>Projects</SidebarGroupLabel>
+              <SidebarMenu>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'frame'">Design Engineering</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'pie-chart'">Sales &amp; Marketing</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton href="'#'" icon="'map'">Travel</SidebarMenuButton></SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+          </ShellNav>
+        </ShellSidebar>
+        <ShellMain>
+          <ShellHeader className="'border-bottom p-3'">
+            <SidebarTrigger/>
+            <Separator orientation="'vertical'"/>
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem><a class="b-breadcrumb-link" href="#">Build Your Application</a></BreadcrumbItem>
+                    <BreadcrumbSeparator/>
+                    <BreadcrumbItem><BreadcrumbPage>Data Fetching</BreadcrumbPage></BreadcrumbItem>
+                </BreadcrumbList>
+                </Breadcrumb>
+          </ShellHeader>
+          <ShellContent className="'d-flex flex-column gap-3'">
+            <div class="row row-cols-3 g-3">
+              <div class="col"><div class="ratio ratio-16x9 bg-body-secondary rounded-4"></div></div>
+              <div class="col"><div class="ratio ratio-16x9 bg-body-secondary rounded-4"></div></div>
+              <div class="col"><div class="ratio ratio-16x9 bg-body-secondary rounded-4"></div></div>
+            </div>
+            <div class="flex-grow-1 bg-body-secondary rounded-4"></div>
+          </ShellContent>
+        </ShellMain>
+      </Shell>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

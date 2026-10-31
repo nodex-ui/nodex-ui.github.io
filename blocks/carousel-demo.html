@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>carousel-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="carousel-demo" data-block-description="A carousel with numbered slides and previous/next navigation buttons.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="carousel-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 20rem; width: 100%">
+        <Carousel slideCount="5" defaultIndex="0">
+          <CarouselSlide index="0">
+            <Card className="'w-100'">
+              <CardBody className="'d-flex align-items-center justify-content-center' + ' ratio ratio-1x1'">
+                <span class="fs-1 fw-semibold">1</span>
+              </CardBody>
+            </Card>
+          </CarouselSlide>
+          <CarouselSlide index="1">
+            <Card className="'w-100'">
+              <CardBody className="'d-flex align-items-center justify-content-center' + ' ratio ratio-1x1'">
+                <span class="fs-1 fw-semibold">2</span>
+              </CardBody>
+            </Card>
+          </CarouselSlide>
+          <CarouselSlide index="2">
+            <Card className="'w-100'">
+              <CardBody className="'d-flex align-items-center justify-content-center' + ' ratio ratio-1x1'">
+                <span class="fs-1 fw-semibold">3</span>
+              </CardBody>
+            </Card>
+          </CarouselSlide>
+          <CarouselSlide index="3">
+            <Card className="'w-100'">
+              <CardBody className="'d-flex align-items-center justify-content-center' + ' ratio ratio-1x1'">
+                <span class="fs-1 fw-semibold">4</span>
+              </CardBody>
+            </Card>
+          </CarouselSlide>
+          <CarouselSlide index="4">
+            <Card className="'w-100'">
+              <CardBody className="'d-flex align-items-center justify-content-center' + ' ratio ratio-1x1'">
+                <span class="fs-1 fw-semibold">5</span>
+              </CardBody>
+            </Card>
+          </CarouselSlide>
+          <CarouselPrevious><Icon name="'arrow-left'"/></CarouselPrevious>
+          <CarouselNext><Icon name="'arrow-right'"/></CarouselNext>
+        </Carousel>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

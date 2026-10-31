@@ -1,0 +1,26 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/block-gallery\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: vi\n"
+
+#: block-gallery.xml
+msgid "Feature blocks"
+msgstr "Khối tính năng"
+
+#: block-gallery.xml
+msgid "Sidebar blocks"
+msgstr "Khối thanh bên"
+
+#: block-gallery.xml
+msgid "Auth blocks"
+msgstr "Khối xác thực"
+
+#: block-gallery.xml
+msgid "Component demos"
+msgstr "Demo thành phần"
+
+#: block-gallery.xml
+msgid "Open block"
+msgstr "Mở khối"
+
+#: block-gallery.xml
+msgid "{label} preview"
+msgstr "Xem trước {label}"

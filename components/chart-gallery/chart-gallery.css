@@ -1,0 +1,3 @@
+/* Intentionally empty: the Chart tab renders entirely with Nodex UI component
+   CSS (dist/nodexui.min.css) — Chart/Select/SidebarGroup/SidebarMenu*/Icon —
+   plus Bootstrap grid/utility classes. No bespoke gallery CSS is needed. */

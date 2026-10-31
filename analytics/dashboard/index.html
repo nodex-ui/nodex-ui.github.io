@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.min.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "nodexui": "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.esm.js",
+      "nodexui/templates": "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.templates.xml",
+      "nodexui/analytics": "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.analytics.esm.js"
+    }
+  }
+  </script>
+  <style>
+    .kpi-value { font-size: 1.75rem; font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; }
+    .bar-cell { position: relative; padding: 0.125rem 0.5rem; border-radius: var(--b-radius-sm, 0.25rem); }
+    .bar-cell > .bar { position: absolute; inset: 0 auto 0 0; border-radius: inherit;
+      background: color-mix(in srgb, var(--b-chart-1) 16%, transparent); }
+    .bar-cell > span { position: relative; }
+    td.num, th.num { text-align: end; font-variant-numeric: tabular-nums; width: 6rem; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="./dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>signup-03</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="signup-03" data-block-description="A signup page with a muted background color.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div class="d-flex flex-column align-items-center justify-content-center gap-4 min-vh-100 bg-body-tertiary p-4">
+      <div class="d-flex flex-column align-items-center gap-4 col-12 col-sm-8 col-md-6 col-lg-4">
+        <a href="#" class="d-inline-flex align-items-center gap-2 fw-medium">
+          <Icon name="'gallery-vertical-end'"/>
+          Acme Inc.
+        </a>
+        <Card className="'w-100'">
+          <CardBody>
+            <form class="d-flex flex-column gap-4">
+              <div class="d-flex flex-column gap-2 text-center">
+                <h2 class="h4 mb-0">Create an account</h2>
+                <p class="text-muted mb-0">Enter your email below to create your account</p>
+              </div>
+              <FieldGroup>
+                <Field label="'Email'">
+                  <Input type="'email'" placeholder="'m@example.com'"/>
+                </Field>
+                <Button icon="'user-plus'">Sign up</Button>
+                <Button variant="'outline'" icon="'mail'">Sign up with email</Button>
+              </FieldGroup>
+              <p class="text-center small mb-0">Already have an account? <a href="#" class="text-decoration-underline">Login</a></p>
+            </form>
+          </CardBody>
+        </Card>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

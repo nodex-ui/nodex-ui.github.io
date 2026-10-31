@@ -1,0 +1,11 @@
+<templates>
+  <t t-name="examples.OwlFrameworkSidebar">
+    <div class="b-owl-framework-sidebar-inner">
+      <MarkdownTree src="treeSrc" activePath="state.path" onSelect="onSelect"/>
+    </div>
+  </t>
+
+  <t t-name="examples.OwlFrameworkContent">
+    <Markdown src="docSrc" mermaid="true" nodexUi="true"/>
+  </t>
+</templates>

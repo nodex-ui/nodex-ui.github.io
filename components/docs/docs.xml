@@ -1,0 +1,52 @@
+<templates>
+  <t t-name="examples.DocsSidebar">
+    <div class="d-grid gap-4 overflow-y-auto">
+      <SidebarGroup>
+        <SidebarGroupLabel><t t-esc="t('Guides')"/></SidebarGroupLabel>
+        <SidebarMenu>
+          <SidebarMenuItem t-foreach="guidePages" t-as="guide" t-key="guide.slug">
+            <SidebarMenuButton href="'#/docs/guide/' + guide.slug" active="state.kind === 'guide' and state.slug === guide.slug">
+              <t t-esc="guide.title"/>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroup>
+
+      <SidebarGroup>
+        <SidebarGroupLabel><t t-esc="t('Components')"/></SidebarGroupLabel>
+        <Input className="'mt-1 mb-2'" type="'search'" placeholder="t('Filter components')" value="state.query" onInput="(value) => this.onQueryInput(value)"/>
+        <SidebarMenu>
+          <SidebarMenuItem t-foreach="visibleComponents" t-as="component" t-key="component.name">
+            <SidebarMenuButton href="'#/docs/components/' + component.name" active="state.kind === 'component' and state.slug === component.name">
+              <t t-esc="titleize(component.name)"/>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroup>
+    </div>
+  </t>
+
+  <t t-name="examples.DocsContent">
+    <div>
+      <Alert t-if="state.error" variant="'danger'"><t t-esc="state.error"/></Alert>
+      <div t-elif="state.loading" class="text-muted small"><t t-esc="t('Loading docs...')"/></div>
+      <t t-else="">
+        <Breadcrumb className="'mb-4'">
+          <BreadcrumbList>
+            <BreadcrumbItem><a class="b-breadcrumb-link" href="#/docs"><t t-esc="t('Docs')"/></a></BreadcrumbItem>
+            <BreadcrumbSeparator/>
+            <BreadcrumbItem><BreadcrumbPage><t t-esc="state.title"/></BreadcrumbPage></BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h1 t-esc="state.title"/>
+        <p t-if="state.description" class="text-muted small" t-esc="state.description"/>
+        <div t-if="state.kind === 'component'" class="d-flex flex-wrap gap-2 my-3">
+          <Badge variant="'muted'" label="state.componentType"/>
+          <Badge variant="'outline'"><t t-esc="t('{count} attributes', { count: state.attributeCount })"/></Badge>
+          <Badge variant="'outline'"><t t-esc="t('{count} events', { count: state.eventCount })"/></Badge>
+        </div>
+        <Markdown src="docSrc"/>
+      </t>
+    </div>
+  </t>
+</templates>

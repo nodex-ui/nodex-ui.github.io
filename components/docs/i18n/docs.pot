@@ -1,0 +1,138 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/docs\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: docs.js
+msgid "Usage Guide"
+msgstr ""
+
+#: docs.js
+msgid "The single entry point for integrating Nodex UI into a consumer project."
+msgstr ""
+
+#: docs.js
+msgid "Installation"
+msgstr ""
+
+#: docs.js
+msgid "Install mechanics: CSS and JS files, load order, and CDN paths."
+msgstr ""
+
+#: docs.js
+msgid "Theming"
+msgstr ""
+
+#: docs.js
+msgid "Set the theme on `html` or a subtree and override semantic tokens."
+msgstr ""
+
+#: docs.js
+msgid "Runtime API"
+msgstr ""
+
+#: docs.js
+msgid "The `window.thebase` global: mount, mountAll, destroy, and events."
+msgstr ""
+
+#: docs.js
+msgid "Analytics"
+msgstr ""
+
+#: docs.js
+msgid "Optional standalone, cookieless pageview and event tracking (`nodexui/analytics`)."
+msgstr ""
+
+#: docs.js
+msgid "i18n"
+msgstr ""
+
+#: docs.js
+msgid "Optional standalone gettext (.po) translations and language switching (`nodexui/i18n`)."
+msgstr ""
+
+#: docs.js
+msgid "Skill for AI"
+msgstr ""
+
+#: docs.js
+msgid "Install the Nodex UI agent skill so Claude Code builds apps and components with Nodex UI."
+msgstr ""
+
+#: docs.js
+msgid "Registry"
+msgstr ""
+
+#: docs.js
+msgid "How `dist/nodexui.registry.json` describes every shipped component."
+msgstr ""
+
+#: docs.js
+msgid "Nodex UI Component"
+msgstr ""
+
+#: docs.js
+msgid "Import real component classes instead of the static `b-ui` markers."
+msgstr ""
+
+#: docs.js
+msgid "Component Authoring"
+msgstr ""
+
+#: docs.js
+msgid "How components implement both the static and pure Nodex UI public APIs."
+msgstr ""
+
+#: docs.js
+msgid "Blocks"
+msgstr ""
+
+#: docs.js
+msgid "Static HTML block compositions styled by the shadcn-aligned tokens."
+msgstr ""
+
+#: docs.js
+msgid "Built-in Icons"
+msgstr ""
+
+#: docs.js
+msgid "Use the bundled Lucide icon library from plain HTML or JavaScript."
+msgstr ""
+
+#: docs.js
+msgid "Unable to load Nodex UI registry."
+msgstr ""
+
+#: docs.js
+msgid "{title} - Nodex UI Docs"
+msgstr ""
+
+#: docs.js
+msgid "Unable to render docs."
+msgstr ""
+
+#: docs.xml
+msgid "Guides"
+msgstr ""
+
+#: docs.xml
+msgid "Components"
+msgstr ""
+
+#: docs.xml
+msgid "Filter components"
+msgstr ""
+
+#: docs.xml
+msgid "Loading docs..."
+msgstr ""
+
+#: docs.xml
+msgid "Docs"
+msgstr ""
+
+#: docs.xml
+msgid "{count} attributes"
+msgstr ""
+
+#: docs.xml
+msgid "{count} events"
+msgstr ""

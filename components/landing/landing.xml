@@ -1,0 +1,147 @@
+<templates>
+  <t t-name="examples.Landing">
+    <header class="border-bottom sticky-top bg-body">
+      <nav class="container d-flex flex-wrap align-items-center justify-content-between gap-2 py-3" t-att-aria-label="t('Main')">
+        <a class="fw-semibold fs-5 text-decoration-none text-body d-inline-flex align-items-center gap-2 thebase-event-name=Brand+Click" href="/">
+          <Icon name="'box'" size="'22px'"/>Nodex UI
+        </a>
+        <div class="d-flex align-items-center gap-2">
+          <a class="btn btn-link text-body text-decoration-none px-2" href="/examples/index.html#/docs"><t t-esc="t('Docs')"/></a>
+          <a class="btn btn-link text-body text-decoration-none px-2" href="/examples/index.html#/blocks"><t t-esc="t('Blocks')"/></a>
+          <a class="btn btn-link text-body text-decoration-none d-none d-md-inline-block" href="#apidoc"><t t-esc="t('API docs')"/></a>
+          <a class="btn btn-link text-body text-decoration-none d-none d-md-inline-block" href="#analytics"><t t-esc="t('Analytics')"/></a>
+          <a class="btn btn-link text-body text-decoration-none" href="/examples/index.html"><t t-esc="t('Examples')"/></a>
+          <LanguageSwitcher/>
+          <ThemeButton variant="'outline'" storageKey="'b-example-theme'" onChange="(theme) => this.onThemeChange(theme)"/>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="b-landing-hero border-bottom">
+        <div class="container py-5 text-center" style="max-width: 48rem">
+          <Badge variant="'muted'" pill="true"><t t-esc="t('v{version} · SemVer stable', { version })"/></Badge>
+          <h1 class="display-4 fw-bold mt-3"><t t-esc="t('UI components with no build step.')"/></h1>
+          <p class="lead text-muted mt-3" t-out="richText.hero"/>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+            <Button href="'/examples/index.html'" icon="'arrow-right'" iconPosition="'end'"><t t-esc="t('Browse examples')"/></Button>
+            <Button href="'/examples/index.html#/docs'" variant="'outline'" icon="'book-open'"><t t-esc="t('Read the docs')"/></Button>
+          </div>
+          <div class="d-flex align-items-center justify-content-center gap-2 mt-4">
+            <code class="b-landing-code py-2">npm install nodexui</code>
+            <ClipboardButton variant="'outline'" size="'icon'" icon="'clipboard'" value="'npm install nodexui'" ariaLabel="t('Copy install command')"/>
+          </div>
+        </div>
+      </section>
+
+      <section class="container py-5">
+        <h2 class="h3 fw-semibold text-center"><t t-esc="t('Why Nodex UI')"/></h2>
+        <p class="text-muted text-center mb-4"><t t-esc="t('Built for pages that mount, unmount, and re-render from markup — like WYSIWYG website builders.')"/></p>
+        <div class="row g-3">
+          <div t-foreach="features" t-as="feature" t-key="feature.title" class="col-12 col-md-6 col-lg-3">
+            <Card className="'h-100'">
+              <CardBody>
+                <span class="b-landing-feature-icon"><Icon name="feature.icon"/></span>
+                <h3 class="h6 fw-semibold mt-3" t-esc="feature.title"/>
+                <p class="text-muted small mb-0" t-esc="feature.text"/>
+              </CardBody>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-top border-bottom bg-body-tertiary">
+        <div class="container py-5" style="max-width: 56rem">
+          <h2 class="h3 fw-semibold text-center"><t t-esc="t('Start in two lines')"/></h2>
+          <p class="text-muted text-center mb-4"><t t-esc="t('Pick the API that fits your page. Pin an exact version in production.')"/></p>
+          <Tabs defaultValue="'static'" className="'align-items-center'" onChange="(value) => this.selectTab(value)">
+            <TabsList>
+              <TabTrigger value="'static'"><t t-esc="t('Static HTML')"/></TabTrigger>
+              <TabTrigger value="'owl'"><t t-esc="t('Pure Nodex UI')"/></TabTrigger>
+            </TabsList>
+            <TabContent value="'static'" className="'w-100'"><pre class="b-landing-code"><code t-esc="snippets.static"/></pre></TabContent>
+            <TabContent value="'owl'" className="'w-100'"><pre class="b-landing-code"><code t-esc="snippets.owl"/></pre></TabContent>
+          </Tabs>
+        </div>
+      </section>
+
+      <section id="apidoc" class="container py-5 border-top">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-6 order-lg-2">
+            <Badge variant="'muted'" pill="true"><t t-esc="t('Optional · standalone')"/></Badge>
+            <h2 class="h3 fw-semibold mt-3"><t t-esc="t('API documentation from an OpenAPI file')"/></h2>
+            <p class="text-muted" t-out="richText.apidoc"/>
+            <ul class="list-unstyled d-grid gap-2 small mb-4">
+              <li t-foreach="apidocFeatures" t-as="item" t-key="item.icon" class="d-flex gap-2">
+                <Icon name="item.icon" size="'16px'" className="'text-primary flex-shrink-0 mt-1'"/><span t-esc="item.text"/>
+              </li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2">
+              <Button href="'/examples/apidoc/index.html'" icon="'file-json'"><t t-esc="t('Live Petstore demo')"/></Button>
+              <Button href="'/examples/index.html#/docs/components/apidoc'" variant="'outline'" icon="'book-open'"><t t-esc="t('ApiDoc docs')"/></Button>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 order-lg-1">
+            <div class="position-relative">
+              <pre class="b-landing-code"><code t-esc="snippets.apidoc"/></pre>
+              <ClipboardButton variant="'ghost'" size="'icon'" icon="'clipboard'" value="snippets.apidoc" ariaLabel="t('Copy ApiDoc snippet')" className="'position-absolute top-0 end-0 m-2'"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="analytics" class="container py-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-6">
+            <Badge variant="'muted'" pill="true"><t t-esc="t('New in 1.3.0 · optional')"/></Badge>
+            <h2 class="h3 fw-semibold mt-3"><t t-esc="t('Privacy-friendly analytics, built in')"/></h2>
+            <p class="text-muted" t-out="richText.analytics"/>
+            <ul class="list-unstyled d-grid gap-2 small mb-4">
+              <li t-foreach="analyticsFeatures" t-as="item" t-key="item.icon" class="d-flex gap-2">
+                <Icon name="item.icon" size="'16px'" className="'text-primary flex-shrink-0 mt-1'"/><span t-esc="item.text"/>
+              </li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2">
+              <Button href="'/examples/index.html#/docs/guide/analytics'" icon="'chart-line'"><t t-esc="t('Analytics guide')"/></Button>
+              <Button href="cdn + '/dist/nodexui.analytics.esm.js'" variant="'outline'" icon="'external-link'"><t t-esc="t('View bundle')"/></Button>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="position-relative">
+              <pre class="b-landing-code"><code t-esc="snippets.analytics"/></pre>
+              <ClipboardButton variant="'ghost'" size="'icon'" icon="'clipboard'" value="snippets.analytics" ariaLabel="t('Copy analytics snippet')" className="'position-absolute top-0 end-0 m-2'"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container py-5 border-top">
+        <h2 class="h3 fw-semibold text-center mb-4"><t t-esc="t('Explore the examples')"/></h2>
+        <div class="row g-3">
+          <div t-foreach="sections" t-as="section" t-key="section.route" class="col-12 col-sm-6 col-lg-3">
+            <a class="text-decoration-none" t-att-href="'/examples/index.html#/' + section.route">
+              <Card className="'h-100'">
+                <CardHeader className="'d-flex align-items-center gap-2'"><Icon name="section.icon"/><t t-esc="section.title"/></CardHeader>
+                <CardBody className="'text-muted small'"><t t-esc="section.text"/></CardBody>
+              </Card>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <Button href="'/examples/index.html'" variant="'outline'" icon="'arrow-right'" iconPosition="'end'"><t t-esc="t('Open all examples')"/></Button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-top">
+      <div class="container d-flex flex-wrap justify-content-between gap-2 py-4 small text-muted">
+        <span><t t-esc="t('nodexui · MIT License')"/></span>
+        <span>
+          <a class="text-muted" href="https://www.npmjs.com/package/nodexui">npm</a> ·
+          <a class="text-muted" t-att-href="cdn + '/'">jsDelivr</a> ·
+          <a class="text-muted thebase-event-name=Footer+Link thebase-event-target=examples" href="/examples/index.html"><t t-esc="t('Examples')"/></a>
+        </span>
+      </div>
+    </footer>
+  </t>
+</templates>

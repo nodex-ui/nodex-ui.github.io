@@ -1,0 +1,42 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/icons\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: vi\n"
+
+#: icons.js
+msgid "Unable to load the Lucide icon manifest."
+msgstr "Không thể tải danh sách biểu tượng Lucide."
+
+#: icons.js
+msgid "Unable to load icons."
+msgstr "Không thể tải biểu tượng."
+
+#: icons.xml
+msgid "Filter icons..."
+msgstr "Lọc biểu tượng..."
+
+#: icons.xml
+msgid "Showing {shown} of {total} icons (refine your search to see more)."
+msgstr "Hiển thị {shown} / {total} biểu tượng (hãy thu hẹp tìm kiếm để xem thêm)."
+
+#: icons.xml
+msgid "Showing {shown} of {total} icons."
+msgstr "Hiển thị {shown} / {total} biểu tượng."
+
+#: icons.xml
+msgid "Loading icons..."
+msgstr "Đang tải biểu tượng..."
+
+#: icons.xml
+msgid "No icon matches your search."
+msgstr "Không có biểu tượng nào khớp với tìm kiếm."
+
+#: icons.xml
+msgid "Static markup"
+msgstr "Markup tĩnh"
+
+#: icons.xml
+msgid "Pure Nodex UI"
+msgstr "Base thuần"
+
+#: icons.xml
+msgid "Color follows the surrounding text color:"
+msgstr "Màu theo màu chữ xung quanh:"

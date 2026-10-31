@@ -1,0 +1,3 @@
+[b-block="sidebar-12"] [b-block-calendar-grid] { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.125rem; text-align: center; }
+[b-block="sidebar-12"] [b-block-calendar-grid] span { border-radius: var(--b-radius-md); padding: 0.25rem; }
+[b-block="sidebar-12"] [b-block-calendar-grid] span[aria-current="date"] { background: var(--b-primary); color: var(--b-primary-foreground); }

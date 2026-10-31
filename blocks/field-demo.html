@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>field-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="field-demo" data-block-description="A payment form combining labels, controls, and helper text into an accessible, grouped field layout.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="field-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <form class="d-flex flex-column gap-3" style="max-width: 32rem; width: 100%;">
+        <FieldSet>
+          <FieldLegend>Payment Method</FieldLegend>
+          <FieldDescription>All transactions are secure and encrypted</FieldDescription>
+          <FieldGroup className="'mt-3 gap-3 d-flex flex-column'">
+            <Field label="'Name on Card'">
+              <Input id="'card-name'" value="'Evil Rabbit'"/>
+            </Field>
+            <Field label="'Card Number'" description="'Enter your 16-digit card number'" useTip="1">
+              <Input id="'card-number-tip'" placeholder="'1234 5678 9012 3456'"/>
+            </Field>
+
+            <Field label="'Card Number'" description="'Enter your 16-digit card number'">
+              <Input id="'card-number'" value="'1234 5678 9012 3456'" leadingIcon="'credit-card'"/>
+            </Field>
+
+            <div class="row g-3">
+              <div class="col-4">
+                <Field label="'Month'">
+                  <NativeSelect id="'expiry-month'">
+                    <option>MM</option>
+                  </NativeSelect>
+                </Field>
+              </div>
+              <div class="col-4">
+                <Field label="'Year'">
+                  <NativeSelect id="'expiry-year'">
+                    <option>YYYY</option>
+                  </NativeSelect>
+                </Field>
+              </div>
+              <div class="col-4">
+                <Field label="'CVV'">
+                  <Input id="'card-cvv'" value="'123'"/>
+                </Field>
+              </div>
+            </div>
+
+            <FieldSeparator/>
+
+            <FieldSet>
+              <FieldLegend>Billing Address</FieldLegend>
+              <FieldDescription>The billing address associated with your payment method</FieldDescription>
+              <Field orientation="'horizontal'" className="'mt-3'">
+                <Checkbox id="'same-address'" checked="true"/>
+                <FieldLabel for="'same-address'">Same as shipping address</FieldLabel>
+              </Field>
+            </FieldSet>
+
+            <Field label="'Comments'">
+              <Textarea id="'comments'" placeholder="'Add any additional comments'" rows="3"/>
+            </Field>
+          </FieldGroup>
+        </FieldSet>
+
+        <div class="d-flex gap-2">
+          <Button type="'submit'">Submit</Button>
+          <Button variant="'outline'" type="'button'">Cancel</Button>
+        </div>
+      </form>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

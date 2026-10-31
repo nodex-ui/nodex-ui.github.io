@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>checkbox-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="checkbox-demo" data-block-description="A simple checkbox paired with a label that lets users toggle acceptance of terms.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="checkbox-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100 d-flex align-items-center gap-2">
+        <Checkbox className="'me-1'">Accept terms and conditions</Checkbox>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

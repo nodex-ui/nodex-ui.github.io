@@ -1,0 +1,90 @@
+.b-theme-creator-panel {
+  /* The sidebar is shorter than the controls: cap the height (below the brand row) so the panel scrolls. */
+  max-height: calc(100vh - 6rem);
+  padding-inline: 0.25rem;
+}
+
+.b-theme-creator-preview {
+  background: var(--b-background);
+  color: var(--b-foreground);
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-xl);
+  padding: 2rem;
+}
+
+.b-theme-creator-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  align-items: start;
+}
+
+.b-theme-creator-swatch {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.b-theme-creator-swatch.is-active {
+  outline: 2px solid var(--b-ring);
+  outline-offset: 2px;
+}
+
+.b-theme-creator-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--b-border);
+  background: var(--b-muted);
+  color: var(--b-foreground);
+}
+
+.b-theme-creator-custom .b-icon,
+.b-theme-creator-custom svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.b-theme-creator-base {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-md);
+}
+
+.b-theme-creator-base.is-active {
+  border-color: var(--b-ring);
+  background: var(--b-muted);
+}
+
+.b-theme-creator-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+}
+
+.b-theme-creator-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+  gap: 0.5rem;
+}
+
+.b-theme-creator-palette > div {
+  display: flex;
+  align-items: end;
+  height: 3.25rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-md);
+  font-size: var(--b-text-xs);
+}
+
+.b-theme-creator-status-label {
+  margin-bottom: 0.35rem;
+  font-size: var(--b-text-sm);
+  text-transform: capitalize;
+}

@@ -1,0 +1,134 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/theme-creator\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+#: theme-creator.js theme-creator.xml
+msgid "Success"
+msgstr ""
+
+#: theme-creator.js theme-creator.xml
+msgid "Warning"
+msgstr ""
+
+#: theme-creator.js
+msgid "Danger"
+msgstr ""
+
+#: theme-creator.js theme-creator.xml
+msgid "Info"
+msgstr ""
+
+#: theme-creator.js
+msgid "Load the downloaded files after <code>nodexui.min.css</code>, or replace <code>src/themes/nodexui-*.css</code>."
+msgstr ""
+
+#: theme-creator.xml
+msgid "Theme creator"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Reset"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Base colour"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Accent"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Custom colour"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Status colours"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Radius"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Preview mode"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Light"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Dark"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Download nodexui-light.css"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Download nodexui-dark.css"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Copied"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Copy both"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Create an account"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Enter your email below to create your account"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Email"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Send me product updates"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Create account"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Primary"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Secondary"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Outline"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Delete"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Default"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Destructive"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Muted"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Heads up"
+msgstr ""
+
+#: theme-creator.xml
+msgid "Colours, radius and borders on this page follow your choices."
+msgstr ""

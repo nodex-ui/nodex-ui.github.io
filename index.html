@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nodex UI — Ready-to-use UI components, straight from a CDN</title>
+    <meta name="description" content="Nodex UI (nodexui) is a free, no-build JavaScript UI component library: 73 responsive, accessible components, blocks, icons and themes you can load from a CDN or install with npm.">
+    <link rel="icon" href="/examples/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/examples/pwa/logo/light/pwa/favicon-32.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" sizes="32x32" href="/examples/pwa/logo/dark/pwa/favicon-32.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="16x16" href="/examples/pwa/logo/light/pwa/favicon-16.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" sizes="16x16" href="/examples/pwa/logo/dark/pwa/favicon-16.png" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="/examples/pwa/logo/light/ios/AppIcon-180-iphone@3x.png">
+    <link rel="manifest" href="/examples/pwa/manifest.webmanifest">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://ui.thebase.vn/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nodex UI">
+    <meta property="og:title" content="Nodex UI — Ready-to-use UI components, straight from a CDN">
+    <meta property="og:description" content="Nodex UI (nodexui) is a free, no-build JavaScript UI component library: 73 responsive, accessible components, blocks, icons and themes you can load from a CDN or install with npm.">
+    <meta property="og:image" content="https://ui.thebase.vn/examples/pwa/logo/light/pwa/icon-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:url" content="https://ui.thebase.vn/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nodex UI — Ready-to-use UI components, straight from a CDN">
+    <meta name="twitter:description" content="Free, no-build JavaScript UI component library: 73 responsive components, blocks, icons and themes. Load from a CDN or npm.">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "Organization", "@id": "https://ui.thebase.vn/#org", "name": "The Base", "url": "https://thebase.vn" },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Nodex UI",
+            "url": "https://ui.thebase.vn/",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "description": "Free, no-build JavaScript UI component library with 73 responsive, accessible components, blocks, icons and themes. Load from a CDN or install with npm.",
+            "publisher": { "@id": "https://ui.thebase.vn/#org" },
+            "sameAs": ["https://www.npmjs.com/package/nodexui"]
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <link rel="stylesheet" href="/examples/components/chart-gallery/chart-gallery.css">
+    <link rel="stylesheet" href="/examples/components/block-gallery/block-gallery.css">
+    <link rel="stylesheet" href="/examples/components/landing/landing.css">
+    <link rel="stylesheet" href="/examples/components/theme-creator/theme-creator.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "nodexui": "/dist/nodexui.esm.js",
+          "nodexui/templates": "/dist/nodexui.templates.xml",
+          "nodexui/analytics": "/dist/nodexui.analytics.esm.js",
+          "nodexui/i18n": "/dist/nodexui.i18n.esm.js",
+          "nodexui/qr": "/dist/nodexui.qr.esm.js",
+          "@/": "/examples/"
+        }
+      }
+    </script>
+    <script type="module" src="/examples/index-router.js"></script>
+  </head>
+  <body class="bg-body text-body">
+    <div id="b-example-root"></div>
+    <noscript>
+      <main>
+        <h1>Nodex UI — Free JavaScript UI Component Library, No Build Step</h1>
+        <p>Install with <code>npm install nodexui</code> or load it from the jsDelivr CDN. Browse the docs, blocks, icons and theme creator; this site needs JavaScript to run the live demos.</p>
+        <p><a href="https://www.npmjs.com/package/nodexui">nodexui on npm</a></p>
+      </main>
+    </noscript>
+  </body>
+</html>

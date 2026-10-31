@@ -1,0 +1,54 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/main\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: vi\n"
+
+#: main.js
+msgid "Docs"
+msgstr "Tài liệu"
+
+#: main.js
+msgid "Install paths, usage guidance, and per-component sample code with live Nodex UI previews."
+msgstr "Cách cài đặt, hướng dẫn sử dụng và mã mẫu cho từng thành phần kèm bản xem trước Nodex UI trực tiếp."
+
+#: main.js
+msgid "Blocks"
+msgstr "Khối"
+
+#: main.js
+msgid "Catalog of composed Nodex UI block examples."
+msgstr "Danh mục các khối Nodex UI được ghép sẵn."
+
+#: main.js
+msgid "Icons"
+msgstr "Biểu tượng"
+
+#: main.js
+msgid "Lucide-backed icon usage through the Icon component."
+msgstr "Dùng biểu tượng Lucide thông qua thành phần Icon."
+
+#: main.js
+msgid "Chart"
+msgstr "Biểu đồ"
+
+#: main.js
+msgid "Interactive Nodex UI chart catalog."
+msgstr "Danh mục biểu đồ Nodex UI tương tác."
+
+#: main.js
+msgid "Concept"
+msgstr "Khái niệm"
+
+#: main.js
+msgid "Reference for everything exported by the underlying runtime."
+msgstr "Tham chiếu mọi thứ được runtime bên dưới xuất ra."
+
+#: main.js
+msgid "Theme"
+msgstr "Giao diện"
+
+#: main.js
+msgid "Pick colours and radius, preview Nodex UI live, and download nodexui-light.css / nodexui-dark.css."
+msgstr "Chọn màu và độ bo góc, xem trước Nodex UI trực tiếp, và tải nodexui-light.css / nodexui-dark.css."
+
+#: main.xml
+msgid "Nodex UI pages"
+msgstr "Các trang Nodex UI"

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>command-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="command-demo" data-block-description="A searchable command list with suggestions and settings items, each showing a keyboard shortcut hint.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="command-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div class="border rounded-3 shadow-sm bg-body" style="max-width: 28rem; width: 100%;">
+        <Command
+          placeholder="'Type a command or search...'"
+          className="'border-0 shadow-none'"
+          items="[
+            { value: 'calendar', label: 'Calendar' },
+            { value: 'search-emoji', label: 'Search Emoji' },
+            { value: 'calculator', label: 'Calculator (disabled)' },
+            { value: 'profile', label: 'Profile — ⌘P' },
+            { value: 'billing', label: 'Billing — ⌘B' },
+            { value: 'settings', label: 'Settings — ⌘S' },
+          ]"
+        />
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

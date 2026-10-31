@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>spinner-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="spinner-demo" data-block-description="A loading payment item showing a spinner alongside a status message and amount.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="spinner-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100">
+        <Item className="'d-flex align-items-center gap-2'">
+          <Spinner/>
+          <span>Processing payment...</span>
+          <span class="ms-auto text-muted">$100.00</span>
+        </Item>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

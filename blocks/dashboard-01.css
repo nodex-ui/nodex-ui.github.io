@@ -1,0 +1,3 @@
+/* Intentionally empty: dashboard-01.html renders entirely with Nodex UI
+   component CSS (dist/nodexui.min.css) — Shell/Sidebar/Card/Chart/Badge/Table
+   components plus Bootstrap utility classes. No bespoke CSS is needed. */

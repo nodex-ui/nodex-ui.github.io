@@ -1,0 +1,133 @@
+<templates>
+  <t t-name="examples.ThemeCreatorSidebar">
+    <div class="b-theme-creator-panel d-grid gap-0 overflow-y-auto pb-4">
+        <header class="d-flex align-items-center justify-content-between mb-3">
+          <span class="fw-semibold"><t t-esc="t('Theme creator')"/></span>
+          <Button variant="'ghost'" size="'sm'" label="t('Reset')" onClick="() => this.reset()"/>
+        </header>
+
+        <section class="mb-4">
+          <Label><t t-esc="t('Base colour')"/></Label>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <t t-foreach="bases" t-as="name" t-key="name">
+              <button type="button" class="btn btn-sm b-theme-creator-base" t-att-class="{ 'is-active': state.base === name }" t-on-click="() => this.setBase(name)">
+                <span class="b-theme-creator-dot" t-att-style="'background:' + baseDot[name]"/>
+                <t t-esc="name"/>
+              </button>
+            </t>
+          </div>
+        </section>
+
+        <section class="mb-4">
+          <Label><t t-esc="t('Accent')"/></Label>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <t t-foreach="accents" t-as="name" t-key="name">
+              <button type="button" class="b-theme-creator-swatch" t-att-class="{ 'is-active': !state.custom and state.accent === name }" t-att-style="'background:' + swatch[name]" t-att-title="name" t-att-aria-label="name" t-on-click="() => this.setAccent(name)"/>
+            </t>
+            <label class="b-theme-creator-swatch b-theme-creator-custom" t-att-class="{ 'is-active': state.custom }" t-att-style="state.custom ? 'background:' + state.custom : ''" t-att-title="t('Custom colour')">
+              <Icon name="'pipette'"/>
+              <input type="color" class="visually-hidden" t-att-aria-label="t('Custom colour')" t-att-value="state.custom || '#2563eb'" t-on-input="(event) => this.setCustom(event.target.value)"/>
+            </label>
+          </div>
+        </section>
+
+        <section class="mb-4">
+          <Label><t t-esc="t('Status colours')"/></Label>
+          <div class="d-flex flex-column gap-3 mt-2">
+            <t t-foreach="statuses" t-as="name" t-key="name">
+              <div>
+                <div class="b-theme-creator-status-label" t-esc="statusLabels[name]"/>
+                <div class="d-flex flex-wrap gap-2">
+                  <t t-foreach="presets[name]" t-as="preset" t-key="preset[0]">
+                    <button type="button" class="b-theme-creator-swatch" t-att-class="{ 'is-active': this.isStatus(name, preset[1]) }" t-att-style="'background:' + preset[1]" t-att-title="preset[0]" t-att-aria-label="name + ' ' + preset[0]" t-on-click="() => this.setStatus(name, preset[1])"/>
+                  </t>
+                  <label class="b-theme-creator-swatch b-theme-creator-custom" t-att-class="{ 'is-active': this.hasCustomStatus(name) }" t-att-style="this.hasCustomStatus(name) ? 'background:' + state.status[name] : ''" t-att-title="t('Custom colour')">
+                    <Icon name="'pipette'"/>
+                    <input type="color" class="visually-hidden" t-att-aria-label="name + ' custom colour'" t-att-value="this.statusColor(name)" t-on-input="(event) => this.setStatus(name, event.target.value)"/>
+                  </label>
+                </div>
+              </div>
+            </t>
+          </div>
+        </section>
+
+        <section class="mb-4">
+          <Label><t t-esc="t('Radius')"/></Label>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <t t-foreach="radii" t-as="r" t-key="r">
+              <Button size="'sm'" variant="state.radius === r ? 'secondary' : 'outline'" label="'' + r" onClick="() => this.setRadius(r)"/>
+            </t>
+          </div>
+        </section>
+
+        <section class="mb-4">
+          <Label><t t-esc="t('Preview mode')"/></Label>
+          <div class="d-flex gap-2 mt-2">
+            <Button size="'sm'" variant="state.mode === 'light' ? 'secondary' : 'outline'" label="t('Light')" onClick="() => this.setMode('light')"/>
+            <Button size="'sm'" variant="state.mode === 'dark' ? 'secondary' : 'outline'" label="t('Dark')" onClick="() => this.setMode('dark')"/>
+          </div>
+        </section>
+
+        <section class="d-grid gap-2">
+          <Button icon="'download'" label="t('Download nodexui-light.css')" onClick="() => this.downloadMode('light')"/>
+          <Button icon="'download'" label="t('Download nodexui-dark.css')" onClick="() => this.downloadMode('dark')"/>
+          <Button variant="'outline'" icon="'copy'" label="state.copied ? t('Copied') : t('Copy both')" onClick="() => this.copyAll()"/>
+          <p class="text-body-secondary small mb-0" t-out="loadHint"/>
+        </section>
+      </div>
+  </t>
+
+  <t t-name="examples.ThemeCreatorContent">
+        <div class="b-theme-creator-preview" t-ref="preview" t-att-data-signature="signature">
+          <div class="b-theme-creator-grid">
+            <Card>
+              <CardHeader>
+                <CardTitle><t t-esc="t('Create an account')"/></CardTitle>
+                <CardDescription><t t-esc="t('Enter your email below to create your account')"/></CardDescription>
+              </CardHeader>
+              <CardBody>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex flex-column gap-2">
+                    <Label htmlFor="'tc-email'"><t t-esc="t('Email')"/></Label>
+                    <Input id="'tc-email'" type="'email'" placeholder="'m@example.com'"/>
+                  </div>
+                  <Switch><t t-esc="t('Send me product updates')"/></Switch>
+                  <Progress value="66"/>
+                </div>
+              </CardBody>
+              <CardFooter>
+                <Button label="t('Create account')" className="'w-100'"/>
+              </CardFooter>
+            </Card>
+
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex flex-wrap gap-2">
+                <Button label="t('Primary')"/>
+                <Button variant="'secondary'" label="t('Secondary')"/>
+                <Button variant="'outline'" label="t('Outline')"/>
+                <Button variant="'destructive'" label="t('Delete')"/>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <Badge variant="'primary'"><t t-esc="t('Default')"/></Badge>
+                <Badge variant="'secondary'"><t t-esc="t('Secondary')"/></Badge>
+                <Badge variant="'danger'"><t t-esc="t('Destructive')"/></Badge>
+                <Badge variant="'muted'"><t t-esc="t('Muted')"/></Badge>
+                <Badge variant="'success'"><t t-esc="t('Success')"/></Badge>
+                <Badge variant="'warning'"><t t-esc="t('Warning')"/></Badge>
+                <Badge variant="'info'"><t t-esc="t('Info')"/></Badge>
+              </div>
+              <div class="b-theme-creator-palette">
+                <div t-foreach="tiles" t-as="tile" t-key="tile[0]" t-att-style="'background: var(--b-' + tile[0] + '); color: var(--b-' + tile[1] + ')'" t-att-title="'--b-' + tile[0]">
+                  <span t-esc="tile[0]"/>
+                </div>
+              </div>
+              <Alert>
+                <Icon name="'info'"/>
+                <AlertTitle><t t-esc="t('Heads up')"/></AlertTitle>
+                <AlertDescription><t t-esc="t('Colours, radius and borders on this page follow your choices.')"/></AlertDescription>
+              </Alert>
+            </div>
+          </div>
+        </div>
+        </t>
+</templates>

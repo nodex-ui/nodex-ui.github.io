@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" b-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>date-picker-demo</title>
+    <link rel="stylesheet" href="/dist/nodexui.min.css">
+    <script src="/dist/nodexui.min.js" defer></script>
+    <script type="module" src="/dist/nodexui.block-viewer.esm.js"></script>
+  </head>
+  <body class="bg-body text-body" data-block-title="date-picker-demo" data-block-description="A date picker that lets a user select a single date, shown with its current value.">
+    <div id="b-block-viewer" b-ui="block-viewer"></div>
+    <script type="text/xml" b-block-code-template>
+<templates>
+  <t t-name="examples.SidebarBlock">
+    <div b-block="date-picker-demo" class="d-flex align-items-center justify-content-center min-vh-100 bg-body-tertiary p-4">
+      <div style="max-width: 28rem" class="w-100 d-flex flex-column gap-4">
+        <DatePicker label="'Date of birth'" supportingText="'As on your ID'"/>
+        <DatePicker label="'Start date'" errorText="'Pick a date'"/>
+        <DatePicker label="'Date of birth'" supportingText="'As on your ID'" useTip="1"/>
+      </div>
+    </div>
+  </t>
+</templates>
+    </script>
+  </body>
+</html>

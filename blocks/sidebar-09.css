@@ -1,0 +1,6 @@
+[b-block="sidebar-09"] [b-block-content] { padding: 0; }
+[b-block="sidebar-09"] [b-block-mail] { display: grid; grid-template-columns: minmax(18rem, 24rem) minmax(0, 1fr); min-height: 100%; }
+[b-block="sidebar-09"] [b-block-mail-list] { border-right: 1px solid var(--b-border); display: grid; gap: 0.5rem; align-content: start; padding: 1rem; }
+[b-block="sidebar-09"] [b-block-mail-list] a { border-radius: var(--b-radius-lg); display: grid; gap: 0.25rem; padding: 0.75rem; }
+[b-block="sidebar-09"] [b-block-mail-list] a[aria-current="page"] { background: var(--b-accent); }
+[b-block="sidebar-09"] [b-block-message] { padding: 1.5rem; }

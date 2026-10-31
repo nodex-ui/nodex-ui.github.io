@@ -1,0 +1,23 @@
+msgid ""
+msgstr "Project-Id-Version: examples/i18n\nContent-Type: text/plain; charset=UTF-8\nLanguage: vi\n"
+
+msgid "i18n example"
+msgstr "Ví dụ i18n"
+
+msgid "Translate a page with the Nodex UI i18n service."
+msgstr "Dịch một trang bằng dịch vụ i18n của Nodex UI."
+
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+msgid "Welcome to the i18n example"
+msgstr "Chào mừng đến ví dụ i18n"
+
+msgid "Hello {name}, nice to meet you."
+msgstr "Xin chào {name}, rất vui được gặp bạn."
+
+msgid "You clicked {count} times."
+msgstr "Bạn đã bấm {count} lần."
+
+msgid "Click me"
+msgstr "Bấm vào đây"
