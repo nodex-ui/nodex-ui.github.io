@@ -1,6 +1,6 @@
 /* global NodexUI */
 
-const root = document.getElementById("b-example-root");
+const root = document.getElementById("b-root");
 
 /** Slugs from examples/components/docs/docs.js's guidePages — kept in sync manually. */
 const guideSlugs = [
@@ -41,13 +41,13 @@ function redirectTargetFor(pathname) {
 async function boot() {
   const target = redirectTargetFor(location.pathname);
   if (target) {
-    location.replace(`/examples/index.html${target}`);
+    location.replace(`/index.html${target}`);
     return;
   }
 
   root.innerHTML = '<div id="b-example-app"></div>';
   const isLanding = location.pathname === "/" || location.pathname === "/index.html";
-  await import(isLanding ? "/examples/components/landing/landing.js" : "/examples/components/main/main.js");
+  await import(isLanding ? "/components/landing/landing.js" : "/components/main/main.js");
 }
 
 /** Reloads the page when the service worker reports a new app version, and asks it to re-check

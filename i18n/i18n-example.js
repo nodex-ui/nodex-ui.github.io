@@ -1,5 +1,5 @@
 // Sample page translated with the standalone i18n service: no Owl or component library is loaded.
-// Run `npm run dev` and open /examples/i18n/ (or add ?lang=vi). Translations: ./i18n/vi.po.
+// Run `npm run dev` and open /i18n/ (or add ?lang=vi). Translations: ./i18n/vi.po.
 import { init, t, loadCatalog, languages, currentLanguage, setLanguage, translateHead } from "nodexui/i18n";
 
 init({ languages: [{ code: "en", label: "English" }, { code: "vi", label: "Tiếng Việt" }], storageKey: "b-example-lang" });

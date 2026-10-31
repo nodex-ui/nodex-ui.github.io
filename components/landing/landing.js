@@ -125,7 +125,7 @@ function templateBody(xml) {
 
 const [baseTemplates, landingTemplates] = await Promise.all([
   loadFile(import.meta.resolve("nodexui/templates")),
-  loadFile("/examples/components/landing/landing.xml"),
+  loadFile("/components/landing/landing.xml"),
 ]);
 await mount(Landing, document.getElementById("b-example-app"), {
   templates: `<templates>${templateBody(baseTemplates)}${templateBody(landingTemplates)}</templates>`,

@@ -3,8 +3,8 @@
     <Shell collapsed="state.collapsed" onCollapsedChange="(value) => { state.collapsed = value; }">
       <ShellSidebar>
         <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold text-decoration-none fs-5 mb-2 px-2 thebase-event-name=Brand+Click" href="/">
-          <img class="b-brand-logo b-brand-logo-light" src="/examples/pwa/logo/nodexui-logo-square-light.svg" alt="" width="28" height="28"/>
-          <img class="b-brand-logo b-brand-logo-dark" src="/examples/pwa/logo/nodexui-logo-square-dark.svg" alt="" width="28" height="28"/>
+          <img class="b-brand-logo b-brand-logo-light" src="/pwa/logo/nodexui-logo-square-light.svg" alt="" width="28" height="28"/>
+          <img class="b-brand-logo b-brand-logo-dark" src="/pwa/logo/nodexui-logo-square-dark.svg" alt="" width="28" height="28"/>
           <span>Nodex UI</span>
         </a>
         <t t-if="state.route === 'docs'"><DocsSidebar/></t>

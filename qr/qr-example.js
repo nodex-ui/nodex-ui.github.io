@@ -1,5 +1,5 @@
 // Sample page for the standalone QR service: no Owl or component library is loaded.
-// Run `npm run dev` and open /examples/qr/.
+// Run `npm run dev` and open /qr/.
 import { buildVietQr, qrSvg } from "nodexui/qr";
 
 const text = document.getElementById("text");

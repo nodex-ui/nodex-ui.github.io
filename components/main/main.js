@@ -74,13 +74,13 @@ export class Root extends Component {
 
 const [baseTemplates, appTemplates, docsTemplates, blockGalleryTemplates, iconsTemplates, chartGalleryTemplates, owlFrameworkTemplates, themeCreatorTemplates] = await Promise.all([
   loadFile(import.meta.resolve("nodexui/templates")),
-  loadFile("/examples/components/main/main.xml"),
-  loadFile("/examples/components/docs/docs.xml"),
-  loadFile("/examples/components/block-gallery/block-gallery.xml"),
-  loadFile("/examples/components/icons/icons.xml"),
-  loadFile("/examples/components/chart-gallery/chart-gallery.xml"),
-  loadFile("/examples/components/owl-framework/owl-framework.xml"),
-  loadFile("/examples/components/theme-creator/theme-creator.xml"),
+  loadFile("/components/main/main.xml"),
+  loadFile("/components/docs/docs.xml"),
+  loadFile("/components/block-gallery/block-gallery.xml"),
+  loadFile("/components/icons/icons.xml"),
+  loadFile("/components/chart-gallery/chart-gallery.xml"),
+  loadFile("/components/owl-framework/owl-framework.xml"),
+  loadFile("/components/theme-creator/theme-creator.xml"),
 ]);
 const templates = [baseTemplates, appTemplates, docsTemplates, blockGalleryTemplates, iconsTemplates, chartGalleryTemplates, owlFrameworkTemplates, themeCreatorTemplates]
   .map(templateBody)

@@ -1,0 +1,15 @@
+build
+logs
+vendor
+temp
+dist
+version.json
+**/*/version.json
+node_modules/
+coverage/
+.vite/
+npm-debug.log*
+.agents
+.claude
+CLAUDE.md
+

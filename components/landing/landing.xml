@@ -6,11 +6,11 @@
           <Icon name="'box'" size="'22px'"/>Nodex UI
         </a>
         <div class="d-flex align-items-center gap-2">
-          <a class="btn btn-link text-body text-decoration-none px-2" href="/examples/index.html#/docs"><t t-esc="t('Docs')"/></a>
-          <a class="btn btn-link text-body text-decoration-none px-2" href="/examples/index.html#/blocks"><t t-esc="t('Blocks')"/></a>
+          <a class="btn btn-link text-body text-decoration-none px-2" href="/index.html#/docs"><t t-esc="t('Docs')"/></a>
+          <a class="btn btn-link text-body text-decoration-none px-2" href="/index.html#/blocks"><t t-esc="t('Blocks')"/></a>
           <a class="btn btn-link text-body text-decoration-none d-none d-md-inline-block" href="#apidoc"><t t-esc="t('API docs')"/></a>
           <a class="btn btn-link text-body text-decoration-none d-none d-md-inline-block" href="#analytics"><t t-esc="t('Analytics')"/></a>
-          <a class="btn btn-link text-body text-decoration-none" href="/examples/index.html"><t t-esc="t('Examples')"/></a>
+          <a class="btn btn-link text-body text-decoration-none" href="/index.html"><t t-esc="t('Examples')"/></a>
           <LanguageSwitcher/>
           <ThemeButton variant="'outline'" storageKey="'b-example-theme'" onChange="(theme) => this.onThemeChange(theme)"/>
         </div>
@@ -24,8 +24,8 @@
           <h1 class="display-4 fw-bold mt-3"><t t-esc="t('UI components with no build step.')"/></h1>
           <p class="lead text-muted mt-3" t-out="richText.hero"/>
           <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
-            <Button href="'/examples/index.html'" icon="'arrow-right'" iconPosition="'end'"><t t-esc="t('Browse examples')"/></Button>
-            <Button href="'/examples/index.html#/docs'" variant="'outline'" icon="'book-open'"><t t-esc="t('Read the docs')"/></Button>
+            <Button href="'/index.html'" icon="'arrow-right'" iconPosition="'end'"><t t-esc="t('Browse examples')"/></Button>
+            <Button href="'/index.html#/docs'" variant="'outline'" icon="'book-open'"><t t-esc="t('Read the docs')"/></Button>
           </div>
           <div class="d-flex align-items-center justify-content-center gap-2 mt-4">
             <code class="b-landing-code py-2">npm install nodexui</code>
@@ -77,8 +77,8 @@
               </li>
             </ul>
             <div class="d-flex flex-wrap gap-2">
-              <Button href="'/examples/apidoc/index.html'" icon="'file-json'"><t t-esc="t('Live Petstore demo')"/></Button>
-              <Button href="'/examples/index.html#/docs/components/apidoc'" variant="'outline'" icon="'book-open'"><t t-esc="t('ApiDoc docs')"/></Button>
+              <Button href="'/apidoc/index.html'" icon="'file-json'"><t t-esc="t('Live Petstore demo')"/></Button>
+              <Button href="'/index.html#/docs/components/apidoc'" variant="'outline'" icon="'book-open'"><t t-esc="t('ApiDoc docs')"/></Button>
             </div>
           </div>
           <div class="col-12 col-lg-6 order-lg-1">
@@ -102,7 +102,7 @@
               </li>
             </ul>
             <div class="d-flex flex-wrap gap-2">
-              <Button href="'/examples/index.html#/docs/guide/analytics'" icon="'chart-line'"><t t-esc="t('Analytics guide')"/></Button>
+              <Button href="'/index.html#/docs/guide/analytics'" icon="'chart-line'"><t t-esc="t('Analytics guide')"/></Button>
               <Button href="cdn + '/dist/nodexui.analytics.esm.js'" variant="'outline'" icon="'external-link'"><t t-esc="t('View bundle')"/></Button>
             </div>
           </div>
@@ -119,7 +119,7 @@
         <h2 class="h3 fw-semibold text-center mb-4"><t t-esc="t('Explore the examples')"/></h2>
         <div class="row g-3">
           <div t-foreach="sections" t-as="section" t-key="section.route" class="col-12 col-sm-6 col-lg-3">
-            <a class="text-decoration-none" t-att-href="'/examples/index.html#/' + section.route">
+            <a class="text-decoration-none" t-att-href="'/index.html#/' + section.route">
               <Card className="'h-100'">
                 <CardHeader className="'d-flex align-items-center gap-2'"><Icon name="section.icon"/><t t-esc="section.title"/></CardHeader>
                 <CardBody className="'text-muted small'"><t t-esc="section.text"/></CardBody>
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="text-center mt-4">
-          <Button href="'/examples/index.html'" variant="'outline'" icon="'arrow-right'" iconPosition="'end'"><t t-esc="t('Open all examples')"/></Button>
+          <Button href="'/index.html'" variant="'outline'" icon="'arrow-right'" iconPosition="'end'"><t t-esc="t('Open all examples')"/></Button>
         </div>
       </section>
     </main>
@@ -139,7 +139,7 @@
         <span>
           <a class="text-muted" href="https://www.npmjs.com/package/nodexui">npm</a> ·
           <a class="text-muted" t-att-href="cdn + '/'">jsDelivr</a> ·
-          <a class="text-muted thebase-event-name=Footer+Link thebase-event-target=examples" href="/examples/index.html"><t t-esc="t('Examples')"/></a>
+          <a class="text-muted thebase-event-name=Footer+Link thebase-event-target=examples" href="/index.html"><t t-esc="t('Examples')"/></a>
         </span>
       </div>
     </footer>
