@@ -1,8 +1,9 @@
-import { Component, loadFile, markup, mount } from "nodexui";
+import { Component, loadFile, markup, mount, onMounted, onPatched, onWillUnmount, useState } from "nodexui";
 import {
   Badge, Button, Card, CardBody, CardHeader, ClipboardButton, Icon, TabContent, TabTrigger, Tabs, TabsList, ThemeButton,
 } from "nodexui";
 import { LanguageSwitcher } from "@/components/language-switcher/language-switcher.js";
+import { Samples } from "@/components/samples/samples.js";
 import { setPageMeta } from "@/seo.js";
 import { trackEvent } from "@/tracking.js";
 import { loadCatalog, t } from "../../i18n.js";
@@ -10,7 +11,7 @@ import { loadCatalog, t } from "../../i18n.js";
 await loadCatalog(import.meta.url);
 
 // Latest version published to npm; bump this one value on release (drives the hero badge and CDN snippets).
-const version = "1.3.1";
+const version = "1.3.3";
 const cdn = `https://cdn.jsdelivr.net/npm/nodexui@${version}`;
 
 const features = [
@@ -85,18 +86,40 @@ function richText() {
   };
 }
 
-/** Nodex UI marketing landing page: pitches the library and links into each section of the examples app. */
+// `#samples` shows the Samples page under the landing header; any other hash (or none) is the home page.
+function pageFromHash() {
+  return location.hash === "#samples" ? "samples" : "home";
+}
+
+// Sets the browser tab title and search description for whichever landing page is showing.
+function setLandingMeta(page) {
+  if (page === "samples") {
+    setPageMeta({ title: t("Samples · Nodex UI"), description: t("Applications built with Nodex UI.") });
+    return;
+  }
+  setPageMeta({
+    title: t("Nodex UI — Ready-to-use UI components, straight from a CDN"),
+    description: t("Nodex UI (nodexui) is a free, no-build JavaScript UI component library: 73 responsive, accessible components, blocks, icons and themes you can load from a CDN or install with npm."),
+  });
+}
+
+/** Nodex UI marketing landing page: pitches the library and links into each section of the examples app.
+ * The same header also hosts the Samples page (`#samples`). */
 export class Landing extends Component {
-  static components = { LanguageSwitcher, Badge, Button, Card, CardBody, CardHeader, ClipboardButton, Icon, TabContent, TabTrigger, Tabs, TabsList, ThemeButton };
+  static components = {
+    LanguageSwitcher, Samples, Badge, Button, Card, CardBody, CardHeader, ClipboardButton, Icon, TabContent, TabTrigger, Tabs, TabsList, ThemeButton,
+  };
   static template = "examples.Landing";
 
   t = t;
 
   setup() {
-    setPageMeta({
-      title: t("Nodex UI — Ready-to-use UI components, straight from a CDN"),
-      description: t("Nodex UI (nodexui) is a free, no-build JavaScript UI component library: 73 responsive, accessible components, blocks, icons and themes you can load from a CDN or install with npm."),
-    });
+    this.state = useState({ page: pageFromHash() });
+    setLandingMeta(this.state.page);
+    this.onHashChange = () => this.syncPage();
+    onMounted(() => window.addEventListener("hashchange", this.onHashChange));
+    onWillUnmount(() => window.removeEventListener("hashchange", this.onHashChange));
+    onPatched(() => this.scrollAfterPageSwitch());
     this.cdn = cdn;
     this.version = version;
     this.features = features;
@@ -105,6 +128,25 @@ export class Landing extends Component {
     this.analyticsFeatures = analyticsFeatures;
     this.snippets = snippets;
     this.richText = richText();
+  }
+
+  /** Switches between the home and Samples pages when the hash changes (header links), keeping the header. */
+  syncPage() {
+    const page = pageFromHash();
+    if (page === this.state.page) return;
+    this.pageSwitched = true;
+    this.state.page = page;
+    setLandingMeta(page);
+  }
+
+  /** After a page switch, jumps to the section the hash names (e.g. `#apidoc` from Samples), or to the top:
+   * the browser's own anchor scroll ran before that section existed. */
+  scrollAfterPageSwitch() {
+    if (!this.pageSwitched) return;
+    this.pageSwitched = false;
+    const target = this.state.page === "home" && location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
   }
 
   /** Records a light/dark theme switch made with the header theme button. */
@@ -123,10 +165,11 @@ function templateBody(xml) {
   return xml.match(/<templates[^>]*>([\s\S]*)<\/templates>/)?.[1] || xml;
 }
 
-const [baseTemplates, landingTemplates] = await Promise.all([
+const [baseTemplates, landingTemplates, samplesTemplates] = await Promise.all([
   loadFile(import.meta.resolve("nodexui/templates")),
   loadFile("/components/landing/landing.xml"),
+  loadFile("/components/samples/samples.xml"),
 ]);
 await mount(Landing, document.getElementById("b-example-app"), {
-  templates: `<templates>${templateBody(baseTemplates)}${templateBody(landingTemplates)}</templates>`,
+  templates: `<templates>${templateBody(baseTemplates)}${templateBody(landingTemplates)}${templateBody(samplesTemplates)}</templates>`,
 });

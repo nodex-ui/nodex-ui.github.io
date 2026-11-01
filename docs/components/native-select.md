@@ -41,9 +41,9 @@ Set `useTip="1"` to move `supportingText` into a tooltip: a question-mark icon a
 | `NativeSelect` | `ariaLabel` / `aria-label` | `String` | optional, accessible name for the control |
 | `NativeSelect` | `id` | `String` | optional, e.g. for `Label`'s `for` |
 | `NativeSelect` | `onChange` | `Function` | optional |
-| `NativeSelect` | `label`, `labelBackground`, `supportingText`, `useTip`, `errorText`, `invalid` | `String` / `Boolean` | Material-style outlined field, same behaviour as [Input](/index.html#/docs/components/input): the label floats onto the border, `errorText` replaces `supportingText`. Also inherited from a parent `Field`. |
+| `NativeSelect` | `label`, `labelBackground`, `supportingText`, `useTip`, `errorText`, `invalid` | `String` / `Boolean` | Material-style outlined field, same behaviour as [Input](/examples/blocks.html#/docs/components/input): the label floats onto the border, `errorText` replaces `supportingText`. Also inherited from a parent `Field`. |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

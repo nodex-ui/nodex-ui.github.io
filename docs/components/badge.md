@@ -24,7 +24,7 @@ import { Badge } from "nodexui";
 | `label` | `String` | alternative to default-slot children |
 | `className` | `String` | appended to the generated `badge ...` classes |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

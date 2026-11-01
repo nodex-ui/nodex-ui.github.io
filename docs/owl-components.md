@@ -53,7 +53,7 @@ Everything — the static `b-ui` runtime, the Nodex runtime, every Nodex UI comp
 </script>
 ```
 
-`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable — swap the host in each URL above. For a self-hosted build, replace the CDN host with your own served path (e.g. `/dist/nodexui.esm.js`). These snippets use `@latest` for readability; pin an exact version (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) in production so a new release can't change what your page loads.
+`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable — swap the host in each URL above. For a self-hosted build, replace the CDN host with your own served path (e.g. `/dist/nodexui.esm.js`). These snippets use `@latest` for readability; pin an exact version (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) in production so a new release can't change what your page loads.
 
 No `@odoo/owl` import appears anywhere in that snippet — `nodexui` is the only Nodex entry point Nodex UI components and consumer apps need. Because `nodexui`, `nodexui`, and `nodexui` all point at the exact same `dist/nodexui.esm.js` URL, the browser fetches and evaluates it once and every key shares the same module instance — no separate classic `<script>` needs to load first to set up a shared global.
 

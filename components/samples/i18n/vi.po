@@ -1,0 +1,18 @@
+msgid ""
+msgstr "Project-Id-Version: examples/components/samples\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nLanguage: vi\n"
+
+#: samples.xml
+msgid "Samples"
+msgstr "Ứng dụng mẫu"
+
+#: samples.xml
+msgid "Applications built with Nodex UI."
+msgstr "Các ứng dụng được xây dựng bằng Nodex UI."
+
+#: samples.xml
+msgid "Link"
+msgstr "Liên kết"
+
+#: samples.xml
+msgid "Open {name} in a new tab"
+msgstr "Mở {name} trong thẻ mới"

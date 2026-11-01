@@ -32,7 +32,7 @@ import { Card, CardBody, CardDescription, CardFooter, CardHeader, CardTitle } fr
 </div>
 ```
 
-`Card`, `CardHeader`, `CardBody`, `CardFooter`, `CardTitle`, and `CardDescription` each accept `className` (`String`, optional) and render their default slot as-is. `Card` additionally accepts `tag` (`String`, optional, default `"div"`) to render a different semantic root element, e.g. `tag="'aside'"` for complementary content. See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+`Card`, `CardHeader`, `CardBody`, `CardFooter`, `CardTitle`, and `CardDescription` each accept `className` (`String`, optional) and render their default slot as-is. `Card` additionally accepts `tag` (`String`, optional, default `"div"`) to render a different semantic root element, e.g. `tag="'aside'"` for complementary content. See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

@@ -1,5 +1,7 @@
-const CACHE_NAME = "nodexui-examples-cache-v5";
-const NODEXUI_CDN = "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/";
+const CACHE_NAME = "nodexui-examples-cache-v8";
+importScripts("/nodexui.config.js"); // defines NODEXUI_LIB: where the Nodex UI library loads from
+
+const NODEXUI_BASE = `${NODEXUI_LIB.base}/`;
 
 const PRECACHE_URLS = [
   "/",
@@ -10,21 +12,21 @@ const PRECACHE_URLS = [
   "/pwa/logo/light/pwa/icon-192.png",
   "/pwa/logo/light/pwa/icon-512.png",
   "/pwa/logo/light/ios/AppIcon-180-iphone@3x.png",
-  "/templates.xml",
+  "/nodexui.config.js",
   "/index-router.js",
   "/i18n.js",
   "/components/landing/landing.js",
   "/components/landing/landing.css",
   "/components/landing/landing.xml",
   "/components/landing/i18n/vi.po",
+  "/components/samples/samples.js",
+  "/components/samples/samples.xml",
+  "/components/samples/samples.json",
+  "/components/samples/i18n/vi.po",
   "/components/language-switcher/language-switcher.js",
   "/components/language-switcher/i18n/vi.po",
-  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.min.css",
-  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.esm.js",
-  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.templates.xml",
-  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.min.js",
-  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.i18n.esm.js",
-  "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.qr.esm.js"
+  ...NODEXUI_LIB.precache,
+  ...(NODEXUI_LIB.templatesFallback ? [NODEXUI_LIB.templatesFallback] : []),
 ];
 
 /** Last-seen app version lives in its own cache so wiping the app caches never forgets it. */
@@ -99,7 +101,7 @@ async function fromCdnCache(request) {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
-  if (NODEXUI_CDN && request.url.startsWith(NODEXUI_CDN)) {
+  if (NODEXUI_LIB.source === "cdn" && request.url.startsWith(NODEXUI_BASE)) {
     event.respondWith(fromCdnCache(request));
     return;
   }

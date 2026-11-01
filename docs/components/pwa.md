@@ -59,7 +59,7 @@ A launcher rendered outside the `Pwa` tree opens it through `PwaTrigger`, or by 
 
 Render a second `Pwa` instance for a follow-up prompt (e.g. "Allow notifications" after install is dismissed) — each `Pwa` owns its own open state independently.
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

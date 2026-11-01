@@ -1,6 +1,6 @@
 # Markdown
 
-Use `b-ui="markdown"` (or the pure Nodex UI `Markdown` component) to render Markdown or mount an editable Markdown document. Read-only parsing uses the vendored `src/runtime/marked/marked.min.js` (marked v15). Fenced ` ```mermaid ` code blocks render as inline SVG via `src/runtime/mermaid/mermaid.esm.min.mjs`. Fenced ` ```base-ui ` code blocks render as a live Nodex UI preview through the page's global static runtime (`window.thebase`, e.g. `dist/nodexui.min.js`).
+Use `b-ui="markdown"` (or the pure Nodex UI `Markdown` component) to render Markdown or mount an editable Markdown document. Read-only parsing uses the vendored `src/runtime/marked/marked.min.js` (marked v15). Fenced ` ```mermaid ` code blocks render as inline SVG via `src/runtime/mermaid/mermaid.esm.min.js`. Fenced ` ```base-ui ` code blocks render as a live Nodex UI preview through the page's global static runtime (`window.thebase`, e.g. `dist/nodexui.min.js`).
 
 Editable mode lazy-loads `dist/runtime/milkdown/milkdown-editor.js`, which bundles Milkdown, Yjs, and y-webrtc only when `b-att-editable="true"` / `editable="true"` is used. The editor runtime enables CommonMark, GFM, history, clipboard, cursor, listener, indent, upload, block handle, tooltip, slash, streaming, and diff plugins. Collaborative mode uses Milkdown's Yjs-aware collab undo/redo instead of the plain history stack.
 

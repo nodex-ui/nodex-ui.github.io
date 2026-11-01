@@ -28,7 +28,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "nodexui";
 | `CollapsibleContent` | `className` | `String` | optional |
 | `CollapsibleTrigger` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

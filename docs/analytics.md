@@ -13,12 +13,12 @@ init({ backendUrl: "https://stats.example.com" });
 ```html
 <!-- ES module from the CDN (or map it as "nodexui/analytics" in an import map) -->
 <script type="module">
-  import { init } from "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.analytics.esm.js";
+  import { init } from "https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.analytics.esm.js";
   init({ backendUrl: "https://stats.example.com" });
 </script>
 
 <!-- Classic script tag: sets window.thebase.analytics (load order vs dist/nodexui.min.js doesn't matter) -->
-<script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.analytics.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.analytics.min.js"></script>
 <script>
   thebase.analytics.init({ backendUrl: "https://stats.example.com" });
 </script>
@@ -226,21 +226,22 @@ curl -i -X POST http://localhost:8080/api/event -H 'Content-Type: text/plain' \
 
 ## Sample dashboard
 
-`components/analytics-dashboard/` contains a working dashboard plus two complete sample backends: [`server-go`](/components/analytics-dashboard/server-go/main.go) (Fiber v3) and [`server-fastapi`](/components/analytics-dashboard/server-fastapi/main.py). Each one extends the receivers above with an in-memory store, a daily-salted cookieless visitor hash and a `GET /api/stats` endpoint.
-
-The dashboard ([Blocks → Examples → Analytics dashboard](/index.html#/blocks/analytics)) is a pure Nodex UI component: KPI `Card`s, an area `Chart`, top pages/sources/events `Table`s and site and period `NativeSelect`s. On the site it shows demo data generated in the browser in the `GET /api/stats` shape, so it needs no backend; the Refresh button regenerates it.
+[`examples/components/analytics/`](../examples/components/analytics/) holds two complete sample backends: [`server-go`](../examples/components/analytics/server-go/main.go) (Fiber v3) and [`server-fastapi`](../examples/components/analytics/server-fastapi/main.py). Each one extends the receivers above with an in-memory store, a daily-salted cookieless visitor hash, a `GET /api/stats` endpoint, and optional static hosting for a dashboard folder (`DASHBOARD_DIR`).
 
 ```sh
 # Go (1.25+)
-cd components/analytics-dashboard/server-go && DEMO_SEED=1 go run .
+cd examples/components/analytics/server-go && DEMO_SEED=1 go run .
 
 # or Python (3.10+)
-cd components/analytics-dashboard/server-fastapi && pip install -r requirements.txt && DEMO_SEED=1 fastapi run main.py --port 8080
+cd examples/components/analytics/server-fastapi && pip install -r requirements.txt && DEMO_SEED=1 fastapi run main.py --port 8080
 ```
 
-The backends serve only the API (the site's [dashboard](/index.html#/blocks/analytics) does not call them). `DEMO_SEED=1` preloads 30 days of synthetic traffic for `demo.example.com`. Other environment variables:
+`DEMO_SEED=1` preloads 30 days of synthetic traffic for `demo.example.com`. Other environment variables:
 - `ADDR`: the Go listen address.
 - `ALLOWED_ORIGINS`: a comma-separated CORS allow-list (default `*`).
+- `DASHBOARD_DIR`: the folder served at `/`.
+
+To serve the dashboard from somewhere else, open it with `?backend=https://stats.example.com`.
 
 `GET /api/stats?domain=<site>&days=<1..90>` (default: the busiest site, 7 days, UTC) returns:
 

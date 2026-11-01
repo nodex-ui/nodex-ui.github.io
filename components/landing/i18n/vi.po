@@ -236,3 +236,7 @@ msgstr "Mở tất cả ví dụ"
 #: landing.xml
 msgid "nodexui · MIT License"
 msgstr "nodexui · Giấy phép MIT"
+
+#: landing.js
+msgid "Samples · Nodex UI"
+msgstr "Ứng dụng mẫu · Nodex UI"

@@ -32,7 +32,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "nodexui";
 | `PopoverContent` | `className` | `String` | optional |
 | `PopoverTrigger` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 Both the pure Nodex UI and static forms are driven by a live `bootstrap.Popover` instance owned on the trigger element — **the visible popup is the built-in generated DOM (a `.popover`/`.popover-arrow`/`.popover-body` node, positioned via Popper), appended to `document.body`, not rendered inline where you authored the popover.** Don't query for it as a descendant of the trigger or root; query `document.body.querySelector(".popover .popover-body")` instead. There's no separate heading/title concept in the current API — only body content (`.popover-body`); no `.popover-header` is generated.
 

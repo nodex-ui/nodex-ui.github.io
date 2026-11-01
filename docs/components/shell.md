@@ -76,7 +76,7 @@ Four cross-cutting concerns are opt-in via props instead of baked into the layou
 | `ShellContent` | `className` | `String` | optional |
 | `ShellUserMenu` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

@@ -23,7 +23,7 @@
           <Card className="'h-100'">
             <CardBody>
               <div class="text-body-secondary small" t-esc="kpi.label"/>
-              <div class="kpi-value" t-esc="kpi.value"/>
+              <div class="b-analytics-kpi-value" t-esc="kpi.value"/>
             </CardBody>
           </Card>
         </div>
@@ -69,18 +69,18 @@
             <CardBody>
               <Table className="'table-sm mb-0'">
                 <thead>
-                  <tr><th t-esc="list.column"/><th class="num">Visitors</th><th class="num" t-esc="list.countLabel"/></tr>
+                  <tr><th t-esc="list.column"/><th class="b-analytics-num">Visitors</th><th class="b-analytics-num" t-esc="list.countLabel"/></tr>
                 </thead>
                 <tbody>
                   <tr t-foreach="list.rows" t-as="row" t-key="row.name">
                     <td>
-                      <div class="bar-cell text-truncate">
-                        <div class="bar" t-att-style="'width: ' + (row.count / list.max * 100) + '%'"/>
+                      <div class="b-analytics-bar-cell text-truncate">
+                        <div class="b-analytics-bar" t-att-style="'width: ' + (row.count / list.max * 100) + '%'"/>
                         <span t-esc="row.name"/>
                       </div>
                     </td>
-                    <td class="num" t-esc="format(row.visitors)"/>
-                    <td class="num" t-esc="format(row.count)"/>
+                    <td class="b-analytics-num" t-esc="format(row.visitors)"/>
+                    <td class="b-analytics-num" t-esc="format(row.count)"/>
                   </tr>
                 </tbody>
               </Table>

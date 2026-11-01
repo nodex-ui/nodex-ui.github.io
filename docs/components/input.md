@@ -28,7 +28,7 @@ import { Input } from "nodexui";
 
 ### Addons (`start` / `end` slots)
 
-Put text, icons or buttons inside the field with the `start` and `end` slots. The text stays clear of them, and the label moves over for `start`.  Content can be plain text, an `Icon`, a `Kbd` or a `Button`. For a textarea, see the `footer` slot on [Textarea](/index.html#/docs/components/textarea).
+Put text, icons or buttons inside the field with the `start` and `end` slots. The text stays clear of them, and the label moves over for `start`.  Content can be plain text, an `Icon`, a `Kbd` or a `Button`. For a textarea, see the `footer` slot on [Textarea](/examples/blocks.html#/docs/components/textarea).
 
 ```base-ui
 <div style="max-width: 28rem" class="w-100 pt-3 d-flex flex-column gap-4">
@@ -76,7 +76,7 @@ Set `useTip="1"` to move `supportingText` into a tooltip: a question-mark icon a
 | `onInput` | `Function` | called as `(value, event)` on the native `input` event |
 | `onChange` | `Function` | called as `(value, event)` on the native `change` event |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

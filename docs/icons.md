@@ -22,7 +22,7 @@ Load the normal Nodex UI assets. No separate icon script is required.
 <script src="https://cdn.jsdelivr.net/npm/nodexui@latest/dist/nodexui.min.js" defer></script>
 ```
 
-`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) instead of `@latest` for production. `b-icon` also works with the [pure Nodex UI `Icon` component](components/icon.md) — the recommended API in an application; the classic script above is for pages using the static `b-ui` API.
+`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) instead of `@latest` for production. `b-icon` also works with the [pure Nodex UI `Icon` component](components/icon.md) — the recommended API in an application; the classic script above is for pages using the static `b-ui` API.
 
 The build publishes every Lucide SVG to `dist/icons/lucide/` and writes the generated icon manifest to `dist/icons/lucide.json`.
 

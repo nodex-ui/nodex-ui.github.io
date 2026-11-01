@@ -86,7 +86,7 @@ import { Typography } from "nodexui";
 | `Typography` | `tag` | `String` | optional; defaults to `h1`-`h4`, `blockquote`, `small`, `ul` for those variants, else `p` |
 | `Typography` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## built-in typography classes
 

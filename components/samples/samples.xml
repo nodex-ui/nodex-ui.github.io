@@ -1,0 +1,29 @@
+<templates>
+  <t t-name="examples.Samples">
+    <main class="container py-5" style="max-width: 56rem">
+      <h1 class="h3 fw-semibold"><t t-esc="t('Samples')"/></h1>
+      <p class="text-muted mb-4"><t t-esc="t('Applications built with Nodex UI.')"/></p>
+      <Table hover="true" responsive="true">
+        <thead>
+          <tr>
+            <th><t t-esc="t('Samples')"/></th>
+            <th class="text-end" style="width: 6rem"><t t-esc="t('Link')"/></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr t-foreach="samples" t-as="sample" t-key="sample.link">
+            <td>
+              <div class="fw-medium" t-esc="sample.name"/>
+              <div class="text-muted small" t-esc="sample.description"/>
+            </td>
+            <td class="text-end align-middle">
+              <Button href="sample.link" variant="'outline'" size="'icon'" icon="'external-link'"
+                ariaLabel="t('Open {name} in a new tab', { name: sample.name })"
+                attrs="{ target: '_blank', rel: 'noopener noreferrer' }"/>
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+    </main>
+  </t>
+</templates>

@@ -12,13 +12,15 @@
           <a class="btn btn-link text-body text-decoration-none px-2" href="/index.html#/blocks"><t t-esc="t('Blocks')"/></a>
           <a class="btn btn-link text-body text-decoration-none d-none d-md-inline-block" href="#apidoc"><t t-esc="t('API docs')"/></a>
           <a class="btn btn-link text-body text-decoration-none d-none d-md-inline-block" href="#analytics"><t t-esc="t('Analytics')"/></a>
+          <a class="btn btn-link text-body text-decoration-none px-2" href="#samples" t-att-aria-current="state.page === 'samples' ? 'page' : undefined"><t t-esc="t('Samples')"/></a>
           <LanguageSwitcher/>
           <ThemeButton variant="'outline'" storageKey="'b-example-theme'" onChange="(theme) => this.onThemeChange(theme)"/>
         </div>
       </nav>
     </header>
 
-    <main>
+    <Samples t-if="state.page === 'samples'"/>
+    <main t-else="">
       <section class="b-landing-hero border-bottom">
         <div class="container py-5 text-center" style="max-width: 48rem">
           <Badge variant="'muted'" pill="true"><t t-esc="t('v{version} · SemVer stable', { version })"/></Badge>

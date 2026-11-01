@@ -67,7 +67,7 @@ import { Carousel, CarouselNext, CarouselPrevious, CarouselSlide } from "nodexui
 | `CarouselSlide` | `index` | `Number` | required |
 | `CarouselSlide` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 The whole group shares a single live `bootstrap.Carousel` instance, owned by the root `Carousel`/`b-ui="carousel"` element: the root always carries classes `carousel slide` and wraps its slides in a `.carousel-inner` container, each `CarouselSlide`/`b-carousel-slide` renders permanently as a `.carousel-item` (exactly one carrying `.active` at a time) — don't rely on node removal to detect the active slide. `CarouselPrevious`/`CarouselNext` (and the static `[b-carousel-prev]`/`[b-carousel-next]` buttons) call `.prev()`/`.next()` on that shared instance directly; the built-in `wrap: true` handles wrap-around at both ends and `interval: false` keeps autoplay off.
 

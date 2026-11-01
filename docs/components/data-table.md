@@ -64,7 +64,7 @@ The table viewport always scrolls horizontally (`overflow: auto`) once its conte
 
 Below 640px width, the table view is replaced by a stacked one-column card ("kanban") view — each row becomes a card showing every visible column as a label/value pair, with selection and row actions preserved. This is CSS-driven (`.b-data-table__viewport` hides, `.b-data-table__cards` shows), so it applies to both the Nodex UI component and the static `b-ui="data-table"` markup automatically.
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

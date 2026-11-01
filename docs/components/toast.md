@@ -35,7 +35,7 @@ The toast stays hidden until `open`/`state` becomes truthy (never shows on mount
 | `Toast` | `onOpenChange` | `Function` | optional |
 | `Toast` | `action` slot | — | optional — e.g. a `<Button/>`, rendered grouped next to the close button (`<t t-set-slot="action">...</t>`) |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

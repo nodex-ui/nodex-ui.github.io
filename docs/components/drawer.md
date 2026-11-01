@@ -38,7 +38,7 @@ import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, Dr
 | `DrawerTitle` | `className` | `String` | optional |
 | `DrawerTrigger` | `className` | `String` | optional |
 
-`DrawerContent` is driven by a real `bootstrap.Offcanvas` instance bound to its own root (rendered as `.offcanvas.offcanvas-bottom`, permanently mounted rather than added/removed from the DOM) — Escape, backdrop click, and the Tab focus trap are the built-in native Offcanvas behavior, same as the static API; focus-restore-to-trigger on close is kept by hand (not native to Offcanvas). `DrawerClose` closes via `data-bs-dismiss="offcanvas"`. Drawer has no side variant — it always slides up from the bottom. See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+`DrawerContent` is driven by a real `bootstrap.Offcanvas` instance bound to its own root (rendered as `.offcanvas.offcanvas-bottom`, permanently mounted rather than added/removed from the DOM) — Escape, backdrop click, and the Tab focus trap are the built-in native Offcanvas behavior, same as the static API; focus-restore-to-trigger on close is kept by hand (not native to Offcanvas). `DrawerClose` closes via `data-bs-dismiss="offcanvas"`. Drawer has no side variant — it always slides up from the bottom. See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

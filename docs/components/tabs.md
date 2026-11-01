@@ -57,7 +57,7 @@ The `"line"` variant swaps the segmented pill for a transparent, underline-drive
 
 ArrowLeft/ArrowRight (or ArrowUp/ArrowDown when vertical) move focus and selection between
 `TabTrigger`s, same as the static API — each trigger's own live `bootstrap.Tab` instance handles
-this natively. See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how
+this natively. See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how
 to load `nodexui` and `dist/nodexui.templates.xml`.
 
 Each `TabTrigger` (`b-tab` button / pure Nodex UI `TabTrigger`'s own root) is driven by a live `bootstrap.Tab` instance: it always carries `role="tab"` plus a `data-bs-target="#<id>"` pointing at its linked pane, and the library itself manages the pane's `tab-pane fade`/`show`/`active` classes and the trigger's `active`/`aria-selected`/`tabindex` across switches — don't rely on node removal to detect the active panel; every `TabContent`/`b-panel` stays mounted permanently (`role="tabpanel"`, `tab-pane fade` + `show active` on the initially active one).

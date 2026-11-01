@@ -24,7 +24,7 @@ import { Tooltip } from "nodexui";
 | `Tooltip` | `state` | `String` | optional; `"open"`/`"on"`/`"active"` shows the tooltip once on mount (uncontrolled testing hook) |
 | `Tooltip` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 Both the pure Nodex UI and static forms are driven by a live `bootstrap.Tooltip` instance owned on the trigger element, with `trigger: "hover focus"` — **the visible popup is the built-in generated DOM (a `.tooltip`/`.tooltip-arrow`/`.tooltip-inner` node, positioned via Popper), appended to `document.body`, not rendered inline where you authored the tooltip.** Don't query for it as a descendant of the trigger; query `document.body.querySelector(".tooltip .tooltip-inner")` instead. base sets `aria-describedby` on the trigger itself, but only while the tooltip is actually shown (removed again on hide) — Nodex UI does not additionally set a static `aria-describedby` up front.
 

@@ -95,11 +95,13 @@ function registerServiceWorker() {
   }
 }
 
-/** nodexui 1.3.1 loads its live-preview templates from a hardcoded `/dist/nodexui.templates.xml`; this site
- * has no `/dist`, so send that one request to the repo's `/templates.xml` copy instead. */
+/** The library fetches its live-preview templates from a hardcoded `/dist/nodexui.templates.xml`; when the lib
+ * config says there is no local /dist (CDN mode), send that one request to its `templatesFallback` copy instead. */
 function useLocalTemplates() {
+  const fallback = NODEXUI_LIB.templatesFallback;
+  if (!fallback) return;
   const nativeFetch = window.fetch;
-  window.fetch = (input, init) => nativeFetch(input === "/dist/nodexui.templates.xml" ? "/templates.xml" : input, init);
+  window.fetch = (input, init) => nativeFetch(input === "/dist/nodexui.templates.xml" ? fallback : input, init);
 }
 
 useLocalTemplates();

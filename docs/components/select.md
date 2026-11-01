@@ -40,13 +40,13 @@ Set `useTip="1"` to move `supportingText` into a tooltip: a question-mark icon a
 | `Select` | `value` | `String` | optional |
 | `Select` | `onChange` | `Function` | optional |
 | `Select` | `className` | `String` | optional |
-| `Select` | `label`, `labelBackground`, `supportingText`, `useTip`, `errorText`, `invalid` | `String` / `Boolean` | Material-style outlined field, same behaviour as [Input](/index.html#/docs/components/input): the label floats onto the border, `errorText` replaces `supportingText`. Also inherited from a parent `Field`. |
+| `Select` | `label`, `labelBackground`, `supportingText`, `useTip`, `errorText`, `invalid` | `String` / `Boolean` | Material-style outlined field, same behaviour as [Input](/examples/blocks.html#/docs/components/input): the label floats onto the border, `errorText` replaces `supportingText`. Also inherited from a parent `Field`. |
 | `SelectContent` | `className` | `String` | optional |
 | `SelectItem` | `value` | `String` | required |
 | `SelectItem` | `className` | `String` | optional |
 | `SelectTrigger` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

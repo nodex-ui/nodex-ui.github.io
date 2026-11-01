@@ -234,7 +234,7 @@ Reusable nav-content primitives, extracted from the recurring group/item shapes 
 | `SidebarMenuSubButton` | `href` | `String` | optional |
 | `SidebarMenuSubItem` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

@@ -22,7 +22,7 @@ thebase.theme.set({ primary: "#0057d8", radius: "0.5rem" });
 3. Load them after Nodex UI stylesheet:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.min.css">
 <link rel="stylesheet" href="/css/nodexui-light.css">
 <link rel="stylesheet" href="/css/nodexui-dark.css">
 ```
@@ -68,7 +68,7 @@ For a reusable theme toggle with persistence, URL override, button-label sync, a
 </script>
 ```
 
-`https://unpkg.com/nodexui@latest/dist/nodexui.esm.js` mirrors the same file as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) instead of `@latest` for production. Npm/bundler consumers can import the same API from `nodexui`.
+`https://unpkg.com/nodexui@latest/dist/nodexui.esm.js` mirrors the same file as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) instead of `@latest` for production. Npm/bundler consumers can import the same API from `nodexui`.
 
 For a ready-made icon button, use Nodex UI component instead of wiring your own click handler:
 

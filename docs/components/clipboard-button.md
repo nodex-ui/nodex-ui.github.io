@@ -35,7 +35,7 @@ import { ClipboardButton } from "nodexui";
 | `onCopy` | `Function` | called with `{ value, event }` after a successful copy |
 | `onCopyError` | `Function` | called with `{ error, event }` when both the Clipboard API and the fallback fail |
 
-Also accepts default slot content instead of `label`. See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+Also accepts default slot content instead of `label`. See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

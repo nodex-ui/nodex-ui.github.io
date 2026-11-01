@@ -32,7 +32,7 @@ Save this as an `.html` file and open it — no build step, no server required. 
 </html>
 ```
 
-`https://cdn.jsdelivr.net/npm/nodexui@latest/dist/...` is the real jsDelivr URL for the published `nodexui` npm package's `latest` tag, used here for a copy-paste-and-go quick start. Pin an exact version instead (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) for production, so a new release can't change what your page loads. See [Installation](installation.md) for jsDelivr/unpkg/npm/self-hosted paths.
+`https://cdn.jsdelivr.net/npm/nodexui@latest/dist/...` is the real jsDelivr URL for the published `nodexui` npm package's `latest` tag, used here for a copy-paste-and-go quick start. Pin an exact version instead (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) for production, so a new release can't change what your page loads. See [Installation](installation.md) for jsDelivr/unpkg/npm/self-hosted paths.
 
 The static bundle calls `thebase.mountAll()` automatically on `DOMContentLoaded`, so initial `[b-ui]` and `[b-icon]` markup mounts without an extra script. Call `thebase.mountAll(root)` yourself only after injecting new markup or when mounting a specific fragment. If the consumer is itself an application, use [step 2](#2-install-pure-owl-api--recommended) instead — that's the recommended path.
 
@@ -61,7 +61,7 @@ Both APIs come from the same package and the same CSS file, and can be mixed on 
 </script>
 ```
 
-`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable — swap the host in each URL above. Pin an exact version (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) instead of `@latest` for production.
+`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable — swap the host in each URL above. Pin an exact version (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) instead of `@latest` for production.
 
 ```html
 <script type="module">
@@ -101,7 +101,7 @@ Two rules that account for most integration failures — see [Nodex UI Component
 <script src="https://cdn.jsdelivr.net/npm/nodexui@latest/dist/nodexui.min.js" defer></script>
 ```
 
-`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) instead of `@latest` for production.
+`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) instead of `@latest` for production.
 
 **Option B — npm (bundler-based apps: Vite, webpack, etc.):**
 
@@ -118,7 +118,7 @@ import "nodexui"; // side-effect import: registers window.thebase and auto-mount
 
 Rule that applies to both options:
 
-- Production pages must use a pinned version (e.g. `nodexui@1.3.1` or `nodexui@1`), never `@latest`.
+- Production pages must use a pinned version (e.g. `nodexui@1.3.3` or `nodexui@1`), never `@latest`.
 
 Mount markup:
 
@@ -217,7 +217,7 @@ export default {
   },
   serviceWorker: {
     cacheName: "my-app-cache-v1",
-    cdnVersion: "1.3.1", // pin to match the importmap in index.html
+    cdnVersion: "1.3.3", // pin to match the importmap in index.html
     appFiles: ["/app.css", "/app.js", "/app.xml", "/favicon.svg", "/icons/icon-192.png", "/icons/icon-512.png"],
   },
 };

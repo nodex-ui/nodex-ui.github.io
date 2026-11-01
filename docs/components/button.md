@@ -55,7 +55,7 @@ import { Button } from "nodexui";
 | `getRef` | `Function` | called with the rendered root element after mount, and with `null` on unmount |
 | `onClick` | `Function` | called with the native click event |
 
-Also accepts default slot content instead of `label`. Every pure Nodex UI component that renders a clickable control (dialog close, tab triggers, toast action, select trigger, ...) renders it through `Button`, usually with `unstyled`, so those controls share one click/disabled/`href` implementation. See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+Also accepts default slot content instead of `label`. Every pure Nodex UI component that renders a clickable control (dialog close, tab triggers, toast action, select trigger, ...) renders it through `Button`, usually with `unstyled`, so those controls share one click/disabled/`href` implementation. See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 

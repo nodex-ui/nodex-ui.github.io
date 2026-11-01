@@ -4,7 +4,7 @@ See the [Usage Guide](usage-guide.md) for the end-to-end integration path (choos
 
 Nodex UI is distributed as one CSS file and one JavaScript file for browser use. `dist/nodexui.min.js` is fully self-contained: the JS bundle (Popper.js included) and the Nodex runtime are embedded ahead of Nodex UI's own code, in load order (JS bundle, then runtime, then Nodex UI) — nothing else needs to load first. Both install paths below load this same file; the Nodex UI component API is the recommended way to consume Nodex UI in an application, with the base static markup (`b-ui`) API available as a lighter-weight alternative for non-component pages.
 
-The snippets below use the `@latest` tag for readability. Pin an exact version instead (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) for any production page — `@latest` can silently change what your page loads the moment a new version is published.
+The snippets below use the `@latest` tag for readability. Pin an exact version instead (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) for any production page — `@latest` can silently change what your page loads the moment a new version is published.
 
 ## Nodex UI component install (recommended)
 
@@ -41,7 +41,7 @@ For static HTML, a server-rendered page, or a Base HUB website page that has no 
 
 base is the bundled baseline CSS framework, and its JS bundle now drives Nodex UI's interactive components directly.
 
-`nodexui` is published on npm, so [unpkg](https://unpkg.com/nodexui@latest/) mirrors the same files as an alternative CDN (`https://unpkg.com/nodexui@latest/dist/nodexui.min.css` / `nodexui.min.js`) if jsDelivr is unreachable in your environment. Pin an exact version (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) instead of `@latest` for production.
+`nodexui` is published on npm, so [unpkg](https://unpkg.com/nodexui@latest/) mirrors the same files as an alternative CDN (`https://unpkg.com/nodexui@latest/dist/nodexui.min.css` / `nodexui.min.js`) if jsDelivr is unreachable in your environment. Pin an exact version (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) instead of `@latest` for production.
 
 For npm/self-hosted usage:
 

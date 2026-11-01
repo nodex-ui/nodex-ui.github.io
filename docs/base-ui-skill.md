@@ -6,7 +6,7 @@ It is a plain folder of Markdown and scripts, so it is not tied to one tool. It 
 
 ## Download
 
-[Download base-ui-skill.tar](/base-ui-skill.tar)
+[Download base-ui-skill.tar](/examples/base-ui-skill.tar)
 
 The archive contains one `base-ui/` folder: `SKILL.md`, `references/` and `scripts/`.
 

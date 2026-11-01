@@ -50,7 +50,7 @@ import { Chart } from "nodexui";
 | `Chart` | `variant` | `String` | optional |
 | `Chart` | `className` | `String` | optional |
 
-See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
+See [Nodex UI Component](/examples/blocks.html#/docs/guide/owl-components) for how to load `nodexui` and `dist/nodexui.templates.xml`.
 
 ## Static component
 
@@ -78,7 +78,7 @@ See [Nodex UI Component](/index.html#/docs/guide/owl-components) for how to load
 </div>
 ```
 
-See the [Chart tab](/index.html#/chart/area) (`components/chart-gallery/`) for the local copy of the shadcn area chart gallery: interactive, default, linear, step, legend, stacked, stacked expanded, icons, gradient, and axes.
+See the **Chart** tab of the examples app (`examples/components/chart-gallery/`) for the local copy of the shadcn area chart gallery: interactive, default, linear, step, legend, stacked, stacked expanded, icons, gradient, and axes.
 
 ## Chart.js usage
 

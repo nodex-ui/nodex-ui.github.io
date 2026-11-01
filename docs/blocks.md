@@ -2,7 +2,7 @@
 
 Nodex UI blocks are static HTML compositions styled by the same shadcn-aligned tokens as the component library. They are based on the public shadcn/ui blocks page and keep the same sizing landmarks: `min-height: 100svh`, sidebar widths, header heights, `gap-4`/`gap-6`, muted backgrounds, and auth-card widths.
 
-Each block has its own source stylesheet in `examples/blocks/<block-name>.css`. Shared helpers live in `examples/blocks/shared.css`; new blocks should not be folded into an all-in-one block stylesheet.
+Each block that needs one has its own source stylesheet in `src/blocks/<block-name>.css`, bundled into `dist/nodexui.min.css`. Shared helpers live in `src/blocks/shared.css`; new blocks should not be folded into an all-in-one block stylesheet.
 
 Block navigation icons must use Nodex UI's built-in Lucide icon component, for example `<span b-icon="layout-dashboard" b-block-icon></span>`. Do not use placeholder letters inside `b-block-icon`.
 
@@ -13,7 +13,7 @@ Blocks are not standalone runtime components. Paste the markup and load the norm
 <script src="https://cdn.jsdelivr.net/npm/nodexui@latest/dist/nodexui.min.js" defer></script>
 ```
 
-`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.1`, or `@1` to take only non-breaking updates) instead of `@latest` for production. Blocks are static markup, so they only need the static `b-ui` runtime above — see [Usage Guide](usage-guide.md) if the surrounding page is itself an application and you'd rather compose the equivalent layout from [Nodex UI Component](owl-components.md).
+`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) instead of `@latest` for production. Blocks are static markup, so they only need the static `b-ui` runtime above — see [Usage Guide](usage-guide.md) if the surrounding page is itself an application and you'd rather compose the equivalent layout from [Nodex UI Component](owl-components.md).
 
 Use `b-block` to select the block style:
 
@@ -26,7 +26,7 @@ Use `b-block` to select the block style:
 </section>
 ```
 
-The docs/dev server serves the block gallery at `/blocks` through the shared `examples/index.html` shell. Individual block viewers still live at `examples/blocks/<block-name>.html` and are also available through clean `/blocks/<block-name>` aliases. Use `?embed=1` for iframe previews without the surrounding viewer chrome.
+The docs/dev server serves the block gallery at `/blocks` through the shared `examples/index.html` shell. Each block is a template in `examples/components/blocks/<block-name>.xml`, rendered inline by the gallery and deep-linked as `#/blocks/<block-name>`.
 
 ## Included Blocks
 
@@ -39,4 +39,4 @@ The docs/dev server serves the block gallery at `/blocks` through the shared `ex
 - `signup-03`: centered signup card kept separate from login while sharing the same 24rem/auth-card sizing.
 - `signup-04`: signup card and media split kept separate from login while sharing the same 56rem split-card sizing.
 
-See `/blocks` for the gallery, or open `examples/blocks/<block-name>.html` for the shadcn-style viewer with Preview/Code modes and desktop, tablet, and mobile viewport controls. Add `?embed=1` to a block URL for a clean preview-only render inside an iframe.
+See `/blocks` for the gallery.

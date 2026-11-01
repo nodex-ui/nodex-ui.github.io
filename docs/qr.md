@@ -12,11 +12,11 @@ document.querySelector("#qr").innerHTML = qrSvg(payload, { ecc: "M", margin: 2, 
 ```html
 <!-- ES module from the CDN (or map it as "nodexui/qr" in an import map) -->
 <script type="module">
-  import { qrSvg } from "https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.qr.esm.js";
+  import { qrSvg } from "https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.qr.esm.js";
 </script>
 
 <!-- Classic script tag: sets window.thebase.qr -->
-<script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.1/dist/nodexui.qr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.qr.min.js"></script>
 ```
 
 Types ship as `dist/types/qr.d.ts`.
@@ -33,4 +33,4 @@ Types ship as `dist/types/qr.d.ts`.
 
 Text is encoded as UTF-8, so Vietnamese text scans correctly.
 
-See [Blocks → Examples → QR code](/index.html#/blocks/qr) (`components/qr-demo/`) for a working page, plus the `emvhub` QR tool and `qr-page` app.
+See the **QR** tab of the examples app ([`examples/components/qr/`](../examples/components/qr/)) for a working example, plus the `emvhub` QR tool and `qr-page` app.
