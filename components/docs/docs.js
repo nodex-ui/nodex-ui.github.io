@@ -130,6 +130,27 @@ function docsRouteFromHash() {
   return { kind: "guide", slug: guidePages[0].slug };
 }
 
+/** Document path (as listed in tree.json) for the current `#/docs/...` hash; empty when the hash is another tab's. Bare `#/docs` opens the first guide. */
+export function docsPathFromHash(hash) {
+  if (!/^#\/?docs(\/|$)/.test(hash)) return "";
+  const { kind, slug } = docsRouteFromHash();
+  return kind === "component" ? `docs/components/${slug}.md` : `docs/${slug}.md`;
+}
+
+/** Hash for a document path: guides and components keep their `#/docs/guide|components/<slug>` URLs, anything else (docs/v2/...) belongs to the Concept tab. */
+export function docsHashOfPath(path) {
+  const match = /^docs\/(components\/)?([^/]+)\.md$/.exec(path);
+  if (!match) return `#/concept/${path}`;
+  return match[1] ? `#/docs/components/${match[2]}` : `#/docs/guide/${match[2]}`;
+}
+
+/** Sidebar label for a document: the translated guide title, or the title-cased component name; empty keeps the tree's own label. */
+export function docsLabel(node) {
+  const match = /^docs\/(components\/)?([^/]+)\.md$/.exec(node.path);
+  if (!match) return "";
+  return match[1] ? titleize(match[2]) : guidePages.find((guide) => guide.slug === match[2])?.title || "";
+}
+
 async function ensureComponentsLoaded() {
   if (docsState.components.length) return;
   const registry = await loadRegistry();
@@ -181,14 +202,18 @@ async function loadDocsRoute() {
   }
 }
 
-/** Docs tab sidebar: search + Guides/Components lists. Owns hash-listening and registry loading for the whole Docs tab. */
+/** Docs tab sidebar: search + Guides/Components lists, each a `DocViewer` sidebar. Owns hash-listening and registry loading for the whole Docs tab. */
 export class DocsSidebar extends Component {
   static template = "examples.DocsSidebar";
 
   t = t;
 
   setup() {
-    this.guidePages = guidePages;
+    this.guidePaths = guidePages.map((guide) => `docs/${guide.slug}.md`);
+    this.hiddenComponentPaths = ["docs/components/readme.md"];
+    this.fromHash = docsPathFromHash;
+    this.toHash = docsHashOfPath;
+    this.label = docsLabel;
     this.state = useState(docsState);
     this.onHashChange = () => loadDocsRoute();
     onWillStart(() => loadDocsRoute());
@@ -199,14 +224,11 @@ export class DocsSidebar extends Component {
     });
   }
 
+  // Components whose name matches the filter box; the tree shows the same set, this count feeds the search tracking.
   get visibleComponents() {
     const query = this.state.query.trim().toLowerCase();
     if (!query) return this.state.components;
     return this.state.components.filter((component) => titleize(component.name).toLowerCase().includes(query));
-  }
-
-  titleize(value) {
-    return titleize(value);
   }
 
   onQueryInput(value) {
@@ -226,31 +248,18 @@ export class DocsSidebar extends Component {
   }
 }
 
-/** Docs tab content: renders the selected guide or component doc via `Markdown`. */
+/** Docs tab content: header (title, badges) plus the selected guide or component doc via `DocViewer`. */
 export class DocsContent extends Component {
   static template = "examples.DocsContent";
 
   t = t;
 
   setup() {
+    this.fromHash = docsPathFromHash;
+    this.toHash = docsHashOfPath;
     this.state = useState(docsState);
     onMounted(() => this.mountStaticNodexUI());
     onPatched(() => this.mountStaticNodexUI());
-  }
-
-  get treeSrc() {
-    return "/docs/tree.json";
-  }
-
-  /** Maps a tree path to a Docs route: docs/components/<slug>.md, docs/<guide>.md, else the Concept tab (docs/v2/...). */
-  onNavigate = (path) => {
-    const match = /^docs\/(components\/)?([^/]+)\.md$/.exec(path);
-    window.location.hash = match ? (match[1] ? `#/docs/components/${match[2]}` : `#/docs/guide/${match[2]}`) : `#/owl-framework/${path}`;
-  };
-
-  get docSrc() {
-    if (this.state.kind === "component") return `/docs/components/${this.state.slug}.md`;
-    return `/docs/${this.state.slug}.md`;
   }
 
   mountStaticNodexUI() {

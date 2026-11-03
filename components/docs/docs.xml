@@ -1,28 +1,16 @@
 <templates>
   <t t-name="examples.DocsSidebar">
     <div class="d-grid gap-4 overflow-y-auto">
-      <SidebarGroup>
+      <div>
         <SidebarGroupLabel><t t-esc="t('Guides')"/></SidebarGroupLabel>
-        <SidebarMenu>
-          <SidebarMenuItem t-foreach="guidePages" t-as="guide" t-key="guide.slug">
-            <SidebarMenuButton href="'#/docs/guide/' + guide.slug" active="state.kind === 'guide' and state.slug === guide.slug">
-              <t t-esc="guide.title"/>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarGroup>
+        <DocViewer part="'sidebar'" tree="'/docs/tree.json'" root="'docs'" path="'docs/usage-guide.md'" include="guidePaths" formatLabel="label" fromHash="fromHash" toHash="toHash"/>
+      </div>
 
-      <SidebarGroup>
+      <div>
         <SidebarGroupLabel><t t-esc="t('Components')"/></SidebarGroupLabel>
         <Input className="'mt-1 mb-2'" type="'search'" placeholder="t('Filter components')" value="state.query" onInput="(value) => this.onQueryInput(value)"/>
-        <SidebarMenu>
-          <SidebarMenuItem t-foreach="visibleComponents" t-as="component" t-key="component.name">
-            <SidebarMenuButton href="'#/docs/components/' + component.name" active="state.kind === 'component' and state.slug === component.name">
-              <t t-esc="titleize(component.name)"/>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarGroup>
+        <DocViewer part="'sidebar'" tree="'/docs/tree.json'" root="'docs/components'" path="'docs/usage-guide.md'" exclude="hiddenComponentPaths" filter="state.query" formatLabel="label" fromHash="fromHash" toHash="toHash"/>
+      </div>
     </div>
   </t>
 
@@ -45,7 +33,7 @@
           <Badge variant="'outline'"><t t-esc="t('{count} attributes', { count: state.attributeCount })"/></Badge>
           <Badge variant="'outline'"><t t-esc="t('{count} events', { count: state.eventCount })"/></Badge>
         </div>
-        <Markdown src="docSrc" tree="treeSrc" onNavigate="onNavigate"/>
+        <DocViewer part="'content'" tree="'/docs/tree.json'" path="'docs/usage-guide.md'" fromHash="fromHash" toHash="toHash"/>
       </t>
     </div>
   </t>

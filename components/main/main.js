@@ -3,7 +3,7 @@ import { DocsSidebar, DocsContent } from "@/components/docs/docs.js";
 import { BlocksSidebar, BlocksContent } from "@/components/block-gallery/block-gallery.js";
 import { IconsSidebar, IconsContent } from "@/components/icons/icons.js";
 import { ChartSidebar, ChartContent } from "@/components/chart-gallery/chart-gallery.js";
-import { OwlFrameworkSidebar, OwlFrameworkContent } from "@/components/owl-framework/owl-framework.js";
+import { ConceptSidebar, ConceptContent } from "@/components/concept/concept.js";
 import { ThemeCreatorSidebar, ThemeCreatorContent } from "@/components/theme-creator/theme-creator.js";
 import { LanguageSwitcher } from "@/components/language-switcher/language-switcher.js";
 import { mountPage } from "@/components/page/page.js";
@@ -18,7 +18,7 @@ const routes = [
   { id: "blocks", label: t("Blocks"), description: t("Catalog of composed Nodex UI blocks and runnable examples.") },
   { id: "icons", label: t("Icons"), description: t("Lucide-backed icon usage through the Icon component.") },
   { id: "chart", label: t("Chart"), description: t("Interactive Nodex UI chart catalog.") },
-  { id: "owl-framework", label: t("Concept"), description: t("Reference for everything exported by the underlying runtime.") },
+  { id: "concept", label: t("Concept"), description: t("Reference for everything exported by the underlying runtime.") },
   { id: "theme", label: t("Theme"), description: t("Pick colours and radius, preview Nodex UI live, and download nodexui-light.css / nodexui-dark.css.") },
 ];
 
@@ -37,7 +37,7 @@ function setRouteTitle(id) {
 export class Root extends Component {
   static components = {
     DocsSidebar, DocsContent, BlocksSidebar, BlocksContent, IconsSidebar, IconsContent, ChartSidebar, ChartContent,
-    OwlFrameworkSidebar, OwlFrameworkContent, ThemeCreatorSidebar, ThemeCreatorContent, LanguageSwitcher,
+    ConceptSidebar, ConceptContent, ThemeCreatorSidebar, ThemeCreatorContent, LanguageSwitcher,
   };
 
   static template = "examples.MainApp";
@@ -79,6 +79,6 @@ await mountPage(Root, [
   "/components/qr-demo/qr-demo.xml",
   "/components/i18n-demo/i18n-demo.xml",
   "/components/analytics-dashboard/analytics-dashboard.xml",
-  "/components/owl-framework/owl-framework.xml",
+  "/components/concept/concept.xml",
   "/components/theme-creator/theme-creator.xml",
 ], document.getElementById("b-example-app"));

@@ -12,7 +12,7 @@
         <t t-elif="state.route === 'icons'"><IconsSidebar/></t>
         <t t-elif="state.route === 'chart'"><ChartSidebar/></t>
         <t t-elif="state.route === 'theme'"><ThemeCreatorSidebar/></t>
-        <t t-else=""><OwlFrameworkSidebar/></t>
+        <t t-else=""><ConceptSidebar/></t>
       </ShellSidebar>
 
       <ShellMain>
@@ -35,7 +35,7 @@
           <section t-elif="state.route === 'icons'"><IconsContent/></section>
           <section t-elif="state.route === 'chart'"><ChartContent/></section>
           <section t-elif="state.route === 'theme'"><ThemeCreatorContent/></section>
-          <section t-else=""><OwlFrameworkContent/></section>
+          <section t-else=""><ConceptContent/></section>
         </ShellContent>
       </ShellMain>
     </Shell>

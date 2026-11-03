@@ -233,6 +233,14 @@
           "meta": {}
         },
         {
+          "name": "doc-viewer.md",
+          "type": "file",
+          "path": "docs/components/doc-viewer.md",
+          "title": "DocViewer",
+          "description": "Renders a whole Markdown folder: a navigation tree beside the selected document. It combines MarkdownTree (sidebar) and Markdown (content), the same pattern...",
+          "meta": {}
+        },
+        {
           "name": "drawer.md",
           "type": "file",
           "path": "docs/components/drawer.md",
