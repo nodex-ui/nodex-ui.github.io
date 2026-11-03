@@ -1,7 +1,7 @@
 <templates>
   <t t-name="examples.OwlFrameworkSidebar">
-    <div class="b-owl-framework-sidebar-inner">
-      <MarkdownTree src="treeSrc" activePath="state.path" onSelect="onSelect"/>
+    <div class="b-owl-framework-sidebar-inner" style="flex: 1 1 auto; min-height: 0; overflow-y: auto;">
+      <MarkdownTree src="treeSrc" root="treeRoot" activePath="state.path" onSelect="onSelect"/>
     </div>
   </t>
 

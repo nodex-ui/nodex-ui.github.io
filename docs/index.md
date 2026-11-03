@@ -98,10 +98,6 @@ This file is the single entry point for AI agents. Every link is **relative to t
 - [Tooltip](components/tooltip.md): Use b-ui="tooltip" with either b-att-content or a tooltip content child.
 - [Typography](components/typography.md): Small text helpers for plain content.
 
-## v2
-- [Nodex UI — Instruction](v2/instruction.md): Introduction to Nodex UI, how to use it, and where to find the Bootstrap 5 and Owl framework references.
-- [🦉 Owl overview 🦉](v2/readme.md): Here is a list of everything exported by the Owl library:
-
 ## v2/learning
 - [🦉 How to test Components 🦉](v2/learning/how_to_test.md): It is a good practice to test applications and components to ensure that they behave as expected. There are many ways to test a user interface: manual testin...
 - [🦉 How to start an Owl project 🦉](v2/learning/quick_start.md): Each software project has its specific needs. Many of these needs can be solved with some tooling: webpack, gulp, css preprocessor, bundlers, transpilers, ...
@@ -131,9 +127,5 @@ This file is the single entry point for AI agents. Every link is **relative to t
 - [🦉 Templates 🦉](v2/reference/templates.md): Owl templates are describe using the QWeb specification. It is based on the XML format, and used mostly to generate HTML. In OWL, QWeb templates are compiled...
 - [🦉 Translations 🦉](v2/reference/translations.md): If properly setup, Owl can translate all rendered templates. To do so, it needs a translate function, which takes
 - [🦉 Utils 🦉](v2/reference/utils.md): Owl export a few useful utility functions, to help with common issues. Those functions are all available in the owl.utils namespace.
-
-## v2/tools
-- [Owl Devtools Guide](v2/tools/devtools_guide.md): After having installed the extension, a new icon will be added to your extension bar. If you don't see it, you can pin the extension using the extensions popup.
-- [Owl Devtools Browser extension](v2/tools/devtools.md): The owl devtools browser extension is an extension available on chrome or firefox which adds an owl tab to the browser devtools in order to inspect all appli...
 
 <!-- docs-index:end -->

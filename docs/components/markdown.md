@@ -95,7 +95,7 @@ A fenced ` ```base-ui ` block renders as a live component, not a code sample:
 
 ## Options and attributes
 
-- `b-att-src` / `src` — fetch a remote Markdown file instead of using inline content.
+- `b-att-src` / `src` — fetch a remote Markdown file instead of using inline content. A folder URL (trailing `/`) or a missing document falls back to that folder's `readme.md` (or `README.md`), the folder's default document.
 - `b-att-content` / `content` — a static `<script type="text/markdown">` child (or a `<template>`), `b-att-content`, or the element's own text content supplies the Markdown source when no `src` is set.
 - `b-att-mermaid` / `mermaid` — set to `"false"` to skip mermaid diagram rendering (defaults to enabled).  Diagrams use mermaid's dark theme when the nearest `data-bs-theme` (else the system preference) is dark.
 - `b-att-base-ui` / `nodexUi` — set to `"false"` to skip live-mounting fenced ` ```base-ui ` blocks; they render as plain code instead (defaults to enabled).

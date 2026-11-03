@@ -1,6 +1,7 @@
 import { Component, onMounted, onWillStart, onWillUnmount, reactive, useState } from "nodexui";
 
-const treeSrc = "/docs/v2/tree.json";
+const treeSrc = "/docs/tree.json";
+const treeRoot = "docs/v2";
 const defaultPath = "docs/v2/instruction.md";
 
 /** Shared reactive state for the Owl Framework tab, subscribed to by both `OwlFrameworkSidebar` and `OwlFrameworkContent`. */
@@ -27,6 +28,7 @@ export class OwlFrameworkSidebar extends Component {
 
   setup() {
     this.treeSrc = treeSrc;
+    this.treeRoot = treeRoot;
     this.state = useState(owlFrameworkState);
     this.onHashChange = () => loadOwlFrameworkRoute();
     this.onSelect = (path) => selectOwlFrameworkPath(path);
@@ -42,7 +44,7 @@ export class OwlFrameworkContent extends Component {
 
   setup() {
     this.state = useState(owlFrameworkState);
-    this.treeSrc = "/docs/tree.json";
+    this.treeSrc = treeSrc;
     this.onNavigate = (path, hash) => selectOwlFrameworkPath(path);
   }
 

@@ -12,450 +12,608 @@
           "name": "accordion.md",
           "type": "file",
           "path": "docs/components/accordion.md",
+          "title": "Accordion",
+          "description": "Use b-ui=\"accordion\" for grouped disclosure panels.",
           "meta": {}
         },
         {
           "name": "alert-dialog.md",
           "type": "file",
           "path": "docs/components/alert-dialog.md",
+          "title": "Alert Dialog",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "alert.md",
           "type": "file",
           "path": "docs/components/alert.md",
+          "title": "Alert",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "apidoc.md",
           "type": "file",
           "path": "docs/components/apidoc.md",
+          "title": "ApiDoc",
+          "description": "Use b-ui=\"apidoc\" (or the pure Nodex UI ApiDoc component) to render an OpenAPI 3.0+ JSON document as browsable API documentation: a grouped sidebar, per-oper...",
           "meta": {}
         },
         {
           "name": "aspect-ratio.md",
           "type": "file",
           "path": "docs/components/aspect-ratio.md",
+          "title": "Aspect Ratio",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "attachment.md",
           "type": "file",
           "path": "docs/components/attachment.md",
+          "title": "Attachment",
+          "description": "Use b-ui=\"attachment\" for a CDN-ready attachment card with media, metadata, upload state, and actions.",
           "meta": {}
         },
         {
           "name": "avatar.md",
           "type": "file",
           "path": "docs/components/avatar.md",
+          "title": "Avatar",
+          "description": "Use b-ui=\"avatar\" for a CDN-ready avatar component.",
           "meta": {}
         },
         {
           "name": "badge.md",
           "type": "file",
           "path": "docs/components/badge.md",
+          "title": "Badge",
+          "description": "Small status label for counts, states, and metadata.",
           "meta": {}
         },
         {
           "name": "block-viewer.md",
           "type": "file",
           "path": "docs/components/block-viewer.md",
+          "title": "Block Viewer",
+          "description": "BlockViewer is the page-root component used by Nodex UI block gallery detail pages (examples/blocks/.html). It reads a title/description from document.body.d...",
           "meta": {}
         },
         {
           "name": "breadcrumb.md",
           "type": "file",
           "path": "docs/components/breadcrumb.md",
+          "title": "Breadcrumb",
+          "description": "Displays the path to the current resource using a hierarchy of links.",
           "meta": {}
         },
         {
           "name": "bubble.md",
           "type": "file",
           "path": "docs/components/bubble.md",
+          "title": "Bubble",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "button-group.md",
           "type": "file",
           "path": "docs/components/button-group.md",
+          "title": "Button Group",
+          "description": "Groups related buttons while preserving native button semantics.",
           "meta": {}
         },
         {
           "name": "button.md",
           "type": "file",
           "path": "docs/components/button.md",
+          "title": "Button",
+          "description": "Use b-ui=\"button\" on a native button or link.",
           "meta": {}
         },
         {
           "name": "calendar.md",
           "type": "file",
           "path": "docs/components/calendar.md",
+          "title": "Calendar",
+          "description": "Use b-ui=\"calendar\" for a CDN-ready calendar component.",
           "meta": {}
         },
         {
           "name": "card.md",
           "type": "file",
           "path": "docs/components/card.md",
+          "title": "Card",
+          "description": "Card, CardHeader, CardBody, CardFooter, CardTitle, and CardDescription each accept className (String, optional) and render their default slot as-is. Card add...",
           "meta": {}
         },
         {
           "name": "carousel.md",
           "type": "file",
           "path": "docs/components/carousel.md",
+          "title": "Carousel",
+          "description": "Use b-ui=\"carousel\" for a CDN-ready carousel component.",
           "meta": {}
         },
         {
           "name": "chart.md",
           "type": "file",
           "path": "docs/components/chart.md",
+          "title": "Chart",
+          "description": "Use b-ui=\"chart\" for a CDN-ready chart component styled after the current shadcn chart pages.",
           "meta": {}
         },
         {
           "name": "checkbox.md",
           "type": "file",
           "path": "docs/components/checkbox.md",
+          "title": "Checkbox",
+          "description": "Native checkbox input or label wrapper.",
           "meta": {}
         },
         {
           "name": "clipboard-button.md",
           "type": "file",
           "path": "docs/components/clipboard-button.md",
+          "title": "Clipboard Button",
+          "description": "Use b-ui=\"clipboard-button\" on a native button to copy specific data to the clipboard. Built on the same variant/size classes and built-in .btn styling as Bu...",
           "meta": {}
         },
         {
           "name": "code-editor.md",
           "type": "file",
           "path": "docs/components/code-editor.md",
+          "title": "Code Editor",
+          "description": "A dependency-free code box with line numbers, syntax colouring, Tab/Shift+Tab indent, Enter auto-indent and Format, Copy and Edit/View buttons. Pure Nodex UI...",
           "meta": {}
         },
         {
           "name": "collapsible.md",
           "type": "file",
           "path": "docs/components/collapsible.md",
+          "title": "Collapsible",
+          "description": "Use b-ui=\"collapsible\" for a single disclosure region.",
           "meta": {}
         },
         {
           "name": "combobox.md",
           "type": "file",
           "path": "docs/components/combobox.md",
+          "title": "Combobox",
+          "description": "Use b-ui=\"combobox\" for a CDN-ready combobox component.",
           "meta": {}
         },
         {
           "name": "command.md",
           "type": "file",
           "path": "docs/components/command.md",
+          "title": "Command",
+          "description": "Use b-ui=\"command\" for a CDN-ready command component.",
           "meta": {}
         },
         {
           "name": "context-menu.md",
           "type": "file",
           "path": "docs/components/context-menu.md",
+          "title": "Context Menu",
+          "description": "Use b-ui=\"context-menu\" for a CDN-ready context menu component.",
           "meta": {}
         },
         {
           "name": "data-table.md",
           "type": "file",
           "path": "docs/components/data-table.md",
+          "title": "Data Table",
+          "description": "Use b-ui=\"data-table\" for a CDN-ready data table component.",
           "meta": {}
         },
         {
           "name": "date-picker.md",
           "type": "file",
           "path": "docs/components/date-picker.md",
+          "title": "Date Picker",
+          "description": "Use b-ui=\"date-picker\" for a CDN-ready date picker component.",
           "meta": {}
         },
         {
           "name": "dialog.md",
           "type": "file",
           "path": "docs/components/dialog.md",
+          "title": "Dialog",
+          "description": "DialogContent also accepts showCloseButton (default true) to render the shadcn-style top-right close control; pass false to hide it. DialogTrigger, DialogCon...",
           "meta": {}
         },
         {
           "name": "direction.md",
           "type": "file",
           "path": "docs/components/direction.md",
+          "title": "Direction",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "drawer.md",
           "type": "file",
           "path": "docs/components/drawer.md",
+          "title": "Drawer",
+          "description": "DrawerContent is driven by a real bootstrap.Offcanvas instance bound to its own root (rendered as .offcanvas.offcanvas-bottom, permanently mounted rather tha...",
           "meta": {}
         },
         {
           "name": "dropdown-menu.md",
           "type": "file",
           "path": "docs/components/dropdown-menu.md",
+          "title": "Dropdown Menu",
+          "description": "Displays a menu to the user, such as a set of actions or functions, triggered by a button.",
           "meta": {}
         },
         {
           "name": "empty.md",
           "type": "file",
           "path": "docs/components/empty.md",
+          "title": "Empty",
+          "description": "Use b-ui=\"empty\" for an accessible empty state. The component mirrors shadcn's Base Empty composition: header, media, title, description, and content.",
           "meta": {}
         },
         {
           "name": "field.md",
           "type": "file",
           "path": "docs/components/field.md",
+          "title": "Field",
+          "description": "Combine labels, controls, and help text to compose accessible form fields and grouped inputs.",
           "meta": {}
         },
         {
           "name": "form.md",
           "type": "file",
           "path": "docs/components/form.md",
+          "title": "Form",
+          "description": "Build an accessible Bug Report form with Nodex UI Field layout, Nodex UI Button actions, and Nodex t-model input bindings.",
           "meta": {}
         },
         {
           "name": "hover-card.md",
           "type": "file",
           "path": "docs/components/hover-card.md",
+          "title": "Hover Card",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "icon.md",
           "type": "file",
           "path": "docs/components/icon.md",
+          "title": "Icon",
+          "description": "Nodex UI includes the full Lucide SVG icon set as a built-in CDN icon library.",
           "meta": {}
         },
         {
           "name": "input-otp.md",
           "type": "file",
           "path": "docs/components/input-otp.md",
+          "title": "Input Otp",
+          "description": "Use b-ui=\"input-otp\" for a CDN-ready input otp component.",
           "meta": {}
         },
         {
           "name": "input.md",
           "type": "file",
           "path": "docs/components/input.md",
+          "title": "Input",
+          "description": "Use b-ui=\"input\" on a native input element.",
           "meta": {}
         },
         {
           "name": "item.md",
           "type": "file",
           "path": "docs/components/item.md",
+          "title": "Item",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "kbd.md",
           "type": "file",
           "path": "docs/components/kbd.md",
+          "title": "Kbd",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "label.md",
           "type": "file",
           "path": "docs/components/label.md",
+          "title": "Label",
+          "description": "Form label with consistent spacing and optional required marker.",
           "meta": {}
         },
         {
           "name": "markdown.md",
           "type": "file",
           "path": "docs/components/markdown.md",
+          "title": "Markdown",
+          "description": "Use b-ui=\"markdown\" (or the pure Nodex UI Markdown component) to render Markdown or mount an editable Markdown document. Read-only parsing uses the vendored...",
           "meta": {}
         },
         {
           "name": "marker.md",
           "type": "file",
           "path": "docs/components/marker.md",
+          "title": "Marker",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "menubar.md",
           "type": "file",
           "path": "docs/components/menubar.md",
+          "title": "Menubar",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "message-scroller.md",
           "type": "file",
           "path": "docs/components/message-scroller.md",
+          "title": "Message Scroller",
+          "description": "Use b-ui=\"message-scroller\" for a CDN-ready message scroller component.",
           "meta": {}
         },
         {
           "name": "message.md",
           "type": "file",
           "path": "docs/components/message.md",
+          "title": "Message",
+          "description": "Use b-ui=\"message\" for a CDN-ready message component.",
           "meta": {}
         },
         {
           "name": "native-select.md",
           "type": "file",
           "path": "docs/components/native-select.md",
+          "title": "Native Select",
+          "description": "Browser-native select control with standard styling.",
           "meta": {}
         },
         {
           "name": "navigation-menu.md",
           "type": "file",
           "path": "docs/components/navigation-menu.md",
+          "title": "Navigation Menu",
+          "description": "Use b-ui=\"navigation-menu\" for horizontal site or app navigation.",
           "meta": {}
         },
         {
           "name": "pagination.md",
           "type": "file",
           "path": "docs/components/pagination.md",
+          "title": "Pagination",
+          "description": "Use b-ui=\"pagination\" on a nav containing a list of links or buttons.",
           "meta": {}
         },
         {
           "name": "popover.md",
           "type": "file",
           "path": "docs/components/popover.md",
+          "title": "Popover",
+          "description": "Use b-ui=\"popover\" with trigger and content nodes.",
           "meta": {}
         },
         {
           "name": "progress.md",
           "type": "file",
           "path": "docs/components/progress.md",
+          "title": "Progress",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "pwa.md",
           "type": "file",
           "path": "docs/components/pwa.md",
+          "title": "Pwa",
+          "description": "Use b-ui=\"pwa\" for a bottom-anchored install/permission prompt (an \"Add to Home Screen\" or \"Allow notifications\" sheet). Pwa is presentational only — it owns...",
           "meta": {}
         },
         {
           "name": "qr-card.md",
           "type": "file",
           "path": "docs/components/qr-card.md",
+          "title": "QR Card",
+          "description": "A centred card with a QR code, a title and a description, built from the Card parts (Card, CardBody, CardHeader, CardTitle, CardDescription). Give it qrConte...",
           "meta": {}
         },
         {
           "name": "questionnaire.md",
           "type": "file",
           "path": "docs/components/questionnaire.md",
+          "title": "Questionnaire",
+          "description": "Use b-ui=\"questionnaire\" for a CDN-ready questionnaire component.",
           "meta": {}
         },
         {
           "name": "radio-group.md",
           "type": "file",
           "path": "docs/components/radio-group.md",
+          "title": "Radio Group",
+          "description": "Native radio input or label wrapper.",
+          "meta": {}
+        },
+        {
+          "name": "readme.md",
+          "type": "file",
+          "path": "docs/components/readme.md",
+          "title": "components",
+          "description": "",
           "meta": {}
         },
         {
           "name": "resizable.md",
           "type": "file",
           "path": "docs/components/resizable.md",
+          "title": "Resizable",
+          "description": "Use b-ui=\"resizable\" for a CDN-ready resizable component.",
           "meta": {}
         },
         {
           "name": "scroll-area.md",
           "type": "file",
           "path": "docs/components/scroll-area.md",
+          "title": "Scroll Area",
+          "description": "Use b-ui=\"scroll-area\" for a CDN-ready scroll area component.",
           "meta": {}
         },
         {
           "name": "select.md",
           "type": "file",
           "path": "docs/components/select.md",
+          "title": "Select",
+          "description": "Set useTip=\"1\" to move supportingText into a tooltip: a question-mark icon appears right after the label, in the same label box, and the text shows on hover...",
           "meta": {}
         },
         {
           "name": "separator.md",
           "type": "file",
           "path": "docs/components/separator.md",
+          "title": "Separator",
+          "description": "Visual divider with separator semantics.",
           "meta": {}
         },
         {
           "name": "sheet.md",
           "type": "file",
           "path": "docs/components/sheet.md",
+          "title": "Sheet",
+          "description": "Use b-ui=\"sheet\" for offcanvas panels.",
           "meta": {}
         },
         {
           "name": "shell.md",
           "type": "file",
           "path": "docs/components/shell.md",
+          "title": "Shell",
+          "description": "Use b-ui=\"shell\" for a collapsible app shell: a desktop-collapsible/mobile off-canvas sidebar next to a sticky header and scrollable content region.",
           "meta": {}
         },
         {
           "name": "sidebar.md",
           "type": "file",
           "path": "docs/components/sidebar.md",
+          "title": "Sidebar",
+          "description": "Use b-ui=\"sidebar\" for app navigation panels. The component mirrors shadcn's composable Sidebar parts: header, content, footer, groups, menu rows, actions, n...",
           "meta": {}
         },
         {
           "name": "skeleton.md",
           "type": "file",
           "path": "docs/components/skeleton.md",
+          "title": "Skeleton",
+          "description": "Loading placeholder for content that is not ready yet.",
           "meta": {}
         },
         {
           "name": "slider.md",
           "type": "file",
           "path": "docs/components/slider.md",
+          "title": "Slider",
+          "description": "See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.",
           "meta": {}
         },
         {
           "name": "spinner.md",
           "type": "file",
           "path": "docs/components/spinner.md",
+          "title": "Spinner",
+          "description": "Inline loading indicator using built-in spinner classes.",
           "meta": {}
         },
         {
           "name": "switch.md",
           "type": "file",
           "path": "docs/components/switch.md",
+          "title": "Switch",
+          "description": "Checkbox-backed switch control using role=\"switch\".",
           "meta": {}
         },
         {
           "name": "table.md",
           "type": "file",
           "path": "docs/components/table.md",
+          "title": "Table",
+          "description": "Native table styling for static or server-rendered data.",
           "meta": {}
         },
         {
           "name": "tabs.md",
           "type": "file",
           "path": "docs/components/tabs.md",
+          "title": "Tabs",
+          "description": "Matches shadcn/the built-in Tabs: TabsList renders as a segmented pill control on a muted background by default, or a transparent underline list via variant=...",
           "meta": {}
         },
         {
           "name": "text-editor.md",
           "type": "file",
           "path": "docs/components/text-editor.md",
+          "title": "Text Editor",
+          "description": "Use b-ui=\"text-editor\" (or the pure Nodex UI TextEditor component) for WYSIWYG rich-text editing backed by Milkdown (ProseMirror + a Markdown-aware schema, v...",
           "meta": {}
         },
         {
           "name": "textarea.md",
           "type": "file",
           "path": "docs/components/textarea.md",
+          "title": "Textarea",
+          "description": "Native multiline text input with Nodex UI and built-in styling.",
           "meta": {}
         },
         {
           "name": "theme-button.md",
           "type": "file",
           "path": "docs/components/theme-button.md",
+          "title": "Theme Button",
+          "description": "Use b-ui=\"theme-button\" for an icon-only light/dark theme toggle.",
           "meta": {}
         },
         {
           "name": "toast.md",
           "type": "file",
           "path": "docs/components/toast.md",
+          "title": "Toast",
+          "description": "Use b-ui=\"toast\" for transient status messages.",
           "meta": {}
         },
         {
           "name": "toggle-group.md",
           "type": "file",
           "path": "docs/components/toggle-group.md",
+          "title": "Toggle Group",
+          "description": "Use b-ui=\"toggle-group\" for a CDN-ready toggle group component.",
           "meta": {}
         },
         {
           "name": "toggle.md",
           "type": "file",
           "path": "docs/components/toggle.md",
+          "title": "Toggle",
+          "description": "Use b-ui=\"toggle\" for a CDN-ready toggle component.",
           "meta": {}
         },
         {
           "name": "tooltip.md",
           "type": "file",
           "path": "docs/components/tooltip.md",
+          "title": "Tooltip",
+          "description": "Use b-ui=\"tooltip\" with either b-att-content or a tooltip content child.",
           "meta": {}
         },
         {
           "name": "typography.md",
           "type": "file",
           "path": "docs/components/typography.md",
+          "title": "Typography",
+          "description": "Small text helpers for plain content.",
           "meta": {}
         }
       ]
@@ -474,18 +632,32 @@
               "name": "how_to_test.md",
               "type": "file",
               "path": "docs/v2/learning/how_to_test.md",
+              "title": "🦉 How to test Components 🦉",
+              "description": "It is a good practice to test applications and components to ensure that they behave as expected. There are many ways to test a user interface: manual testin...",
               "meta": {}
             },
             {
               "name": "quick_start.md",
               "type": "file",
               "path": "docs/v2/learning/quick_start.md",
+              "title": "🦉 How to start an Owl project 🦉",
+              "description": "Each software project has its specific needs. Many of these needs can be solved with some tooling: webpack, gulp, css preprocessor, bundlers, transpilers, ...",
+              "meta": {}
+            },
+            {
+              "name": "readme.md",
+              "type": "file",
+              "path": "docs/v2/learning/readme.md",
+              "title": "learning",
+              "description": "",
               "meta": {}
             },
             {
               "name": "tutorial_todoapp.md",
               "type": "file",
               "path": "docs/v2/learning/tutorial_todoapp.md",
+              "title": "🦉 OWL Tutorial: TodoApp 🦉",
+              "description": "For this tutorial, we will build a very simple Todo list application. The app should satisfy the following requirements:",
               "meta": {}
             }
           ]
@@ -499,24 +671,40 @@
               "name": "architecture.md",
               "type": "file",
               "path": "docs/v2/miscellaneous/architecture.md",
+              "title": "🦉 Notes On Owl Architecture 🦉",
+              "description": "We explain here how Owl is designed",
               "meta": {}
             },
             {
               "name": "comparison.md",
               "type": "file",
               "path": "docs/v2/miscellaneous/comparison.md",
+              "title": "Comparison with Vue/React",
+              "description": "OWL, React and Vue have the same main feature: they allow developers to build declarative user interfaces. To do that, all these frameworks uses a virtual do...",
               "meta": {}
             },
             {
               "name": "compiled_template.md",
               "type": "file",
               "path": "docs/v2/miscellaneous/compiled_template.md",
+              "title": "🦉 Notes On Owl Compiled Templates 🦉",
+              "description": "This page will explain what an Owl compiled template look like. This is a technical document intended for developers interested in understanding how Owl work...",
+              "meta": {}
+            },
+            {
+              "name": "readme.md",
+              "type": "file",
+              "path": "docs/v2/miscellaneous/readme.md",
+              "title": "miscellaneous",
+              "description": "",
               "meta": {}
             },
             {
               "name": "why_owl.md",
               "type": "file",
               "path": "docs/v2/miscellaneous/why_owl.md",
+              "title": "🦉 Why Owl ? 🦉",
+              "description": "The common wisdom is that one should not reinvent the wheel, because that would waste effort and resources. It is certainly true in many cases. A javascript...",
               "meta": {}
             }
           ]
@@ -530,145 +718,158 @@
               "name": "app.md",
               "type": "file",
               "path": "docs/v2/reference/app.md",
+              "title": "🦉 App 🦉",
+              "description": "Every Owl application has a root element, a set of templates, an environment and possibly a few other settings. The App class is a simple class that represen...",
               "meta": {}
             },
             {
               "name": "component.md",
               "type": "file",
               "path": "docs/v2/reference/component.md",
+              "title": "🦉 Owl Component 🦉",
+              "description": "An Owl component is a small class which represents some part of the user interface. It is part of a component tree, and has an environment (env), which is pr...",
               "meta": {}
             },
             {
               "name": "concurrency_model.md",
               "type": "file",
               "path": "docs/v2/reference/concurrency_model.md",
+              "title": "🦉 Concurrency Model 🦉",
+              "description": "Owl was designed from the very beginning with asynchronous components. This comes from the willStart and the willUpdateProps lifecycle hooks. With these asyn...",
               "meta": {}
             },
             {
               "name": "environment.md",
               "type": "file",
               "path": "docs/v2/reference/environment.md",
+              "title": "🦉 Environment 🦉",
+              "description": "An environment is a shared object given to all components in a tree. It is not used by Owl itself, but it is useful for application developers to provide a s...",
               "meta": {}
             },
             {
               "name": "error_handling.md",
               "type": "file",
               "path": "docs/v2/reference/error_handling.md",
+              "title": "🦉 Error Handling 🦉",
+              "description": "By default, whenever an error occurs in the rendering of an Owl application, we destroy the whole application. Otherwise, we cannot offer any guarantee on th...",
               "meta": {}
             },
             {
               "name": "event_handling.md",
               "type": "file",
               "path": "docs/v2/reference/event_handling.md",
+              "title": "🦉 Event Handling 🦉",
+              "description": "In a component's template, it is useful to be able to register handlers on DOM elements to some specific events. This is what makes a template alive. This is...",
               "meta": {}
             },
             {
               "name": "hooks.md",
               "type": "file",
               "path": "docs/v2/reference/hooks.md",
+              "title": "🦉 Hooks 🦉",
+              "description": "Hooks were popularised by React as a way to solve the following issues:",
               "meta": {}
             },
             {
               "name": "input_bindings.md",
               "type": "file",
               "path": "docs/v2/reference/input_bindings.md",
+              "title": "🦉 Form Input Bindings 🦉",
+              "description": "It is very common to need to be able to read the value out of an html input (or textarea, or select) in order to use it (note: it does not need to be in a fo...",
               "meta": {}
             },
             {
               "name": "portal.md",
               "type": "file",
               "path": "docs/v2/reference/portal.md",
+              "title": "🦉 Portal 🦉",
+              "description": "It is sometimes useful to be able to render some content outside the boundaries of a component. To do that, Owl provides a special directive: t-portal:",
               "meta": {}
             },
             {
               "name": "precompiling_templates.md",
               "type": "file",
               "path": "docs/v2/reference/precompiling_templates.md",
+              "title": "🦉 Precompiling templates 🦉",
+              "description": "Owl is designed to be used by the Odoo javascript framework. Since Odoo handles its assets in its own non standard way, it was decided/assumed that Owl would...",
               "meta": {}
             },
             {
               "name": "props.md",
               "type": "file",
               "path": "docs/v2/reference/props.md",
+              "title": "🦉 Props 🦉",
+              "description": "In Owl, props (short for properties) is an object which contains every piece of data given to a component by its parent.",
               "meta": {}
             },
             {
               "name": "reactivity.md",
               "type": "file",
               "path": "docs/v2/reference/reactivity.md",
+              "title": "🦉 Reactivity 🦉",
+              "description": "Reactivity is a big topic in javascript frameworks. The goal is to provide a simple way to manipulate state, in such a way that the interface updates automat...",
+              "meta": {}
+            },
+            {
+              "name": "readme.md",
+              "type": "file",
+              "path": "docs/v2/reference/readme.md",
+              "title": "reference",
+              "description": "",
               "meta": {}
             },
             {
               "name": "refs.md",
               "type": "file",
               "path": "docs/v2/reference/refs.md",
+              "title": "🦉 References 🦉",
+              "description": "The useRef hook is useful when we need a way to interact with some inside part of a component, rendered by Owl. It can work either on a DOM node, or on a com...",
               "meta": {}
             },
             {
               "name": "slots.md",
               "type": "file",
               "path": "docs/v2/reference/slots.md",
+              "title": "🦉 Slots 🦉",
+              "description": "Owl is a template based component system. There is therefore a need to be able to make generic components. For example, imagine a generic Navbar component, w...",
               "meta": {}
             },
             {
               "name": "templates.md",
               "type": "file",
               "path": "docs/v2/reference/templates.md",
+              "title": "🦉 Templates 🦉",
+              "description": "Owl templates are describe using the QWeb specification. It is based on the XML format, and used mostly to generate HTML. In OWL, QWeb templates are compiled...",
               "meta": {}
             },
             {
               "name": "translations.md",
               "type": "file",
               "path": "docs/v2/reference/translations.md",
+              "title": "🦉 Translations 🦉",
+              "description": "If properly setup, Owl can translate all rendered templates. To do so, it needs a translate function, which takes",
               "meta": {}
             },
             {
               "name": "utils.md",
               "type": "file",
               "path": "docs/v2/reference/utils.md",
+              "title": "🦉 Utils 🦉",
+              "description": "Owl export a few useful utility functions, to help with common issues. Those functions are all available in the owl.utils namespace.",
               "meta": {}
             }
           ]
-        },
-        {
-          "name": "tools",
-          "type": "dir",
-          "path": "docs/v2/tools",
-          "children": [
-            {
-              "name": "screenshots",
-              "type": "dir",
-              "path": "docs/v2/tools/screenshots",
-              "children": []
-            },
-            {
-              "name": "devtools_guide.md",
-              "type": "file",
-              "path": "docs/v2/tools/devtools_guide.md",
-              "meta": {}
-            },
-            {
-              "name": "devtools.md",
-              "type": "file",
-              "path": "docs/v2/tools/devtools.md",
-              "meta": {}
-            }
-          ]
-        },
-        {
-          "name": "instruction.md",
-          "type": "file",
-          "path": "docs/v2/instruction.md",
-          "meta": {
-            "description": "Introduction to Nodex UI, how to use it, and where to find the Bootstrap 5 and Owl framework references.",
-            "sidebar_position": 1
-          }
         },
         {
           "name": "readme.md",
           "type": "file",
           "path": "docs/v2/readme.md",
-          "meta": {}
+          "title": "Nodex UI — Instruction",
+          "description": "Introduction to Nodex UI, how to use it, and where to find the Bootstrap 5 and Owl framework references.",
+          "meta": {
+            "description": "Introduction to Nodex UI, how to use it, and where to find the Bootstrap 5 and Owl framework references.",
+            "sidebar_position": 1
+          }
         }
       ]
     },
@@ -676,84 +877,120 @@
       "name": "analytics.md",
       "type": "file",
       "path": "docs/analytics.md",
+      "title": "Analytics",
+      "description": "Nodex UI ships a cookieless web-analytics service, ported from @plausible-analytics/tracker 0.4.6 (MIT; notice in LICENSE). Nothing is collected until the pa...",
       "meta": {}
     },
     {
       "name": "base-ui-skill.md",
       "type": "file",
       "path": "docs/base-ui-skill.md",
+      "title": "Skill for AI",
+      "description": "Nodex UI skill teaches an AI coding agent how to build apps and components with NodexUI: scaffolding a PWA, emitting real components and icons, and packaging...",
       "meta": {}
     },
     {
       "name": "blocks.md",
       "type": "file",
       "path": "docs/blocks.md",
+      "title": "Blocks",
+      "description": "Nodex UI blocks are static HTML compositions styled by the same shadcn-aligned tokens as the component library. They are based on the public shadcn/ui blocks...",
       "meta": {}
     },
     {
       "name": "component-authoring.md",
       "type": "file",
       "path": "docs/component-authoring.md",
+      "title": "Component Authoring",
+      "description": "Nodex UI exposes two intentional public APIs from the same component source folder. Both must share styling, accessibility semantics, and — where practical —...",
       "meta": {}
     },
     {
       "name": "i18n.md",
       "type": "file",
       "path": "docs/i18n.md",
+      "title": "i18n service",
+      "description": "Instructions for adding translations to a page or app with Nodex UI i18n service (nodexui/i18n). It is optional and standalone: no framework or component run...",
       "meta": {}
     },
     {
       "name": "icons.md",
       "type": "file",
       "path": "docs/icons.md",
+      "title": "Built-in Icons",
+      "description": "Nodex UI ships the full Lucide icon set as a built-in CDN-ready icon library. Icons use the b-icon attribute, render as CSS masks, and inherit currentColor f...",
       "meta": {}
     },
     {
       "name": "index.md",
       "type": "file",
       "path": "docs/index.md",
+      "title": "Nodex UI Documentation Index",
+      "description": "This file is the single entry point for AI agents. Every link is relative to this file, so resolve it against this file's own URL (for example, components/bu...",
       "meta": {}
     },
     {
       "name": "installation.md",
       "type": "file",
       "path": "docs/installation.md",
+      "title": "Installation",
+      "description": "See the Usage Guide for the end-to-end integration path (choosing an API, install, theming, verification). This page covers install mechanics only.",
       "meta": {}
     },
     {
       "name": "owl-components.md",
       "type": "file",
       "path": "docs/owl-components.md",
+      "title": "Nodex UI Component",
+      "description": "See the Usage Guide for when to reach for this API versus the static b-ui one. This page covers the pure Nodex UI API only.",
       "meta": {}
     },
     {
       "name": "qr.md",
       "type": "file",
       "path": "docs/qr.md",
+      "title": "QR",
+      "description": "Nodex UI ships a standalone QR service: a QR code generator and the VietQR (Napas/EMV) payment payload builder. It wraps @thebeanfamily/vietqr, which bundles...",
+      "meta": {}
+    },
+    {
+      "name": "readme.md",
+      "type": "file",
+      "path": "docs/readme.md",
+      "title": "Nodex UI Documentation Index",
+      "description": "",
       "meta": {}
     },
     {
       "name": "registry.md",
       "type": "file",
       "path": "docs/registry.md",
+      "title": "Registry",
+      "description": "Every release publishes dist/nodexui.registry.json. The registry lists package metadata, CDN paths, build files, themes, and per-component metadata (type, de...",
       "meta": {}
     },
     {
       "name": "runtime-api.md",
       "type": "file",
       "path": "docs/runtime-api.md",
+      "title": "Runtime API",
+      "description": "Nodex UI exposes one browser global: window.thebase. window.NodexUI still points to the same object as a deprecated alias for 1.x pages; it will be removed i...",
       "meta": {}
     },
     {
       "name": "theming.md",
       "type": "file",
       "path": "docs/theming.md",
+      "title": "Theming",
+      "description": "Set the theme on html or a subtree:",
       "meta": {}
     },
     {
       "name": "usage-guide.md",
       "type": "file",
       "path": "docs/usage-guide.md",
+      "title": "Usage Guide — Integrating Nodex UI Into a Project",
+      "description": "This is the single entry point for adding Nodex UI to a consumer project (a static page, a Base HUB website page, a server-rendered app, or your own applicat...",
       "meta": {}
     }
   ]
