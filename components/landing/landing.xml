@@ -41,7 +41,7 @@
         <h2 class="h3 fw-semibold text-center"><t t-esc="t('Why Nodex UI')"/></h2>
         <p class="text-muted text-center mb-4"><t t-esc="t('Built for pages that mount, unmount, and re-render from markup — like WYSIWYG website builders.')"/></p>
         <div class="row g-3">
-          <div t-foreach="features" t-as="feature" t-key="feature.title" class="col-12 col-md-6 col-lg-3">
+          <div t-foreach="features" t-as="feature" t-key="feature.title" class="col-12 col-md-6 col-lg">
             <Card className="'h-100'">
               <CardBody>
                 <span class="b-landing-feature-icon"><Icon name="feature.icon"/></span>
@@ -131,7 +131,7 @@
           </div>
         </div>
         <div class="text-center mt-4">
-          <Button href="'/index.html'" variant="'outline'" icon="'arrow-right'" iconPosition="'end'"><t t-esc="t('Open all examples')"/></Button>
+          <Button href="'#samples'" variant="'outline'" icon="'arrow-right'" iconPosition="'end'"><t t-esc="t('Open all examples')"/></Button>
         </div>
       </section>
     </main>

@@ -1,6 +1,26 @@
-import { Component, loadFile, markup, mount, onMounted, onPatched, onWillUnmount, useState } from "nodexui";
 import {
-  Badge, Button, Card, CardBody, CardHeader, ClipboardButton, Icon, TabContent, TabTrigger, Tabs, TabsList, ThemeButton,
+  Component,
+  loadFile,
+  markup,
+  mount,
+  onMounted,
+  onPatched,
+  onWillUnmount,
+  useState,
+} from "nodexui";
+import {
+  Badge,
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  ClipboardButton,
+  Icon,
+  TabContent,
+  TabTrigger,
+  Tabs,
+  TabsList,
+  ThemeButton,
 } from "nodexui";
 import { LanguageSwitcher } from "@/components/language-switcher/language-switcher.js";
 import { Samples } from "@/components/samples/samples.js";
@@ -15,34 +35,138 @@ const version = "1.3.3";
 const cdn = `https://cdn.jsdelivr.net/npm/nodexui@${version}`;
 
 const features = [
-  { icon: "zap", title: t("No build step"), text: t("One stylesheet and one script from jsDelivr or unpkg. Nothing to compile.") },
-  { icon: "layers", title: t("Two APIs, one source"), text: t("Pure Nodex UI <Button/> classes and base static markup (`b-ui`) share the same components.") },
-  { icon: "puzzle", title: t("Modular"), text: t("Each component is self-contained. Use one or all 73, plus a full Lucide icon set.") },
-  { icon: "moon", title: t("Themeable"), text: t("--b-* design tokens with light and dark themes built in.") },
+  {
+    icon: "zap",
+    title: t("No build step"),
+    text: t(
+      "One stylesheet and one script from jsDelivr or unpkg. Nothing to compile.",
+    ),
+  },
+  {
+    icon: "moon",
+    title: t("Themeable"),
+    text: t("--b-* design tokens with light and dark themes built in."),
+  },
+  {
+    icon: "layers",
+    title: t("Two APIs, one source"),
+    text: t(
+      "Pure Nodex UI <Button/> classes and base static markup (`b-ui`) share the same components.",
+    ),
+  },
+  {
+    icon: "puzzle",
+    title: t("Modular"),
+    text: t(
+      "Each component is self-contained. Use one or all 73, plus a full Lucide icon set.",
+    ),
+  },
+
+  {
+    icon: "boxes",
+    title: t("Reactive component"),
+    text: t(
+      "Nodex UI is based on the Owl framework and Bootstrap 5, so you get reactive components on top of a familiar grid and utilities.",
+    ),
+  },
 ];
 
 const sections = [
-  { route: "docs", icon: "book-open", title: t("Docs"), text: t("Install paths, usage guides, and live previews for every component.") },
-  { route: "blocks", icon: "layout-dashboard", title: t("Blocks"), text: t("Dashboards, sidebars, data tables, and auth screens ready to copy.") },
-  { route: "icons", icon: "shapes", title: t("Icons"), text: t("The full Lucide set through b-icon and the Icon component.") },
-  { route: "chart", icon: "chart-column", title: t("Charts"), text: t("Bar, line, area, pie, radar and radial charts from native Nodex UI markup, plus Chart.js.") },
+  {
+    route: "docs",
+    icon: "book-open",
+    title: t("Docs"),
+    text: t(
+      "Install paths, usage guides, and live previews for every component.",
+    ),
+  },
+  {
+    route: "blocks",
+    icon: "layout-dashboard",
+    title: t("Blocks"),
+    text: t(
+      "Dashboards, sidebars, data tables, and auth screens ready to copy.",
+    ),
+  },
+  {
+    route: "icons",
+    icon: "shapes",
+    title: t("Icons"),
+    text: t("The full Lucide set through b-icon and the Icon component."),
+  },
+  {
+    route: "chart",
+    icon: "chart-column",
+    title: t("Charts"),
+    text: t(
+      "Bar, line, area, pie, radar and radial charts from native Nodex UI markup, plus Chart.js.",
+    ),
+  },
 ];
 
 const analyticsFeatures = [
-  { icon: "cookie", text: t("Cookieless: no visitor ID leaves the browser, and nothing is sent until init().") },
-  { icon: "feather", text: t("Standalone ~5.6 KB bundle with no framework or component runtime.") },
-  { icon: "route", text: t("Automatic pageviews, including pushState and hash-routed SPAs.") },
+  {
+    icon: "cookie",
+    text: t(
+      "Cookieless: no visitor ID leaves the browser, and nothing is sent until init().",
+    ),
+  },
+  {
+    icon: "feather",
+    text: t(
+      "Standalone ~5.6 KB bundle with no framework or component runtime.",
+    ),
+  },
+  {
+    icon: "route",
+    text: t("Automatic pageviews, including pushState and hash-routed SPAs."),
+  },
   { icon: "timer", text: t("Engagement: time on page and max scroll depth.") },
-  { icon: "mouse-pointer-click", text: t("Outbound links, file downloads, form submits, and custom events with props and revenue.") },
-  { icon: "server", text: t("One POST route on your backend. Go Fiber and FastAPI samples ship with a ready-made dashboard.") },
+  {
+    icon: "mouse-pointer-click",
+    text: t(
+      "Outbound links, file downloads, form submits, and custom events with props and revenue.",
+    ),
+  },
+  {
+    icon: "server",
+    text: t(
+      "One POST route on your backend. Go Fiber and FastAPI samples ship with a ready-made dashboard.",
+    ),
+  },
 ];
 
 const apidocFeatures = [
-  { icon: "file-json", text: t("Renders an OpenAPI 3.x JSON file as browsable docs: grouped sidebar, parameters, request bodies, responses, callbacks.") },
-  { icon: "send", text: t("Try It panel with request code samples in 17 languages and a Send API Request button.") },
-  { icon: "key-round", text: t("Authorize dialog for API key, basic, bearer, OpenID Connect, and OAuth2 flows.") },
-  { icon: "workflow", text: t("Markdown descriptions with Mermaid diagrams, light and dark themes, and linkable pages.") },
-  { icon: "package", text: t("Standalone bundle: the runtime and its templates are embedded, so it needs no other Nodex UI script.") },
+  {
+    icon: "file-json",
+    text: t(
+      "Renders an OpenAPI 3.x JSON file as browsable docs: grouped sidebar, parameters, request bodies, responses, callbacks.",
+    ),
+  },
+  {
+    icon: "send",
+    text: t(
+      "Try It panel with request code samples in 17 languages and a Send API Request button.",
+    ),
+  },
+  {
+    icon: "key-round",
+    text: t(
+      "Authorize dialog for API key, basic, bearer, OpenID Connect, and OAuth2 flows.",
+    ),
+  },
+  {
+    icon: "workflow",
+    text: t(
+      "Markdown descriptions with Mermaid diagrams, light and dark themes, and linkable pages.",
+    ),
+  },
+  {
+    icon: "package",
+    text: t(
+      "Standalone bundle: the runtime and its templates are embedded, so it needs no other Nodex UI script.",
+    ),
+  },
 ];
 
 const snippets = {
@@ -80,9 +204,21 @@ await mount(Root, document.getElementById("app"), { templates });`,
 // The three paragraphs that contain inline <code>, translated as whole sentences and marked safe because the text is ours.
 function richText() {
   return {
-    hero: markup(t("Nodex UI is a CDN-installable kit of 73 Nodex UI components with built-in theming. Use them as pure Nodex UI components in your app, or as plain <code>b-ui</code> HTML markup on any page.")),
-    apidoc: markup(t("<code>nodexui/apidoc</code> turns any OpenAPI 3.x JSON document into interactive API docs. Use it as the <code>ApiDoc</code> Nodex UI component, as <code>b-ui=\"apidoc\"</code> markup, or as its own bundle.")),
-    analytics: markup(t("<code>nodexui/analytics</code> is a cookieless pageview and event tracker you can load on any page, with or without the rest of Nodex UI. Point it at your own backend and keep the data.")),
+    hero: markup(
+      t(
+        "Nodex UI is a CDN-installable kit of 73 Nodex UI components with built-in theming. Use them as pure Nodex UI components in your app, or as plain <code>b-ui</code> HTML markup on any page.",
+      ),
+    ),
+    apidoc: markup(
+      t(
+        '<code>nodexui/apidoc</code> turns any OpenAPI 3.x JSON document into interactive API docs. Use it as the <code>ApiDoc</code> Nodex UI component, as <code>b-ui="apidoc"</code> markup, or as its own bundle.',
+      ),
+    ),
+    analytics: markup(
+      t(
+        "<code>nodexui/analytics</code> is a cookieless pageview and event tracker you can load on any page, with or without the rest of Nodex UI. Point it at your own backend and keep the data.",
+      ),
+    ),
   };
 }
 
@@ -94,12 +230,17 @@ function pageFromHash() {
 // Sets the browser tab title and search description for whichever landing page is showing.
 function setLandingMeta(page) {
   if (page === "samples") {
-    setPageMeta({ title: t("Samples · Nodex UI"), description: t("Applications built with Nodex UI.") });
+    setPageMeta({
+      title: t("Samples · Nodex UI"),
+      description: t("Applications built with Nodex UI."),
+    });
     return;
   }
   setPageMeta({
     title: t("Nodex UI — Ready-to-use UI components, straight from a CDN"),
-    description: t("Nodex UI (nodexui) is a free, no-build JavaScript UI component library: 73 responsive, accessible components, blocks, icons and themes you can load from a CDN or install with npm."),
+    description: t(
+      "Nodex UI (nodexui) is a free, no-build JavaScript UI component library: 73 responsive, accessible components, blocks, icons and themes you can load from a CDN or install with npm.",
+    ),
   });
 }
 
@@ -107,7 +248,20 @@ function setLandingMeta(page) {
  * The same header also hosts the Samples page (`#samples`). */
 export class Landing extends Component {
   static components = {
-    LanguageSwitcher, Samples, Badge, Button, Card, CardBody, CardHeader, ClipboardButton, Icon, TabContent, TabTrigger, Tabs, TabsList, ThemeButton,
+    LanguageSwitcher,
+    Samples,
+    Badge,
+    Button,
+    Card,
+    CardBody,
+    CardHeader,
+    ClipboardButton,
+    Icon,
+    TabContent,
+    TabTrigger,
+    Tabs,
+    TabsList,
+    ThemeButton,
   };
   static template = "examples.Landing";
 
@@ -118,7 +272,9 @@ export class Landing extends Component {
     setLandingMeta(this.state.page);
     this.onHashChange = () => this.syncPage();
     onMounted(() => window.addEventListener("hashchange", this.onHashChange));
-    onWillUnmount(() => window.removeEventListener("hashchange", this.onHashChange));
+    onWillUnmount(() =>
+      window.removeEventListener("hashchange", this.onHashChange),
+    );
     onPatched(() => this.scrollAfterPageSwitch());
     this.cdn = cdn;
     this.version = version;
@@ -144,7 +300,10 @@ export class Landing extends Component {
   scrollAfterPageSwitch() {
     if (!this.pageSwitched) return;
     this.pageSwitched = false;
-    const target = this.state.page === "home" && location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    const target =
+      this.state.page === "home" && location.hash
+        ? document.getElementById(location.hash.slice(1))
+        : null;
     if (target) target.scrollIntoView();
     else window.scrollTo(0, 0);
   }

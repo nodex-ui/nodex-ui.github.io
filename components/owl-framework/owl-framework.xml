@@ -6,6 +6,6 @@
   </t>
 
   <t t-name="examples.OwlFrameworkContent">
-    <Markdown src="docSrc" mermaid="true" nodexUi="true"/>
+    <Markdown src="docSrc" tree="treeSrc" onNavigate="onNavigate" mermaid="true" nodexUi="true"/>
   </t>
 </templates>

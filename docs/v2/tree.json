@@ -194,6 +194,15 @@
       ]
     },
     {
+      "name": "instruction.md",
+      "type": "file",
+      "path": "docs/v2/instruction.md",
+      "meta": {
+        "description": "Introduction to Nodex UI, how to use it, and where to find the Bootstrap 5 and Owl framework references.",
+        "sidebar_position": 1
+      }
+    },
+    {
       "name": "readme.md",
       "type": "file",
       "path": "docs/v2/readme.md",

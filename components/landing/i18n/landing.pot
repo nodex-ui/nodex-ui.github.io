@@ -33,6 +33,14 @@ msgstr ""
 msgid "--b-* design tokens with light and dark themes built in."
 msgstr ""
 
+#: landing.js
+msgid "Reactive component"
+msgstr ""
+
+#: landing.js
+msgid "Nodex UI is based on the Owl framework and Bootstrap 5, so you get reactive components on top of a familiar grid and utilities."
+msgstr ""
+
 #: landing.js landing.xml
 msgid "Docs"
 msgstr ""

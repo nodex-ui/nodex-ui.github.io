@@ -1,200 +1,139 @@
 # Nodex UI Documentation Index
 
-Nodex UI (`nodexui`) is a component library built on Owl + Bootstrap 5 with shadcn-aligned tokens. It offers two APIs: static `b-ui="..."` markup and pure Nodex UI (Owl) components.
+> Nodex UI (`nodexui`) is a component library built on Owl + Bootstrap 5 with shadcn-aligned tokens. It offers two APIs: static `b-ui="..."` markup and pure Nodex UI (Owl) components. Start with `usage-guide.md`; fetch only the pages you need.
 
-This file is the entry point for AI agents. Every link is **relative to this file**, so resolve it against this file's own URL.
+This file is the single entry point for AI agents. Every link is **relative to this file**, so resolve it against this file's own URL (for example, `components/button.md` next to `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/docs/index.md`). Pages are grouped by folder below; `v2/` is the upstream Owl framework reference. Regenerate with `npm run generate:docs-index`.
 
-For example, if this file is at `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/docs/index.md`, then `components/button.md` is at `https://raw.githubusercontent.com/nodex-ui/nodex-ui.github.io/refs/heads/main/docs/components/button.md`.
+<!-- docs-index:start (auto-generated; edit documents, not this block) -->
 
-## How to use this index
+## Guides
+- [Analytics](analytics.md): Nodex UI ships a cookieless web-analytics service, ported from @plausible-analytics/tracker 0.4.6 (MIT; notice in LICENSE). Nothing is collected until the pa...
+- [Skill for AI](base-ui-skill.md): Nodex UI skill teaches an AI coding agent how to build apps and components with NodexUI: scaffolding a PWA, emitting real components and icons, and packaging...
+- [Blocks](blocks.md): Nodex UI blocks are static HTML compositions styled by the same shadcn-aligned tokens as the component library. They are based on the public shadcn/ui blocks...
+- [Component Authoring](component-authoring.md): Nodex UI exposes two intentional public APIs from the same component source folder. Both must share styling, accessibility semantics, and — where practical —...
+- [i18n service](i18n.md): Instructions for adding translations to a page or app with Nodex UI i18n service (nodexui/i18n). It is optional and standalone: no framework or component run...
+- [Built-in Icons](icons.md): Nodex UI ships the full Lucide icon set as a built-in CDN-ready icon library. Icons use the b-icon attribute, render as CSS masks, and inherit currentColor f...
+- [Installation](installation.md): See the Usage Guide for the end-to-end integration path (choosing an API, install, theming, verification). This page covers install mechanics only.
+- [Nodex UI Component](owl-components.md): See the Usage Guide for when to reach for this API versus the static b-ui one. This page covers the pure Nodex UI API only.
+- [QR](qr.md): Nodex UI ships a standalone QR service: a QR code generator and the VietQR (Napas/EMV) payment payload builder. It wraps @thebeanfamily/vietqr, which bundles...
+- [Registry](registry.md): Every release publishes dist/nodexui.registry.json. The registry lists package metadata, CDN paths, build files, themes, and per-component metadata (type, de...
+- [Runtime API](runtime-api.md): Nodex UI exposes one browser global: window.thebase. window.NodexUI still points to the same object as a deprecated alias for 1.x pages; it will be removed i...
+- [Theming](theming.md): Set the theme on html or a subtree:
+- [Usage Guide — Integrating Nodex UI Into a Project](usage-guide.md): This is the single entry point for adding Nodex UI to a consumer project (a static page, a Base HUB website page, a server-rendered app, or your own applicat...
 
-1. Start with [Usage Guide](usage-guide.md). It is the single entry point for integrating Nodex UI.
-2. For one component, fetch `components/<name>.md`. The full list is below.
-3. For Owl framework questions (templates, hooks, props, reactivity), use the [Owl v2 reference](#owl-v2-reference).
-4. Fetch only the files you need. Each file is self-contained.
+## components
+- [Accordion](components/accordion.md): Use b-ui="accordion" for grouped disclosure panels.
+- [Alert Dialog](components/alert-dialog.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Alert](components/alert.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [ApiDoc](components/apidoc.md): Use b-ui="apidoc" (or the pure Nodex UI ApiDoc component) to render an OpenAPI 3.0+ JSON document as browsable API documentation: a grouped sidebar, per-oper...
+- [Aspect Ratio](components/aspect-ratio.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Attachment](components/attachment.md): Use b-ui="attachment" for a CDN-ready attachment card with media, metadata, upload state, and actions.
+- [Avatar](components/avatar.md): Use b-ui="avatar" for a CDN-ready avatar component.
+- [Badge](components/badge.md): Small status label for counts, states, and metadata.
+- [Block Viewer](components/block-viewer.md): BlockViewer is the page-root component used by Nodex UI block gallery detail pages (examples/blocks/.html). It reads a title/description from document.body.d...
+- [Breadcrumb](components/breadcrumb.md): Displays the path to the current resource using a hierarchy of links.
+- [Bubble](components/bubble.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Button Group](components/button-group.md): Groups related buttons while preserving native button semantics.
+- [Button](components/button.md): Use b-ui="button" on a native button or link.
+- [Calendar](components/calendar.md): Use b-ui="calendar" for a CDN-ready calendar component.
+- [Card](components/card.md): Card, CardHeader, CardBody, CardFooter, CardTitle, and CardDescription each accept className (String, optional) and render their default slot as-is. Card add...
+- [Carousel](components/carousel.md): Use b-ui="carousel" for a CDN-ready carousel component.
+- [Chart](components/chart.md): Use b-ui="chart" for a CDN-ready chart component styled after the current shadcn chart pages.
+- [Checkbox](components/checkbox.md): Native checkbox input or label wrapper.
+- [Clipboard Button](components/clipboard-button.md): Use b-ui="clipboard-button" on a native button to copy specific data to the clipboard. Built on the same variant/size classes and built-in .btn styling as Bu...
+- [Code Editor](components/code-editor.md): A dependency-free code box with line numbers, syntax colouring, Tab/Shift+Tab indent, Enter auto-indent and Format, Copy and Edit/View buttons. Pure Nodex UI...
+- [Collapsible](components/collapsible.md): Use b-ui="collapsible" for a single disclosure region.
+- [Combobox](components/combobox.md): Use b-ui="combobox" for a CDN-ready combobox component.
+- [Command](components/command.md): Use b-ui="command" for a CDN-ready command component.
+- [Context Menu](components/context-menu.md): Use b-ui="context-menu" for a CDN-ready context menu component.
+- [Data Table](components/data-table.md): Use b-ui="data-table" for a CDN-ready data table component.
+- [Date Picker](components/date-picker.md): Use b-ui="date-picker" for a CDN-ready date picker component.
+- [Dialog](components/dialog.md): DialogContent also accepts showCloseButton (default true) to render the shadcn-style top-right close control; pass false to hide it. DialogTrigger, DialogCon...
+- [Direction](components/direction.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Drawer](components/drawer.md): DrawerContent is driven by a real bootstrap.Offcanvas instance bound to its own root (rendered as .offcanvas.offcanvas-bottom, permanently mounted rather tha...
+- [Dropdown Menu](components/dropdown-menu.md): Displays a menu to the user, such as a set of actions or functions, triggered by a button.
+- [Empty](components/empty.md): Use b-ui="empty" for an accessible empty state. The component mirrors shadcn's Base Empty composition: header, media, title, description, and content.
+- [Field](components/field.md): Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
+- [Form](components/form.md): Build an accessible Bug Report form with Nodex UI Field layout, Nodex UI Button actions, and Nodex t-model input bindings.
+- [Hover Card](components/hover-card.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Icon](components/icon.md): Nodex UI includes the full Lucide SVG icon set as a built-in CDN icon library.
+- [Input Otp](components/input-otp.md): Use b-ui="input-otp" for a CDN-ready input otp component.
+- [Input](components/input.md): Use b-ui="input" on a native input element.
+- [Item](components/item.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Kbd](components/kbd.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Label](components/label.md): Form label with consistent spacing and optional required marker.
+- [Markdown](components/markdown.md): Use b-ui="markdown" (or the pure Nodex UI Markdown component) to render Markdown or mount an editable Markdown document. Read-only parsing uses the vendored...
+- [Marker](components/marker.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Menubar](components/menubar.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Message Scroller](components/message-scroller.md): Use b-ui="message-scroller" for a CDN-ready message scroller component.
+- [Message](components/message.md): Use b-ui="message" for a CDN-ready message component.
+- [Native Select](components/native-select.md): Browser-native select control with standard styling.
+- [Navigation Menu](components/navigation-menu.md): Use b-ui="navigation-menu" for horizontal site or app navigation.
+- [Pagination](components/pagination.md): Use b-ui="pagination" on a nav containing a list of links or buttons.
+- [Popover](components/popover.md): Use b-ui="popover" with trigger and content nodes.
+- [Progress](components/progress.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Pwa](components/pwa.md): Use b-ui="pwa" for a bottom-anchored install/permission prompt (an "Add to Home Screen" or "Allow notifications" sheet). Pwa is presentational only — it owns...
+- [QR Card](components/qr-card.md): A centred card with a QR code, a title and a description, built from the Card parts (Card, CardBody, CardHeader, CardTitle, CardDescription). Give it qrConte...
+- [Questionnaire](components/questionnaire.md): Use b-ui="questionnaire" for a CDN-ready questionnaire component.
+- [Radio Group](components/radio-group.md): Native radio input or label wrapper.
+- [Resizable](components/resizable.md): Use b-ui="resizable" for a CDN-ready resizable component.
+- [Scroll Area](components/scroll-area.md): Use b-ui="scroll-area" for a CDN-ready scroll area component.
+- [Select](components/select.md): Set useTip="1" to move supportingText into a tooltip: a question-mark icon appears right after the label, in the same label box, and the text shows on hover...
+- [Separator](components/separator.md): Visual divider with separator semantics.
+- [Sheet](components/sheet.md): Use b-ui="sheet" for offcanvas panels.
+- [Shell](components/shell.md): Use b-ui="shell" for a collapsible app shell: a desktop-collapsible/mobile off-canvas sidebar next to a sticky header and scrollable content region.
+- [Sidebar](components/sidebar.md): Use b-ui="sidebar" for app navigation panels. The component mirrors shadcn's composable Sidebar parts: header, content, footer, groups, menu rows, actions, n...
+- [Skeleton](components/skeleton.md): Loading placeholder for content that is not ready yet.
+- [Slider](components/slider.md): See Nodex UI Component for how to load nodexui and dist/nodexui.templates.xml.
+- [Spinner](components/spinner.md): Inline loading indicator using built-in spinner classes.
+- [Switch](components/switch.md): Checkbox-backed switch control using role="switch".
+- [Table](components/table.md): Native table styling for static or server-rendered data.
+- [Tabs](components/tabs.md): Matches shadcn/the built-in Tabs: TabsList renders as a segmented pill control on a muted background by default, or a transparent underline list via variant=...
+- [Text Editor](components/text-editor.md): Use b-ui="text-editor" (or the pure Nodex UI TextEditor component) for WYSIWYG rich-text editing backed by Milkdown (ProseMirror + a Markdown-aware schema, v...
+- [Textarea](components/textarea.md): Native multiline text input with Nodex UI and built-in styling.
+- [Theme Button](components/theme-button.md): Use b-ui="theme-button" for an icon-only light/dark theme toggle.
+- [Toast](components/toast.md): Use b-ui="toast" for transient status messages.
+- [Toggle Group](components/toggle-group.md): Use b-ui="toggle-group" for a CDN-ready toggle group component.
+- [Toggle](components/toggle.md): Use b-ui="toggle" for a CDN-ready toggle component.
+- [Tooltip](components/tooltip.md): Use b-ui="tooltip" with either b-att-content or a tooltip content child.
+- [Typography](components/typography.md): Small text helpers for plain content.
 
-## Getting started
+## v2
+- [Nodex UI — Instruction](v2/instruction.md): Introduction to Nodex UI, how to use it, and where to find the Bootstrap 5 and Owl framework references.
+- [🦉 Owl overview 🦉](v2/readme.md): Here is a list of everything exported by the Owl library:
 
-| File | Read it when you need |
-| --- | --- |
-| [usage-guide.md](usage-guide.md) | End-to-end integration: choosing an API, install, theming, verification |
-| [installation.md](installation.md) | Install mechanics: CDN, npm, files and versions |
-| [runtime-api.md](runtime-api.md) | The `window.thebase` browser global and its runtime API |
-| [theming.md](theming.md) | Light/dark themes, design tokens, theme customisation |
-| [registry.md](registry.md) | `nodexui.registry.json`: package metadata, CDN paths, per-component metadata |
+## v2/learning
+- [🦉 How to test Components 🦉](v2/learning/how_to_test.md): It is a good practice to test applications and components to ensure that they behave as expected. There are many ways to test a user interface: manual testin...
+- [🦉 How to start an Owl project 🦉](v2/learning/quick_start.md): Each software project has its specific needs. Many of these needs can be solved with some tooling: webpack, gulp, css preprocessor, bundlers, transpilers, ...
+- [🦉 OWL Tutorial: TodoApp 🦉](v2/learning/tutorial_todoapp.md): For this tutorial, we will build a very simple Todo list application. The app should satisfy the following requirements:
 
-## Authoring and APIs
+## v2/miscellaneous
+- [🦉 Notes On Owl Architecture 🦉](v2/miscellaneous/architecture.md): We explain here how Owl is designed
+- [Comparison with Vue/React](v2/miscellaneous/comparison.md): OWL, React and Vue have the same main feature: they allow developers to build declarative user interfaces. To do that, all these frameworks uses a virtual do...
+- [🦉 Notes On Owl Compiled Templates 🦉](v2/miscellaneous/compiled_template.md): This page will explain what an Owl compiled template look like. This is a technical document intended for developers interested in understanding how Owl work...
+- [🦉 Why Owl ? 🦉](v2/miscellaneous/why_owl.md): The common wisdom is that one should not reinvent the wheel, because that would waste effort and resources. It is certainly true in many cases. A javascript...
 
-| File | Read it when you need |
-| --- | --- |
-| [owl-components.md](owl-components.md) | The pure Nodex UI (Owl component) API, as opposed to static `b-ui` markup |
-| [component-authoring.md](component-authoring.md) | Writing or changing a component. Both public APIs share one source folder |
-| [blocks.md](blocks.md) | Blocks: static HTML compositions based on shadcn/ui blocks |
-| [icons.md](icons.md) | Built-in Lucide icon set and the `b-icon` attribute |
+## v2/reference
+- [🦉 App 🦉](v2/reference/app.md): Every Owl application has a root element, a set of templates, an environment and possibly a few other settings. The App class is a simple class that represen...
+- [🦉 Owl Component 🦉](v2/reference/component.md): An Owl component is a small class which represents some part of the user interface. It is part of a component tree, and has an environment (env), which is pr...
+- [🦉 Concurrency Model 🦉](v2/reference/concurrency_model.md): Owl was designed from the very beginning with asynchronous components. This comes from the willStart and the willUpdateProps lifecycle hooks. With these asyn...
+- [🦉 Environment 🦉](v2/reference/environment.md): An environment is a shared object given to all components in a tree. It is not used by Owl itself, but it is useful for application developers to provide a s...
+- [🦉 Error Handling 🦉](v2/reference/error_handling.md): By default, whenever an error occurs in the rendering of an Owl application, we destroy the whole application. Otherwise, we cannot offer any guarantee on th...
+- [🦉 Event Handling 🦉](v2/reference/event_handling.md): In a component's template, it is useful to be able to register handlers on DOM elements to some specific events. This is what makes a template alive. This is...
+- [🦉 Hooks 🦉](v2/reference/hooks.md): Hooks were popularised by React as a way to solve the following issues:
+- [🦉 Form Input Bindings 🦉](v2/reference/input_bindings.md): It is very common to need to be able to read the value out of an html input (or textarea, or select) in order to use it (note: it does not need to be in a fo...
+- [🦉 Portal 🦉](v2/reference/portal.md): It is sometimes useful to be able to render some content outside the boundaries of a component. To do that, Owl provides a special directive: t-portal:
+- [🦉 Precompiling templates 🦉](v2/reference/precompiling_templates.md): Owl is designed to be used by the Odoo javascript framework. Since Odoo handles its assets in its own non standard way, it was decided/assumed that Owl would...
+- [🦉 Props 🦉](v2/reference/props.md): In Owl, props (short for properties) is an object which contains every piece of data given to a component by its parent.
+- [🦉 Reactivity 🦉](v2/reference/reactivity.md): Reactivity is a big topic in javascript frameworks. The goal is to provide a simple way to manipulate state, in such a way that the interface updates automat...
+- [🦉 References 🦉](v2/reference/refs.md): The useRef hook is useful when we need a way to interact with some inside part of a component, rendered by Owl. It can work either on a DOM node, or on a com...
+- [🦉 Slots 🦉](v2/reference/slots.md): Owl is a template based component system. There is therefore a need to be able to make generic components. For example, imagine a generic Navbar component, w...
+- [🦉 Templates 🦉](v2/reference/templates.md): Owl templates are describe using the QWeb specification. It is based on the XML format, and used mostly to generate HTML. In OWL, QWeb templates are compiled...
+- [🦉 Translations 🦉](v2/reference/translations.md): If properly setup, Owl can translate all rendered templates. To do so, it needs a translate function, which takes
+- [🦉 Utils 🦉](v2/reference/utils.md): Owl export a few useful utility functions, to help with common issues. Those functions are all available in the owl.utils namespace.
 
-## Services
+## v2/tools
+- [Owl Devtools Guide](v2/tools/devtools_guide.md): After having installed the extension, a new icon will be added to your extension bar. If you don't see it, you can pin the extension using the extensions popup.
+- [Owl Devtools Browser extension](v2/tools/devtools.md): The owl devtools browser extension is an extension available on chrome or firefox which adds an owl tab to the browser devtools in order to inspect all appli...
 
-| File | Read it when you need |
-| --- | --- |
-| [i18n.md](i18n.md) | Adding translations to a page or app (`nodexui/i18n`) |
-| [qr.md](qr.md) | QR code generator and the VietQR (Napas/EMV) payload builder |
-| [analytics.md](analytics.md) | Cookieless web analytics, ported from Plausible's tracker |
-
-## AI tooling
-
-| File | Read it when you need |
-| --- | --- |
-| [base-ui-skill.md](base-ui-skill.md) | The Nodex UI skill that teaches an AI agent to scaffold apps and emit components |
-
-## Components
-
-Each page documents both APIs (`b-ui="<name>"` markup and the pure Nodex UI component), with examples.
-
-### Layout and structure
-
-- [Card](components/card.md)
-- [Separator](components/separator.md)
-- [Aspect Ratio](components/aspect-ratio.md)
-- [Resizable](components/resizable.md)
-- [Scroll Area](components/scroll-area.md)
-- [Shell](components/shell.md): collapsible app shell with sidebar, header and content
-- [Sidebar](components/sidebar.md)
-- [Item](components/item.md)
-- [Empty](components/empty.md): empty state
-- [Direction](components/direction.md): RTL/LTR
-- [Typography](components/typography.md)
-
-### Navigation
-
-- [Breadcrumb](components/breadcrumb.md)
-- [Navigation Menu](components/navigation-menu.md)
-- [Menubar](components/menubar.md)
-- [Tabs](components/tabs.md)
-- [Pagination](components/pagination.md)
-- [Command](components/command.md)
-
-### Forms and inputs
-
-- [Form](components/form.md)
-- [Field](components/field.md)
-- [Label](components/label.md)
-- [Input](components/input.md)
-- [Input OTP](components/input-otp.md)
-- [Textarea](components/textarea.md)
-- [Select](components/select.md)
-- [Native Select](components/native-select.md)
-- [Combobox](components/combobox.md)
-- [Checkbox](components/checkbox.md)
-- [Radio Group](components/radio-group.md)
-- [Switch](components/switch.md)
-- [Slider](components/slider.md)
-- [Toggle](components/toggle.md)
-- [Toggle Group](components/toggle-group.md)
-- [Calendar](components/calendar.md)
-- [Date Picker](components/date-picker.md)
-- [Questionnaire](components/questionnaire.md)
-
-### Buttons and actions
-
-- [Button](components/button.md)
-- [Button Group](components/button-group.md)
-- [Clipboard Button](components/clipboard-button.md)
-- [Theme Button](components/theme-button.md): light/dark toggle
-
-### Overlays and menus
-
-- [Dialog](components/dialog.md)
-- [Alert Dialog](components/alert-dialog.md)
-- [Sheet](components/sheet.md)
-- [Drawer](components/drawer.md)
-- [Popover](components/popover.md)
-- [Hover Card](components/hover-card.md)
-- [Tooltip](components/tooltip.md)
-- [Dropdown Menu](components/dropdown-menu.md)
-- [Context Menu](components/context-menu.md)
-- [Toast](components/toast.md)
-- [Pwa](components/pwa.md): install and permission prompt
-
-### Feedback and status
-
-- [Alert](components/alert.md)
-- [Badge](components/badge.md)
-- [Progress](components/progress.md)
-- [Skeleton](components/skeleton.md)
-- [Spinner](components/spinner.md)
-
-### Data display
-
-- [Table](components/table.md)
-- [Data Table](components/data-table.md)
-- [Chart](components/chart.md)
-- [Accordion](components/accordion.md)
-- [Collapsible](components/collapsible.md)
-- [Carousel](components/carousel.md)
-- [Avatar](components/avatar.md)
-- [Attachment](components/attachment.md)
-- [Icon](components/icon.md)
-- [Kbd](components/kbd.md)
-- [Marker](components/marker.md)
-- [QR Card](components/qr-card.md)
-
-### Chat
-
-- [Message](components/message.md)
-- [Message Scroller](components/message-scroller.md)
-- [Bubble](components/bubble.md)
-
-### Content and editors
-
-- [Markdown](components/markdown.md): render or edit Markdown
-- [Text Editor](components/text-editor.md): WYSIWYG editor (Milkdown)
-- [Code Editor](components/code-editor.md)
-- [ApiDoc](components/apidoc.md): render an OpenAPI 3.0+ document
-- [Block Viewer](components/block-viewer.md): page root for block gallery detail pages
-
-## Owl v2 reference
-
-Upstream Owl framework docs (v2). Nodex UI components are built on Owl.
-
-- [readme.md](v2/readme.md): Owl overview
-- [tree.json](v2/tree.json): machine-readable file tree of this section
-
-### Learning
-
-- [quick_start.md](v2/learning/quick_start.md): start an Owl project
-- [tutorial_todoapp.md](v2/learning/tutorial_todoapp.md): TodoApp tutorial
-- [how_to_test.md](v2/learning/how_to_test.md): test components
-
-### Reference
-
-- [app.md](v2/reference/app.md)
-- [component.md](v2/reference/component.md)
-- [props.md](v2/reference/props.md)
-- [slots.md](v2/reference/slots.md)
-- [refs.md](v2/reference/refs.md)
-- [hooks.md](v2/reference/hooks.md)
-- [reactivity.md](v2/reference/reactivity.md)
-- [templates.md](v2/reference/templates.md)
-- [precompiling_templates.md](v2/reference/precompiling_templates.md)
-- [event_handling.md](v2/reference/event_handling.md)
-- [input_bindings.md](v2/reference/input_bindings.md)
-- [environment.md](v2/reference/environment.md)
-- [portal.md](v2/reference/portal.md)
-- [translations.md](v2/reference/translations.md)
-- [error_handling.md](v2/reference/error_handling.md)
-- [concurrency_model.md](v2/reference/concurrency_model.md)
-- [utils.md](v2/reference/utils.md)
-
-### Miscellaneous
-
-- [why_owl.md](v2/miscellaneous/why_owl.md)
-- [comparison.md](v2/miscellaneous/comparison.md): comparison with Vue and React
-- [architecture.md](v2/miscellaneous/architecture.md)
-- [compiled_template.md](v2/miscellaneous/compiled_template.md)
-
-### Tools
-
-- [devtools.md](v2/tools/devtools.md): Owl Devtools browser extension
-- [devtools_guide.md](v2/tools/devtools_guide.md)
-
-Screenshots for the devtools pages are in `v2/tools/screenshots/` (PNG, not needed for text-only use).
+<!-- docs-index:end -->

@@ -22,7 +22,7 @@ Extract the archive into the skills folder of your agent, either per user or ins
 
 ```bash
 mkdir -p ~/.claude/skills
-unzip base-ui-skill.zip -d ~/.claude/skills
+tar -xf base-ui-skill.tar -C ~/.claude/skills
 ```
 
 Replace `~/.claude/skills` with the folder for your agent, then restart it. Skill folder locations can change between agent versions, so check your agent's documentation if the skill is not picked up.

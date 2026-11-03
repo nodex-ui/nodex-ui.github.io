@@ -33,6 +33,14 @@ msgstr "Tùy biến giao diện"
 msgid "--b-* design tokens with light and dark themes built in."
 msgstr "Token thiết kế --b-* với giao diện sáng và tối có sẵn."
 
+#: landing.js
+msgid "Reactive component"
+msgstr "Reactive component"
+
+#: landing.js
+msgid "Nodex UI is based on the Owl framework and Bootstrap 5, so you get reactive components on top of a familiar grid and utilities."
+msgstr "Nodex UI dựa trên framework Owl và Bootstrap 5, mang đến các thành phần phản ứng trên nền lưới và tiện ích quen thuộc."
+
 #: landing.js landing.xml
 msgid "Docs"
 msgstr "Tài liệu"

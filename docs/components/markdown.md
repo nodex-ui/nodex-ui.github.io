@@ -104,6 +104,7 @@ A fenced ` ```base-ui ` block renders as a live component, not a code sample:
 - `b-att-room` / `room` — y-webrtc room name for collaborative sessions (defaults to `b-markdown`).
 - `b-att-password` / `password` — optional y-webrtc room password.
 - `b-att-signaling` / `signaling` — comma-separated signaling URLs for the static API, or an array prop for Nodex.
+- `tree` + `onNavigate` (Nodex only) — `tree` is the URL of a `tree.json` manifest written by `scripts/doc-folder-tree.mjs` (for example `/docs/tree.json`); with `onNavigate(path, hash)`, a click on a relative link is resolved against `src`, looked up in the manifest, and handed to `onNavigate` when found. Links not in the tree keep the browser default.
 
 See `dist/nodexui.registry.json` for the full attribute list.
 

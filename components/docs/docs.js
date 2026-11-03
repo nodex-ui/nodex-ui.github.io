@@ -238,6 +238,16 @@ export class DocsContent extends Component {
     onPatched(() => this.mountStaticNodexUI());
   }
 
+  get treeSrc() {
+    return "/docs/tree.json";
+  }
+
+  /** Maps a tree path to a Docs route: docs/components/<slug>.md, docs/<guide>.md, else the Concept tab (docs/v2/...). */
+  onNavigate = (path) => {
+    const match = /^docs\/(components\/)?([^/]+)\.md$/.exec(path);
+    window.location.hash = match ? (match[1] ? `#/docs/components/${match[2]}` : `#/docs/guide/${match[2]}`) : `#/owl-framework/${path}`;
+  };
+
   get docSrc() {
     if (this.state.kind === "component") return `/docs/components/${this.state.slug}.md`;
     return `/docs/${this.state.slug}.md`;

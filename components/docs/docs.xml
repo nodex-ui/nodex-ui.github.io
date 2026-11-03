@@ -45,7 +45,7 @@
           <Badge variant="'outline'"><t t-esc="t('{count} attributes', { count: state.attributeCount })"/></Badge>
           <Badge variant="'outline'"><t t-esc="t('{count} events', { count: state.eventCount })"/></Badge>
         </div>
-        <Markdown src="docSrc"/>
+        <Markdown src="docSrc" tree="treeSrc" onNavigate="onNavigate"/>
       </t>
     </div>
   </t>
