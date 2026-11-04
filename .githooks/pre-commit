@@ -1,0 +1,8 @@
+#!/bin/sh
+# Writes a fresh version.json into every commit so sw.js sees a new version on each deploy.
+set -e
+root=$(git rev-parse --show-toplevel)
+new=$(printf '%s:%s:%s' "$(date +%s%N)" "$$" "$(git write-tree)" | sha256sum | cut -c1-12)
+printf '{"version":"%s"}' "$new" > "$root/version.json"
+git add -f "$root/version.json"
+echo "pre-commit: version.json -> $new"

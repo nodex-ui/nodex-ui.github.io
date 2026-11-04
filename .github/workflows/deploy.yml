@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; never cancel a running deploy half way.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # sw.js polls version.json and reloads every open tab when the value changes,
+      # so every deploy must ship a value that differs from the previous one.
+      - name: Generate new version.json
+        run: |
+          set -euo pipefail
+          old=""
+          if [ -f version.json ]; then old=$(jq -r '.version // ""' version.json); fi
+          new=$(printf '%s:%s:%s' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" | sha256sum | cut -c1-12)
+          jq -nc --arg v "$new" '{version: $v}' > version.json
+          [[ "$new" =~ ^[0-9a-f]{12}$ ]] || { echo "::error::invalid version '$new'"; exit 1; }
+          [ "$new" != "$old" ] || { echo "::error::version.json did not change ($old)"; exit 1; }
+          echo "version: $old -> $new"
+
+      - name: Stage site
+        run: |
+          mkdir _site
+          rsync -a \
+            --exclude '/_site' --exclude '.git' --exclude '.github' \
+            --exclude '.agents' --exclude '.claude' --exclude 'CLAUDE.md' \
+            --exclude '/scripts' --exclude '/Makefile' --exclude '/serve.bat' \
+            ./ _site/
+          test "$(jq -r .version _site/version.json)" = "$(jq -r .version version.json)"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
