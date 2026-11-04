@@ -1,9 +1,9 @@
 <templates>
   <t t-name="examples.ConceptSidebar">
-    <DocViewer part="'sidebar'" tree="'/docs/tree.json'" root="'docs/v2'" path="'docs/v2/instruction.md'" hashPrefix="'#/concept/'"/>
+    <DocViewer part="'sidebar'" tree="'/docs/tree.json'" root="'docs/v2'" path="'docs/v2/readme.md'" hashPrefix="'#/concept/'"/>
   </t>
 
   <t t-name="examples.ConceptContent">
-    <DocViewer part="'content'" tree="'/docs/tree.json'" root="'docs/v2'" path="'docs/v2/instruction.md'" hashPrefix="'#/concept/'"/>
+    <DocViewer part="'content'" tree="'/docs/tree.json'" root="'docs/v2'" path="'docs/v2/readme.md'" hashPrefix="'#/concept/'"/>
   </t>
 </templates>
