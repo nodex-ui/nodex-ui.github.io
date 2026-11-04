@@ -31,7 +31,7 @@ import { loadCatalog, t } from "../../i18n.js";
 await loadCatalog(import.meta.url);
 
 // Latest version published to npm; bump this one value on release (drives the hero badge and CDN snippets).
-const version = "1.3.3";
+const version = "1.3.4";
 const cdn = `https://cdn.jsdelivr.net/npm/nodexui@${version}`;
 
 const features = [
