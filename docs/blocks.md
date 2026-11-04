@@ -13,7 +13,7 @@ Blocks are not standalone runtime components. Paste the markup and load the norm
 <script src="https://cdn.jsdelivr.net/npm/nodexui@latest/dist/nodexui.min.js" defer></script>
 ```
 
-`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.3`, or `@1` to take only non-breaking updates) instead of `@latest` for production. Blocks are static markup, so they only need the static `b-ui` runtime above — see [Usage Guide](usage-guide.md) if the surrounding page is itself an application and you'd rather compose the equivalent layout from [Nodex UI Component](owl-components.md).
+`https://unpkg.com/nodexui@latest/dist/...` mirrors the same files as an alternative CDN if jsDelivr is unreachable. Pin an exact version (e.g. `@1.3.4`, or `@1` to take only non-breaking updates) instead of `@latest` for production. Blocks are static markup, so they only need the static `b-ui` runtime above — see [Usage Guide](usage-guide.md) if the surrounding page is itself an application and you'd rather compose the equivalent layout from [Nodex UI Component](owl-components.md).
 
 Use `b-block` to select the block style:
 

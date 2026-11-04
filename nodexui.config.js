@@ -3,7 +3,7 @@
  * examples/ folder and nodex-ui.github.io. This is the ONLY file that differs between the two. */
 (() => {
   const source = "cdn"; // "dist" = the local build served at /dist, "cdn" = jsDelivr
-  const version = "1.3.2"; // npm version the CDN source loads
+  const version = "1.3.4"; // npm version the CDN source loads
   const base = source === "cdn" ? `https://cdn.jsdelivr.net/npm/nodexui@${version}/dist` : "/dist";
   const file = (name) => `${base}/${name}`;
   const imports = {

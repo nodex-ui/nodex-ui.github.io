@@ -30,7 +30,7 @@ Both share the same component source, so styling and accessibility match.
 <span b-icon="check"></span>
 ```
 
-Pin a version (`nodexui@1.3.3`) in production. Set the theme on `<html data-theme="dark">` or on any subtree.
+Pin a version (`nodexui@1.3.4`) in production. Set the theme on `<html data-theme="dark">` or on any subtree.
 
 ### Pure component example
 

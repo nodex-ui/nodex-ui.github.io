@@ -12,11 +12,11 @@ document.querySelector("#qr").innerHTML = qrSvg(payload, { ecc: "M", margin: 2, 
 ```html
 <!-- ES module from the CDN (or map it as "nodexui/qr" in an import map) -->
 <script type="module">
-  import { qrSvg } from "https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.qr.esm.js";
+  import { qrSvg } from "https://cdn.jsdelivr.net/npm/nodexui@1.3.4/dist/nodexui.qr.esm.js";
 </script>
 
 <!-- Classic script tag: sets window.thebase.qr -->
-<script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.qr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.4/dist/nodexui.qr.min.js"></script>
 ```
 
 Types ship as `dist/types/qr.d.ts`.

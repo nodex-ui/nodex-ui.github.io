@@ -13,12 +13,12 @@ init({ backendUrl: "https://stats.example.com" });
 ```html
 <!-- ES module from the CDN (or map it as "nodexui/analytics" in an import map) -->
 <script type="module">
-  import { init } from "https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.analytics.esm.js";
+  import { init } from "https://cdn.jsdelivr.net/npm/nodexui@1.3.4/dist/nodexui.analytics.esm.js";
   init({ backendUrl: "https://stats.example.com" });
 </script>
 
 <!-- Classic script tag: sets window.thebase.analytics (load order vs dist/nodexui.min.js doesn't matter) -->
-<script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.3/dist/nodexui.analytics.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nodexui@1.3.4/dist/nodexui.analytics.min.js"></script>
 <script>
   thebase.analytics.init({ backendUrl: "https://stats.example.com" });
 </script>
